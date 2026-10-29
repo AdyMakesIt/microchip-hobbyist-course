@@ -1,0 +1,8 @@
+/* Makes tables in VS Code's built-in Markdown preview look like proper tables. */
+.vscode-body table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.93em; }
+.vscode-body th, .vscode-body td { border: 1px solid #8884; padding: 6px 10px; vertical-align: top; text-align: left; }
+.vscode-body th { background: #8882; font-weight: 600; }
+.vscode-body tr:nth-child(even) td { background: #8881; }
+.vscode-body img { max-width: 100%; height: auto; }
+.vscode-body pre { border-radius: 6px; }
+.vscode-body h1, .vscode-body h2 { border-bottom: 1px solid #8884; padding-bottom: 0.25em; }

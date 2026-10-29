@@ -1,0 +1,22 @@
+# MPLAB X build output
+build/
+dist/
+debug/
+*.o
+*.p1
+*.d
+*.pre
+*.sdb
+*.cmf
+*.elf
+*.hxl
+*.lst
+*.map
+*.sym
+nbproject/private/
+# keep nbproject/configurations.xml and project.xml when you add real MPLAB projects
+# general
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

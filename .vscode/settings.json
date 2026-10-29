@@ -1,0 +1,7 @@
+{
+  "markdown.styles": [".vscode/course-markdown.css"],
+  "markdown.preview.breaks": false,
+  "markdown.preview.fontSize": 15,
+  "editor.wordWrap": "on",
+  "[markdown]": { "editor.wordWrap": "on" }
+}
