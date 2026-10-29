@@ -1,16 +1,16 @@
-# Month 1 · Build 2 – Add the button
+# Month 1 · PIC Build 2 – Add the button
 
-[← Build 1](build-1-blink.md) · [Month 1](README.md) · [Next: Build 3 →](build-3-dice.md)
+[← PIC Build 1](pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](pic-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
 **Status:** logic tested in simulation · compile and bench test pending
 
-**Before you start:** Build 1 must pass. Power OFF. Leave everything from Build 1 in place.
+**Before you start:** PIC Build 1 must pass. Power OFF. Leave everything from Build 1 in place.
 
 ## 1. What you are adding
 
-![Schematic for build 2](images/build-2-schematic.png)
+![Schematic for build 2](images/pic-2-schematic.png)
 
 New in green: the push button **SW1** between pin 2 (RA0) and GND.
 
@@ -20,9 +20,9 @@ That is why "pressed" means `0` in the code. Most buttons in later months work t
 
 ## 2. Build it
 
-![Breadboard layout for build 2](images/build-2-breadboard.png)
+![Breadboard layout for build 2](images/pic-2-breadboard.png)
 
-<!-- placement:2 -->
+<!-- placement:pic:2 -->
 | Step | Part            | Where it goes                                                 | Notes                                                                                              |
 | ---: | --------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 |    1 | SW1 push button | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
@@ -35,7 +35,7 @@ whichever way round it sits. The other two legs must not touch anything.
 
 Connections, as a list:
 
-<!-- connections:2 -->
+<!-- connections:pic:2 -->
 | Starts at          | Then goes through    |
 | ------------------ | -------------------- |
 | U1 pin **2** (RA0) | SW1 button → **GND** |
@@ -51,7 +51,7 @@ Connections, as a list:
 
 Change the code in your project (or make a new project, same settings) to this, then **Clean and Build** and **Make and Program Device**:
 
-<!-- code:code/build-2-button/main.c -->
+<!-- code:code/pic-2-button/main.c -->
 ```c
 /*
  * Month 1 - Build 2: A button controls the LED
@@ -137,4 +137,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← Build 1](build-1-blink.md) · [Month 1](README.md) · [Next: Build 3 →](build-3-dice.md)
+[← PIC Build 1](pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](pic-3-dice.md)

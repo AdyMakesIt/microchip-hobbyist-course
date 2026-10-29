@@ -4,7 +4,8 @@ These tests run each build's **unmodified `main.c`** on a PC against a model of 
 the datasheet protocol. They need only `g++` (any recent version).
 
 ```sh
-sh maintainer/sim/m1/run_tests.sh     # Month 1
+sh maintainer/sim/m1pic/run_tests.sh   # Month 1, PIC track
+sh maintainer/sim/m1avr/run_tests.sh   # Month 1, ATmega328P track
 sh maintainer/sim/m2/run_tests.sh     # Month 2
 ```
 
@@ -29,4 +30,4 @@ Each test was run against deliberately broken copies of the code (wrong address,
 bad table values, off-by-one wraps). Every injected fault was caught, apart from one "equivalent" mutant where removing a start-of-roll debounce makes no difference,
 because the roll animation takes much longer than any bounce.
 
-The files `xc.h` here are stand-ins for Microchip's `<xc.h>`; they are not used in a real build.
+The files `xc.h` (PIC) and `avr/io.h` (AVR) here are stand-ins for Microchip's and avr-libc's real headers; they are not used in a real build.

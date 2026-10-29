@@ -11,9 +11,10 @@ using **free chip samples** and a **low-cost PICkit 3 programmer**. No soldering
 
 1. [How the course works](start-here/01-how-the-course-works.md) (5 min)
 2. [Ordering and budget](start-here/02-ordering-and-budget.md): starter kit and free samples
-3. [Software and programmer setup](start-here/03-software-setup.md): MPLAB X v6.20, XC8, PICkit 3
-4. [Electronics and breadboard basics](start-here/04-electronics-and-breadboard-basics.md)
-5. [Troubleshooting](start-here/05-troubleshooting.md)
+3. [AVR software and programmer setup](start-here/03-avr-setup.md) (ATmega328P, VS Code + PlatformIO)
+4. [PIC software and programmer setup](start-here/04-pic-setup.md) (MPLAB X v6.20, XC8, PICkit 3)
+5. [Electronics and breadboard basics](start-here/05-electronics-and-breadboard-basics.md)
+6. [Troubleshooting](start-here/06-troubleshooting.md)
 
 ## The months
 

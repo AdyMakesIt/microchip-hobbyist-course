@@ -69,4 +69,4 @@ Always measure **power off** for continuity and resistance. Never use the contin
 * Power **off** whenever you add or move a part.
 * If a chip gets **hot to the touch**, power off at once: it is in backwards or something is shorted.
 
-Next: [Troubleshooting](05-troubleshooting.md) or go straight to [Month 1](../month-01-electronic-dice/README.md).
+Next: [Troubleshooting](06-troubleshooting.md) or go straight to [Month 1](../month-01-electronic-dice/README.md).

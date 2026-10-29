@@ -9,8 +9,9 @@ each month you order two free chips, build something with them on a breadboard, 
 After 24 months you have a drawer full of real parts and hands-on experience with Microchip's PIC and AVR families,
 for the cost of a modest starter kit plus resistors, LEDs and wire.
 
-It is written for **keen amateurs**. No electronics degree, no soldering, no expensive tools. The programmer is a
-**PICkit 3** (cheap clones are common) rather than a costly modern debugger.
+It is written for **keen amateurs**. No electronics degree, no soldering, no expensive tools. The PIC programmer is a
+**PICkit 3** (cheap clones are common) and the AVR programmer is a **USBasp** or an **Arduino Uno R3** you may already own.
+If you have used an Arduino, the course starts on familiar ground: the same ATmega328P chip, with the Arduino IDE swapped for the real tools it was hiding.
 
 ## How a month is laid out
 
@@ -65,6 +66,6 @@ and the exact compiler/programmer message. That is enough to fix the page for ev
 ## Where to go next
 
 1. [Ordering and budget](02-ordering-and-budget.md)
-2. [Software and programmer setup](03-software-setup.md)
-3. [Electronics and breadboard basics](04-electronics-and-breadboard-basics.md)
+2. [AVR software and programmer setup](03-avr-setup.md) and [PIC software and programmer setup](04-pic-setup.md)
+3. [Electronics and breadboard basics](05-electronics-and-breadboard-basics.md)
 4. [Month 1](../month-01-electronic-dice/README.md)

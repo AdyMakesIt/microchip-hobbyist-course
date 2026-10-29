@@ -20,7 +20,7 @@
 ![Breadboard layout for build 1](images/build-1-breadboard.png)
 
 (Sharper [SVG](images/build-1-breadboard.svg).) Power OFF while you build. New to the hole names (like **13j**)? See
-[breadboard basics](../start-here/04-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
+[breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
 <!-- placement:1 -->
 | Step | Part                     | Where it goes                                                                                                           | Notes                                                                                                                                                                      |
@@ -89,7 +89,7 @@ Power on (jumper at **5 V**): measure pin 11 to pin 12: **4.8 V to 5.2 V**.
 
 ## 4. Program it
 
-Follow [Software & programmer setup](../start-here/03-software-setup.md#create-a-project) with device **PIC18F47K42**. Then:
+Follow [Software & programmer setup](../start-here/04-pic-setup.md#create-a-project) with device **PIC18F47K42**. Then:
 
 <!-- code:code/build-1-blink/main.c -->
 ```c
@@ -156,11 +156,11 @@ New compared with Month 1: this chip runs at **64 MHz**, so `OSCFRQ = 0x08` is s
 
 ## 6. If it does not work
 
-| What you see                  | Most likely cause                    | What to do                                                                                                            |
-| ----------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| "Target device not found"     | a power pin missing                  | **all four** of pins 11, 12, 31, 32 must be connected                                                                 |
-| Chip gets warm                | a short or the chip is in backwards  | power off at once; check the notch is on the left                                                                     |
-| Programs but no blink         | LED backwards, or wire in wrong hole | wire from **21i** goes to **53a**; long leg towards the resistor                                                      |
-| Blink is far too slow or fast | clock configuration                  | check the `#pragma config` block; see [setup](../start-here/03-software-setup.md#if-a-pragma-config-line-is-rejected) |
+| What you see                  | Most likely cause                    | What to do                                                                                                       |
+| ----------------------------- | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| "Target device not found"     | a power pin missing                  | **all four** of pins 11, 12, 31, 32 must be connected                                                            |
+| Chip gets warm                | a short or the chip is in backwards  | power off at once; check the notch is on the left                                                                |
+| Programs but no blink         | LED backwards, or wire in wrong hole | wire from **21i** goes to **53a**; long leg towards the resistor                                                 |
+| Blink is far too slow or fast | clock configuration                  | check the `#pragma config` block; see [setup](../start-here/04-pic-setup.md#if-a-pragma-config-line-is-rejected) |
 
 [← Month 2](README.md) · [Next: Build 2 →](build-2-hello-expander.md)

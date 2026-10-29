@@ -45,7 +45,7 @@ Then on GitHub: **Releases → Draft a new release → choose a tag (`month-02-v
 
 ## Where do the MPLAB X projects go?
 
-Right now each build has a single `main.c` and the learner creates the MPLAB project themselves ([setup guide](../start-here/03-software-setup.md#create-a-project)).
+Right now each build has a single `main.c` and the learner creates the MPLAB project themselves ([setup guide](../start-here/04-pic-setup.md#create-a-project)).
 That is deliberate: a project file written by hand and never opened in MPLAB can fail in ways nobody can diagnose.
 
 **Once a build has compiled and run on your bench**, you can add the real project:

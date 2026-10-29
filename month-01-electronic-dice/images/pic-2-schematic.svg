@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 822 620" width="822" height="620" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
 <rect width="100%" height="100%" fill="#fff"/>
-<text x="14" y="24" font-size="17" font-weight="bold" fill="#111">Month 1 - Build 2 - Add the button: schematic</text>
+<text x="14" y="24" font-size="17" font-weight="bold" fill="#111">Month 1 (PIC) - PIC Build 2 - Add the button: schematic</text>
 <g transform="translate(0,34)">
 <rect x="20" y="60" width="166" height="264" fill="#f6f8fb" stroke="#1d3557" stroke-width="2"/>
 <text x="103.0" y="77" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">J1  PICkit 3 ICSP</text>

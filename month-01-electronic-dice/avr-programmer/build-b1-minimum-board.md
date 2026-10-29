@@ -103,7 +103,7 @@ which then lets you load later programs over the serial lead. This is the "chick
 
 1. Install the **Arduino IDE**. Plug in the USBasp.
 2. **Tools → Board → Arduino AVR Boards → Arduino Uno.**
-3. **Tools → Programmer → USBasp.**
+3. **Tools → Programmer → USBasp** (or **Arduino as ISP** if your programmer is an Uno; then also choose the Uno's port, and wire the five leads as in the [AVR setup page](../../start-here/03-avr-setup.md)).
 4. **Tools → Burn Bootloader.** Wait for **Done burning bootloader.**
 5. **Power off, then unplug the five USBasp leads.** You will not need the USBasp again in Part B.
 

@@ -5,7 +5,8 @@ from mhc_draw import Circuit, Board
 # ---------------------------------------------------------------------------------
 # MONTH 1 - PIC16F18857 electronic dice
 # ---------------------------------------------------------------------------------
-M1_BUILDS = {1: "Build 1 - Blink an LED", 2: "Build 2 - Add the button", 3: "Build 3 - The dice (seven LEDs)"}
+M1_BUILDS = {1: "PIC Build 1 - Blink an LED", 2: "PIC Build 2 - Add the button", 3: "PIC Build 3 - The dice (seven LEDs)"}
+AVR1_BUILDS = {1: "AVR Build 1 - Blink an LED", 2: "AVR Build 2 - Add the button", 3: "AVR Build 3 - The dice (seven LEDs)"}
 
 def month1():
     c = Circuit("Month 1")
@@ -67,6 +68,50 @@ def month1():
     b.switch("SW1", 3, 2)
     b.wire("3a", "TN3", 2, "GND")
     b.wire("5g", "9g", 2, "RA0")
+    return c, b
+
+
+# ---------------------------------------------------------------------------------
+# MONTH 1, AVR TRACK - ATmega328P electronic dice (programmed through an ISP programmer)
+# ---------------------------------------------------------------------------------
+def month1_avr():
+    c = Circuit("Month 1 AVR")
+    c.ic("J1", "ISP programmer", 5, "skinny", {1: "MISO", 2: "SCK", 3: "MOSI", 4: "RESET", 5: "GND"}, at=(20, 60),
+         sides={1: "R", 2: "R", 3: "R", 4: "R", 5: "R"}, connector=True, named_only=True)
+    names = {1: "RESET", 2: "PD0", 3: "PD1", 4: "PD2", 5: "PD3", 6: "PD4", 7: "VCC", 8: "GND", 11: "PD5", 12: "PD6",
+             17: "MOSI (PB3)", 18: "MISO (PB4)", 19: "SCK (PB5)", 20: "AVCC", 22: "GND", 23: "PC0"}
+    c.ic("U1", "ATmega328P-PU", 28, "skinny", names, at=(330, 40),
+         sides={p: "L" for p in (1, 7, 8, 17, 18, 19, 20, 22, 23)} | {p: "R" for p in (2, 3, 4, 5, 6, 11, 12)})
+    for p in (7, 20): c.chain(("U1", p), ["+5V"], 1)
+    for p in (8, 22): c.chain(("U1", p), ["GND"], 1)
+    c.chain(("NET", "+5V"), ["C:C1:100nF", "GND"], 1)
+    c.chain(("U1", 1), ["NET:RESET"], 1)
+    c.chain(("NET", "RESET"), ["R:R1:10k", "+5V"], 1)
+    c.chain(("J1", 4), ["NET:RESET"], 1)
+    for jp, up, nm in ((1, 18, "MISO"), (2, 19, "SCK"), (3, 17, "MOSI")):
+        c.chain(("J1", jp), [f"NET:{nm}"], 1); c.chain(("U1", up), [f"NET:{nm}"], 1)
+    c.chain(("J1", 5), ["GND"], 1)
+    leds = [(2, "D1", "R2", 1), (3, "D2", "R3", 3), (4, "D3", "R4", 3), (5, "D4", "R5", 3), (6, "D5", "R6", 3),
+            (11, "D6", "R7", 3), (12, "D7", "R8", 3)]
+    for pin, d, r, bld in leds:
+        c.chain(("U1", pin), [f"R:{r}:680R", f"LED:{d}:red", "GND"], bld)
+    c.chain(("U1", 23), ["SW:SW1:ROLL", "GND"], 2)
+
+    b = Board(c)
+    b.ic("U1", 8, 1)
+    b.wire("TP2", "BP2", 1, "+5V"); b.wire("TN1", "BN1", 1, "GND")
+    b.wire("14j", "BP14", 1, "+5V"); b.wire("15j", "BN15", 1, "GND"); b.two("C1", "14i", "15i", 1)
+    b.wire("16b", "TP16", 1, "+5V"); b.wire("14b", "TN14", 1, "GND")
+    b.two("R1", "8i", "BP8", 1)
+    b.lead("J1", 4, "8j", 1, "RESET"); b.lead("J1", 1, "18c", 1, "MISO"); b.lead("J1", 2, "17c", 1, "SCK")
+    b.lead("J1", 3, "19c", 1, "MOSI"); b.lead("J1", 5, "TN6", 1, "GND")
+    pinhole = {2: "9h", 3: "10h", 4: "11h", 5: "12h", 6: "13h", 11: "18h", 12: "19h"}
+    for i, (pin, d, r, bld) in enumerate(leds):
+        uc = 25 + i
+        b.wire(pinhole[pin], f"{uc}a", bld, f"PD{i}")
+        b.two(r, f"{uc}d", f"{uc}g", bld)
+        b.two(d, f"{uc}h", f"BN{uc}", bld)
+    b.switch("SW1", 3, 2); b.wire("3a", "TN3", 2, "GND"); b.wire("5g", "13b", 2, "PC0")
     return c, b
 
 # ---------------------------------------------------------------------------------
@@ -154,10 +199,10 @@ def month2():
 # ---------------------------------------------------------------------------------
 # MONTH 1, PART B (optional) - ATmega328P as an AVR programmer
 # ---------------------------------------------------------------------------------
-AVR_BUILDS = {1: "Build B1 - The minimum ATmega328P board", 2: "Build B2 - Turn it into a programmer",
+ISP_BUILDS = {1: "Build B1 - The minimum ATmega328P board", 2: "Build B2 - Turn it into a programmer",
               3: "Build B3 - Program a second chip"}
 
-def month1_avr():
+def month1_isp():
     c = Circuit("Month 1 Part B")
     c.ic("J2", "USB-serial adapter", 4, "skinny", {1: "GND", 2: "TXD (to chip RXD)", 3: "RXD (from chip TXD)", 4: "DTR"},
          at=(20, 40), sides={1: "R", 2: "R", 3: "R", 4: "R"}, connector=True, named_only=True)
@@ -245,7 +290,7 @@ def month1_avr():
     return c, b
 
 if __name__ == "__main__":
-    for name, fn, nb in (("Month 1", month1, 3), ("Month 1 Part B", month1_avr, 3), ("Month 2", month2, 4)):
+    for name, fn, nb in (("Month 1", month1, 3), ("Month 1 Part B", month1_isp, 3), ("Month 1 ATmega328P", month1_avr, 3), ("Month 2", month2, 4)):
         c, b = fn()
         for n in range(1, nb + 1):
             pr = b.verify(n)

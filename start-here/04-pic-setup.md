@@ -1,6 +1,6 @@
-# Software and programmer setup
+# PIC software and programmer setup
 
-**Do this once.** About 30–40 minutes, mostly downloading.
+**Do this once.** About 30–40 minutes, mostly downloading. This page is for the **PIC chips**. For the ATmega328P (AVR), see [AVR software and programmer setup](03-avr-setup.md).
 
 > **Tested combination (bench-tested on a PIC16F18857 on 2026-08-08):** MPLAB XC8 **v3.10** with the
 > PIC16F1xxxx device pack 1.31.465. Use the **MPLAB X IDE v6.20** installer: it is the **last version that supports the PICkit 3**.
@@ -116,4 +116,4 @@ If you had to change the block, please report which name differed so the course 
 | see the compiler messages | **Window → Output → Output**, tab *Build* |
 | start a new build         | **File → New Project**, as above          |
 
-Next: [Electronics and breadboard basics](04-electronics-and-breadboard-basics.md)
+Next: [Electronics and breadboard basics](05-electronics-and-breadboard-basics.md)

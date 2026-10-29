@@ -1,15 +1,26 @@
-# Month 1 · Build 1 – Blink an LED
+# Month 1 · PIC Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: Build 2 →](build-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](pic-2-button.md)
 
 **Goal:** make one LED blink once a second. This proves that the chip, the power, the programmer and the
 software all work. Almost every problem you will meet later is easier to find because this build works.
 
 **Status:** logic tested in simulation · compile and bench test pending
 
+This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](avr-1-blink.md); the two tracks are independent.
+
+## 0. Coming from the AVR track?
+
+You can reuse most of your breadboard. **Power off**, then:
+
+* **Remove:** the ATmega328P, its power wires and capacitor (C1), its RESET resistor (R1), the programmer leads, and the wires that run from the chip to the LED columns.
+* **Keep:** the two rail-bridging wires on the left, the LED units (columns 25 to 31: resistor and LED), and the push button with its ground wire.
+
+Then follow the table in step 2 below. Skip any step whose part is already in place.
+
 ## 1. What you are building
 
-![Schematic for build 1](images/build-1-schematic.png)
+![Schematic for build 1](images/pic-1-schematic.png)
 
 How to read it: lines are wires. The little arrows with a name (such as **MCLR**) are "net flags":
 every flag with the same name is the same wire. The ground symbol (⏚) is the **GND** rail and the
@@ -24,15 +35,15 @@ What each part does:
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/build-1-breadboard.png)
+![Breadboard layout for build 1](images/pic-1-breadboard.png)
 
-(The picture is also available as a sharper [SVG](images/build-1-breadboard.svg). Open it in a browser and zoom in.)
+(The picture is also available as a sharper [SVG](images/pic-1-breadboard.svg). Open it in a browser and zoom in.)
 
 **Before you start:** power OFF, PICkit 3 unplugged. Each step below is one thing to plug in.
 Hole names such as **16b** mean *column 16, row b*; see the
-[breadboard basics](../start-here/04-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
+[breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
-<!-- placement:1 -->
+<!-- placement:pic:1 -->
 | Step | Part                     | Where it goes                                                                                                           | Notes                                                                                  |
 | ---: | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 |    1 | U1 PIC16F18857-I/SP      | Pin 1 in hole **8f**, notch to the **left**. Pins 1–14 run along row f (columns 8–21); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
@@ -58,7 +69,7 @@ Use female-to-male Dupont leads. Pin 6 is not used. Leave the leads attached whi
 
 **The same circuit, as a connection list** (useful if you prefer reading to looking):
 
-<!-- connections:1 -->
+<!-- connections:pic:1 -->
 | Starts at               | Then goes through                                           |
 | ----------------------- | ----------------------------------------------------------- |
 | U1 pin **20** (VDD)     | **+5 V**                                                    |
@@ -89,15 +100,15 @@ Now switch the breadboard supply on (jumper set to **5 V**):
 
 * **Check 4:** meter on DC volts, red probe on pin **20**, black on pin **19**: you should read **4.8 V to 5.2 V**.
 
-If any check fails, stop and fix it first. See [Troubleshooting](../start-here/05-troubleshooting.md).
+If any check fails, stop and fix it first. See [Troubleshooting](../start-here/06-troubleshooting.md).
 
 ## 4. Program it
 
-1. Follow [Software & programmer setup → Create a project](../start-here/03-software-setup.md#create-a-project) with device **PIC16F18857**.
-2. Replace the contents of `main.c` with the code below (or add the file from `code/build-1-blink/`).
+1. Follow [Software & programmer setup → Create a project](../start-here/04-pic-setup.md#create-a-project) with device **PIC16F18857**.
+2. Replace the contents of `main.c` with the code below (or add the file from `code/pic-1-blink/`).
 3. **Clean and Build**, then **Make and Program Device**.
 
-<!-- code:code/build-1-blink/main.c -->
+<!-- code:code/pic-1-blink/main.c -->
 ```c
 /*
  * Month 1 - Build 1: Blink an LED
@@ -166,18 +177,18 @@ How it works, line by line:
 
 ## 6. If it does not work
 
-| What you see                              | Most likely cause                                      | What to do                                                                                                             |
-| ----------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| MPLAB cannot find the PICkit 3            | cable, driver or firmware                              | try another USB port/cable; see [setup → PICkit 3 problems](../start-here/03-software-setup.md#pickit-3-problems)      |
-| "Target device not found"                 | power, MCLR or lead problem                            | recheck the 4 checks above; PICkit pin 1 on the correct wire; **PGD and PGC not swapped**; chip the right way round    |
-| It programs fine but the LED never lights | LED backwards or wrong hole                            | long leg towards the resistor; wire from pin 11 lands in **18h** and **25a**                                           |
-| LED lights steadily and does not blink    | a different program still in the chip, or the watchdog | re-program; confirm `WDTE = OFF` is in the code                                                                        |
-| Blinks too fast or too slow               | clock setting                                          | the `#pragma config` block must be exactly as shown                                                                    |
-| Compiler error on a `#pragma config` line | header name differs on your tool version               | [setup → If a #pragma config line is rejected](../start-here/03-software-setup.md#if-a-pragma-config-line-is-rejected) |
+| What you see                              | Most likely cause                                      | What to do                                                                                                          |
+| ----------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| MPLAB cannot find the PICkit 3            | cable, driver or firmware                              | try another USB port/cable; see [setup → PICkit 3 problems](../start-here/04-pic-setup.md#pickit-3-problems)        |
+| "Target device not found"                 | power, MCLR or lead problem                            | recheck the 4 checks above; PICkit pin 1 on the correct wire; **PGD and PGC not swapped**; chip the right way round |
+| It programs fine but the LED never lights | LED backwards or wrong hole                            | long leg towards the resistor; wire from pin 11 lands in **18h** and **25a**                                        |
+| LED lights steadily and does not blink    | a different program still in the chip, or the watchdog | re-program; confirm `WDTE = OFF` is in the code                                                                     |
+| Blinks too fast or too slow               | clock setting                                          | the `#pragma config` block must be exactly as shown                                                                 |
+| Compiler error on a `#pragma config` line | header name differs on your tool version               | [setup → If a #pragma config line is rejected](../start-here/04-pic-setup.md#if-a-pragma-config-line-is-rejected)   |
 
 ## 7. Try this (optional)
 
 * Make it blink twice as fast. Which numbers change?
 * Make it blink three short flashes, a pause, repeat.
 
-[← Month 1](README.md) · [Next: Build 2 →](build-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](pic-2-button.md)

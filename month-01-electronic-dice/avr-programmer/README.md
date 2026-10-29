@@ -2,7 +2,7 @@
 
 [← Month 1](../README.md)
 
-**Time:** two or three evenings  **Do it after:** Month 1 Build 3 passes (or at any later time)  **Supply:** 5 V
+**Time:** two or three evenings  **Do it after:** both Month 1 tracks pass (or at any later time)  **Supply:** 5 V
 **Everything for Part B is in this folder:** pages, pictures and code.
 
 You will turn one ATmega328P chip into a small **programmer** that can load programs into other AVR chips, and then use it to program a second ATmega328P.
@@ -16,9 +16,8 @@ Along the way you learn how an AVR chip is built into a minimal working board: c
 | ATmega328P and other AVR chips that use the **ISP** interface (MOSI, MISO, SCK, RESET), such as the ATtiny85 and ATtiny84 | **PIC chips**: use the PICkit 3 for those                              |
 |                                                                                                                           | newer AVR chips that use **UPDI** (the "AVR Dx" and "AVR Ex" families) |
 
-**Why build one?** A USBasp (used below to start the process) can also program AVR chips directly, and is the quicker everyday tool.
-Part B is about **understanding** how a chip is programmed, and ending up with a working programmer you built yourself.
-Skip it if you only want to get on with the PIC projects.
+**Why build one?** In the AVR track you already programmed an ATmega328P with a USBasp or an Uno R3. Part B is about **understanding** how a programmer works, and ending up with one you built yourself, using the same chip.
+The USBasp stays the quicker everyday tool. Skip Part B if you would rather move on.
 
 ## The three builds
 
@@ -35,7 +34,7 @@ Nothing here has been run on a real bench yet. Please report what you find.
 
 ### Free sample chips
 
-Two of the **three ATmega328P-PU** chips ordered in Month 1: one becomes the programmer, one is the target. The third is a spare.
+Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used one in the AVR track): one becomes the programmer, one is the target. Keep a spare.
 
 ### Extra items (not free)
 

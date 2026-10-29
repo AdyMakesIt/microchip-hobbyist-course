@@ -6,27 +6,28 @@
 
 Buy this once. Prices are **rough hobby-market guides, not quotes**; they vary by supplier and change often.
 
-| Item                     | What to look for                                                | Rough cost   |
-| ------------------------ | --------------------------------------------------------------- | -----------: |
-| Solderless breadboard    | 830 tie-points (the full-size kind with 63 columns)             |         £3–6 |
-| Breadboard power supply  | MB102 style, with a jumper for 5 V / 3.3 V, USB or barrel input |         £2–4 |
-| Jumper wires             | male-to-male, mixed lengths, at least 65                        |         £3–6 |
-| Dupont leads             | **female-to-male**, at least 10 (for the PICkit 3 leads)        |         £2–4 |
-| Resistor assortment      | ¼ W, E12 range. It will contain 100 Ω, 680 Ω, 4.7 kΩ, 10 kΩ     |         £4–8 |
-| LEDs                     | 5 mm red, at least 20                                           |         £2–4 |
-| Ceramic capacitors       | assortment that includes 100 nF (0.1 µF)                        |         £3–6 |
-| Push buttons             | 6 mm, 4-leg tact switches, at least 10                          |         £2–4 |
-| Piezo discs              | **passive** discs (no oscillator inside), at least 2            |         £1–3 |
-| Multimeter               | any basic one with continuity beep and DC volts                 |       £10–20 |
-| **Programmer: PICkit 3** | an original or a clone, with USB cable                          |       £10–25 |
-| USB cables / chargers    | for the PICkit and the breadboard supply                        | have already |
+| Item                                                  | What to look for                                                                                                                      | Rough cost   |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -----------: |
+| Solderless breadboard                                 | 830 tie-points (the full-size kind with 63 columns)                                                                                   |         £3–6 |
+| Breadboard power supply                               | MB102 style, with a jumper for 5 V / 3.3 V, USB or barrel input                                                                       |         £2–4 |
+| Jumper wires                                          | male-to-male, mixed lengths, at least 65                                                                                              |         £3–6 |
+| Dupont leads                                          | **female-to-male**, at least 10 (for the PICkit 3 leads)                                                                              |         £2–4 |
+| Resistor assortment                                   | ¼ W, E12 range. It will contain 100 Ω, 680 Ω, 4.7 kΩ, 10 kΩ                                                                           |         £4–8 |
+| LEDs                                                  | 5 mm red, at least 20                                                                                                                 |         £2–4 |
+| Ceramic capacitors                                    | assortment that includes 100 nF (0.1 µF)                                                                                              |         £3–6 |
+| Push buttons                                          | 6 mm, 4-leg tact switches, at least 10                                                                                                |         £2–4 |
+| Piezo discs                                           | **passive** discs (no oscillator inside), at least 2                                                                                  |         £1–3 |
+| Multimeter                                            | any basic one with continuity beep and DC volts                                                                                       |       £10–20 |
+| **PIC programmer: PICkit 3**                          | an original or a clone, with USB cable                                                                                                |       £10–25 |
+| **AVR programmer: USBasp** *or* an **Arduino Uno R3** | either works as the ATmega328P programmer (see [AVR setup](03-avr-setup.md)); a USBasp costs a few pounds, an Uno you may already own |         £2–5 |
+| USB cables / chargers                                 | for the PICkit and the breadboard supply                                                                                              | have already |
 
 *Optional extras for the Month 1 AVR programmer (Part B) are listed in that part's own page.*
 
 A realistic one-off total is **about £45–£95**, and almost all of it is reusable for all 24 months.
 
 **On clone programmers:** quality varies. A PICkit 3 clone is fine for this course, but if yours is unreliable,
-suspect it early (see the [troubleshooting](05-troubleshooting.md)). A clone that works for Month 1 will keep working as the course goes on.
+suspect it early (see the [troubleshooting](06-troubleshooting.md)). A clone that works for Month 1 will keep working as the course goes on.
 
 ## 2. Free samples
 
@@ -52,4 +53,4 @@ Order the chips for a month **a few weeks before you need them**, since delivery
 Each month's `README.md` has a **parts list counted automatically from that month's circuit**, with a margin
 ("Buy at least"). Buy the larger number so you always have spares.
 
-Next: [Software and programmer setup](03-software-setup.md)
+Next: [AVR software and programmer setup](03-avr-setup.md)
