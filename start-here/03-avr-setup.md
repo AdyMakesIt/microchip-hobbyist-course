@@ -69,7 +69,9 @@ platform = atmelavr
 board = ATmega328P
 board_build.f_cpu = 1000000L
 upload_protocol = usbasp
-upload_flags = -B10
+upload_flags =
+    -Pusb
+    -B10
 ```
 
 **If you use an Arduino Uno R3 as a programmer** (change `COM3` to your Uno's port; on Linux or macOS it looks like `/dev/ttyACM0`):
@@ -92,7 +94,7 @@ What the lines mean:
 * `board = ATmega328P` is the bare chip (not an Arduino board).
 * `board_build.f_cpu = 1000000L` tells the compiler the chip runs at **1 MHz**: that is the chip's factory setting.
 * `upload_protocol` picks the uploader's language for your programmer.
-* `-B10` slows the programming clock (explained in the next section).
+* `-Pusb` tells avrdude to look for the USBasp on USB; `-B10` slows the programming clock (explained in the next section).
 
 ## Step 3: Build and upload
 

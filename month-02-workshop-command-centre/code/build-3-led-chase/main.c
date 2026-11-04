@@ -119,7 +119,7 @@ static unsigned char i2cRead(unsigned char sendAck)
     I2C_DELAY();
     sclRelease();               I2C_DELAY();
     sclLow();                   I2C_DELAY();
-    sdaRelease();
+    sdaRelease();               I2C_DELAY();   /* let the line settle before the next clock pulse */
     return data;
 }
 
