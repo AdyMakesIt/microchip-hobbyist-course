@@ -40,6 +40,7 @@ class Circuit:
        'PIEZO:BZ1'  and a terminal:  'GND' | '+5V' | 'NET:SCL' """
     def __init__(self, title):
         self.title = title
+        self.supply_label = "+5 V"      # text shown for the +5V net (set "+3.3 V" for a 3.3 V month)
         self.ics = {}
         self.chains = []
         self.parts = {}         # ref -> (kind, value)
@@ -54,7 +55,7 @@ class Circuit:
         self.chains.append(Chain(start, elems, build, side, until))
         for e in elems:
             k = e.split(":")
-            if k[0] in ("R", "LED", "C", "SW", "PIEZO", "XTAL"):
+            if k[0] in ("R", "LED", "C", "SW", "PIEZO", "XTAL", "POT"):
                 self.parts[k[1]] = (k[0], k[2] if len(k) > 2 else "")
 
     # ---- netlist --------------------------------------------------------
@@ -74,7 +75,9 @@ class Circuit:
             n = 0
             for e in ch.elems:
                 k = e.split(":")
-                if k[0] in ("R", "C", "PIEZO", "SW", "LED", "XTAL"):
+                if k[0] == "WIPER":
+                    u(cur, ("pin", k[1], "W")); continue
+                if k[0] in ("R", "C", "PIEZO", "SW", "LED", "XTAL", "POT"):
                     p1, p2 = (("A", "K") if k[0] == "LED" else ("1", "2"))
                     nxt = ("int", ci, n); n += 1
                     u(cur, ("pin", k[1], p1)); u(nxt, ("pin", k[1], p2)); cur = nxt
@@ -102,7 +105,8 @@ class Circuit:
             if ch.start[0] != "NET": pins.add(tuple(ch.start))
             for e in ch.elems:
                 k = e.split(":")
-                if k[0] in ("R", "C", "PIEZO", "SW", "XTAL"): pins |= {(k[1], "1"), (k[1], "2")}
+                if k[0] in ("R", "C", "PIEZO", "SW", "XTAL", "POT"): pins |= {(k[1], "1"), (k[1], "2")}
+                if k[0] == "WIPER": pins.add((k[1], "W"))
                 if k[0] == "LED": pins |= {(k[1], "A"), (k[1], "K")}
         return pins
 
@@ -145,6 +149,10 @@ class Board:
     def wire(self, a, b, build, label="", until=99, **kw):
         self.items.append(dict(kind="wire", a=parse_hole(a), b=parse_hole(b), build=build, label=label, until=until, **kw))
 
+    def pot(self, ref, a, w, b, build):
+        """Potentiometer: a and b are the outer legs (the track ends), w the middle leg (wiper)."""
+        self.items.append(dict(kind="POT", ref=ref, a=parse_hole(a), w=parse_hole(w), b=parse_hole(b), build=build))
+
     def switch(self, ref, col, build):
         """Tact switch straddling the centre gap: legs at (col,e) (col+2,e) (col,f) (col+2,f).
         Only the diagonal legs (col,e) and (col+2,f) are used, whichever way round the switch is."""
@@ -186,6 +194,9 @@ class Board:
                 u(("pin", it["ref"], "1"), hole_node(it["a"])); u(("pin", it["ref"], "2"), hole_node(it["b"]))
             elif k == "LED":
                 u(("pin", it["ref"], "A"), hole_node(it["a"])); u(("pin", it["ref"], "K"), hole_node(it["b"]))
+            elif k == "POT":
+                u(("pin", it["ref"], "1"), hole_node(it["a"])); u(("pin", it["ref"], "W"), hole_node(it["w"]))
+                u(("pin", it["ref"], "2"), hole_node(it["b"]))
             elif k == "wire":
                 u(hole_node(it["a"]), hole_node(it["b"]))
             elif k == "lead":
@@ -291,7 +302,7 @@ class BBDraw:
                 ic = board.c.ics[it["ref"]]; cols += [it["col"], it["col"] + ic.npins // 2 - 1]
             elif it["kind"] == "SW": cols += [it["col"], it["col"] + 2]
             else:
-                for k in ("a", "b"):
+                for k in ("a", "b", "w"):
                     if k in it: cols.append(it[k][0])
         # always show the same crop for every build of a month so pictures line up
         allcols = []
@@ -300,7 +311,7 @@ class BBDraw:
                 ic = board.c.ics[it["ref"]]; allcols += [it["col"], it["col"] + ic.npins // 2 - 1]
             elif it["kind"] == "SW": allcols += [it["col"], it["col"] + 2]
             else:
-                for k in ("a", "b"):
+                for k in ("a", "b", "w"):
                     if k in it: allcols.append(it[k][0])
         self.cmin = cmin if cmin is not None else max(1, min(allcols) - 3)
         self.cmax = cmax if cmax is not None else min(63, max(allcols) + 3)
@@ -349,7 +360,7 @@ class BBDraw:
                 o.append(f'<text x="{x}" y="{self.Y0+2.05*P}" font-size="9" fill="#7a725f" text-anchor="middle">{col}</text>')
                 o.append(f'<text x="{x}" y="{self.Y0+15.15*P}" font-size="9" fill="#7a725f" text-anchor="middle">{col}</text>')
         # items (draw order: ICs, flat parts, switches, wires, leads)
-        order = {"ic": 0, "R": 1, "C": 1, "LED": 1, "PIEZO": 1, "XTAL": 1, "SW": 2, "wire": 3, "lead": 4}
+        order = {"ic": 0, "R": 1, "C": 1, "LED": 1, "PIEZO": 1, "XTAL": 1, "POT": 1, "SW": 2, "wire": 3, "lead": 4}
         wi = 0
         self.labels = []
         self.lead_idx = 0
@@ -358,6 +369,7 @@ class BBDraw:
             k = it["kind"]
             if k == "ic": o.append(self.draw_ic(it, new))
             elif k in ("R", "C", "LED", "PIEZO", "XTAL"): o.append(self.draw_part(it, new))
+            elif k == "POT": o.append(self.draw_pot(it, new))
             elif k == "SW": o.append(self.draw_switch(it, new))
             elif k == "wire": o.append(self.draw_wire(it, new, wi)); wi += 1
             elif k == "lead": o.append(self.draw_lead(it, new))
@@ -374,8 +386,14 @@ class BBDraw:
         if new: s.append(f'<rect x="{x0-10}" y="{yt-6}" width="{x1-x0+20}" height="{yb-yt+12}" rx="6" fill="#ffe34d" opacity=".6"/>')
         s.append(f'<rect x="{x0-6}" y="{yt+4}" width="{x1-x0+12}" height="{yb-yt-8}" rx="3" fill="#2b2b2b" stroke="#000"/>')
         s.append(f'<path d="M {x0-6} {(yt+yb)/2-6} a 6 6 0 0 1 0 12" fill="#f4efe6" stroke="#000"/>')
-        s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2-3}" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">{esc(ic.ref)}  {esc(ic.part)}</text>')
-        s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2+12}" font-size="10" fill="#ddd" text-anchor="middle">notch ◖ at the LEFT; pin 1 is bottom-left</text>')
+        wide_body = (x1 - x0) > 210
+        if wide_body:
+            s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2-3}" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">{esc(ic.ref)}  {esc(ic.part)}</text>')
+            s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2+12}" font-size="10" fill="#ddd" text-anchor="middle">notch ◖ at the LEFT; pin 1 is bottom-left</text>')
+        else:   # narrow chip: shorter text so it stays inside the body
+            short = ic.part.split("-")[0]
+            s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2-1}" font-size="9.5" font-weight="bold" fill="#fff" text-anchor="middle">{esc(ic.ref)} {esc(short)}</text>')
+            s.append(f'<text x="{(x0+x1)/2}" y="{(yt+yb)/2+11}" font-size="8" fill="#ddd" text-anchor="middle">pin 1 bottom-left</text>')
         for p in range(1, ic.npins + 1):
             h = self.b.ic_pin_hole(ic.ref, p); x, y = self.xy(h)
             s.append(f'<rect x="{x-3.4}" y="{y-3.4}" width="6.8" height="6.8" fill="#cfcfcf" stroke="#555" stroke-width=".6"/>')
@@ -421,6 +439,17 @@ class BBDraw:
             s.append(f'<text x="{mx}" y="{my+3}" font-size="8" font-weight="bold" fill="#4a3b00" text-anchor="middle">BZ</text>')
         for (x, y) in ((xa, ya), (xb, yb)):
             s.append(f'<circle cx="{x}" cy="{y}" r="2.6" fill="#555"/>')
+        return "\n".join(s)
+
+    def draw_pot(self, it, new):
+        (xa, ya), (xw, yw), (xb, yb) = self.xy(it["a"]), self.xy(it["w"]), self.xy(it["b"])
+        s = []
+        if new: s.append(f'<rect x="{xa-13}" y="{ya-6}" width="{xb-xa+26}" height="{(yb-ya)+ (46 if ya < self.Y0 + 8*P else -46)}" rx="8" fill="#ffe34d" opacity=".6"/>' if False else f'<rect x="{xa-14}" y="{ya-48}" width="{xb-xa+28}" height="60" rx="8" fill="#ffe34d" opacity=".6"/>')
+        s.append(f'<rect x="{xa-10}" y="{ya-42}" width="{xb-xa+20}" height="48" rx="6" fill="#2d6cdf" stroke="#12347a" stroke-width="1.5"/>')
+        s.append(f'<circle cx="{xw}" cy="{ya-20}" r="14" fill="#cfd6e4" stroke="#12347a"/><line x1="{xw}" y1="{ya-20}" x2="{xw+8}" y2="{ya-28}" stroke="#12347a" stroke-width="2.5"/>')
+        s.append(f'<text x="{xw}" y="{ya-45}" font-size="9" fill="#12347a" text-anchor="middle">{esc(it["ref"])} {esc(pretty_ohms(self.b.c.parts[it["ref"]][1]))} pot</text>')
+        for (x, y, lab) in ((xa, ya, "end"), (xw, yw, "wiper"), (xb, yb, "end")):
+            s.append(f'<circle cx="{x}" cy="{y}" r="2.8" fill="#555"/>')
         return "\n".join(s)
 
     def draw_switch(self, it, new):
@@ -557,7 +586,11 @@ class SchDraw:
             s.append(f'<line x1="{cur-6}" y1="{y}" x2="{cur}" y2="{y}" stroke="{col}" stroke-width="1.8"/>')
         for e in ch.elems:
             k = e.split(":")
-            if k[0] in ("R", "C", "LED", "SW", "PIEZO", "XTAL"):
+            if k[0] == "WIPER":
+                s.append(f'<line x1="{cur}" y1="{y}" x2="{cur+d*14}" y2="{y}" stroke="{col}" stroke-width="1.8"/>')
+                s.append(f'<text x="{cur+d*18}" y="{y+4}" font-size="10" fill="{col}">wiper of {esc(k[1])}</text>')
+                continue
+            if k[0] in ("R", "C", "LED", "SW", "PIEZO", "XTAL", "POT"):
                 s.append(f'<line x1="{cur}" y1="{y}" x2="{cur+d*14}" y2="{y}" stroke="{col}" stroke-width="1.8"/>')
                 cur += d * 14
                 s.append(self.symbol(k, cur, y, d, col, new))
@@ -590,6 +623,10 @@ class SchDraw:
             s.append(f'<line x1="{tip}" y1="{y-9}" x2="{tip}" y2="{y+9}" stroke="{col}" stroke-width="1.8"/>')
             s.append(f'<path d="M {cx-2} {y-12} l 7 -7 m -3 0 h 3 v 3 M {cx+6} {y-9} l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="{col}" stroke-width="1.1"/>')
             s.append(lab.replace(f'y="{y-12}"', f'y="{y-23}"') )
+        elif kind == "POT":
+            s.append(f'<rect x="{cx-18}" y="{y-6}" width="36" height="12" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
+            s.append(f'<path d="M {cx} {y-20} L {cx} {y-7} M {cx-4} {y-12} L {cx} {y-7} L {cx+4} {y-12}" fill="none" stroke="{col}" stroke-width="1.6"/>')
+            s.append(lab.replace(f'y="{y-12}"', f'y="{y-24}"') + f'<text x="{cx}" y="{y+21}" font-size="10" fill="{col}" text-anchor="middle">{esc(pretty_ohms(val))} pot</text>')
         elif kind == "XTAL":
             s.append(f'<line x1="{cx-10}" y1="{y-11}" x2="{cx-10}" y2="{y+11}" stroke="{col}" stroke-width="2"/><line x1="{cx+10}" y1="{y-11}" x2="{cx+10}" y2="{y+11}" stroke="{col}" stroke-width="2"/>')
             s.append(f'<rect x="{cx-5}" y="{y-8}" width="10" height="16" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
@@ -614,7 +651,7 @@ class SchDraw:
 
     def vcc(self, x, y, col):
         return (f'<g stroke="{col}" stroke-width="1.8"><line x1="{x}" y1="{y}" x2="{x}" y2="{y-8}"/><line x1="{x-9}" y1="{y-8}" x2="{x+9}" y2="{y-8}"/></g>'
-                f'<text x="{x}" y="{y-12}" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+5 V</text>')
+                f'<text x="{x}" y="{y-12}" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">{esc(self.c.supply_label)}</text>')
 
     def flag(self, x, y, d, name, col):
         w = 12 + 7.2 * len(name)
@@ -647,7 +684,10 @@ def pin_table(circuit, board, build):
             elif k[0] == "SW": steps.append(f"{k[1]} button")
             elif k[0] == "PIEZO": steps.append(f"{k[1]} piezo")
             elif k[0] == "GND": steps.append("**GND**")
-            elif k[0] == "+5V": steps.append("**+5 V**")
+            elif k[0] == "+5V": steps.append(f"**{circuit.supply_label}**")
+            elif k[0] == "POT": steps.append(f"{k[1]} {k[2]} potentiometer (outer legs)")
+            elif k[0] == "WIPER": steps.append(f"{k[1]} wiper (middle leg)")
+            elif k[0] == "XTAL": steps.append(f"{k[1]} {k[2]} crystal")
             elif k[0] == "NET": steps.append(f"net **{k[1]}**")
         rows.append((start, " → ".join(steps)))
     return rows

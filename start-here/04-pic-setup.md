@@ -95,6 +95,34 @@ The one that matters most is **WDTE = OFF**: left on, the chip resets itself eve
 
 If you had to change the block, please report which name differed so the course can be fixed.
 
+## PIC24 and dsPIC: the XC16 compiler
+
+The 16-bit PIC24 and dsPIC chips (from Month 5) use a different compiler, **MPLAB XC16**. Install it the same way as XC8: download **MPLAB XC16** (free edition) from the same Microchip site and install it with the defaults. Then:
+
+1. **File → New Project → Microchip Embedded → Standalone Project.** Device: `PIC24FJ64GA002`. Tool: **PICkit 3** (it should show as supported).
+2. **Compiler:** choose **XC16**.
+3. Add `main.c` as before. Untick "Power target circuit from PICkit3" (see above). For a **3.3 V board**, the PICkit 3's **VDD lead goes to the 3.3 V rail**, and your breadboard supply must be set to 3.3 V first.
+4. **Clean and Build**, then **Make and Program Device**.
+
+Differences you will notice in the code: the program starts with `int main(void)`, delays come from `#include <libpic30.h>` after `#define FCY 4000000UL`, and pins are made digital with `AD1PCFG = 0xFFFF;` (a **1** means digital on this chip).
+
+**If an XC16 `#pragma config` line is rejected**, use the same method as above (Window → Target Memory Views → Configuration Bits → **Generate Source Code to Output**) and set:
+
+| Setting                      | Value for the PIC24FJ64GA002                              |
+| ---------------------------- | --------------------------------------------------------- |
+| JTAGEN                       | OFF                                                       |
+| GCP (code protect)           | OFF                                                       |
+| GWRP (write protect)         | OFF                                                       |
+| ICS (programming pins)       | **PGx1** (PGEC1 / PGED1)                                  |
+| FWDTEN (watchdog)            | **OFF**                                                   |
+| WINDIS, FWPSA, WDTPS         | leave at default (they only matter if the watchdog is on) |
+| POSCMOD (primary oscillator) | NONE                                                      |
+| OSCIOFNC                     | ON                                                        |
+| FCKSM (clock switching)      | CSDCMD (disabled)                                         |
+| FNOSC (oscillator)           | **FRC** (the internal 8 MHz)                              |
+
+As before, the one that matters most is the **watchdog (FWDTEN = OFF)**.
+
 ## PICkit 3 problems
 
 | Message or symptom                                     | Try                                                                                                                                                                                                   |

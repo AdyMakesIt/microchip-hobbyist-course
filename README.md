@@ -3,9 +3,9 @@
 Learn to build with Microchip's **PIC** and **AVR** microcontrollers on a breadboard, one small project a month,
 using **free chip samples** and a **low-cost PICkit 3 programmer**. No soldering. No degree needed.
 
-> **Status: first release.** Months 1 and 2 are complete. Their programs are tested in simulation and their wiring is
-> machine-checked, but they still need their first **bench test** on real hardware (see
-> [the verification log](maintainer/VERIFICATION_LOG.md)). Months 3 to 24 are in preparation.
+> **Status: Months 1 to 5 are complete.** Their programs are tested in simulation and their wiring is machine-checked,
+> but they still need their first **bench test** on real hardware (see [the verification log](maintainer/VERIFICATION_LOG.md)).
+> Months 6 to 24 are in preparation.
 
 ## Start here
 
@@ -18,11 +18,14 @@ using **free chip samples** and a **low-cost PICkit 3 programmer**. No soldering
 
 ## The months
 
-| Month                                           | Project                 | Chips                                   | Status                        |
-| :---------------------------------------------: | ----------------------- | --------------------------------------- | ----------------------------- |
-|     [1](month-01-electronic-dice/README.md)     | Electronic dice         | PIC16F18857 (+ optional AVR programmer) | complete: awaiting bench test |
-| [2](month-02-workshop-command-centre/README.md) | Workshop Command Centre | PIC18F47K42 + MCP23017                  | complete: awaiting bench test |
-|                      3–24                       | in preparation          |                                         |                               |
+| Month                                           | Project                               | Chips                           | Status                        |
+| :---------------------------------------------: | ------------------------------------- | ------------------------------- | ----------------------------- |
+|     [1](month-01-electronic-dice/README.md)     | Electronic dice (AVR first, then PIC) | ATmega328P + PIC16F18857        | complete: awaiting bench test |
+| [2](month-02-workshop-command-centre/README.md) | Workshop Command Centre               | PIC18F47K42 + MCP23017          | complete: awaiting bench test |
+|     [3](month-03-analogue-in-out/README.md)     | Analogue in, analogue out             | PIC18F47K42 + MCP3008 + MCP4822 | complete: awaiting bench test |
+|      [4](month-04-binary-clock/README.md)       | The binary clock                      | PIC16F18446 + MCP7940N          | complete: awaiting bench test |
+| [5](month-05-sixteen-bit-and-memory/README.md)  | A 16-bit chip at 3.3 V                | PIC24FJ64GA002 + 24LC512        | complete: awaiting bench test |
+|                      6–24                       | in preparation                        |                                 |                               |
 
 ## What is different in this version
 
@@ -41,6 +44,7 @@ README.md                          this page
 start-here/                        introduction, ordering, setup, basics, troubleshooting
 month-01-electronic-dice/          pages + images + code, all together
 month-02-workshop-command-centre/  pages + images + code, all together
+month-03-analogue-in-out/          (and months 4 and 5, the same layout)
 maintainer/                        tests, diagram tools, GitHub guide, verification log
 ```
 

@@ -26,7 +26,7 @@ def run(cmd, cwd):
     return r.returncode == 0, (r.stdout + r.stderr)[-1500:]
 
 # 1 logic tests
-for m in ("m1pic", "m1avr", "m2"):
+for m in ("m1pic", "m1avr", "m2", "m3", "m4", "m5"):
     good, out = run(["sh", "run_tests.sh"], os.path.join(ROOT, "maintainer", "sim", m))
     n_fail = len(re.findall(r"FAILED|FAIL:", out))
     step(f"logic tests ({m})", good and n_fail == 0, out)

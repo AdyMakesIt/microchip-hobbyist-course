@@ -14,13 +14,16 @@ Run:  python3 sync_docs.py        (make_all.py draws the pictures; run it first)
 """
 import os, re, sys, collections
 from mhc_draw import pin_table, pretty_ohms, RAILS
-from circuits import month1, month2, month1_avr, month1_isp
+from circuits import month1, month2, month3, month4, month5, month1_avr, month1_isp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 # folder -> {key: circuit function}. The first key is the default for markers that give no key.
 MONTHS = {"month-01-electronic-dice": {"pic": month1, "avr": month1_avr},
           "month-02-workshop-command-centre": {"main": month2},
+          "month-03-analogue-in-out": {"main": month3},
+          "month-04-binary-clock": {"main": month4},
+          "month-05-sixteen-bit-and-memory": {"main": month5},
           "month-01-electronic-dice/avr-programmer": {"main": month1_isp}}
 
 RAIL_NAME = {"TP": "top **red** rail (+)", "TN": "top **blue** rail (−)", "BN": "bottom **blue** rail (−)", "BP": "bottom **red** rail (+)"}
@@ -51,9 +54,11 @@ def describe(c, b, it):
         return (f"{it['ref']} piezo", f"{hole(it['a'])} and {hole(it['b'])}", "a bare piezo disc has no polarity")
     if k == "wire":
         lab = it.get("label", "")
-        purpose = {"+5V": "+5 V power", "GND": "ground"}.get(lab, f"signal {lab}")
+        purpose = {"+5V": f"{c.supply_label} power", "GND": "ground"}.get(lab, f"signal {lab}")
         col = {"+5V": "red", "GND": "black"}.get(lab, "any colour")
         return ("jumper wire", f"{hole(it['a'])} → {hole(it['b'])}", f"{purpose} ({col})")
+    if k == "POT":
+        return (f"{it['ref']} {pretty_ohms(c.parts[it['ref']][1])} potentiometer", f"legs in {hole(it['a'])}, {hole(it['w'])} and {hole(it['b'])}", "outer legs = the two ends of the track, middle leg = the wiper (the moving contact)")
     if k == "XTAL":
         return (f"{it['ref']} {c.parts[it['ref']][1]} crystal", f"{hole(it['a'])} and {hole(it['b'])}", "no polarity; the metal can may be left standing up")
     if k == "lead":
@@ -90,7 +95,8 @@ def bom_counts(c, b):
         elif kind == "LED": cnt[("LED, 5 mm", "red")] += 1
         elif kind == "SW": cnt[("Push button (4-leg tact switch)", "6 mm")] += 1
         elif kind == "PIEZO": cnt[("Piezo disc (passive)", "")] += 1
-        elif kind == "XTAL": cnt[("Crystal, HC-49", val)] += 1
+        elif kind == "XTAL": cnt[("Crystal", val)] += 1
+        elif kind == "POT": cnt[("Potentiometer (rotary or trimmer)", pretty_ohms(val))] += 1
     cnt[("Jumper wires, solid or male-to-male", "assorted lengths")] = sum(1 for it in b.items if it["kind"] == "wire")
     conns = sorted({c.ics[it["conn"]].part for it in b.items if it["kind"] == "lead"})
     cnt[("LEADS", " / ".join(conns))] = sum(1 for it in b.items if it["kind"] == "lead")
@@ -105,7 +111,7 @@ def bom_md(circuits):
             merged[k] = max(merged[k], n)
     conns = sorted({c.ics[it["conn"]].part for c, b in circuits for it in b.items if it["kind"] == "lead"})
     out = ["| Part | Value | Qty used | Buy at least |", "|---|---|---:|---:|"]
-    order = ["Resistor", "Ceramic capacitor", "Crystal, HC-49", "LED, 5 mm", "Push button (4-leg tact switch)", "Piezo disc (passive)",
+    order = ["Resistor", "Ceramic capacitor", "Crystal", "Crystal, HC-49", "Potentiometer (rotary or trimmer)", "LED, 5 mm", "Push button (4-leg tact switch)", "Piezo disc (passive)",
              "Jumper wires, solid or male-to-male", "LEADS"]
     for (k, v) in sorted(merged, key=lambda kv: (order.index(kv[0]), kv[1])):
         n = merged[(k, v)]

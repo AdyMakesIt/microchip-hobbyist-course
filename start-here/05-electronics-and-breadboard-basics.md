@@ -63,6 +63,24 @@ Always measure **power off** for continuity and resistance. Never use the contin
 * **The hole-by-hole table** under each breadboard picture is the instruction you actually follow. The picture is there to help you see it.
 * Every breadboard layout in this course is **machine-checked against its schematic**: if a hole-by-hole table asked you to wire something differently from the schematic, the pictures would not have been produced.
 
+## Potentiometers (knobs)
+
+A **potentiometer** is a resistor with a sliding contact. It has three legs: the two **outer legs** are the two ends of the resistor track, and the **middle leg (the wiper)** is the sliding contact.
+Connect the outer legs to +5 V and ground, and the wiper gives any voltage in between as you turn it. A **10 kΩ linear** pot ("B10K") is the usual choice.
+
+## Supply voltages: 5 V and 3.3 V
+
+Most chips in the early months run from 5 V. Some, including the PIC24 in Month 5, run from **3.3 V and are damaged by 5 V**. Rules that keep you safe:
+
+* Set the supply jumpers on the breadboard power module **before** you put chips in, and **measure the rails with the multimeter**.
+* Do not connect a 5 V chip's output pin to a 3.3 V chip's input.
+* Resistors for LEDs change with the supply: about **680 Ω at 5 V**, about **330 Ω at 3.3 V**, for roughly the same brightness.
+
+## Crystals and load capacitors
+
+A **crystal** makes a clock that is accurate for timekeeping. Many chips ask for a small **load capacitor** from each crystal leg to ground (typically 10 to 22 pF); the chip's datasheet says how much.
+Crystals have no polarity, but their legs are fragile: do not bend them tight against the body.
+
 ## Static and care
 
 * Touch something metal (a radiator) before you handle the chips. Do not rub them on carpet.

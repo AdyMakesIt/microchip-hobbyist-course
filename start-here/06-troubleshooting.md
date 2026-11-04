@@ -52,3 +52,7 @@ See the table in [Month 2 Build 2](../month-02-workshop-command-centre/build-2-h
 * **Write down what you tried.** A list stops you repeating the same test.
 * If it worked yesterday and not today, suspect **a loose wire** first and the software last.
 * When you are tired, stop. Faults seem to vanish after a night's sleep because you stop making the same mistake.
+
+## Special case: 3.3 V chips
+
+If a 3.3 V board (Month 5) misbehaves: **measure the supply first**. Check it reads 3.2–3.4 V at the chip, that the **VCAP** capacitor is in place, and that nothing 5 V is connected to the board.
