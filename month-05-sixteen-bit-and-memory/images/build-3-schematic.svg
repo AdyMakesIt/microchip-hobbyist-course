@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 847 1584" width="847" height="1584" font-family="DejaVu Sans, Verdana, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="14" y="24" font-size="17" font-weight="bold" fill="#111">Month 5 - Build 3 - Memory that survives power-off: schematic</text>
+<g transform="translate(0,34)">
+<rect x="20" y="60" width="166" height="264" fill="#f6f8fb" stroke="#1d3557" stroke-width="2"/>
+<text x="103.0" y="77" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">J1  PICkit 3 ICSP</text>
+<text x="178" y="106" font-size="11" fill="#111" text-anchor="end">MCLR  <tspan font-weight="bold">1</tspan></text>
+<line x1="186" y1="102" x2="200" y2="102" stroke="#222" stroke-width="1.8"/>
+<polygon points="200,102 208,94 240.8,94 240.8,110 208,110" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="224.4" y="106" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">MCLR</text>
+<text x="178" y="152" font-size="11" fill="#111" text-anchor="end">VDD  <tspan font-weight="bold">2</tspan></text>
+<line x1="186" y1="148" x2="200" y2="148" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="200" y1="148" x2="200" y2="140"/><line x1="191" y1="140" x2="209" y2="140"/></g><text x="200" y="136" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<text x="178" y="198" font-size="11" fill="#111" text-anchor="end">VSS  <tspan font-weight="bold">3</tspan></text>
+<line x1="186" y1="194" x2="200" y2="194" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="200" y1="194" x2="200" y2="200"/><line x1="190" y1="200" x2="210" y2="200"/><line x1="194" y1="204" x2="206" y2="204"/><line x1="197.5" y1="208" x2="202.5" y2="208"/></g><text x="214" y="207" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="178" y="244" font-size="11" fill="#111" text-anchor="end">PGD  <tspan font-weight="bold">4</tspan></text>
+<line x1="186" y1="240" x2="200" y2="240" stroke="#222" stroke-width="1.8"/>
+<polygon points="200,240 208,232 233.6,232 233.6,248 208,248" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="220.8" y="244" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">PGD</text>
+<text x="178" y="290" font-size="11" fill="#111" text-anchor="end">PGC  <tspan font-weight="bold">5</tspan></text>
+<line x1="186" y1="286" x2="200" y2="286" stroke="#222" stroke-width="1.8"/>
+<polygon points="200,286 208,278 233.6,278 233.6,294 208,294" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="220.8" y="290" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">PGC</text>
+<rect x="330" y="40" width="217" height="586" fill="#f6f8fb" stroke="#1d3557" stroke-width="2"/>
+<text x="438.5" y="57" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">U1  PIC24FJ64GA002-I/SP</text>
+<text x="338" y="86" font-size="11" fill="#111"><tspan font-weight="bold">1</tspan>  MCLR</text>
+<line x1="330" y1="82" x2="316" y2="82" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,82 308,74 275.2,74 275.2,90 308,90" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="291.6" y="86" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">MCLR</text>
+<text x="338" y="132" font-size="11" fill="#111"><tspan font-weight="bold">3</tspan>  RA1 (button)</text>
+<line x1="330" y1="128" x2="316" y2="128" stroke="#0a7a2f" stroke-width="1.8"/>
+<polygon points="316,128 308,120 282.4,120 282.4,136 308,136" fill="#eef4ff" stroke="#0a7a2f" stroke-width="1.6"/><text x="295.2" y="132" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">BTN</text>
+<text x="338" y="178" font-size="11" fill="#111"><tspan font-weight="bold">4</tspan>  RB0 (PGED1)</text>
+<line x1="330" y1="174" x2="316" y2="174" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,174 308,166 282.4,166 282.4,182 308,182" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="178" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">PGD</text>
+<text x="338" y="224" font-size="11" fill="#111"><tspan font-weight="bold">5</tspan>  RB1 (PGEC1)</text>
+<line x1="330" y1="220" x2="316" y2="220" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,220 308,212 282.4,212 282.4,228 308,228" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="224" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">PGC</text>
+<text x="338" y="270" font-size="11" fill="#111"><tspan font-weight="bold">8</tspan>  VSS</text>
+<line x1="330" y1="266" x2="316" y2="266" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="266" x2="316" y2="272"/><line x1="306" y1="272" x2="326" y2="272"/><line x1="310" y1="276" x2="322" y2="276"/><line x1="313.5" y1="280" x2="318.5" y2="280"/></g><text x="302" y="279" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="316" font-size="11" fill="#111"><tspan font-weight="bold">13</tspan>  VDD</text>
+<line x1="330" y1="312" x2="316" y2="312" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="312" x2="316" y2="304"/><line x1="307" y1="304" x2="325" y2="304"/></g><text x="316" y="300" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<text x="338" y="362" font-size="11" fill="#111"><tspan font-weight="bold">17</tspan>  RB8 (SCL)</text>
+<line x1="330" y1="358" x2="316" y2="358" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,358 308,350 282.4,350 282.4,366 308,366" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="362" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SCL</text>
+<text x="338" y="408" font-size="11" fill="#111"><tspan font-weight="bold">18</tspan>  RB9 (SDA)</text>
+<line x1="330" y1="404" x2="316" y2="404" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,404 308,396 282.4,396 282.4,412 308,412" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="408" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SDA</text>
+<text x="338" y="454" font-size="11" fill="#111"><tspan font-weight="bold">19</tspan>  VSS</text>
+<line x1="330" y1="450" x2="316" y2="450" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="450" x2="316" y2="456"/><line x1="306" y1="456" x2="326" y2="456"/><line x1="310" y1="460" x2="322" y2="460"/><line x1="313.5" y1="464" x2="318.5" y2="464"/></g><text x="302" y="463" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="500" font-size="11" fill="#111"><tspan font-weight="bold">20</tspan>  VCAP</text>
+<line x1="330" y1="496" x2="316" y2="496" stroke="#222" stroke-width="1.8"/>
+<line x1="285" y1="485" x2="285" y2="507" stroke="#222" stroke-width="2"/><line x1="293" y1="485" x2="293" y2="507" stroke="#222" stroke-width="2"/>
+<text x="289" y="484" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">C2</text><text x="289" y="521" font-size="10" fill="#222" text-anchor="middle">10uF</text>
+<line x1="262" y1="496" x2="250" y2="496" stroke="#222" stroke-width="1.8"/>
+<line x1="250" y1="496" x2="236" y2="496" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="236" y1="496" x2="236" y2="502"/><line x1="226" y1="502" x2="246" y2="502"/><line x1="230" y1="506" x2="242" y2="506"/><line x1="233.5" y1="510" x2="238.5" y2="510"/></g><text x="222" y="509" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="546" font-size="11" fill="#111"><tspan font-weight="bold">27</tspan>  AVSS</text>
+<line x1="330" y1="542" x2="316" y2="542" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="542" x2="316" y2="548"/><line x1="306" y1="548" x2="326" y2="548"/><line x1="310" y1="552" x2="322" y2="552"/><line x1="313.5" y1="556" x2="318.5" y2="556"/></g><text x="302" y="555" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="592" font-size="11" fill="#111"><tspan font-weight="bold">28</tspan>  AVDD</text>
+<line x1="330" y1="588" x2="316" y2="588" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="588" x2="316" y2="580"/><line x1="307" y1="580" x2="325" y2="580"/></g><text x="316" y="576" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<text x="539" y="86" font-size="11" fill="#111" text-anchor="end">RA0 (heartbeat)  <tspan font-weight="bold">2</tspan></text>
+<line x1="547" y1="82" x2="561" y2="82" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="76" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="70" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R2</text><text x="588" y="103" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="82" x2="627" y2="82" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="82" x2="641" y2="82" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,73 660,91 676,82" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="73" x2="676" y2="91" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 70 l 7 -7 m -3 0 h 3 v 3 M 674 73 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="59" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D1</text>
+<line x1="695" y1="82" x2="707" y2="82" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="82" x2="721" y2="82" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="82" x2="721" y2="88"/><line x1="711" y1="88" x2="731" y2="88"/><line x1="715" y1="92" x2="727" y2="92"/><line x1="718.5" y1="96" x2="723.5" y2="96"/></g><text x="735" y="95" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="132" font-size="11" fill="#111" text-anchor="end">RB2  <tspan font-weight="bold">6</tspan></text>
+<line x1="547" y1="128" x2="561" y2="128" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="122" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="116" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R5</text><text x="588" y="149" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="128" x2="627" y2="128" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="128" x2="641" y2="128" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,119 660,137 676,128" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="119" x2="676" y2="137" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 116 l 7 -7 m -3 0 h 3 v 3 M 674 119 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="105" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D2</text>
+<line x1="695" y1="128" x2="707" y2="128" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="128" x2="721" y2="128" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="128" x2="721" y2="134"/><line x1="711" y1="134" x2="731" y2="134"/><line x1="715" y1="138" x2="727" y2="138"/><line x1="718.5" y1="142" x2="723.5" y2="142"/></g><text x="735" y="141" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="178" font-size="11" fill="#111" text-anchor="end">RB3  <tspan font-weight="bold">7</tspan></text>
+<line x1="547" y1="174" x2="561" y2="174" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="168" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="162" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R6</text><text x="588" y="195" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="174" x2="627" y2="174" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="174" x2="641" y2="174" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,165 660,183 676,174" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="165" x2="676" y2="183" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 162 l 7 -7 m -3 0 h 3 v 3 M 674 165 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="151" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D3</text>
+<line x1="695" y1="174" x2="707" y2="174" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="174" x2="721" y2="174" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="174" x2="721" y2="180"/><line x1="711" y1="180" x2="731" y2="180"/><line x1="715" y1="184" x2="727" y2="184"/><line x1="718.5" y1="188" x2="723.5" y2="188"/></g><text x="735" y="187" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="224" font-size="11" fill="#111" text-anchor="end">RB10  <tspan font-weight="bold">21</tspan></text>
+<line x1="547" y1="220" x2="561" y2="220" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="214" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="208" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R7</text><text x="588" y="241" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="220" x2="627" y2="220" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="220" x2="641" y2="220" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,211 660,229 676,220" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="211" x2="676" y2="229" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 208 l 7 -7 m -3 0 h 3 v 3 M 674 211 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="197" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D4</text>
+<line x1="695" y1="220" x2="707" y2="220" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="220" x2="721" y2="220" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="220" x2="721" y2="226"/><line x1="711" y1="226" x2="731" y2="226"/><line x1="715" y1="230" x2="727" y2="230"/><line x1="718.5" y1="234" x2="723.5" y2="234"/></g><text x="735" y="233" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="270" font-size="11" fill="#111" text-anchor="end">RB11  <tspan font-weight="bold">22</tspan></text>
+<line x1="547" y1="266" x2="561" y2="266" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="260" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="254" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R8</text><text x="588" y="287" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="266" x2="627" y2="266" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="266" x2="641" y2="266" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,257 660,275 676,266" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="257" x2="676" y2="275" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 254 l 7 -7 m -3 0 h 3 v 3 M 674 257 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="243" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D5</text>
+<line x1="695" y1="266" x2="707" y2="266" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="266" x2="721" y2="266" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="266" x2="721" y2="272"/><line x1="711" y1="272" x2="731" y2="272"/><line x1="715" y1="276" x2="727" y2="276"/><line x1="718.5" y1="280" x2="723.5" y2="280"/></g><text x="735" y="279" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="316" font-size="11" fill="#111" text-anchor="end">RB12  <tspan font-weight="bold">23</tspan></text>
+<line x1="547" y1="312" x2="561" y2="312" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="306" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="300" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R9</text><text x="588" y="333" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="312" x2="627" y2="312" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="312" x2="641" y2="312" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,303 660,321 676,312" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="303" x2="676" y2="321" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 300 l 7 -7 m -3 0 h 3 v 3 M 674 303 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="289" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D6</text>
+<line x1="695" y1="312" x2="707" y2="312" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="312" x2="721" y2="312" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="312" x2="721" y2="318"/><line x1="711" y1="318" x2="731" y2="318"/><line x1="715" y1="322" x2="727" y2="322"/><line x1="718.5" y1="326" x2="723.5" y2="326"/></g><text x="735" y="325" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="362" font-size="11" fill="#111" text-anchor="end">RB13  <tspan font-weight="bold">24</tspan></text>
+<line x1="547" y1="358" x2="561" y2="358" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="352" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="346" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R10</text><text x="588" y="379" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="358" x2="627" y2="358" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="358" x2="641" y2="358" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,349 660,367 676,358" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="349" x2="676" y2="367" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 346 l 7 -7 m -3 0 h 3 v 3 M 674 349 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="335" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D7</text>
+<line x1="695" y1="358" x2="707" y2="358" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="358" x2="721" y2="358" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="358" x2="721" y2="364"/><line x1="711" y1="364" x2="731" y2="364"/><line x1="715" y1="368" x2="727" y2="368"/><line x1="718.5" y1="372" x2="723.5" y2="372"/></g><text x="735" y="371" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="408" font-size="11" fill="#111" text-anchor="end">RB14  <tspan font-weight="bold">25</tspan></text>
+<line x1="547" y1="404" x2="561" y2="404" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="398" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="392" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R11</text><text x="588" y="425" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="404" x2="627" y2="404" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="404" x2="641" y2="404" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,395 660,413 676,404" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="395" x2="676" y2="413" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 392 l 7 -7 m -3 0 h 3 v 3 M 674 395 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="381" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D8</text>
+<line x1="695" y1="404" x2="707" y2="404" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="404" x2="721" y2="404" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="404" x2="721" y2="410"/><line x1="711" y1="410" x2="731" y2="410"/><line x1="715" y1="414" x2="727" y2="414"/><line x1="718.5" y1="418" x2="723.5" y2="418"/></g><text x="735" y="417" font-size="9" fill="#222" text-anchor="start">GND</text>
+<text x="539" y="454" font-size="11" fill="#111" text-anchor="end">RB15  <tspan font-weight="bold">26</tspan></text>
+<line x1="547" y1="450" x2="561" y2="450" stroke="#222" stroke-width="1.8"/>
+<rect x="570" y="444" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="588" y="438" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R12</text><text x="588" y="471" font-size="10" fill="#222" text-anchor="middle">330 Ω</text>
+<line x1="615" y1="450" x2="627" y2="450" stroke="#222" stroke-width="1.8"/>
+<line x1="627" y1="450" x2="641" y2="450" stroke="#222" stroke-width="1.8"/>
+<polygon points="660,441 660,459 676,450" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<line x1="676" y1="441" x2="676" y2="459" stroke="#222" stroke-width="1.8"/>
+<path d="M 666 438 l 7 -7 m -3 0 h 3 v 3 M 674 441 l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="#222" stroke-width="1.1"/>
+<text x="668" y="427" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">D9</text>
+<line x1="695" y1="450" x2="707" y2="450" stroke="#222" stroke-width="1.8"/>
+<line x1="707" y1="450" x2="721" y2="450" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="721" y1="450" x2="721" y2="456"/><line x1="711" y1="456" x2="731" y2="456"/><line x1="715" y1="460" x2="727" y2="460"/><line x1="718.5" y1="464" x2="723.5" y2="464"/></g><text x="735" y="463" font-size="9" fill="#222" text-anchor="start">GND</text>
+<rect x="330" y="760" width="150" height="402" fill="#f6f8fb" stroke="#1d3557" stroke-width="2"/>
+<text x="405.0" y="777" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">U2  24LC512-I/P</text>
+<text x="338" y="806" font-size="11" fill="#111"><tspan font-weight="bold">1</tspan>  A0</text>
+<line x1="330" y1="802" x2="316" y2="802" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="802" x2="316" y2="808"/><line x1="306" y1="808" x2="326" y2="808"/><line x1="310" y1="812" x2="322" y2="812"/><line x1="313.5" y1="816" x2="318.5" y2="816"/></g><text x="302" y="815" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="852" font-size="11" fill="#111"><tspan font-weight="bold">2</tspan>  A1</text>
+<line x1="330" y1="848" x2="316" y2="848" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="848" x2="316" y2="854"/><line x1="306" y1="854" x2="326" y2="854"/><line x1="310" y1="858" x2="322" y2="858"/><line x1="313.5" y1="862" x2="318.5" y2="862"/></g><text x="302" y="861" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="898" font-size="11" fill="#111"><tspan font-weight="bold">3</tspan>  A2</text>
+<line x1="330" y1="894" x2="316" y2="894" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="894" x2="316" y2="900"/><line x1="306" y1="900" x2="326" y2="900"/><line x1="310" y1="904" x2="322" y2="904"/><line x1="313.5" y1="908" x2="318.5" y2="908"/></g><text x="302" y="907" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="944" font-size="11" fill="#111"><tspan font-weight="bold">4</tspan>  VSS</text>
+<line x1="330" y1="940" x2="316" y2="940" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="940" x2="316" y2="946"/><line x1="306" y1="946" x2="326" y2="946"/><line x1="310" y1="950" x2="322" y2="950"/><line x1="313.5" y1="954" x2="318.5" y2="954"/></g><text x="302" y="953" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="990" font-size="11" fill="#111"><tspan font-weight="bold">5</tspan>  SDA</text>
+<line x1="330" y1="986" x2="316" y2="986" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,986 308,978 282.4,978 282.4,994 308,994" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="990" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SDA</text>
+<text x="338" y="1036" font-size="11" fill="#111"><tspan font-weight="bold">6</tspan>  SCL</text>
+<line x1="330" y1="1032" x2="316" y2="1032" stroke="#222" stroke-width="1.8"/>
+<polygon points="316,1032 308,1024 282.4,1024 282.4,1040 308,1040" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="295.2" y="1036" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SCL</text>
+<text x="338" y="1082" font-size="11" fill="#111"><tspan font-weight="bold">7</tspan>  WP</text>
+<line x1="330" y1="1078" x2="316" y2="1078" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="1078" x2="316" y2="1084"/><line x1="306" y1="1084" x2="326" y2="1084"/><line x1="310" y1="1088" x2="322" y2="1088"/><line x1="313.5" y1="1092" x2="318.5" y2="1092"/></g><text x="302" y="1091" font-size="9" fill="#222" text-anchor="end">GND</text>
+<text x="338" y="1128" font-size="11" fill="#111"><tspan font-weight="bold">8</tspan>  VCC</text>
+<line x1="330" y1="1124" x2="316" y2="1124" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="316" y1="1124" x2="316" y2="1116"/><line x1="307" y1="1116" x2="325" y2="1116"/></g><text x="316" y="1112" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<text x="40" y="1212" font-size="12" font-weight="bold" fill="#444">Parts hanging on a net (same net name = same wire)</text>
+<polygon points="154,1256 146,1248 120.4,1248 120.4,1264 146,1264" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="133.2" y="1260" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">+5V</text>
+<line x1="154" y1="1256" x2="160" y2="1256" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1256" x2="174" y2="1256" stroke="#222" stroke-width="1.8"/>
+<line x1="197" y1="1245" x2="197" y2="1267" stroke="#222" stroke-width="2"/><line x1="205" y1="1245" x2="205" y2="1267" stroke="#222" stroke-width="2"/>
+<text x="201" y="1244" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">C1</text><text x="201" y="1281" font-size="10" fill="#222" text-anchor="middle">100nF</text>
+<line x1="228" y1="1256" x2="240" y2="1256" stroke="#222" stroke-width="1.8"/>
+<line x1="240" y1="1256" x2="254" y2="1256" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="254" y1="1256" x2="254" y2="1262"/><line x1="244" y1="1262" x2="264" y2="1262"/><line x1="248" y1="1266" x2="260" y2="1266"/><line x1="251.5" y1="1270" x2="256.5" y2="1270"/></g><text x="268" y="1269" font-size="9" fill="#222" text-anchor="start">GND</text>
+<polygon points="584,1256 576,1248 543.2,1248 543.2,1264 576,1264" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="559.6" y="1260" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">MCLR</text>
+<line x1="584" y1="1256" x2="590" y2="1256" stroke="#222" stroke-width="1.8"/>
+<line x1="590" y1="1256" x2="604" y2="1256" stroke="#222" stroke-width="1.8"/>
+<rect x="613" y="1250" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="631" y="1244" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R1</text><text x="631" y="1277" font-size="10" fill="#222" text-anchor="middle">10 kΩ</text>
+<line x1="658" y1="1256" x2="670" y2="1256" stroke="#222" stroke-width="1.8"/>
+<line x1="670" y1="1256" x2="684" y2="1256" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="684" y1="1256" x2="684" y2="1248"/><line x1="675" y1="1248" x2="693" y2="1248"/></g><text x="684" y="1244" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<polygon points="154,1322 146,1314 120.4,1314 120.4,1330 146,1330" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="133.2" y="1326" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">+5V</text>
+<line x1="154" y1="1322" x2="160" y2="1322" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1322" x2="174" y2="1322" stroke="#222" stroke-width="1.8"/>
+<line x1="197" y1="1311" x2="197" y2="1333" stroke="#222" stroke-width="2"/><line x1="205" y1="1311" x2="205" y2="1333" stroke="#222" stroke-width="2"/>
+<text x="201" y="1310" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">C3</text><text x="201" y="1347" font-size="10" fill="#222" text-anchor="middle">100nF</text>
+<line x1="228" y1="1322" x2="240" y2="1322" stroke="#222" stroke-width="1.8"/>
+<line x1="240" y1="1322" x2="254" y2="1322" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="254" y1="1322" x2="254" y2="1328"/><line x1="244" y1="1328" x2="264" y2="1328"/><line x1="248" y1="1332" x2="260" y2="1332"/><line x1="251.5" y1="1336" x2="256.5" y2="1336"/></g><text x="268" y="1335" font-size="9" fill="#222" text-anchor="start">GND</text>
+<polygon points="584,1322 576,1314 550.4,1314 550.4,1330 576,1330" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="563.2" y="1326" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SCL</text>
+<line x1="584" y1="1322" x2="590" y2="1322" stroke="#222" stroke-width="1.8"/>
+<line x1="590" y1="1322" x2="604" y2="1322" stroke="#222" stroke-width="1.8"/>
+<rect x="613" y="1316" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="631" y="1310" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R3</text><text x="631" y="1343" font-size="10" fill="#222" text-anchor="middle">4.7 kΩ</text>
+<line x1="658" y1="1322" x2="670" y2="1322" stroke="#222" stroke-width="1.8"/>
+<line x1="670" y1="1322" x2="684" y2="1322" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="684" y1="1322" x2="684" y2="1314"/><line x1="675" y1="1314" x2="693" y2="1314"/></g><text x="684" y="1310" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<polygon points="154,1388 146,1380 120.4,1380 120.4,1396 146,1396" fill="#eef4ff" stroke="#222" stroke-width="1.6"/><text x="133.2" y="1392" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">SDA</text>
+<line x1="154" y1="1388" x2="160" y2="1388" stroke="#222" stroke-width="1.8"/>
+<line x1="160" y1="1388" x2="174" y2="1388" stroke="#222" stroke-width="1.8"/>
+<rect x="183" y="1382" width="36" height="12" fill="#fff" stroke="#222" stroke-width="1.8"/>
+<text x="201" y="1376" font-size="10" font-weight="bold" fill="#222" text-anchor="middle">R4</text><text x="201" y="1409" font-size="10" fill="#222" text-anchor="middle">4.7 kΩ</text>
+<line x1="228" y1="1388" x2="240" y2="1388" stroke="#222" stroke-width="1.8"/>
+<line x1="240" y1="1388" x2="254" y2="1388" stroke="#222" stroke-width="1.8"/>
+<g stroke="#222" stroke-width="1.8"><line x1="254" y1="1388" x2="254" y2="1380"/><line x1="245" y1="1380" x2="263" y2="1380"/></g><text x="254" y="1376" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<polygon points="584,1388 576,1380 550.4,1380 550.4,1396 576,1396" fill="#eef4ff" stroke="#0a7a2f" stroke-width="1.6"/><text x="563.2" y="1392" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">BTN</text>
+<line x1="584" y1="1388" x2="590" y2="1388" stroke="#0a7a2f" stroke-width="1.8"/>
+<line x1="590" y1="1388" x2="604" y2="1388" stroke="#0a7a2f" stroke-width="1.8"/>
+<rect x="613" y="1382" width="36" height="12" fill="#fff" stroke="#0a7a2f" stroke-width="1.8"/>
+<text x="631" y="1376" font-size="10" font-weight="bold" fill="#0a7a2f" text-anchor="middle">R13</text><text x="631" y="1409" font-size="10" fill="#0a7a2f" text-anchor="middle">10 kΩ</text>
+<line x1="658" y1="1388" x2="670" y2="1388" stroke="#0a7a2f" stroke-width="1.8"/>
+<line x1="670" y1="1388" x2="684" y2="1388" stroke="#0a7a2f" stroke-width="1.8"/>
+<g stroke="#0a7a2f" stroke-width="1.8"><line x1="684" y1="1388" x2="684" y2="1380"/><line x1="675" y1="1380" x2="693" y2="1380"/></g><text x="684" y="1376" font-size="10" font-weight="bold" fill="#b00020" text-anchor="middle">+3.3 V</text>
+<polygon points="154,1454 146,1446 120.4,1446 120.4,1462 146,1462" fill="#eef4ff" stroke="#0a7a2f" stroke-width="1.6"/><text x="133.2" y="1458" font-size="11" font-weight="bold" fill="#0b3d91" text-anchor="middle">BTN</text>
+<line x1="154" y1="1454" x2="160" y2="1454" stroke="#0a7a2f" stroke-width="1.8"/>
+<line x1="160" y1="1454" x2="174" y2="1454" stroke="#0a7a2f" stroke-width="1.8"/>
+<circle cx="187" cy="1454" r="3" fill="#fff" stroke="#0a7a2f" stroke-width="1.6"/><circle cx="215" cy="1454" r="3" fill="#fff" stroke="#0a7a2f" stroke-width="1.6"/>
+<line x1="187" y1="1451" x2="213" y2="1441" stroke="#0a7a2f" stroke-width="1.8"/>
+<text x="201" y="1442" font-size="10" font-weight="bold" fill="#0a7a2f" text-anchor="middle">SW1</text><text x="201" y="1475" font-size="10" fill="#0a7a2f" text-anchor="middle">ADD button</text>
+<line x1="228" y1="1454" x2="240" y2="1454" stroke="#0a7a2f" stroke-width="1.8"/>
+<line x1="240" y1="1454" x2="254" y2="1454" stroke="#0a7a2f" stroke-width="1.8"/>
+<g stroke="#0a7a2f" stroke-width="1.8"><line x1="254" y1="1454" x2="254" y2="1460"/><line x1="244" y1="1460" x2="264" y2="1460"/><line x1="248" y1="1464" x2="260" y2="1464"/><line x1="251.5" y1="1468" x2="256.5" y2="1468"/></g><text x="268" y="1467" font-size="9" fill="#0a7a2f" text-anchor="start">GND</text>
+</g></svg>
