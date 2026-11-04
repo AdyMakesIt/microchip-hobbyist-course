@@ -69,7 +69,7 @@ Same circuit as a connection list:
 | net **TRESET**             | R3 10 kΩ → **+5 V**                                         |
 | U2 pin **9** (XTAL1)       | net **XTAL1B**                                              |
 | U2 pin **10** (XTAL2)      | net **XTAL2B**                                              |
-| net **XTAL1B**             | net **XTAL2B**                                              |
+| net **XTAL1B**             | Y2 16MHz crystal → net **XTAL2B**                           |
 | net **XTAL1B**             | C7 22pF → **GND**                                           |
 | net **XTAL2B**             | C8 22pF → **GND**                                           |
 | U2 pin **17** (MOSI (PB3)) | net **MOSI**                                                |

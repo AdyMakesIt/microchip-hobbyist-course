@@ -69,7 +69,7 @@ Same circuit as a connection list:
 | net **RESET**                      | R1 10 kΩ → **+5 V**                                         |
 | U1 pin **9** (XTAL1)               | net **XTAL1**                                               |
 | U1 pin **10** (XTAL2)              | net **XTAL2**                                               |
-| net **XTAL1**                      | net **XTAL2**                                               |
+| net **XTAL1**                      | Y1 16MHz crystal → net **XTAL2**                            |
 | net **XTAL1**                      | C2 22pF → **GND**                                           |
 | net **XTAL2**                      | C3 22pF → **GND**                                           |
 | U1 pin **15** (D9 (PB1))           | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |

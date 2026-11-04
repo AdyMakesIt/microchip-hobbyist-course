@@ -54,7 +54,7 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 | Resistor                                                                   | 680 Ω            |        4 |            5 |
 | Ceramic capacitor                                                          | 100nF            |        4 |            5 |
 | Ceramic capacitor                                                          | 22pF             |        4 |            5 |
-| Crystal, HC-49                                                             | 16MHz            |        2 |            3 |
+| Crystal                                                                    | 16MHz            |        2 |            3 |
 | LED, 5 mm                                                                  | red              |        4 |            5 |
 | Jumper wires, solid or male-to-male                                        | assorted lengths |       22 |           28 |
 | Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) |                  |        9 |           10 |
