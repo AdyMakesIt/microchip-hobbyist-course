@@ -61,6 +61,11 @@ A **CR2032 coin cell with a holder**, for keeping the time while the board is of
 * You need the PIC setup and the programmer leads from Month 1 ([PIC setup](../start-here/04-pic-setup.md)). The 20-pin chip is *skinny*, like the Month 1 chip.
 * Build 1 compares your Month 1 program with this month's. Keep your Month 1 files handy.
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (MPLAB X).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the KiCad schematic location, a **parts list** and a **connection list** you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -68,6 +73,8 @@ month-04-binary-clock/
   README.md                          this page
   build-1-blink.md ... build-3-binary-clock.md
   images/                            schematic + breadboard picture for every build
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
     build-1-blink/main.c             one complete file per build
     build-2-rtc-hello/main.c

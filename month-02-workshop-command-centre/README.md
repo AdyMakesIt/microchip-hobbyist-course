@@ -66,6 +66,11 @@ Everything from Month 1 (breadboard, 5 V supply, PICkit 3, multimeter, MPLAB X +
    Its two rows of pins are 0.6" apart, so they go in rows **d** and **h**, with the body covering rows e, f and g. The pictures show this.
 2. **It needs two power pins and two ground pins** (pins 11 and 32 are VDD, pins 12 and 31 are VSS). All four must be connected.
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (MPLAB X).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the KiCad schematic location, a **parts list** and a **connection list** you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -73,6 +78,8 @@ month-02-workshop-command-centre/
   README.md                        this page
   build-1-blink.md ... build-4-command-centre.md
   images/                          schematic + breadboard picture for every build (SVG and PNG)
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
     build-1-blink/main.c           one complete file per build
     build-2-hello-expander/main.c

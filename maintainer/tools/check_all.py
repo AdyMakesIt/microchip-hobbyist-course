@@ -34,6 +34,9 @@ for m in ("m1pic", "m1avr", "m2", "m3", "m4", "m5"):
 # 2 diagrams
 good, out = run([sys.executable, "make_all.py"], HERE); step("breadboard layouts match schematics; diagrams regenerated", good, out)
 good, out = run([sys.executable, "make_extra.py"], HERE); step("teaching diagrams generated", good, out)
+good, out = run([sys.executable, "make_hardware.py"], HERE); step("KiCad parts lists and connection lists generated", good, out)
+good, out = run([sys.executable, "make_projects.py"], HERE); step("ready-to-open projects in step with the code", good, out)
+good, out = run([sys.executable, "make_purchasing.py"], HERE); step("overview, purchasing plan and parts catalogue generated", good, out)
 
 # 3 sync
 good, out = run([sys.executable, "sync_docs.py"], HERE); step("pages synced with code and circuits", good, out)

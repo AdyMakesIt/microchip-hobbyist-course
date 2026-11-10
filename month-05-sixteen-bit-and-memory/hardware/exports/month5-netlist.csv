@@ -1,0 +1,28 @@
+Net,Pins on this net
++3.3V,C1.1; C3.1; J1.2 (VDD); R1.2; R13.2; R3.2; R4.2; U1.13 (VDD); U1.28 (AVDD); U2.8 (VCC)
+GND,C1.2; C2.2; C3.2; D1.K; D2.K; D3.K; D4.K; D5.K; D6.K; D7.K; D8.K; D9.K; J1.3 (VSS); SW1.2; U1.19 (VSS); U1.27 (AVSS); U1.8 (VSS); U2.1 (A0); U2.2 (A1); U2.3 (A2); U2.4 (VSS); U2.7 (WP)
+BTN,R13.1; SW1.1; U1.3 (RA1 (button))
+(unnamed) C2.1/U1.20,C2.1; U1.20 (VCAP)
+(unnamed) D1.A/R2.2,D1.A; R2.2
+(unnamed) D2.A/R5.2,D2.A; R5.2
+(unnamed) D3.A/R6.2,D3.A; R6.2
+(unnamed) D4.A/R7.2,D4.A; R7.2
+(unnamed) D5.A/R8.2,D5.A; R8.2
+(unnamed) D6.A/R9.2,D6.A; R9.2
+(unnamed) D7.A/R10.2,D7.A; R10.2
+(unnamed) D8.A/R11.2,D8.A; R11.2
+(unnamed) D9.A/R12.2,D9.A; R12.2
+MCLR,J1.1 (MCLR); R1.1; U1.1 (MCLR)
+PGC,J1.5 (PGC); U1.5 (RB1 (PGEC1))
+PGD,J1.4 (PGD); U1.4 (RB0 (PGED1))
+(unnamed) R10.1/U1.24,R10.1; U1.24 (RB13)
+(unnamed) R11.1/U1.25,R11.1; U1.25 (RB14)
+(unnamed) R12.1/U1.26,R12.1; U1.26 (RB15)
+(unnamed) R2.1/U1.2,R2.1; U1.2 (RA0 (heartbeat))
+(unnamed) R5.1/U1.6,R5.1; U1.6 (RB2)
+(unnamed) R6.1/U1.7,R6.1; U1.7 (RB3)
+(unnamed) R7.1/U1.21,R7.1; U1.21 (RB10)
+(unnamed) R8.1/U1.22,R8.1; U1.22 (RB11)
+(unnamed) R9.1/U1.23,R9.1; U1.23 (RB12)
+SCL,R3.1; U1.17 (RB8 (SCL)); U2.6 (SCL)
+SDA,R4.1; U1.18 (RB9 (SDA)); U2.5 (SDA)

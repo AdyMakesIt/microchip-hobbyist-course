@@ -1,0 +1,29 @@
+Reference,Value / part,Type,Suggested KiCad footprint (check it matches your part),Added in build
+J1,PICkit 3 ICSP,connector,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,1
+U1,PIC16F18446-I/P,IC,Package_DIP:DIP-20_W7.62mm,1
+U2,MCP7940N-I/P,IC,Package_DIP:DIP-8_W7.62mm,2
+C1,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C2,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,2
+C3,10pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,2
+C4,10pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,2
+D1,red,LED,LED_THT:LED_D5.0mm,1
+D2,red,LED,LED_THT:LED_D5.0mm,2
+D3,red,LED,LED_THT:LED_D5.0mm,2
+D4,red,LED,LED_THT:LED_D5.0mm,2
+D5,red,LED,LED_THT:LED_D5.0mm,2
+D6,red,LED,LED_THT:LED_D5.0mm,2
+D7,red,LED,LED_THT:LED_D5.0mm,3
+D8,red,LED,LED_THT:LED_D5.0mm,3
+R1,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R2,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R3,4.7 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R4,4.7 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R5,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R6,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R7,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R8,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R9,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R10,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R11,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+SW1,MODE,push button,Button_Switch_THT:SW_PUSH_6mm,3
+Y1,32.768kHz,crystal,Crystal:Crystal_C26-LF_D2.1mm_L6.5mm_Vertical,2

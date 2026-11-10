@@ -20,3 +20,12 @@ nbproject/private/
 Thumbs.db
 __pycache__/
 *.pyc
+
+# KiCad
+*-backups/
+fp-info-cache
+*.kicad_prl
+_autosave-*
+*.bak
+*.kicad_sch-bak
+~*.lck

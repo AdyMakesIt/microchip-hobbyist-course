@@ -1,0 +1,31 @@
+Net,Pins on this net
++5V,C1.1; C2.1; C3.1; J1.2 (VDD); R1.2; R3.2; R4.2; R5.2; U1.11 (VDD); U1.32 (VDD); U2.9 (VDD)
+GND,BZ1.2; C1.2; C2.2; C3.2; D1.K; D2.K; D3.K; D4.K; D5.K; D6.K; D7.K; D8.K; D9.K; J1.3 (VSS); SW1.2; SW2.2; U1.12 (VSS); U1.31 (VSS); U2.10 (VSS); U2.15 (A0); U2.16 (A1); U2.17 (A2)
+(unnamed) BZ1.1/R14.2,BZ1.1; R14.2
+(unnamed) D1.A/R2.2,D1.A; R2.2
+(unnamed) D2.A/R6.2,D2.A; R6.2
+(unnamed) D3.A/R7.2,D3.A; R7.2
+(unnamed) D4.A/R8.2,D4.A; R8.2
+(unnamed) D5.A/R9.2,D5.A; R9.2
+(unnamed) D6.A/R10.2,D6.A; R10.2
+(unnamed) D7.A/R11.2,D7.A; R11.2
+(unnamed) D8.A/R12.2,D8.A; R12.2
+(unnamed) D9.A/R13.2,D9.A; R13.2
+MCLR,J1.1 (MCLR); R1.1; U1.1 (MCLR)
+PGC,J1.5 (PGC); U1.39 (RB6/PGC)
+PGD,J1.4 (PGD); U1.40 (RB7/PGD)
+(unnamed) R10.1/U2.25,R10.1; U2.25 (GPA4)
+(unnamed) R11.1/U2.26,R11.1; U2.26 (GPA5)
+(unnamed) R12.1/U2.27,R12.1; U2.27 (GPA6)
+(unnamed) R13.1/U2.28,R13.1; U2.28 (GPA7)
+(unnamed) R14.1/U1.22,R14.1; U1.22 (RD3 (piezo))
+(unnamed) R2.1/U1.19,R2.1; U1.19 (RD0 (LED))
+(unnamed) R5.1/U2.18,R5.1; U2.18 (RESET)
+(unnamed) R6.1/U2.21,R6.1; U2.21 (GPA0)
+(unnamed) R7.1/U2.22,R7.1; U2.22 (GPA1)
+(unnamed) R8.1/U2.23,R8.1; U2.23 (GPA2)
+(unnamed) R9.1/U2.24,R9.1; U2.24 (GPA3)
+SCL,R3.1; U1.18 (RC3 (SCL)); U2.12 (SCL)
+SDA,R4.1; U1.23 (RC4 (SDA)); U2.13 (SDA)
+(unnamed) SW1.1/U2.1,SW1.1; U2.1 (GPB0)
+(unnamed) SW2.1/U2.2,SW2.1; U2.2 (GPB1)

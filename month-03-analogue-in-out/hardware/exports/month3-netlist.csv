@@ -1,0 +1,33 @@
+Net,Pins on this net
++5V,C1.1; C2.1; C3.1; C4.1; J1.2 (VDD); R1.2; RV1.1; U1.11 (VDD); U1.32 (VDD); U2.15 (VREF); U2.16 (VDD); U2.7 (CH6); U3.1 (VDD)
+GND,C1.2; C2.2; C3.2; C4.2; D1.K; D10.K; D2.K; D3.K; D4.K; D5.K; D6.K; D7.K; D8.K; D9.K; J1.3 (VSS); RV1.2; U1.12 (VSS); U1.31 (VSS); U2.14 (AGND); U2.8 (CH7); U2.9 (DGND); U3.5 (LDAC); U3.7 (VSS)
+AIN0,RV1.W; U2.1 (CH0)
+CS_ADC,U1.18 (RC3 (CS ADC)); U2.10 (CS)
+CS_DAC,U1.23 (RC4 (CS DAC)); U3.2 (CS)
+(unnamed) D1.A/R2.2,D1.A; R2.2
+(unnamed) D10.A/R11.2,D10.A; R11.2
+(unnamed) D2.A/R3.2,D2.A; R3.2
+(unnamed) D3.A/R4.2,D3.A; R4.2
+(unnamed) D4.A/R5.2,D4.A; R5.2
+(unnamed) D5.A/R6.2,D5.A; R6.2
+(unnamed) D6.A/R7.2,D6.A; R7.2
+(unnamed) D7.A/R8.2,D7.A; R8.2
+(unnamed) D8.A/R9.2,D8.A; R9.2
+(unnamed) D9.A/R10.2,D9.A; R10.2
+DACA,U2.2 (CH1); U3.8 (VOUTA)
+MCLR,J1.1 (MCLR); R1.1; U1.1 (MCLR)
+MISO,U1.17 (RC2 (MISO)); U2.12 (DOUT)
+MOSI,U1.16 (RC1 (MOSI)); U2.11 (DIN); U3.4 (SDI)
+PGC,J1.5 (PGC); U1.39 (RB6/PGC)
+PGD,J1.4 (PGD); U1.40 (RB7/PGD)
+(unnamed) R10.1/U1.30,R10.1; U1.30 (RD7)
+(unnamed) R11.1/U3.6,R11.1; U3.6 (VOUTB)
+(unnamed) R2.1/U1.33,R2.1; U1.33 (RB0 (heartbeat))
+(unnamed) R3.1/U1.19,R3.1; U1.19 (RD0)
+(unnamed) R4.1/U1.20,R4.1; U1.20 (RD1)
+(unnamed) R5.1/U1.21,R5.1; U1.21 (RD2)
+(unnamed) R6.1/U1.22,R6.1; U1.22 (RD3)
+(unnamed) R7.1/U1.27,R7.1; U1.27 (RD4)
+(unnamed) R8.1/U1.28,R8.1; U1.28 (RD5)
+(unnamed) R9.1/U1.29,R9.1; U1.29 (RD6)
+SCK,U1.15 (RC0 (SCK)); U2.13 (CLK); U3.3 (SCK)

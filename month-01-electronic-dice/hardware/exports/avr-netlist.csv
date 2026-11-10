@@ -1,0 +1,22 @@
+Net,Pins on this net
++5V,C1.1; R1.2; U1.20 (AVCC); U1.7 (VCC)
+GND,C1.2; D1.K; D2.K; D3.K; D4.K; D5.K; D6.K; D7.K; J1.5 (GND); SW1.2; U1.22 (GND); U1.8 (GND)
+(unnamed) D1.A/R2.2,D1.A; R2.2
+(unnamed) D2.A/R3.2,D2.A; R3.2
+(unnamed) D3.A/R4.2,D3.A; R4.2
+(unnamed) D4.A/R5.2,D4.A; R5.2
+(unnamed) D5.A/R6.2,D5.A; R6.2
+(unnamed) D6.A/R7.2,D6.A; R7.2
+(unnamed) D7.A/R8.2,D7.A; R8.2
+MISO,J1.1 (MISO); U1.18 (MISO (PB4))
+MOSI,J1.3 (MOSI); U1.17 (MOSI (PB3))
+(unnamed) R2.1/U1.2,R2.1; U1.2 (PD0)
+(unnamed) R3.1/U1.3,R3.1; U1.3 (PD1)
+(unnamed) R4.1/U1.4,R4.1; U1.4 (PD2)
+(unnamed) R5.1/U1.5,R5.1; U1.5 (PD3)
+(unnamed) R6.1/U1.6,R6.1; U1.6 (PD4)
+(unnamed) R7.1/U1.11,R7.1; U1.11 (PD5)
+(unnamed) R8.1/U1.12,R8.1; U1.12 (PD6)
+RESET,J1.4 (RESET); R1.1; U1.1 (RESET)
+SCK,J1.2 (SCK); U1.19 (SCK (PB5))
+(unnamed) SW1.1/U1.23,SW1.1; U1.23 (PC0)

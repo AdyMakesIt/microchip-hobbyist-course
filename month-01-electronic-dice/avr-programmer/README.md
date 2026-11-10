@@ -81,6 +81,11 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 
 (The board is called "Arduino Uno" because an ATmega328P with a 16 MHz crystal is exactly what an Uno contains.)
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (an Arduino sketch).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the parts list and connection list (the KiCad schematic goes here too) you can use to design a PCB. See [Taking a project further](../../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -90,5 +95,7 @@ avr-programmer/
   build-b2-programmer.md
   build-b3-program-a-chip.md
   images/                           schematic + breadboard picture for every build
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/blink-d9/blink-d9.ino        the blink sketch (ArduinoISP comes with the Arduino IDE)
 ```

@@ -64,7 +64,8 @@ You need only **one** of the two programmers. Choose with this table:
 **If you use a USBasp:**
 
 ```ini
-[env:atmega328p]
+[env:ATmega328p]
+framework = arduino
 platform = atmelavr
 board = ATmega328P
 board_build.f_cpu = 1000000L
@@ -78,6 +79,7 @@ upload_flags =
 
 ```ini
 [env:atmega328p]
+framework = arduino
 platform = atmelavr
 board = ATmega328P
 board_build.f_cpu = 1000000L
@@ -125,7 +127,7 @@ avrdude -c usbasp -p m328p -B 10 -U flash:w:main.hex:i
 
 **Wiring.** Power the chip from your breadboard supply, **not** from the USBasp. Connect only the signal wires and ground:
 
-| Chip pin          | Signal | USBasp 6-pin header pin |
+|     Chip pin      | Signal | USBasp 6-pin header pin |
 | :---------------: | ------ | :---------------------: |
 |        18         | MISO   |            1            |
 | *(not connected)* | VCC    |            2            |

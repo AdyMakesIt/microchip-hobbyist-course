@@ -64,6 +64,11 @@ Everything from Month 4, plus the **XC16 compiler** (free): see the [PIC setup p
 3. **Never connect a 5 V signal to this board.** This chip's supply must stay between 2.0 V and 3.6 V; 5 V can destroy it.
 4. The LEDs use **330 Ω** resistors this month (not 680 Ω), because at 3.3 V 680 Ω gives only a dim glow.
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (MPLAB X).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the KiCad schematic location, a **parts list** and a **connection list** you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -71,6 +76,8 @@ month-05-sixteen-bit-and-memory/
   README.md                          this page
   build-1-blink.md ... build-3-boot-counter.md
   images/                            schematic + breadboard picture for every build
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
     build-1-blink/main.c             one complete file per build
     build-2-eeprom-hello/main.c

@@ -1,0 +1,24 @@
+Net,Pins on this net
++5V,C1.1; C6.1; R1.2; R3.2; U1.20 (AVCC); U1.7 (VCC); U2.20 (AVCC); U2.7 (VCC)
+GND,C1.2; C2.2; C3.2; C5.2; C6.2; C7.2; C8.2; D1.K; D2.K; D3.K; D4.K; J2.1 (GND); U1.22 (GND); U1.8 (GND); U2.22 (GND); U2.8 (GND)
+(unnamed) C4.1/J2.4,C4.1; J2.4 (DTR)
+(unnamed) C5.1/U1.21,C5.1; U1.21 (AREF)
+(unnamed) D1.A/R2.2,D1.A; R2.2
+(unnamed) D2.A/R5.2,D2.A; R5.2
+(unnamed) D3.A/R6.2,D3.A; R6.2
+(unnamed) D4.A/R4.2,D4.A; R4.2
+FROM_TXD,J2.3 (RXD (from chip TXD)); U1.3 (TXD (PD1))
+MISO,U1.18 (MISO (PB4)); U2.18 (MISO (PB4))
+MOSI,U1.17 (MOSI (PB3)); U2.17 (MOSI (PB3))
+(unnamed) R2.1/U1.15,R2.1; U1.15 (D9 (PB1))
+(unnamed) R4.1/U2.15,R4.1; U2.15 (D9 (PB1))
+(unnamed) R5.1/U1.14,R5.1; U1.14 (D8 (PB0))
+(unnamed) R6.1/U1.13,R6.1; U1.13 (D7 (PD7))
+RESET,C4.2; R1.1; U1.1 (RESET)
+SCK,U1.19 (SCK (PB5)); U2.19 (SCK (PB5))
+TO_RXD,J2.2 (TXD (to chip RXD)); U1.2 (RXD (PD0))
+TRESET,R3.1; U1.16 (D10 (PB2)); U2.1 (RESET)
+XTAL1,C2.1; U1.9 (XTAL1); Y1.1
+XTAL1B,C7.1; U2.9 (XTAL1); Y2.1
+XTAL2,C3.1; U1.10 (XTAL2); Y1.2
+XTAL2B,C8.1; U2.10 (XTAL2); Y2.2

@@ -1,0 +1,25 @@
+Reference,Value / part,Type,Suggested KiCad footprint (check it matches your part),Added in build
+J2,USB-serial adapter,connector,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,1
+J3,USBasp ISP,connector,Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical,1
+U1,ATmega328P-PU (programmer),IC,Package_DIP:DIP-28_W7.62mm,1
+U2,ATmega328P-PU (target),IC,Package_DIP:DIP-28_W7.62mm,3
+C1,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C2,22pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C3,22pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C4,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C5,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C6,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,3
+C7,22pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,3
+C8,22pF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,3
+D1,red,LED,LED_THT:LED_D5.0mm,1
+D2,red,LED,LED_THT:LED_D5.0mm,2
+D3,red,LED,LED_THT:LED_D5.0mm,2
+D4,red,LED,LED_THT:LED_D5.0mm,3
+R1,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R2,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R3,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R4,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R5,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R6,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+Y1,16MHz,crystal,Crystal:Crystal_HC49-U_Vertical,1
+Y2,16MHz,crystal,Crystal:Crystal_HC49-U_Vertical,3

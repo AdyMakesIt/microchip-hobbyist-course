@@ -1,8 +1,10 @@
 # Ordering and budget
 
-**Goal:** get your starter kit, and know how to order the free chip samples each month.
+**Goal:** understand how ordering works. The exact lists, month by month, are in the [purchasing plan](purchasing-plan.md); what you will build is in the [course overview](course-overview.md).
 
 ## 1. One-time starter kit
+
+The [purchasing plan](purchasing-plan.md) turns this into exact quantities and shows which round to buy each part in, with links. This page explains the thinking.
 
 Buy this once. Prices are **rough hobby-market guides, not quotes**; they vary by supplier and change often.
 
@@ -31,7 +33,7 @@ suspect it early (see the [troubleshooting](06-troubleshooting.md)). A clone tha
 
 ## 2. Free samples
 
-Each month's `README.md` tells you **which two chips to order that month**, with the exact part number and package.
+Every month you order **two new chips**; the [purchasing plan](purchasing-plan.md) names them, with the exact part number and package, and each month's `README.md` repeats them.
 The same rules apply every time:
 
 * **Order three of each chip.** Chips are easy to damage while learning (wrong supply, backwards in the breadboard), and a spare saves waiting a month.
@@ -50,7 +52,8 @@ Order the chips for a month **a few weeks before you need them**, since delivery
 
 ## 4. What each month needs
 
-Each month's `README.md` has a **parts list counted automatically from that month's circuit**, with a margin
-("Buy at least"). Buy the larger number so you always have spares.
+* [Purchasing plan](purchasing-plan.md): the global guide to what to order each month and what to buy ahead in bulk.
+* [Parts catalogue](parts-catalogue.md): the specification of every part, with links.
+* Each month's `README.md` has a parts list **counted automatically from that month's circuit**.
 
 Next: [AVR software and programmer setup](03-avr-setup.md)

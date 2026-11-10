@@ -21,6 +21,7 @@ tables into the pages, and checks every link. If it passes, the package is inter
 
 ## How the pieces fit
 
+* `tools/course_data.py` holds **the course plan and every part** (chips, lab stock, links). Edit it to change the plan; `make_purchasing.py` regenerates the overview, purchasing plan and parts catalogue.
 * `tools/circuits.py` holds **one description per month**: the schematic chains and the breadboard holes.
 * `tools/mhc_draw.py` draws the schematic and breadboard SVGs and **refuses to produce a picture** if the two disagree.
 * `tools/sync_docs.py` fills marked blocks in the pages (`<!-- code:... -->`, `<!-- placement:N -->`, `<!-- connections:N -->`, `<!-- bom -->`).

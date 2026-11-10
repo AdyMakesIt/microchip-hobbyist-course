@@ -1,0 +1,274 @@
+Month,Type,Item,Part number / specification,Quantity,Package,Link
+1,sample (free),ATmega328P-PU,"classic 8-bit AVR (the chip in an Arduino Uno): 32 KB flash, 10-bit ADC, UART, SPI, I2C",3,PDIP-28,https://www.microchip.com/en-us/product/ATmega328P
+1,sample (free),PIC16F18857-I/SP,8-bit PIC16 with many built-in peripherals: the course's PIC16 all-rounder,3,SPDIP-28,https://www.microchip.com/en-us/product/PIC16F18857
+1,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",7,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+1,lab stock,Resistor 680 Ω,LED resistor at 5 V,7,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+1,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+1,lab stock,"Capacitor 22 pF, ceramic",crystal load capacitor,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit
+1,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+1,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+1,lab stock,"Crystal, 16 MHz, HC-49",,2,,https://www.aliexpress.com/wholesale?SearchText=16MHz+crystal+HC-49
+1,lab stock,"Jumper wires, male-to-male",assorted lengths,22,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+1,lab stock,"Dupont leads, female-to-male",programmer leads,9,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+2,sample (free),PIC18F47K42-I/P,"8-bit PIC18, 64 MHz, 128 KB flash, 12-bit ADC: the course's PIC18 all-rounder",3,PDIP-40,https://www.microchip.com/en-us/product/PIC18F47K42
+2,sample (free),MCP23017-E/SP,16-bit I2C I/O expander,3,SPDIP-28,https://www.microchip.com/en-us/product/MCP23017
+2,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+2,lab stock,Resistor 100 Ω,"1/4 W metal film, E12 series",1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+2,lab stock,Resistor 680 Ω,LED resistor at 5 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+2,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+2,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+2,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+2,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+2,lab stock,"Piezo disc, passive",no oscillator inside,1,,https://www.aliexpress.com/wholesale?SearchText=passive+piezo+buzzer+disc
+2,lab stock,"Jumper wires, male-to-male",assorted lengths,31,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+2,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+3,sample (free),MCP3008-I/P,8-channel 10-bit SPI analogue-to-digital converter,3,PDIP-16,https://www.microchip.com/en-us/product/MCP3008
+3,sample (free),MCP4822-E/P,2-channel 12-bit SPI digital-to-analogue converter,3,PDIP-8,https://www.microchip.com/en-us/product/MCP4822
+3,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",10,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+3,lab stock,Resistor 680 Ω,LED resistor at 5 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+3,lab stock,Resistor 1 kΩ,,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+3,lab stock,Resistor 10 kΩ,reset and button pull-ups,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+3,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+3,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+3,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+3,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+4,sample (free),PIC16F18446-I/P,"20-pin PIC16, a smaller cousin of the PIC16F18857",3,PDIP-20,https://www.microchip.com/en-us/product/PIC16F18446
+4,sample (free),MCP7940N-I/P,I2C real-time clock with battery input; needs a 32.768 kHz crystal,3,PDIP-8,https://www.microchip.com/en-us/product/MCP7940N
+4,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",8,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+4,lab stock,Resistor 680 Ω,LED resistor at 5 V,8,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+4,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+4,lab stock,Resistor 10 kΩ,reset and button pull-ups,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+4,lab stock,"Capacitor 10 pF, ceramic",crystal load capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit
+4,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+4,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+4,lab stock,"Crystal, 32.768 kHz watch type","6 pF to 9 pF load, 2 legs",1,,https://www.aliexpress.com/wholesale?SearchText=32.768kHz+crystal+6pF
+4,lab stock,"Jumper wires, male-to-male",assorted lengths,23,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+4,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+5,sample (free),PIC24FJ64GA002-I/SP,16-bit PIC24F microcontroller (3.3 V only),3,SPDIP-28,https://www.microchip.com/en-us/product/PIC24FJ64GA002
+5,sample (free),24LC512-I/P,512 Kbit (64 KB) I2C EEPROM,3,PDIP-8,https://www.microchip.com/en-us/product/24LC512
+5,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+5,lab stock,Resistor 330 Ω,LED resistor at 3.3 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+5,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+5,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+5,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+5,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,1,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+5,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+5,lab stock,"Jumper wires, male-to-male",assorted lengths,30,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+5,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+6,sample (free),25LC1024-I/P,1 Mbit (128 KB) SPI EEPROM,3,PDIP-8,https://www.microchip.com/en-us/product/25LC1024
+6,sample (free),23LC1024-I/P,1 Mbit (128 KB) SPI SRAM,3,PDIP-8,https://www.microchip.com/en-us/product/23LC1024
+6,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+6,lab stock,Resistor 330 Ω,LED resistor at 3.3 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+6,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+6,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+6,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,1,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+6,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+6,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+6,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+7,sample (free),MCP23S17-E/SP,16-bit SPI I/O expander,3,SPDIP-28,https://www.microchip.com/en-us/product/MCP23S17
+7,sample (free),MCP23008-E/P,8-bit I2C I/O expander,3,PDIP-18,https://www.microchip.com/en-us/product/MCP23008
+7,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",16,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+7,lab stock,Resistor 680 Ω,LED resistor at 5 V,16,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+7,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+7,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+7,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+7,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+7,lab stock,"Keypad, 4×4 membrane (optional)",8 pins,1,,https://www.aliexpress.com/wholesale?SearchText=4x4+matrix+membrane+keypad
+7,lab stock,"Jumper wires, male-to-male",assorted lengths,45,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+7,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+8,sample (free),MCP2221A-I/P,USB to UART / I2C / GPIO bridge,3,PDIP-14,https://www.microchip.com/en-us/product/MCP2221A
+8,sample (free),PIC16F1454-I/P,8-bit PIC with full-speed USB built in,3,PDIP-14,https://www.microchip.com/en-us/product/PIC16F1454
+8,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",4,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+8,lab stock,Resistor 680 Ω,LED resistor at 5 V,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+8,lab stock,Resistor 10 kΩ,reset and button pull-ups,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+8,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+8,lab stock,"Capacitor 1 µF, ceramic",reference and regulator capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+1uF
+8,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+8,lab stock,USB socket breakout board,micro-USB or USB-B with 0.1 inch pins,1,,https://www.aliexpress.com/wholesale?SearchText=micro+USB+breakout+board+2.54mm
+8,lab stock,"Jumper wires, male-to-male",assorted lengths,30,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+8,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+9,sample (free),MCP9700A-E/TO,"analogue temperature sensor: 10 mV per °C, 500 mV at 0 °C",3,TO-92,https://www.microchip.com/en-us/product/MCP9700A
+9,sample (free),TC74A0-5.0VAT,digital I2C temperature sensor,3,TO-220-5,https://www.microchip.com/en-us/product/TC74
+9,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",8,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+9,lab stock,Resistor 680 Ω,LED resistor at 5 V,8,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+9,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+9,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+9,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+9,lab stock,"Capacitor 1 µF, ceramic",reference and regulator capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+1uF
+9,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+9,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+9,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+10,sample (free),MCP6004-I/P,quad rail-to-rail op-amp,3,PDIP-14,https://www.microchip.com/en-us/product/MCP6004
+10,sample (free),MCP6542-I/P,dual comparator,3,PDIP-8,https://www.microchip.com/en-us/product/MCP6542
+10,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",4,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+10,lab stock,Resistor 680 Ω,LED resistor at 5 V,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+10,lab stock,Resistor 1 kΩ,,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+10,lab stock,Resistor 10 kΩ,reset and button pull-ups,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+10,lab stock,Resistor 100 kΩ,,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+10,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+10,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,1,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+10,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+10,lab stock,LDR (light-dependent resistor),"a few kΩ in light, hundreds of kΩ in the dark",1,,https://www.aliexpress.com/wholesale?SearchText=LDR+photoresistor+5mm
+10,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+10,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+11,sample (free),MCP4151-103E/P,10 kΩ 8-bit digital potentiometer (SPI),3,PDIP-8,https://www.microchip.com/en-us/product/MCP4151
+11,sample (free),MCP6S21-I/P,programmable-gain amplifier (SPI),3,PDIP-8,https://www.microchip.com/en-us/product/MCP6S21
+11,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",8,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+11,lab stock,Resistor 100 Ω,"1/4 W metal film, E12 series",1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+11,lab stock,Resistor 680 Ω,LED resistor at 5 V,8,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+11,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+11,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,1,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+11,lab stock,"Push button, 6 mm",4-leg tact switch,3,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+11,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+11,lab stock,"Speaker, 8 Ω, small",0.25 to 0.5 W,1,,https://www.aliexpress.com/wholesale?SearchText=8+ohm+0.5W+small+speaker
+11,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+11,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+12,sample (free),MCP1702-3302E/TO,low-dropout 3.3 V voltage regulator (250 mA),3,TO-92,https://www.microchip.com/en-us/product/MCP1702
+12,sample (free),MCP100-xxx/TO (about 4.5 V threshold),voltage supervisor: holds a chip in reset until the supply is healthy,3,TO-92,https://www.microchip.com/en-us/product/MCP100
+12,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",3,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+12,lab stock,Resistor 680 Ω,LED resistor at 5 V,3,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+12,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+12,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+12,lab stock,"Capacitor 1 µF, ceramic",reference and regulator capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+1uF
+12,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+12,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+12,lab stock,"Jumper wires, male-to-male",assorted lengths,35,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+12,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+13,sample (free),dsPIC33EV128GM002-I/SP,16-bit digital signal controller (5 V) with motor-control PWM,3,SPDIP-28,https://www.microchip.com/en-us/product/dsPIC33EV128GM002
+13,sample (free),MCP3551-E/P,22-bit delta-sigma ADC for precise measurements,3,PDIP-8,https://www.microchip.com/en-us/product/MCP3551
+13,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+13,lab stock,Resistor 680 Ω,LED resistor at 5 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+13,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+13,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+13,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,1,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+13,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+13,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+13,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+13,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+14,sample (free),MCP4922-E/P,dual 12-bit DAC with external reference inputs,3,PDIP-14,https://www.microchip.com/en-us/product/MCP4922
+14,sample (free),MCP1525-I/TO,2.5 V precision voltage reference,3,TO-92,https://www.microchip.com/en-us/product/MCP1525
+14,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",4,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+14,lab stock,Resistor 100 Ω,"1/4 W metal film, E12 series",1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+14,lab stock,Resistor 680 Ω,LED resistor at 5 V,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+14,lab stock,Resistor 1 kΩ,,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+14,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+14,lab stock,"Capacitor 100 µF, electrolytic",audio and supply smoothing,1,,https://www.aliexpress.com/wholesale?SearchText=electrolytic+capacitor+assortment+kit
+14,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",2,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+14,lab stock,"Speaker, 8 Ω, small",0.25 to 0.5 W,1,,https://www.aliexpress.com/wholesale?SearchText=8+ohm+0.5W+small+speaker
+14,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+14,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+15,sample (free),PIC32MX170F256B-I/SP,32-bit MIPS microcontroller (3.3 V),3,SPDIP-28,https://www.microchip.com/en-us/product/PIC32MX170F256B
+15,sample (free),MCP79410-I/P,I2C real-time clock with EEPROM and a unique ID,3,PDIP-8,https://www.microchip.com/en-us/product/MCP79410
+15,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+15,lab stock,Resistor 330 Ω,LED resistor at 3.3 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+15,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+15,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+15,lab stock,"Capacitor 10 pF, ceramic",crystal load capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit
+15,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+15,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+15,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+15,lab stock,"Crystal, 32.768 kHz watch type","6 pF to 9 pF load, 2 legs",1,,https://www.aliexpress.com/wholesale?SearchText=32.768kHz+crystal+6pF
+15,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+15,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+16,sample (free),11LC010-I/TO,1 Kbit single-wire (UNI/O) EEPROM,3,TO-92,https://www.microchip.com/en-us/product/11LC010
+16,sample (free),93LC66B-I/P,4 Kbit Microwire EEPROM,3,PDIP-8,https://www.microchip.com/en-us/product/93LC66B
+16,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",4,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+16,lab stock,Resistor 680 Ω,LED resistor at 5 V,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+16,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+16,lab stock,Resistor 10 kΩ,reset and button pull-ups,3,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+16,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+16,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+16,lab stock,"Jumper wires, male-to-male",assorted lengths,35,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+16,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+17,sample (free),ATtiny85-20PU,tiny 8-pin AVR,3,PDIP-8,https://www.microchip.com/en-us/product/ATtiny85
+17,sample (free),PIC12F1840-I/P,tiny 8-pin PIC,3,PDIP-8,https://www.microchip.com/en-us/product/PIC12F1840
+17,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",6,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+17,lab stock,Resistor 680 Ω,LED resistor at 5 V,6,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+17,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+17,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+17,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+17,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+17,lab stock,LDR (light-dependent resistor),"a few kΩ in light, hundreds of kΩ in the dark",1,,https://www.aliexpress.com/wholesale?SearchText=LDR+photoresistor+5mm
+17,lab stock,"Jumper wires, male-to-male",assorted lengths,30,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+17,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+18,sample (free),ATmega1284P-PU,"large classic AVR: 128 KB flash, 16 KB RAM",3,PDIP-40,https://www.microchip.com/en-us/product/ATmega1284P
+18,sample (free),AVR128DB28-I/SP,modern AVR with event system and UPDI programming (optional month),3,SPDIP-28,https://www.microchip.com/en-us/product/AVR128DB28
+18,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",9,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+18,lab stock,Resistor 680 Ω,LED resistor at 5 V,9,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+18,lab stock,Resistor 1 kΩ,,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+18,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+18,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+18,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+18,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+18,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+19,sample (free),MCP3202-CI/P,2-channel 12-bit SPI ADC,3,PDIP-8,https://www.microchip.com/en-us/product/MCP3202
+19,sample (free),24AA02E48-I/P,I2C EEPROM with a factory-programmed unique MAC address,3,PDIP-8,https://www.microchip.com/en-us/product/24AA02E48
+19,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",4,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+19,lab stock,Resistor 680 Ω,LED resistor at 5 V,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+19,lab stock,Resistor 4.7 kΩ,I2C pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+19,lab stock,"Capacitor 10 pF, ceramic",crystal load capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit
+19,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+19,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+19,lab stock,"Crystal, 32.768 kHz watch type","6 pF to 9 pF load, 2 legs",1,,https://www.aliexpress.com/wholesale?SearchText=32.768kHz+crystal+6pF
+19,lab stock,CR2032 cell and holder,backup battery for the clock chip,1,,https://www.aliexpress.com/wholesale?SearchText=CR2032+battery+holder
+19,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+19,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+20,sample (free),MCP2515-I/P,CAN bus controller (SPI),3,PDIP-18,https://www.microchip.com/en-us/product/MCP2515
+20,sample (free),MCP2562-E/P,CAN bus transceiver,3,PDIP-8,https://www.microchip.com/en-us/product/MCP2562
+20,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",6,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+20,lab stock,Resistor 680 Ω,LED resistor at 5 V,6,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+20,lab stock,Resistor 10 kΩ,reset and button pull-ups,4,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+20,lab stock,Resistor 120 Ω,CAN bus terminator,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+20,lab stock,"Capacitor 22 pF, ceramic",crystal load capacitor,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit
+20,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,6,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+20,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+20,lab stock,"Crystal, 8 MHz, HC-49",,2,,https://www.aliexpress.com/wholesale?SearchText=8MHz+crystal+HC-49
+20,lab stock,Second breadboard,830 points,1,,https://www.aliexpress.com/wholesale?SearchText=830+point+breadboard
+20,lab stock,"Jumper wires, male-to-male",assorted lengths,60,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+20,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+21,sample (free),MCP1407-E/P,6 A MOSFET gate driver,3,PDIP-8,https://www.microchip.com/en-us/product/MCP1407
+21,sample (free),MCP6022-I/P,dual 10 MHz rail-to-rail op-amp,3,PDIP-8,https://www.microchip.com/en-us/product/MCP6022
+21,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",2,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+21,lab stock,Resistor 100 Ω,"1/4 W metal film, E12 series",2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+21,lab stock,Resistor 680 Ω,LED resistor at 5 V,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+21,lab stock,Resistor 10 kΩ,reset and button pull-ups,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+21,lab stock,"Resistor 0.1 Ω, 1 W",current-sense resistor,1,,https://www.aliexpress.com/wholesale?SearchText=0.1+ohm+1W+resistor
+21,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,3,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+21,lab stock,"Capacitor 100 µF, electrolytic",audio and supply smoothing,1,,https://www.aliexpress.com/wholesale?SearchText=electrolytic+capacitor+assortment+kit
+21,lab stock,"Push button, 6 mm",4-leg tact switch,2,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+21,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",1,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+21,lab stock,"MOSFET, N-channel, logic-level",switches loads from a 3.3 V or 5 V pin (for example IRLZ44N or IRLB8721 type),2,,https://www.aliexpress.com/wholesale?SearchText=IRLZ44N+logic+level+MOSFET
+21,lab stock,"Diode, 1N5819 or 1N4007",motor flyback protection,2,,https://www.aliexpress.com/wholesale?SearchText=1N5819+Schottky+diode
+21,lab stock,"DC motor, small (3 to 6 V)",toy motor,1,,https://www.aliexpress.com/wholesale?SearchText=small+DC+motor+3V+6V
+21,lab stock,"Hobby servo, SG90 type",,1,,https://www.aliexpress.com/wholesale?SearchText=SG90+micro+servo
+21,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+21,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+22,sample (free),TC7660EPA,charge-pump voltage inverter: makes a negative supply,3,PDIP-8,https://www.microchip.com/en-us/product/TC7660
+22,sample (free),MCP6S22-I/P,dual programmable-gain amplifier (SPI),3,PDIP-8,https://www.microchip.com/en-us/product/MCP6S22
+22,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",2,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+22,lab stock,Resistor 100 Ω,"1/4 W metal film, E12 series",1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+22,lab stock,Resistor 680 Ω,LED resistor at 5 V,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+22,lab stock,Resistor 1 kΩ,,3,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+22,lab stock,Resistor 10 kΩ,reset and button pull-ups,3,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+22,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,4,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+22,lab stock,"Capacitor 10 µF, ceramic",low-ESR core-regulator capacitor,2,,https://www.aliexpress.com/wholesale?SearchText=10uF+ceramic+capacitor
+22,lab stock,"Capacitor 100 µF, electrolytic",audio and supply smoothing,1,,https://www.aliexpress.com/wholesale?SearchText=electrolytic+capacitor+assortment+kit
+22,lab stock,"Push button, 6 mm",4-leg tact switch,3,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+22,lab stock,"Potentiometer 10 kΩ, linear","rotary or trimmer, 3 legs",2,,https://www.aliexpress.com/wholesale?SearchText=10K+potentiometer+B10K
+22,lab stock,"Speaker, 8 Ω, small",0.25 to 0.5 W,1,,https://www.aliexpress.com/wholesale?SearchText=8+ohm+0.5W+small+speaker
+22,lab stock,"Jumper wires, male-to-male",assorted lengths,40,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+22,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+23,sample (free),MCP1700-3302E/TO,ultra-low-quiescent-current 3.3 V regulator,3,TO-92,https://www.microchip.com/en-us/product/MCP1700
+23,sample (free),TC54VN3002EZB (about 3.0 V),voltage detector: a battery-low warning,3,TO-92,https://www.microchip.com/en-us/product/TC54
+23,lab stock,"LED, 5 mm, red","forward voltage about 2 V, 20 mA maximum; we run them at about 4 mA",2,,https://www.aliexpress.com/wholesale?SearchText=5mm+red+LED+assortment+100
+23,lab stock,Resistor 680 Ω,LED resistor at 5 V,2,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+23,lab stock,Resistor 1 kΩ,,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+23,lab stock,Resistor 10 kΩ,reset and button pull-ups,1,,https://www.aliexpress.com/wholesale?SearchText=resistor+kit+1%2F4W+E12+assortment
+23,lab stock,"Capacitor 100 nF, ceramic",decoupling: one next to every chip,2,,https://www.aliexpress.com/wholesale?SearchText=ceramic+capacitor+assortment+kit+100nF
+23,lab stock,"Push button, 6 mm",4-leg tact switch,1,,https://www.aliexpress.com/wholesale?SearchText=6x6mm+tactile+push+button+switch
+23,lab stock,CR2032 cell and holder,backup battery for the clock chip,1,,https://www.aliexpress.com/wholesale?SearchText=CR2032+battery+holder
+23,lab stock,"Jumper wires, male-to-male",assorted lengths,30,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+23,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm
+24,sample (free),two of your choice from the shortlist,,3,,
+24,lab stock,"Jumper wires, male-to-male",assorted lengths,50,,https://www.aliexpress.com/wholesale?SearchText=jumper+wire+kit+male+to+male+65pcs
+24,lab stock,"Dupont leads, female-to-male",programmer leads,5,,https://www.aliexpress.com/wholesale?SearchText=dupont+wire+female+to+male+20cm

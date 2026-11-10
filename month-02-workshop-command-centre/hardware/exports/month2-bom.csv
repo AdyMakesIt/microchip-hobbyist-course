@@ -1,0 +1,33 @@
+Reference,Value / part,Type,Suggested KiCad footprint (check it matches your part),Added in build
+J1,PICkit 3 ICSP,connector,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,1
+U1,PIC18F47K42-I/P,IC,Package_DIP:DIP-40_W15.24mm,1
+U2,MCP23017-E/SP,IC,Package_DIP:DIP-28_W7.62mm,2
+BZ1,,piezo,Buzzer_Beeper:Buzzer_12x9.5RM7.6,4
+C1,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C2,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
+C3,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,2
+D1,red,LED,LED_THT:LED_D5.0mm,1
+D2,red,LED,LED_THT:LED_D5.0mm,2
+D3,red,LED,LED_THT:LED_D5.0mm,3
+D4,red,LED,LED_THT:LED_D5.0mm,3
+D5,red,LED,LED_THT:LED_D5.0mm,3
+D6,red,LED,LED_THT:LED_D5.0mm,3
+D7,red,LED,LED_THT:LED_D5.0mm,3
+D8,red,LED,LED_THT:LED_D5.0mm,3
+D9,red,LED,LED_THT:LED_D5.0mm,3
+R1,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R2,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R3,4.7 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R4,4.7 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R5,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R6,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,2
+R7,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R8,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R9,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R10,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R11,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R12,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R13,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R14,100 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,4
+SW1,MODE,push button,Button_Switch_THT:SW_PUSH_6mm,3
+SW2,SPEED,push button,Button_Switch_THT:SW_PUSH_6mm,4

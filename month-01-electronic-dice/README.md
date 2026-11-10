@@ -71,6 +71,11 @@ See [Part B](avr-programmer/README.md). Skip it if you would rather move on.
 [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring in the pictures has been machine-checked against the schematics.
 Nothing here has been built on a real bench yet. If something does not work, that is useful information, so please report it.
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (PlatformIO for the ATmega328P, MPLAB X for the PIC).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the KiCad schematic location, a **parts list** and a **connection list** you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -80,6 +85,8 @@ month-01-electronic-dice/
   pic-1-blink.md ...       one page per PIC build
   avr-programmer/          optional Part B: build an AVR programmer (its own pages, pictures, code)
   images/                  schematic + breadboard picture for every build (avr-N-..., pic-N-...)
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
     avr-1-blink/main.c     one complete file per build
     avr-2-button/main.c

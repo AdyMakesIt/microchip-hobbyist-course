@@ -61,6 +61,11 @@ Everything from Month 2. Nothing else.
 1. **Take a photo of your Month 2 board**, then clear it. Month 3 uses the same PIC18F47K42 and the same programming leads, but a new layout.
 2. The numbers: the ADC reads **0 to 1023** for **0 V to 5 V**, so each step is about **4.9 mV**. The DAC is set to its "2x gain" mode, so each step is exactly **1 mV**.
 
+## Ready-made projects and hardware files
+
+* **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (MPLAB X).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the KiCad schematic location, a **parts list** and a **connection list** you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
+
 ## Folder contents
 
 ```text
@@ -68,6 +73,8 @@ month-03-analogue-in-out/
   README.md                          this page
   build-1-adc-bar-graph.md ... build-3-loopback.md
   images/                            schematic + breadboard picture for every build
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
     build-1-adc-bar-graph/main.c     one complete file per build
     build-2-dac/main.c
