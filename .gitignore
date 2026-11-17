@@ -29,3 +29,4 @@ _autosave-*
 *.bak
 *.kicad_sch-bak
 ~*.lck
+month-01-electronic-dice/projects/platformio/avr-1-blink/.vscode/extensions.json

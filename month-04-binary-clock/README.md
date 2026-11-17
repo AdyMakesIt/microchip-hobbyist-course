@@ -34,18 +34,18 @@ Nothing here has been run on a real bench yet. If something does not work, that 
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part                                                     | Value            | Qty used | Buy at least |
-| -------------------------------------------------------- | ---------------- | -------: | -----------: |
-| Resistor                                                 | 10 kΩ            |        1 |            2 |
-| Resistor                                                 | 4.7 kΩ           |        2 |            3 |
-| Resistor                                                 | 680 Ω            |        8 |           10 |
-| Ceramic capacitor                                        | 100nF            |        2 |            3 |
-| Ceramic capacitor                                        | 10pF             |        2 |            3 |
-| Crystal                                                  | 32.768kHz        |        1 |            2 |
-| LED, 5 mm                                                | red              |        8 |           10 |
-| Push button (4-leg tact switch)                          | 6 mm             |        1 |            2 |
-| Jumper wires, solid or male-to-male                      | assorted lengths |       23 |           29 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
+| Part | Value | Qty used | Buy at least |
+|---|---|---:|---:|
+| Resistor | 10 kΩ | 1 | 2 |
+| Resistor | 4.7 kΩ | 2 | 3 |
+| Resistor | 680 Ω | 8 | 10 |
+| Ceramic capacitor | 100nF | 2 | 3 |
+| Ceramic capacitor | 10pF | 2 | 3 |
+| Crystal | 32.768kHz | 1 | 2 |
+| LED, 5 mm | red | 8 | 10 |
+| Push button (4-leg tact switch) | 6 mm | 1 | 2 |
+| Jumper wires, solid or male-to-male | assorted lengths | 23 | 29 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
 <!-- /bom -->
 
 **The crystal and its two capacitors matter.** The MCP7940N needs a **32.768 kHz "watch" crystal** (the little cylinder kind, two legs) and, according to its datasheet,

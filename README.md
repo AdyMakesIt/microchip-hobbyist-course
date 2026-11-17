@@ -29,7 +29,7 @@ using **free chip samples** and a **low-cost PICkit 3 programmer**. No soldering
 |     [3](month-03-analogue-in-out/README.md)     | Analogue in, analogue out             | PIC18F47K42 + MCP3008 + MCP4822 | complete: awaiting bench test |
 |      [4](month-04-binary-clock/README.md)       | The binary clock                      | PIC16F18446 + MCP7940N          | complete: awaiting bench test |
 | [5](month-05-sixteen-bit-and-memory/README.md)  | A 16-bit chip at 3.3 V                | PIC24FJ64GA002 + 24LC512        | complete: awaiting bench test |
-|                      6–24                       | in preparation                        |                                 |                               |
+|                     6–24                      | in preparation                        |                                 |                               |
 
 ## What is different in this version
 

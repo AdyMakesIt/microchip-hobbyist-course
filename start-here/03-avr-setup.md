@@ -64,7 +64,23 @@ You need only **one** of the two programmers. Choose with this table:
 **If you use a USBasp:**
 
 ```ini
-[env:ATmega328p]
+; Use this environment with USBASP for the ATmega328P with the internal 1 MHz oscillator and factory fuses.
+[env:usbasp]
+framework = arduino
+platform = atmelavr
+board = ATmega328P
+board_build.f_cpu = 1000000L
+upload_protocol = usbasp
+upload_flags =
+    -e
+    -Pusb
+    -B32
+
+```
+
+```ini
+; Use this environment to burn the fuses for the internal 1 MHz oscillator. This is a one-time operation.
+[env:usbasp_internal]
 framework = arduino
 platform = atmelavr
 board = ATmega328P
@@ -73,22 +89,27 @@ upload_protocol = usbasp
 upload_flags =
     -Pusb
     -B10
+board_fuses.lfuse = 0x62
+board_fuses.hfuse = 0xD9
+board_fuses.efuse = 0xFF
 ```
 
-**If you use an Arduino Uno R3 as a programmer** (change `COM3` to your Uno's port; on Linux or macOS it looks like `/dev/ttyACM0`):
+**If you use an Arduino Uno R3 as a programmer** (change `COM6` to your Uno's port; on Linux or macOS it looks like `/dev/ttyACM0`):
 
 ```ini
-[env:atmega328p]
+; Use this Environment if using and Arduio Uno R3 running the ArduinoISP example as a programmer. This is slower than using a USBasp, but it works if you don't have one.
+[env:uno_isp]
 framework = arduino
 platform = atmelavr
 board = ATmega328P
 board_build.f_cpu = 1000000L
 upload_protocol = stk500v1
-upload_port = COM3
+upload_port = COM6   ; change to your Uno's port (Linux/macOS: /dev/ttyACM0)
 upload_speed = 19200
 upload_flags =
     -P$UPLOAD_PORT
     -b$UPLOAD_SPEED
+
 ```
 
 What the lines mean:
@@ -96,8 +117,10 @@ What the lines mean:
 * `board = ATmega328P` is the bare chip (not an Arduino board).
 * `board_build.f_cpu = 1000000L` tells the compiler the chip runs at **1 MHz**: that is the chip's factory setting.
 * `upload_protocol` picks the uploader's language for your programmer.
-* `-Pusb` tells avrdude to look for the USBasp on USB; `-B10` slows the programming clock (explained in the next section).
-
+* `-Pusb` tells avrdude to look for the USBasp on USB; 
+* `-B10` slows the programming clock (explained in the next section).
+* `-e` erase the flashbefore programming
+   
 ## Step 3: Build and upload
 
 Use the buttons in the blue bar at the bottom of VS Code:

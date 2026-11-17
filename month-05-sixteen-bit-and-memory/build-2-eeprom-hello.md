@@ -32,72 +32,72 @@ The chip's I2C address is `0x50` plus the three pins A0, A1, A2. All three are w
 ![Breadboard layout for build 2](images/build-2-breadboard.png)
 
 <!-- placement:2 -->
-| Step | Part               | Where it goes                                                                                                          | Notes                                                                                  |
-| ---: | ------------------ | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-|    1 | U2 24LC512-I/P     | Pin 1 in hole **41f**, notch to the **left**. Pins 1–4 run along row f (columns 41–44); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-|    2 | jumper wire        | **13h** → **30a**                                                                                                      | signal LED0 (any colour)                                                               |
-|    3 | R5 330 Ω resistor  | **30d** and **30g**                                                                                                    | either way round                                                                       |
-|    4 | D2 red LED         | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30                                     | the long leg (+) goes towards the resistor                                             |
-|    5 | jumper wire        | **14h** → **31a**                                                                                                      | signal LED1 (any colour)                                                               |
-|    6 | R6 330 Ω resistor  | **31d** and **31g**                                                                                                    | either way round                                                                       |
-|    7 | D3 red LED         | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31                                     | the long leg (+) goes towards the resistor                                             |
-|    8 | jumper wire        | **15b** → **32a**                                                                                                      | signal LED2 (any colour)                                                               |
-|    9 | R7 330 Ω resistor  | **32d** and **32g**                                                                                                    | either way round                                                                       |
-|   10 | D4 red LED         | **long leg** in **32h**, **short leg** in bottom **blue** rail (−), near column 32                                     | the long leg (+) goes towards the resistor                                             |
-|   11 | jumper wire        | **14b** → **33a**                                                                                                      | signal LED3 (any colour)                                                               |
-|   12 | R8 330 Ω resistor  | **33d** and **33g**                                                                                                    | either way round                                                                       |
-|   13 | D5 red LED         | **long leg** in **33h**, **short leg** in bottom **blue** rail (−), near column 33                                     | the long leg (+) goes towards the resistor                                             |
-|   14 | jumper wire        | **13b** → **34a**                                                                                                      | signal LED4 (any colour)                                                               |
-|   15 | R9 330 Ω resistor  | **34d** and **34g**                                                                                                    | either way round                                                                       |
-|   16 | D6 red LED         | **long leg** in **34h**, **short leg** in bottom **blue** rail (−), near column 34                                     | the long leg (+) goes towards the resistor                                             |
-|   17 | jumper wire        | **12b** → **35a**                                                                                                      | signal LED5 (any colour)                                                               |
-|   18 | R10 330 Ω resistor | **35d** and **35g**                                                                                                    | either way round                                                                       |
-|   19 | D7 red LED         | **long leg** in **35h**, **short leg** in bottom **blue** rail (−), near column 35                                     | the long leg (+) goes towards the resistor                                             |
-|   20 | jumper wire        | **11b** → **36a**                                                                                                      | signal LED6 (any colour)                                                               |
-|   21 | R11 330 Ω resistor | **36d** and **36g**                                                                                                    | either way round                                                                       |
-|   22 | D8 red LED         | **long leg** in **36h**, **short leg** in bottom **blue** rail (−), near column 36                                     | the long leg (+) goes towards the resistor                                             |
-|   23 | jumper wire        | **10b** → **37a**                                                                                                      | signal LED7 (any colour)                                                               |
-|   24 | R12 330 Ω resistor | **37d** and **37g**                                                                                                    | either way round                                                                       |
-|   25 | D9 red LED         | **long leg** in **37h**, **short leg** in bottom **blue** rail (−), near column 37                                     | the long leg (+) goes towards the resistor                                             |
-|   26 | jumper wire        | **41h** → bottom **blue** rail (−), near column 41                                                                     | ground (black)                                                                         |
-|   27 | jumper wire        | **42h** → bottom **blue** rail (−), near column 42                                                                     | ground (black)                                                                         |
-|   28 | jumper wire        | **43h** → bottom **blue** rail (−), near column 43                                                                     | ground (black)                                                                         |
-|   29 | jumper wire        | **44h** → bottom **blue** rail (−), near column 44                                                                     | ground (black)                                                                         |
-|   30 | jumper wire        | **42b** → top **blue** rail (−), near column 42                                                                        | ground (black)                                                                         |
-|   31 | jumper wire        | **41b** → top **red** rail (+), near column 41                                                                         | +3.3 V power (red)                                                                     |
-|   32 | C3 100nF capacitor | **41c** and top **blue** rail (−), near column 41                                                                      | ceramic: either way round; keep the legs short                                         |
-|   33 | jumper wire        | **19b** → **43b**                                                                                                      | signal SCL (any colour)                                                                |
-|   34 | jumper wire        | **18c** → **44c**                                                                                                      | signal SDA (any colour)                                                                |
-|   35 | R3 4.7 kΩ resistor | **43c** and top **red** rail (+), near column 43                                                                       | either way round                                                                       |
-|   36 | R4 4.7 kΩ resistor | **44d** and top **red** rail (+), near column 44                                                                       | either way round                                                                       |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | U2 24LC512-I/P | Pin 1 in hole **41f**, notch to the **left**. Pins 1–4 run along row f (columns 41–44); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+| 2 | jumper wire | **13h** → **30a** | signal LED0 (any colour) |
+| 3 | R5 330 Ω resistor | **30d** and **30g** | either way round |
+| 4 | D2 red LED | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30 | the long leg (+) goes towards the resistor |
+| 5 | jumper wire | **14h** → **31a** | signal LED1 (any colour) |
+| 6 | R6 330 Ω resistor | **31d** and **31g** | either way round |
+| 7 | D3 red LED | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31 | the long leg (+) goes towards the resistor |
+| 8 | jumper wire | **15b** → **32a** | signal LED2 (any colour) |
+| 9 | R7 330 Ω resistor | **32d** and **32g** | either way round |
+| 10 | D4 red LED | **long leg** in **32h**, **short leg** in bottom **blue** rail (−), near column 32 | the long leg (+) goes towards the resistor |
+| 11 | jumper wire | **14b** → **33a** | signal LED3 (any colour) |
+| 12 | R8 330 Ω resistor | **33d** and **33g** | either way round |
+| 13 | D5 red LED | **long leg** in **33h**, **short leg** in bottom **blue** rail (−), near column 33 | the long leg (+) goes towards the resistor |
+| 14 | jumper wire | **13b** → **34a** | signal LED4 (any colour) |
+| 15 | R9 330 Ω resistor | **34d** and **34g** | either way round |
+| 16 | D6 red LED | **long leg** in **34h**, **short leg** in bottom **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor |
+| 17 | jumper wire | **12b** → **35a** | signal LED5 (any colour) |
+| 18 | R10 330 Ω resistor | **35d** and **35g** | either way round |
+| 19 | D7 red LED | **long leg** in **35h**, **short leg** in bottom **blue** rail (−), near column 35 | the long leg (+) goes towards the resistor |
+| 20 | jumper wire | **11b** → **36a** | signal LED6 (any colour) |
+| 21 | R11 330 Ω resistor | **36d** and **36g** | either way round |
+| 22 | D8 red LED | **long leg** in **36h**, **short leg** in bottom **blue** rail (−), near column 36 | the long leg (+) goes towards the resistor |
+| 23 | jumper wire | **10b** → **37a** | signal LED7 (any colour) |
+| 24 | R12 330 Ω resistor | **37d** and **37g** | either way round |
+| 25 | D9 red LED | **long leg** in **37h**, **short leg** in bottom **blue** rail (−), near column 37 | the long leg (+) goes towards the resistor |
+| 26 | jumper wire | **41h** → bottom **blue** rail (−), near column 41 | ground (black) |
+| 27 | jumper wire | **42h** → bottom **blue** rail (−), near column 42 | ground (black) |
+| 28 | jumper wire | **43h** → bottom **blue** rail (−), near column 43 | ground (black) |
+| 29 | jumper wire | **44h** → bottom **blue** rail (−), near column 44 | ground (black) |
+| 30 | jumper wire | **42b** → top **blue** rail (−), near column 42 | ground (black) |
+| 31 | jumper wire | **41b** → top **red** rail (+), near column 41 | +3.3 V power (red) |
+| 32 | C3 100nF capacitor | **41c** and top **blue** rail (−), near column 41 | ceramic: either way round; keep the legs short |
+| 33 | jumper wire | **19b** → **43b** | signal SCL (any colour) |
+| 34 | jumper wire | **18c** → **44c** | signal SDA (any colour) |
+| 35 | R3 4.7 kΩ resistor | **43c** and top **red** rail (+), near column 43 | either way round |
+| 36 | R4 4.7 kΩ resistor | **44d** and top **red** rail (+), near column 44 | either way round |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:2 -->
-| Starts at                 | Then goes through                                            |
-| ------------------------- | ------------------------------------------------------------ |
-| U2 pin **1** (A0)         | **GND**                                                      |
-| U2 pin **2** (A1)         | **GND**                                                      |
-| U2 pin **3** (A2)         | **GND**                                                      |
-| U2 pin **4** (VSS)        | **GND**                                                      |
-| U2 pin **7** (WP)         | **GND**                                                      |
-| U2 pin **8** (VCC)        | **+3.3 V**                                                   |
-| net **+5V**               | C3 100nF → **GND**                                           |
-| U2 pin **5** (SDA)        | net **SDA**                                                  |
-| U2 pin **6** (SCL)        | net **SCL**                                                  |
-| net **SCL**               | R3 4.7 kΩ → **+3.3 V**                                       |
-| net **SDA**               | R4 4.7 kΩ → **+3.3 V**                                       |
-| U1 pin **17** (RB8 (SCL)) | net **SCL**                                                  |
-| U1 pin **18** (RB9 (SDA)) | net **SDA**                                                  |
-| U1 pin **6** (RB2)        | R5 330 Ω → D2 LED (long leg towards the resistor) → **GND**  |
-| U1 pin **7** (RB3)        | R6 330 Ω → D3 LED (long leg towards the resistor) → **GND**  |
-| U1 pin **21** (RB10)      | R7 330 Ω → D4 LED (long leg towards the resistor) → **GND**  |
-| U1 pin **22** (RB11)      | R8 330 Ω → D5 LED (long leg towards the resistor) → **GND**  |
-| U1 pin **23** (RB12)      | R9 330 Ω → D6 LED (long leg towards the resistor) → **GND**  |
-| U1 pin **24** (RB13)      | R10 330 Ω → D7 LED (long leg towards the resistor) → **GND** |
-| U1 pin **25** (RB14)      | R11 330 Ω → D8 LED (long leg towards the resistor) → **GND** |
-| U1 pin **26** (RB15)      | R12 330 Ω → D9 LED (long leg towards the resistor) → **GND** |
+| Starts at | Then goes through |
+|---|---|
+| U2 pin **1** (A0) | **GND** |
+| U2 pin **2** (A1) | **GND** |
+| U2 pin **3** (A2) | **GND** |
+| U2 pin **4** (VSS) | **GND** |
+| U2 pin **7** (WP) | **GND** |
+| U2 pin **8** (VCC) | **+3.3 V** |
+| net **+5V** | C3 100nF → **GND** |
+| U2 pin **5** (SDA) | net **SDA** |
+| U2 pin **6** (SCL) | net **SCL** |
+| net **SCL** | R3 4.7 kΩ → **+3.3 V** |
+| net **SDA** | R4 4.7 kΩ → **+3.3 V** |
+| U1 pin **17** (RB8 (SCL)) | net **SCL** |
+| U1 pin **18** (RB9 (SDA)) | net **SDA** |
+| U1 pin **6** (RB2) | R5 330 Ω → D2 LED (long leg towards the resistor) → **GND** |
+| U1 pin **7** (RB3) | R6 330 Ω → D3 LED (long leg towards the resistor) → **GND** |
+| U1 pin **21** (RB10) | R7 330 Ω → D4 LED (long leg towards the resistor) → **GND** |
+| U1 pin **22** (RB11) | R8 330 Ω → D5 LED (long leg towards the resistor) → **GND** |
+| U1 pin **23** (RB12) | R9 330 Ω → D6 LED (long leg towards the resistor) → **GND** |
+| U1 pin **24** (RB13) | R10 330 Ω → D7 LED (long leg towards the resistor) → **GND** |
+| U1 pin **25** (RB14) | R11 330 Ω → D8 LED (long leg towards the resistor) → **GND** |
+| U1 pin **26** (RB15) | R12 330 Ω → D9 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 4. Check before you power it

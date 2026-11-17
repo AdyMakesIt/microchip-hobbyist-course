@@ -38,16 +38,16 @@ You also need the **PIC18F47K42-I/P** from Month 2 and the same PICkit 3 program
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part                                                     | Value            | Qty used | Buy at least |
-| -------------------------------------------------------- | ---------------- | -------: | -----------: |
-| Resistor                                                 | 1 kΩ             |        1 |            2 |
-| Resistor                                                 | 10 kΩ            |        1 |            2 |
-| Resistor                                                 | 680 Ω            |        9 |           11 |
-| Ceramic capacitor                                        | 100nF            |        4 |            5 |
-| Potentiometer (rotary or trimmer)                        | 10 kΩ            |        1 |            2 |
-| LED, 5 mm                                                | red              |       10 |           12 |
-| Jumper wires, solid or male-to-male                      | assorted lengths |       40 |           46 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
+| Part | Value | Qty used | Buy at least |
+|---|---|---:|---:|
+| Resistor | 1 kΩ | 1 | 2 |
+| Resistor | 10 kΩ | 1 | 2 |
+| Resistor | 680 Ω | 9 | 11 |
+| Ceramic capacitor | 100nF | 4 | 5 |
+| Potentiometer (rotary or trimmer) | 10 kΩ | 1 | 2 |
+| LED, 5 mm | red | 10 | 12 |
+| Jumper wires, solid or male-to-male | assorted lengths | 40 | 46 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
 <!-- /bom -->
 
 The potentiometer should be a **10 kΩ linear** one ("B10K"): a rotary pot with three legs in a row, or a small trimmer. Any value from 5 kΩ to 100 kΩ works.

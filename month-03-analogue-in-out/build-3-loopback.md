@@ -19,17 +19,17 @@ A single wire from **DAC output A (MCP4822 pin 8)** to **ADC channel 1 (MCP3008 
 ![Breadboard layout for build 3](images/build-3-breadboard.png)
 
 <!-- placement:3 -->
-| Step | Part        | Where it goes     | Notes                     |
-| ---: | ----------- | ----------------- | ------------------------- |
-|    1 | jumper wire | **36b** → **27h** | signal DAC A (any colour) |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | jumper wire | **36b** → **27h** | signal DAC A (any colour) |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:3 -->
-| Starts at          | Then goes through |
-| ------------------ | ----------------- |
-| U2 pin **2** (CH1) | net **DACA**      |
+| Starts at | Then goes through |
+|---|---|
+| U2 pin **2** (CH1) | net **DACA** |
 <!-- /connections -->
 
 ## 3. Check before you power it

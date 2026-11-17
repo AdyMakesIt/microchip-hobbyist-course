@@ -41,43 +41,43 @@ The lesson for the rest of the course: *the code often ports easily; the wiring 
 ![Breadboard layout for build 1](images/build-1-breadboard.png)
 
 <!-- placement:1 -->
-| Step | Part                     | Where it goes                                                                                                           | Notes                                                                                  |
-| ---: | ------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-|    1 | U1 PIC16F18446-I/P       | Pin 1 in hole **8f**, notch to the **left**. Pins 1–10 run along row f (columns 8–17); pins 11–20 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-|    2 | jumper wire              | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2                                            | +5 V power (red)                                                                       |
-|    3 | jumper wire              | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1                                          | ground (black)                                                                         |
-|    4 | jumper wire              | **8j** → bottom **red** rail (+), near column 8                                                                         | +5 V power (red)                                                                       |
-|    5 | jumper wire              | **8a** → top **blue** rail (−), near column 8                                                                           | ground (black)                                                                         |
-|    6 | C1 100nF capacitor       | **8g** and **8d**                                                                                                       | ceramic: either way round; keep the legs short                                         |
-|    7 | R1 10 kΩ resistor        | **11i** and bottom **red** rail (+), near column 11                                                                     | either way round                                                                       |
-|    8 | PICkit 3 ICSP lead: MCLR | from PICkit 3 ICSP pin **1** (MCLR) to **11j**                                                                          | female-to-male Dupont lead                                                             |
-|    9 | PICkit 3 ICSP lead: VDD  | from PICkit 3 ICSP pin **2** (VDD) to top **red** rail (+), near column 5                                               | female-to-male Dupont lead                                                             |
-|   10 | PICkit 3 ICSP lead: VSS  | from PICkit 3 ICSP pin **3** (VSS) to top **blue** rail (−), near column 5                                              | female-to-male Dupont lead                                                             |
-|   11 | PICkit 3 ICSP lead: PGD  | from PICkit 3 ICSP pin **4** (PGD) to **9b**                                                                            | female-to-male Dupont lead                                                             |
-|   12 | PICkit 3 ICSP lead: PGC  | from PICkit 3 ICSP pin **5** (PGC) to **10b**                                                                           | female-to-male Dupont lead                                                             |
-|   13 | jumper wire              | **12b** → **28a**                                                                                                       | signal RC0 (any colour)                                                                |
-|   14 | R2 680 Ω resistor        | **28d** and **28g**                                                                                                     | either way round                                                                       |
-|   15 | D1 red LED               | **long leg** in **28h**, **short leg** in bottom **blue** rail (−), near column 28                                      | the long leg (+) goes towards the resistor                                             |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | U1 PIC16F18446-I/P | Pin 1 in hole **8f**, notch to the **left**. Pins 1–10 run along row f (columns 8–17); pins 11–20 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+| 2 | jumper wire | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2 | +5 V power (red) |
+| 3 | jumper wire | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1 | ground (black) |
+| 4 | jumper wire | **8j** → bottom **red** rail (+), near column 8 | +5 V power (red) |
+| 5 | jumper wire | **8a** → top **blue** rail (−), near column 8 | ground (black) |
+| 6 | C1 100nF capacitor | **8g** and **8d** | ceramic: either way round; keep the legs short |
+| 7 | R1 10 kΩ resistor | **11i** and bottom **red** rail (+), near column 11 | either way round |
+| 8 | PICkit 3 ICSP lead: MCLR | from PICkit 3 ICSP pin **1** (MCLR) to **11j** | female-to-male Dupont lead |
+| 9 | PICkit 3 ICSP lead: VDD | from PICkit 3 ICSP pin **2** (VDD) to top **red** rail (+), near column 5 | female-to-male Dupont lead |
+| 10 | PICkit 3 ICSP lead: VSS | from PICkit 3 ICSP pin **3** (VSS) to top **blue** rail (−), near column 5 | female-to-male Dupont lead |
+| 11 | PICkit 3 ICSP lead: PGD | from PICkit 3 ICSP pin **4** (PGD) to **9b** | female-to-male Dupont lead |
+| 12 | PICkit 3 ICSP lead: PGC | from PICkit 3 ICSP pin **5** (PGC) to **10b** | female-to-male Dupont lead |
+| 13 | jumper wire | **12b** → **28a** | signal RC0 (any colour) |
+| 14 | R2 680 Ω resistor | **28d** and **28g** | either way round |
+| 15 | D1 red LED | **long leg** in **28h**, **short leg** in bottom **blue** rail (−), near column 28 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:1 -->
-| Starts at                 | Then goes through                                           |
-| ------------------------- | ----------------------------------------------------------- |
-| U1 pin **1** (VDD)        | **+5 V**                                                    |
-| U1 pin **20** (VSS)       | **GND**                                                     |
-| net **+5V**               | C1 100nF → **GND**                                          |
-| U1 pin **4** (RA3 (MCLR)) | net **MCLR**                                                |
-| net **MCLR**              | R1 10 kΩ → **+5 V**                                         |
-| U1 pin **19** (RA0 (PGD)) | net **PGD**                                                 |
-| U1 pin **18** (RA1 (PGC)) | net **PGC**                                                 |
-| J1 pin **1** (MCLR)       | net **MCLR**                                                |
-| J1 pin **2** (VDD)        | **+5 V**                                                    |
-| J1 pin **3** (VSS)        | **GND**                                                     |
-| J1 pin **4** (PGD)        | net **PGD**                                                 |
-| J1 pin **5** (PGC)        | net **PGC**                                                 |
-| U1 pin **16** (RC0)       | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
+| Starts at | Then goes through |
+|---|---|
+| U1 pin **1** (VDD) | **+5 V** |
+| U1 pin **20** (VSS) | **GND** |
+| net **+5V** | C1 100nF → **GND** |
+| U1 pin **4** (RA3 (MCLR)) | net **MCLR** |
+| net **MCLR** | R1 10 kΩ → **+5 V** |
+| U1 pin **19** (RA0 (PGD)) | net **PGD** |
+| U1 pin **18** (RA1 (PGC)) | net **PGC** |
+| J1 pin **1** (MCLR) | net **MCLR** |
+| J1 pin **2** (VDD) | **+5 V** |
+| J1 pin **3** (VSS) | **GND** |
+| J1 pin **4** (PGD) | net **PGD** |
+| J1 pin **5** (PGC) | net **PGC** |
+| U1 pin **16** (RC0) | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 4. Check before you power it

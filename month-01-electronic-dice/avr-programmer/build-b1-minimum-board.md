@@ -24,69 +24,69 @@
 Power OFF. **Do not connect the USB-serial adapter's VCC lead.** The adapter's TXD goes to the chip's RXD and the adapter's RXD to the chip's TXD (they cross over).
 
 <!-- placement:1 -->
-| Step | Part                          | Where it goes                                                                                                           | Notes                                                                                  |
-| ---: | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-|    1 | U1 ATmega328P-PU (programmer) | Pin 1 in hole **5f**, notch to the **left**. Pins 1–14 run along row f (columns 5–18); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-|    2 | jumper wire                   | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2                                            | +5 V power (red)                                                                       |
-|    3 | jumper wire                   | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1                                          | ground (black)                                                                         |
-|    4 | jumper wire                   | **11j** → bottom **red** rail (+), near column 11                                                                       | +5 V power (red)                                                                       |
-|    5 | jumper wire                   | **12j** → bottom **blue** rail (−), near column 12                                                                      | ground (black)                                                                         |
-|    6 | C1 100nF capacitor            | **11i** and **12i**                                                                                                     | ceramic: either way round; keep the legs short                                         |
-|    7 | jumper wire                   | **13b** → top **red** rail (+), near column 13                                                                          | +5 V power (red)                                                                       |
-|    8 | jumper wire                   | **11b** → top **blue** rail (−), near column 11                                                                         | ground (black)                                                                         |
-|    9 | C5 100nF capacitor            | **12a** and top **blue** rail (−), near column 12                                                                       | ceramic: either way round; keep the legs short                                         |
-|   10 | R1 10 kΩ resistor             | **5i** and bottom **red** rail (+), near column 5                                                                       | either way round                                                                       |
-|   11 | C4 100nF capacitor            | **3h** and **5h**                                                                                                       | ceramic: either way round; keep the legs short                                         |
-|   12 | USB-serial adapter lead: DTR  | from USB-serial adapter **DTR** to **3j**                                                                               | female-to-male Dupont lead                                                             |
-|   13 | USB-serial adapter lead: TXD  | from USB-serial adapter **TXD** to **6h**                                                                               | female-to-male Dupont lead                                                             |
-|   14 | USB-serial adapter lead: RXD  | from USB-serial adapter **RXD** to **7h**                                                                               | female-to-male Dupont lead                                                             |
-|   15 | USB-serial adapter lead: GND  | from USB-serial adapter **GND** to bottom **blue** rail (−), near column 8                                              | female-to-male Dupont lead                                                             |
-|   16 | Y1 16MHz crystal              | **13h** and **14h**                                                                                                     | no polarity; the metal can may be left standing up                                     |
-|   17 | C2 22pF capacitor             | **13i** and bottom **blue** rail (−), near column 13                                                                    | ceramic: either way round; keep the legs short                                         |
-|   18 | C3 22pF capacitor             | **14i** and bottom **blue** rail (−), near column 14                                                                    | ceramic: either way round; keep the legs short                                         |
-|   19 | USBasp ISP lead: MISO         | from USBasp ISP pin **1** (MISO) to **15c**                                                                             | female-to-male Dupont lead                                                             |
-|   20 | USBasp ISP lead: SCK          | from USBasp ISP pin **3** (SCK) to **14c**                                                                              | female-to-male Dupont lead                                                             |
-|   21 | USBasp ISP lead: MOSI         | from USBasp ISP pin **4** (MOSI) to **16c**                                                                             | female-to-male Dupont lead                                                             |
-|   22 | USBasp ISP lead: RESET        | from USBasp ISP pin **5** (RESET) to **5j**                                                                             | female-to-male Dupont lead                                                             |
-|   23 | USBasp ISP lead: GND          | from USBasp ISP pin **6** (GND) to top **blue** rail (−), near column 6                                                 | female-to-male Dupont lead                                                             |
-|   24 | jumper wire                   | **18b** → **22a**                                                                                                       | signal D9 (any colour)                                                                 |
-|   25 | R2 680 Ω resistor             | **22d** and **22g**                                                                                                     | either way round                                                                       |
-|   26 | D1 red LED                    | **long leg** in **22h**, **short leg** in bottom **blue** rail (−), near column 22                                      | the long leg (+) goes towards the resistor                                             |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | U1 ATmega328P-PU (programmer) | Pin 1 in hole **5f**, notch to the **left**. Pins 1–14 run along row f (columns 5–18); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+| 2 | jumper wire | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2 | +5 V power (red) |
+| 3 | jumper wire | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1 | ground (black) |
+| 4 | jumper wire | **11j** → bottom **red** rail (+), near column 11 | +5 V power (red) |
+| 5 | jumper wire | **12j** → bottom **blue** rail (−), near column 12 | ground (black) |
+| 6 | C1 100nF capacitor | **11i** and **12i** | ceramic: either way round; keep the legs short |
+| 7 | jumper wire | **13b** → top **red** rail (+), near column 13 | +5 V power (red) |
+| 8 | jumper wire | **11b** → top **blue** rail (−), near column 11 | ground (black) |
+| 9 | C5 100nF capacitor | **12a** and top **blue** rail (−), near column 12 | ceramic: either way round; keep the legs short |
+| 10 | R1 10 kΩ resistor | **5i** and bottom **red** rail (+), near column 5 | either way round |
+| 11 | C4 100nF capacitor | **3h** and **5h** | ceramic: either way round; keep the legs short |
+| 12 | USB-serial adapter lead: DTR | from USB-serial adapter **DTR** to **3j** | female-to-male Dupont lead |
+| 13 | USB-serial adapter lead: TXD | from USB-serial adapter **TXD** to **6h** | female-to-male Dupont lead |
+| 14 | USB-serial adapter lead: RXD | from USB-serial adapter **RXD** to **7h** | female-to-male Dupont lead |
+| 15 | USB-serial adapter lead: GND | from USB-serial adapter **GND** to bottom **blue** rail (−), near column 8 | female-to-male Dupont lead |
+| 16 | Y1 16MHz crystal | **13h** and **14h** | no polarity; the metal can may be left standing up |
+| 17 | C2 22pF capacitor | **13i** and bottom **blue** rail (−), near column 13 | ceramic: either way round; keep the legs short |
+| 18 | C3 22pF capacitor | **14i** and bottom **blue** rail (−), near column 14 | ceramic: either way round; keep the legs short |
+| 19 | USBasp ISP lead: MISO | from USBasp ISP pin **1** (MISO) to **15c** | female-to-male Dupont lead |
+| 20 | USBasp ISP lead: SCK | from USBasp ISP pin **3** (SCK) to **14c** | female-to-male Dupont lead |
+| 21 | USBasp ISP lead: MOSI | from USBasp ISP pin **4** (MOSI) to **16c** | female-to-male Dupont lead |
+| 22 | USBasp ISP lead: RESET | from USBasp ISP pin **5** (RESET) to **5j** | female-to-male Dupont lead |
+| 23 | USBasp ISP lead: GND | from USBasp ISP pin **6** (GND) to top **blue** rail (−), near column 6 | female-to-male Dupont lead |
+| 24 | jumper wire | **18b** → **22a** | signal D9 (any colour) |
+| 25 | R2 680 Ω resistor | **22d** and **22g** | either way round |
+| 26 | D1 red LED | **long leg** in **22h**, **short leg** in bottom **blue** rail (−), near column 22 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:1 -->
-| Starts at                          | Then goes through                                           |
-| ---------------------------------- | ----------------------------------------------------------- |
-| U1 pin **7** (VCC)                 | **+5 V**                                                    |
-| U1 pin **20** (AVCC)               | **+5 V**                                                    |
-| U1 pin **8** (GND)                 | **GND**                                                     |
-| U1 pin **22** (GND)                | **GND**                                                     |
-| U1 pin **21** (AREF)               | C5 100nF → **GND**                                          |
-| net **+5V**                        | C1 100nF → **GND**                                          |
-| U1 pin **1** (RESET)               | net **RESET**                                               |
-| net **RESET**                      | R1 10 kΩ → **+5 V**                                         |
-| U1 pin **9** (XTAL1)               | net **XTAL1**                                               |
-| U1 pin **10** (XTAL2)              | net **XTAL2**                                               |
-| net **XTAL1**                      | Y1 16MHz crystal → net **XTAL2**                            |
-| net **XTAL1**                      | C2 22pF → **GND**                                           |
-| net **XTAL2**                      | C3 22pF → **GND**                                           |
-| U1 pin **15** (D9 (PB1))           | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
-| J2 pin **1** (GND)                 | **GND**                                                     |
-| J2 pin **2** (TXD (to chip RXD))   | net **TO_RXD**                                              |
-| U1 pin **2** (RXD (PD0))           | net **TO_RXD**                                              |
-| J2 pin **3** (RXD (from chip TXD)) | net **FROM_TXD**                                            |
-| U1 pin **3** (TXD (PD1))           | net **FROM_TXD**                                            |
-| J2 pin **4** (DTR)                 | C4 100nF → net **RESET**                                    |
-| J3 pin **1** (MISO)                | net **MISO**                                                |
-| J3 pin **3** (SCK)                 | net **SCK**                                                 |
-| J3 pin **4** (MOSI)                | net **MOSI**                                                |
-| J3 pin **5** (RESET)               | net **RESET**                                               |
-| J3 pin **6** (GND)                 | **GND**                                                     |
-| U1 pin **17** (MOSI (PB3))         | net **MOSI**                                                |
-| U1 pin **18** (MISO (PB4))         | net **MISO**                                                |
-| U1 pin **19** (SCK (PB5))          | net **SCK**                                                 |
+| Starts at | Then goes through |
+|---|---|
+| U1 pin **7** (VCC) | **+5 V** |
+| U1 pin **20** (AVCC) | **+5 V** |
+| U1 pin **8** (GND) | **GND** |
+| U1 pin **22** (GND) | **GND** |
+| U1 pin **21** (AREF) | C5 100nF → **GND** |
+| net **+5V** | C1 100nF → **GND** |
+| U1 pin **1** (RESET) | net **RESET** |
+| net **RESET** | R1 10 kΩ → **+5 V** |
+| U1 pin **9** (XTAL1) | net **XTAL1** |
+| U1 pin **10** (XTAL2) | net **XTAL2** |
+| net **XTAL1** | Y1 16MHz crystal → net **XTAL2** |
+| net **XTAL1** | C2 22pF → **GND** |
+| net **XTAL2** | C3 22pF → **GND** |
+| U1 pin **15** (D9 (PB1)) | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
+| J2 pin **1** (GND) | **GND** |
+| J2 pin **2** (TXD (to chip RXD)) | net **TO_RXD** |
+| U1 pin **2** (RXD (PD0)) | net **TO_RXD** |
+| J2 pin **3** (RXD (from chip TXD)) | net **FROM_TXD** |
+| U1 pin **3** (TXD (PD1)) | net **FROM_TXD** |
+| J2 pin **4** (DTR) | C4 100nF → net **RESET** |
+| J3 pin **1** (MISO) | net **MISO** |
+| J3 pin **3** (SCK) | net **SCK** |
+| J3 pin **4** (MOSI) | net **MOSI** |
+| J3 pin **5** (RESET) | net **RESET** |
+| J3 pin **6** (GND) | **GND** |
+| U1 pin **17** (MOSI (PB3)) | net **MOSI** |
+| U1 pin **18** (MISO (PB4)) | net **MISO** |
+| U1 pin **19** (SCK (PB5)) | net **SCK** |
 <!-- /connections -->
 
 ## 3. Check before you power it

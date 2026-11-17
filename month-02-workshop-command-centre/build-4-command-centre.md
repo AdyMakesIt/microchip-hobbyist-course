@@ -23,22 +23,22 @@ only make a constant buzz with this program.
 ![Breadboard layout for build 4](images/build-4-breadboard.png)
 
 <!-- placement:4 -->
-| Step | Part               | Where it goes                                                     | Notes                                                                                                  |
-| ---: | ------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-|    1 | SW2 push button    | straddling the centre channel with legs in **26e, 28e, 26f, 28f** | only the diagonal legs (26e and 28f) are wired; keep strips 28e and 26f empty. Works either way round. |
-|    2 | jumper wire        | **26a** → top **blue** rail (−), near column 26                   | ground (black)                                                                                         |
-|    3 | jumper wire        | **28h** → **31h**                                                 | signal GPB1 (any colour)                                                                               |
-|    4 | jumper wire        | **21c** → **55a**                                                 | signal RD3 (any colour)                                                                                |
-|    5 | R14 100 Ω resistor | **55d** and **55g**                                               | either way round                                                                                       |
-|    6 | BZ1 piezo          | **55h** and bottom **blue** rail (−), near column 55              | a bare piezo disc has no polarity                                                                      |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | SW2 push button | straddling the centre channel with legs in **26e, 28e, 26f, 28f** | only the diagonal legs (26e and 28f) are wired; keep strips 28e and 26f empty. Works either way round. |
+| 2 | jumper wire | **26a** → top **blue** rail (−), near column 26 | ground (black) |
+| 3 | jumper wire | **28h** → **31h** | signal GPB1 (any colour) |
+| 4 | jumper wire | **21c** → **55a** | signal RD3 (any colour) |
+| 5 | R14 100 Ω resistor | **55d** and **55g** | either way round |
+| 6 | BZ1 piezo | **55h** and bottom **blue** rail (−), near column 55 | a bare piezo disc has no polarity |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:4 -->
-| Starts at                   | Then goes through               |
-| --------------------------- | ------------------------------- |
-| U2 pin **2** (GPB1)         | SW2 button → **GND**            |
+| Starts at | Then goes through |
+|---|---|
+| U2 pin **2** (GPB1) | SW2 button → **GND** |
 | U1 pin **22** (RD3 (piezo)) | R14 100 Ω → BZ1 piezo → **GND** |
 <!-- /connections -->
 

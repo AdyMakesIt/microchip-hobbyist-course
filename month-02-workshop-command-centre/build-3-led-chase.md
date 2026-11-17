@@ -21,47 +21,47 @@
 ![Breadboard layout for build 3](images/build-3-breadboard.png)
 
 <!-- placement:3 -->
-| Step | Part               | Where it goes                                                                      | Notes                                                                                                  |
-| ---: | ------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-|    1 | jumper wire        | **36b** → **45a**                                                                  | signal GPA1 (any colour)                                                                               |
-|    2 | R7 680 Ω resistor  | **45d** and **45g**                                                                | either way round                                                                                       |
-|    3 | D3 red LED         | **long leg** in **45h**, **short leg** in bottom **blue** rail (−), near column 45 | the long leg (+) goes towards the resistor                                                             |
-|    4 | jumper wire        | **35b** → **46a**                                                                  | signal GPA2 (any colour)                                                                               |
-|    5 | R8 680 Ω resistor  | **46d** and **46g**                                                                | either way round                                                                                       |
-|    6 | D4 red LED         | **long leg** in **46h**, **short leg** in bottom **blue** rail (−), near column 46 | the long leg (+) goes towards the resistor                                                             |
-|    7 | jumper wire        | **34b** → **47a**                                                                  | signal GPA3 (any colour)                                                                               |
-|    8 | R9 680 Ω resistor  | **47d** and **47g**                                                                | either way round                                                                                       |
-|    9 | D5 red LED         | **long leg** in **47h**, **short leg** in bottom **blue** rail (−), near column 47 | the long leg (+) goes towards the resistor                                                             |
-|   10 | jumper wire        | **33b** → **48a**                                                                  | signal GPA4 (any colour)                                                                               |
-|   11 | R10 680 Ω resistor | **48d** and **48g**                                                                | either way round                                                                                       |
-|   12 | D6 red LED         | **long leg** in **48h**, **short leg** in bottom **blue** rail (−), near column 48 | the long leg (+) goes towards the resistor                                                             |
-|   13 | jumper wire        | **32b** → **49a**                                                                  | signal GPA5 (any colour)                                                                               |
-|   14 | R11 680 Ω resistor | **49d** and **49g**                                                                | either way round                                                                                       |
-|   15 | D7 red LED         | **long leg** in **49h**, **short leg** in bottom **blue** rail (−), near column 49 | the long leg (+) goes towards the resistor                                                             |
-|   16 | jumper wire        | **31b** → **50a**                                                                  | signal GPA6 (any colour)                                                                               |
-|   17 | R12 680 Ω resistor | **50d** and **50g**                                                                | either way round                                                                                       |
-|   18 | D8 red LED         | **long leg** in **50h**, **short leg** in bottom **blue** rail (−), near column 50 | the long leg (+) goes towards the resistor                                                             |
-|   19 | jumper wire        | **30b** → **51a**                                                                  | signal GPA7 (any colour)                                                                               |
-|   20 | R13 680 Ω resistor | **51d** and **51g**                                                                | either way round                                                                                       |
-|   21 | D9 red LED         | **long leg** in **51h**, **short leg** in bottom **blue** rail (−), near column 51 | the long leg (+) goes towards the resistor                                                             |
-|   22 | SW1 push button    | straddling the centre channel with legs in **23e, 25e, 23f, 25f**                  | only the diagonal legs (23e and 25f) are wired; keep strips 25e and 23f empty. Works either way round. |
-|   23 | jumper wire        | **23a** → top **blue** rail (−), near column 23                                    | ground (black)                                                                                         |
-|   24 | jumper wire        | **25g** → **30g**                                                                  | signal GPB0 (any colour)                                                                               |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | jumper wire | **36b** → **45a** | signal GPA1 (any colour) |
+| 2 | R7 680 Ω resistor | **45d** and **45g** | either way round |
+| 3 | D3 red LED | **long leg** in **45h**, **short leg** in bottom **blue** rail (−), near column 45 | the long leg (+) goes towards the resistor |
+| 4 | jumper wire | **35b** → **46a** | signal GPA2 (any colour) |
+| 5 | R8 680 Ω resistor | **46d** and **46g** | either way round |
+| 6 | D4 red LED | **long leg** in **46h**, **short leg** in bottom **blue** rail (−), near column 46 | the long leg (+) goes towards the resistor |
+| 7 | jumper wire | **34b** → **47a** | signal GPA3 (any colour) |
+| 8 | R9 680 Ω resistor | **47d** and **47g** | either way round |
+| 9 | D5 red LED | **long leg** in **47h**, **short leg** in bottom **blue** rail (−), near column 47 | the long leg (+) goes towards the resistor |
+| 10 | jumper wire | **33b** → **48a** | signal GPA4 (any colour) |
+| 11 | R10 680 Ω resistor | **48d** and **48g** | either way round |
+| 12 | D6 red LED | **long leg** in **48h**, **short leg** in bottom **blue** rail (−), near column 48 | the long leg (+) goes towards the resistor |
+| 13 | jumper wire | **32b** → **49a** | signal GPA5 (any colour) |
+| 14 | R11 680 Ω resistor | **49d** and **49g** | either way round |
+| 15 | D7 red LED | **long leg** in **49h**, **short leg** in bottom **blue** rail (−), near column 49 | the long leg (+) goes towards the resistor |
+| 16 | jumper wire | **31b** → **50a** | signal GPA6 (any colour) |
+| 17 | R12 680 Ω resistor | **50d** and **50g** | either way round |
+| 18 | D8 red LED | **long leg** in **50h**, **short leg** in bottom **blue** rail (−), near column 50 | the long leg (+) goes towards the resistor |
+| 19 | jumper wire | **30b** → **51a** | signal GPA7 (any colour) |
+| 20 | R13 680 Ω resistor | **51d** and **51g** | either way round |
+| 21 | D9 red LED | **long leg** in **51h**, **short leg** in bottom **blue** rail (−), near column 51 | the long leg (+) goes towards the resistor |
+| 22 | SW1 push button | straddling the centre channel with legs in **23e, 25e, 23f, 25f** | only the diagonal legs (23e and 25f) are wired; keep strips 25e and 23f empty. Works either way round. |
+| 23 | jumper wire | **23a** → top **blue** rail (−), near column 23 | ground (black) |
+| 24 | jumper wire | **25g** → **30g** | signal GPB0 (any colour) |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:3 -->
-| Starts at            | Then goes through                                            |
-| -------------------- | ------------------------------------------------------------ |
-| U2 pin **22** (GPA1) | R7 680 Ω → D3 LED (long leg towards the resistor) → **GND**  |
-| U2 pin **23** (GPA2) | R8 680 Ω → D4 LED (long leg towards the resistor) → **GND**  |
-| U2 pin **24** (GPA3) | R9 680 Ω → D5 LED (long leg towards the resistor) → **GND**  |
+| Starts at | Then goes through |
+|---|---|
+| U2 pin **22** (GPA1) | R7 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
+| U2 pin **23** (GPA2) | R8 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
+| U2 pin **24** (GPA3) | R9 680 Ω → D5 LED (long leg towards the resistor) → **GND** |
 | U2 pin **25** (GPA4) | R10 680 Ω → D6 LED (long leg towards the resistor) → **GND** |
 | U2 pin **26** (GPA5) | R11 680 Ω → D7 LED (long leg towards the resistor) → **GND** |
 | U2 pin **27** (GPA6) | R12 680 Ω → D8 LED (long leg towards the resistor) → **GND** |
 | U2 pin **28** (GPA7) | R13 680 Ω → D9 LED (long leg towards the resistor) → **GND** |
-| U2 pin **1** (GPB0)  | SW1 button → **GND**                                         |
+| U2 pin **1** (GPB0) | SW1 button → **GND** |
 <!-- /connections -->
 
 ## 3. Check before you power it

@@ -20,27 +20,27 @@
 ![Breadboard layout for build 3](images/build-3-breadboard.png)
 
 <!-- placement:3 -->
-| Step | Part               | Where it goes                                                                      | Notes                                                                                              |
-| ---: | ------------------ | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-|    1 | jumper wire        | **15h** → **34a**                                                                  | signal RC6 (any colour)                                                                            |
-|    2 | R10 680 Ω resistor | **34d** and **34g**                                                                | either way round                                                                                   |
-|    3 | D7 red LED         | **long leg** in **34h**, **short leg** in bottom **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor                                                         |
-|    4 | jumper wire        | **16h** → **35a**                                                                  | signal RC7 (any colour)                                                                            |
-|    5 | R11 680 Ω resistor | **35d** and **35g**                                                                | either way round                                                                                   |
-|    6 | D8 red LED         | **long leg** in **35h**, **short leg** in bottom **blue** rail (−), near column 35 | the long leg (+) goes towards the resistor                                                         |
-|    7 | SW1 push button    | straddling the centre channel with legs in **3e, 5e, 3f, 5f**                      | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
-|    8 | jumper wire        | **3a** → top **blue** rail (−), near column 3                                      | ground (black)                                                                                     |
-|    9 | jumper wire        | **5g** → **11b**                                                                   | signal RA2 (any colour)                                                                            |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | jumper wire | **15h** → **34a** | signal RC6 (any colour) |
+| 2 | R10 680 Ω resistor | **34d** and **34g** | either way round |
+| 3 | D7 red LED | **long leg** in **34h**, **short leg** in bottom **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor |
+| 4 | jumper wire | **16h** → **35a** | signal RC7 (any colour) |
+| 5 | R11 680 Ω resistor | **35d** and **35g** | either way round |
+| 6 | D8 red LED | **long leg** in **35h**, **short leg** in bottom **blue** rail (−), near column 35 | the long leg (+) goes towards the resistor |
+| 7 | SW1 push button | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
+| 8 | jumper wire | **3a** → top **blue** rail (−), near column 3 | ground (black) |
+| 9 | jumper wire | **5g** → **11b** | signal RA2 (any colour) |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:3 -->
-| Starts at                    | Then goes through                                            |
-| ---------------------------- | ------------------------------------------------------------ |
-| U1 pin **8** (RC6)           | R10 680 Ω → D7 LED (long leg towards the resistor) → **GND** |
-| U1 pin **9** (RC7)           | R11 680 Ω → D8 LED (long leg towards the resistor) → **GND** |
-| U1 pin **17** (RA2 (button)) | SW1 button → **GND**                                         |
+| Starts at | Then goes through |
+|---|---|
+| U1 pin **8** (RC6) | R10 680 Ω → D7 LED (long leg towards the resistor) → **GND** |
+| U1 pin **9** (RC7) | R11 680 Ω → D8 LED (long leg towards the resistor) → **GND** |
+| U1 pin **17** (RA2 (button)) | SW1 button → **GND** |
 <!-- /connections -->
 
 ## 3. Check before you power it

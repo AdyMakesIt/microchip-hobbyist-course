@@ -7,41 +7,41 @@ Every month uses **two new free-sample chips** (three of each), plus parts from 
 
 ## The path
 
-| Phase                      | Months | What it covers                                                               |
-| -------------------------- | :----: | ---------------------------------------------------------------------------- |
-| Foundations                |  1–5   | the real tools, the three buses (I2C, SPI) and the first memory chip         |
-| Buses, memory and analogue |  6–12  | hardware peripherals and the analogue world                                  |
-| New families               | 13–18  | dsPIC33, PIC32, tiny chips and modern AVR, with peripherals you already know |
-| Projects                   | 19–24  | multi-chip projects, a network, power and sound, and a capstone              |
+| Phase | Months | What it covers |
+|---|:-:|---|
+| Foundations | 1–5 | the real tools, the three buses (I2C, SPI) and the first memory chip |
+| Buses, memory and analogue | 6–12 | hardware peripherals and the analogue world |
+| New families | 13–18 | dsPIC33, PIC32, tiny chips and modern AVR, with peripherals you already know |
+| Projects | 19–24 | multi-chip projects, a network, power and sound, and a capstone |
 
 ## Month by month
 
-| Month | Project                                                                  | New chips (free samples)            | Main chip                    | What you learn                                                                                                         | Extra parts to buy                                   |
-| :---: | ------------------------------------------------------------------------ | ----------------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-|   1   | [Electronic dice](../month-01-electronic-dice/README.md)                 | ATmega328P-PU, PIC16F18857-I/SP     | ATmega328P, then PIC16F18857 | Plain C without the Arduino IDE; outputs and inputs; a PICkit 3 and a USBasp or Uno as programmers                     | Crystal                                              |
-|   2   | [Workshop Command Centre](../month-02-workshop-command-centre/README.md) | PIC18F47K42-I/P, MCP23017-E/SP      | PIC18F47K42                  | I2C by hand; fault codes; edge detection                                                                               | –                                                    |
-|   3   | [Analogue in, analogue out](../month-03-analogue-in-out/README.md)       | MCP3008-I/P, MCP4822-E/P            | PIC18F47K42                  | SPI by hand; converting voltages to numbers and back; self-tests                                                       | –                                                    |
-|   4   | [The binary clock](../month-04-binary-clock/README.md)                   | PIC16F18446-I/P, MCP7940N-I/P       | PIC16F18446                  | Moving a program between chips of one family; BCD; a 32.768 kHz crystal                                                | Crystal                                              |
-|   5   | [A 16-bit chip at 3.3 V](../month-05-sixteen-bit-and-memory/README.md)   | PIC24FJ64GA002-I/SP, 24LC512-I/P    | PIC24FJ64GA002               | 3.3 V supplies; a 16-bit core; EEPROM pages and ACK polling                                                            | –                                                    |
-|   6   | SPI memory                                                               | 25LC1024-I/P, 23LC1024-I/P          | PIC24FJ64GA002               | The PIC24's built-in SPI and peripheral pin select; EEPROM versus SRAM speed                                           | –                                                    |
-|   7   | Hardware SPI and I2C on AVR                                              | MCP23S17-E/SP, MCP23008-E/P         | ATmega328P                   | The ATmega328P's SPI and TWI hardware; comparing SPI and I2C                                                           | Keypad                                               |
-|   8   | USB two ways                                                             | MCP2221A-I/P, PIC16F1454-I/P        | PC + PIC16F1454, PIC18F47K42 | A USB-to-serial bridge; a PIC with USB built in; the first use of Microchip's code generator (MCC) for a large library | USB socket breakout board                            |
-|   9   | Sensing the world                                                        | MCP9700A-E/TO, TC74A0-5.0VAT        | ATmega328P                   | ADC accuracy; analogue versus digital sensors; logging to the EEPROM                                                   | –                                                    |
-|  10   | Op-amps and comparators                                                  | MCP6004-I/P, MCP6542-I/P            | PIC16F18857                  | Buffers, gain, hysteresis and filters                                                                                  | LDR (light-dependent resistor)                       |
-|  11   | Programmable analogue                                                    | MCP4151-103E/P, MCP6S21-I/P         | PIC18F47K42                  | Letting software set analogue values over SPI                                                                          | Speaker                                              |
-|  12   | Power and reset                                                          | MCP1702-3302E/TO, MCP100-xxx/TO     | PIC18F47K42                  | Regulators, dropout, supervisors and brown-out                                                                         | –                                                    |
-|  13   | dsPIC33: a signal controller                                             | dsPIC33EV128GM002-I/SP, MCP3551-E/P | dsPIC33EV                    | A fast 16-bit core, timers and PWM; measuring tiny voltages precisely                                                  | –                                                    |
-|  14   | Waveforms with a real reference                                          | MCP4922-E/P, MCP1525-I/TO           | dsPIC33EV                    | Waveform tables; PWM through a filter; the effect of a precise reference                                               | –                                                    |
-|  15   | PIC32: a 32-bit chip                                                     | PIC32MX170F256B-I/SP, MCP79410-I/P  | PIC32MX (3.3 V)              | XC32; a fast 32-bit core; a clock chip with EEPROM and a unique ID                                                     | –                                                    |
-|  16   | Other serial buses                                                       | 11LC010-I/TO, 93LC66B-I/P           | any of your chips            | Bit-banging unusual protocols; separating a hardware layer from a device layer                                         | –                                                    |
-|  17   | Tiny chips: AVR and PIC                                                  | ATtiny85-20PU, PIC12F1840-I/P       | ATtiny85, PIC12F1840         | How little a program can use; comparing a tiny AVR with a tiny PIC                                                     | –                                                    |
-|  18   | Bigger and newer AVRs                                                    | ATmega1284P-PU, AVR128DB28-I/SP     | ATmega1284P, AVR128DB28      | A 128 KB AVR with more peripherals; the modern AVR's event system (optional month, needs a UPDI programmer)            | –                                                    |
-|  19   | Data logger                                                              | MCP3202-CI/P, 24AA02E48-I/P         | any of your chips            | A multi-chip project: clock, memory, sensors, a precise ADC and a node ID                                              | CR2032 cell and holder                               |
-|  20   | CAN bus: two nodes                                                       | MCP2515-I/P, MCP2562-E/P            | PIC18F47K42 + ATmega328P     | CAN messages between two different chip families                                                                       | Crystal                                              |
-|  21   | Motors and power switching                                               | MCP1407-E/P, MCP6022-I/P            | dsPIC33EV or PIC16F18857     | MOSFET switching, PWM speed control, flyback protection and current sensing                                            | Resistor 0.1 Ω, MOSFET, Diode, DC motor, Hobby servo |
-|  22   | Sound and signals                                                        | TC7660EPA, MCP6S22-I/P              | dsPIC33EV                    | A negative rail for an audio op-amp; stereo programmable gain; a simple synthesizer                                    | –                                                    |
-|  23   | Low power                                                                | MCP1700-3302E/TO, TC54VN3002EZB     | PIC or AVR                   | Sleep modes, wake-up sources, an ultra-low-power regulator and a battery-low detector                                  | –                                                    |
-|  24   | Capstone                                                                 | two of your choice                  | your choice                  | Combine at least three chips from earlier months; order two chips of your choice from the shortlist                    | –                                                    |
+| Month | Project | New chips (free samples) | Main chip | What you learn | Extra parts to buy |
+|:-:|---|---|---|---|---|
+| 1 | [Electronic dice](../month-01-electronic-dice/README.md) | ATmega328P-PU, PIC16F18857-I/SP | ATmega328P, then PIC16F18857 | Plain C without the Arduino IDE; outputs and inputs; a PICkit 3 and a USBasp or Uno as programmers | Crystal |
+| 2 | [Workshop Command Centre](../month-02-workshop-command-centre/README.md) | PIC18F47K42-I/P, MCP23017-E/SP | PIC18F47K42 | I2C by hand; fault codes; edge detection | – |
+| 3 | [Analogue in, analogue out](../month-03-analogue-in-out/README.md) | MCP3008-I/P, MCP4822-E/P | PIC18F47K42 | SPI by hand; converting voltages to numbers and back; self-tests | – |
+| 4 | [The binary clock](../month-04-binary-clock/README.md) | PIC16F18446-I/P, MCP7940N-I/P | PIC16F18446 | Moving a program between chips of one family; BCD; a 32.768 kHz crystal | Crystal |
+| 5 | [A 16-bit chip at 3.3 V](../month-05-sixteen-bit-and-memory/README.md) | PIC24FJ64GA002-I/SP, 24LC512-I/P | PIC24FJ64GA002 | 3.3 V supplies; a 16-bit core; EEPROM pages and ACK polling | – |
+| 6 | SPI memory | 25LC1024-I/P, 23LC1024-I/P | PIC24FJ64GA002 | The PIC24's built-in SPI and peripheral pin select; EEPROM versus SRAM speed | – |
+| 7 | Hardware SPI and I2C on AVR | MCP23S17-E/SP, MCP23008-E/P | ATmega328P | The ATmega328P's SPI and TWI hardware; comparing SPI and I2C | Keypad |
+| 8 | USB two ways | MCP2221A-I/P, PIC16F1454-I/P | PC + PIC16F1454, PIC18F47K42 | A USB-to-serial bridge; a PIC with USB built in; the first use of Microchip's code generator (MCC) for a large library | USB socket breakout board |
+| 9 | Sensing the world | MCP9700A-E/TO, TC74A0-5.0VAT | ATmega328P | ADC accuracy; analogue versus digital sensors; logging to the EEPROM | – |
+| 10 | Op-amps and comparators | MCP6004-I/P, MCP6542-I/P | PIC16F18857 | Buffers, gain, hysteresis and filters | LDR (light-dependent resistor) |
+| 11 | Programmable analogue | MCP4151-103E/P, MCP6S21-I/P | PIC18F47K42 | Letting software set analogue values over SPI | Speaker |
+| 12 | Power and reset | MCP1702-3302E/TO, MCP100-xxx/TO | PIC18F47K42 | Regulators, dropout, supervisors and brown-out | – |
+| 13 | dsPIC33: a signal controller | dsPIC33EV128GM002-I/SP, MCP3551-E/P | dsPIC33EV | A fast 16-bit core, timers and PWM; measuring tiny voltages precisely | – |
+| 14 | Waveforms with a real reference | MCP4922-E/P, MCP1525-I/TO | dsPIC33EV | Waveform tables; PWM through a filter; the effect of a precise reference | – |
+| 15 | PIC32: a 32-bit chip | PIC32MX170F256B-I/SP, MCP79410-I/P | PIC32MX (3.3 V) | XC32; a fast 32-bit core; a clock chip with EEPROM and a unique ID | – |
+| 16 | Other serial buses | 11LC010-I/TO, 93LC66B-I/P | any of your chips | Bit-banging unusual protocols; separating a hardware layer from a device layer | – |
+| 17 | Tiny chips: AVR and PIC | ATtiny85-20PU, PIC12F1840-I/P | ATtiny85, PIC12F1840 | How little a program can use; comparing a tiny AVR with a tiny PIC | – |
+| 18 | Bigger and newer AVRs | ATmega1284P-PU, AVR128DB28-I/SP | ATmega1284P, AVR128DB28 | A 128 KB AVR with more peripherals; the modern AVR's event system (optional month, needs a UPDI programmer) | – |
+| 19 | Data logger | MCP3202-CI/P, 24AA02E48-I/P | any of your chips | A multi-chip project: clock, memory, sensors, a precise ADC and a node ID | CR2032 cell and holder |
+| 20 | CAN bus: two nodes | MCP2515-I/P, MCP2562-E/P | PIC18F47K42 + ATmega328P | CAN messages between two different chip families | Crystal |
+| 21 | Motors and power switching | MCP1407-E/P, MCP6022-I/P | dsPIC33EV or PIC16F18857 | MOSFET switching, PWM speed control, flyback protection and current sensing | Resistor 0.1 Ω, MOSFET, Diode, DC motor, Hobby servo |
+| 22 | Sound and signals | TC7660EPA, MCP6S22-I/P | dsPIC33EV | A negative rail for an audio op-amp; stereo programmable gain; a simple synthesizer | – |
+| 23 | Low power | MCP1700-3302E/TO, TC54VN3002EZB | PIC or AVR | Sleep modes, wake-up sources, an ultra-low-power regulator and a battery-low detector | – |
+| 24 | Capstone | two of your choice | your choice | Combine at least three chips from earlier months; order two chips of your choice from the shortlist | – |
 
 ## Details of each month
 

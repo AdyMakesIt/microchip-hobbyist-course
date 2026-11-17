@@ -38,66 +38,66 @@ The MCP7940N's I2C address is fixed at **0x6F**.
 **The crystal is delicate.** Do not bend its legs close to the body. Seat it so its legs reach the holes without strain.
 
 <!-- placement:2 -->
-| Step | Part                 | Where it goes                                                                                                          | Notes                                                                                  |
-| ---: | -------------------- | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-|    1 | U2 MCP7940N-I/P      | Pin 1 in hole **22f**, notch to the **left**. Pins 1–4 run along row f (columns 22–25); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-|    2 | jumper wire          | top **red** rail (+), near column 31 → top **red** rail (+), near column 32                                            | +5 V power (red)                                                                       |
-|    3 | jumper wire          | bottom **red** rail (+), near column 31 → bottom **red** rail (+), near column 32                                      | +5 V power (red)                                                                       |
-|    4 | jumper wire          | top **blue** rail (−), near column 31 → top **blue** rail (−), near column 32                                          | ground (black)                                                                         |
-|    5 | jumper wire          | bottom **blue** rail (−), near column 31 → bottom **blue** rail (−), near column 32                                    | ground (black)                                                                         |
-|    6 | jumper wire          | **22b** → top **red** rail (+), near column 22                                                                         | +5 V power (red)                                                                       |
-|    7 | jumper wire          | **25h** → bottom **blue** rail (−), near column 25                                                                     | ground (black)                                                                         |
-|    8 | jumper wire          | **24h** → bottom **blue** rail (−), near column 24                                                                     | ground (black)                                                                         |
-|    9 | C2 100nF capacitor   | **22c** and top **blue** rail (−), near column 22                                                                      | ceramic: either way round; keep the legs short                                         |
-|   10 | Y1 32.768kHz crystal | **22h** and **23h**                                                                                                    | no polarity; the metal can may be left standing up                                     |
-|   11 | C3 10pF capacitor    | **22i** and bottom **blue** rail (−), near column 22                                                                   | ceramic: either way round; keep the legs short                                         |
-|   12 | C4 10pF capacitor    | **23i** and bottom **blue** rail (−), near column 23                                                                   | ceramic: either way round; keep the legs short                                         |
-|   13 | jumper wire          | **17b** → **24b**                                                                                                      | signal SCL (any colour)                                                                |
-|   14 | jumper wire          | **15c** → **25c**                                                                                                      | signal SDA (any colour)                                                                |
-|   15 | R3 4.7 kΩ resistor   | **24d** and top **red** rail (+), near column 24                                                                       | either way round                                                                       |
-|   16 | R4 4.7 kΩ resistor   | **25d** and top **red** rail (+), near column 25                                                                       | either way round                                                                       |
-|   17 | jumper wire          | **13b** → **29a**                                                                                                      | signal RC1 (any colour)                                                                |
-|   18 | R5 680 Ω resistor    | **29d** and **29g**                                                                                                    | either way round                                                                       |
-|   19 | D2 red LED           | **long leg** in **29h**, **short leg** in bottom **blue** rail (−), near column 29                                     | the long leg (+) goes towards the resistor                                             |
-|   20 | jumper wire          | **14b** → **30a**                                                                                                      | signal RC2 (any colour)                                                                |
-|   21 | R6 680 Ω resistor    | **30d** and **30g**                                                                                                    | either way round                                                                       |
-|   22 | D3 red LED           | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30                                     | the long leg (+) goes towards the resistor                                             |
-|   23 | jumper wire          | **14h** → **31a**                                                                                                      | signal RC3 (any colour)                                                                |
-|   24 | R7 680 Ω resistor    | **31d** and **31g**                                                                                                    | either way round                                                                       |
-|   25 | D4 red LED           | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31                                     | the long leg (+) goes towards the resistor                                             |
-|   26 | jumper wire          | **13h** → **32a**                                                                                                      | signal RC4 (any colour)                                                                |
-|   27 | R8 680 Ω resistor    | **32d** and **32g**                                                                                                    | either way round                                                                       |
-|   28 | D5 red LED           | **long leg** in **32h**, **short leg** in bottom **blue** rail (−), near column 32                                     | the long leg (+) goes towards the resistor                                             |
-|   29 | jumper wire          | **12h** → **33a**                                                                                                      | signal RC5 (any colour)                                                                |
-|   30 | R9 680 Ω resistor    | **33d** and **33g**                                                                                                    | either way round                                                                       |
-|   31 | D6 red LED           | **long leg** in **33h**, **short leg** in bottom **blue** rail (−), near column 33                                     | the long leg (+) goes towards the resistor                                             |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | U2 MCP7940N-I/P | Pin 1 in hole **22f**, notch to the **left**. Pins 1–4 run along row f (columns 22–25); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+| 2 | jumper wire | top **red** rail (+), near column 31 → top **red** rail (+), near column 32 | +5 V power (red) |
+| 3 | jumper wire | bottom **red** rail (+), near column 31 → bottom **red** rail (+), near column 32 | +5 V power (red) |
+| 4 | jumper wire | top **blue** rail (−), near column 31 → top **blue** rail (−), near column 32 | ground (black) |
+| 5 | jumper wire | bottom **blue** rail (−), near column 31 → bottom **blue** rail (−), near column 32 | ground (black) |
+| 6 | jumper wire | **22b** → top **red** rail (+), near column 22 | +5 V power (red) |
+| 7 | jumper wire | **25h** → bottom **blue** rail (−), near column 25 | ground (black) |
+| 8 | jumper wire | **24h** → bottom **blue** rail (−), near column 24 | ground (black) |
+| 9 | C2 100nF capacitor | **22c** and top **blue** rail (−), near column 22 | ceramic: either way round; keep the legs short |
+| 10 | Y1 32.768kHz crystal | **22h** and **23h** | no polarity; the metal can may be left standing up |
+| 11 | C3 10pF capacitor | **22i** and bottom **blue** rail (−), near column 22 | ceramic: either way round; keep the legs short |
+| 12 | C4 10pF capacitor | **23i** and bottom **blue** rail (−), near column 23 | ceramic: either way round; keep the legs short |
+| 13 | jumper wire | **17b** → **24b** | signal SCL (any colour) |
+| 14 | jumper wire | **15c** → **25c** | signal SDA (any colour) |
+| 15 | R3 4.7 kΩ resistor | **24d** and top **red** rail (+), near column 24 | either way round |
+| 16 | R4 4.7 kΩ resistor | **25d** and top **red** rail (+), near column 25 | either way round |
+| 17 | jumper wire | **13b** → **29a** | signal RC1 (any colour) |
+| 18 | R5 680 Ω resistor | **29d** and **29g** | either way round |
+| 19 | D2 red LED | **long leg** in **29h**, **short leg** in bottom **blue** rail (−), near column 29 | the long leg (+) goes towards the resistor |
+| 20 | jumper wire | **14b** → **30a** | signal RC2 (any colour) |
+| 21 | R6 680 Ω resistor | **30d** and **30g** | either way round |
+| 22 | D3 red LED | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30 | the long leg (+) goes towards the resistor |
+| 23 | jumper wire | **14h** → **31a** | signal RC3 (any colour) |
+| 24 | R7 680 Ω resistor | **31d** and **31g** | either way round |
+| 25 | D4 red LED | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31 | the long leg (+) goes towards the resistor |
+| 26 | jumper wire | **13h** → **32a** | signal RC4 (any colour) |
+| 27 | R8 680 Ω resistor | **32d** and **32g** | either way round |
+| 28 | D5 red LED | **long leg** in **32h**, **short leg** in bottom **blue** rail (−), near column 32 | the long leg (+) goes towards the resistor |
+| 29 | jumper wire | **12h** → **33a** | signal RC5 (any colour) |
+| 30 | R9 680 Ω resistor | **33d** and **33g** | either way round |
+| 31 | D6 red LED | **long leg** in **33h**, **short leg** in bottom **blue** rail (−), near column 33 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:2 -->
-| Starts at                 | Then goes through                                           |
-| ------------------------- | ----------------------------------------------------------- |
-| U2 pin **8** (VCC)        | **+5 V**                                                    |
-| U2 pin **4** (VSS)        | **GND**                                                     |
-| U2 pin **3** (VBAT)       | **GND**                                                     |
-| net **+5V**               | C2 100nF → **GND**                                          |
-| U2 pin **1** (X1)         | net **X1**                                                  |
-| U2 pin **2** (X2)         | net **X2**                                                  |
-| net **X1**                | Y1 32.768kHz crystal → net **X2**                           |
-| net **X1**                | C3 10pF → **GND**                                           |
-| net **X2**                | C4 10pF → **GND**                                           |
-| U2 pin **6** (SCL)        | net **SCL**                                                 |
-| U2 pin **5** (SDA)        | net **SDA**                                                 |
-| net **SCL**               | R3 4.7 kΩ → **+5 V**                                        |
-| net **SDA**               | R4 4.7 kΩ → **+5 V**                                        |
-| U1 pin **11** (RB6 (SCL)) | net **SCL**                                                 |
-| U1 pin **13** (RB4 (SDA)) | net **SDA**                                                 |
-| U1 pin **15** (RC1)       | R5 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
-| U1 pin **14** (RC2)       | R6 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
-| U1 pin **7** (RC3)        | R7 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
-| U1 pin **6** (RC4)        | R8 680 Ω → D5 LED (long leg towards the resistor) → **GND** |
-| U1 pin **5** (RC5)        | R9 680 Ω → D6 LED (long leg towards the resistor) → **GND** |
+| Starts at | Then goes through |
+|---|---|
+| U2 pin **8** (VCC) | **+5 V** |
+| U2 pin **4** (VSS) | **GND** |
+| U2 pin **3** (VBAT) | **GND** |
+| net **+5V** | C2 100nF → **GND** |
+| U2 pin **1** (X1) | net **X1** |
+| U2 pin **2** (X2) | net **X2** |
+| net **X1** | Y1 32.768kHz crystal → net **X2** |
+| net **X1** | C3 10pF → **GND** |
+| net **X2** | C4 10pF → **GND** |
+| U2 pin **6** (SCL) | net **SCL** |
+| U2 pin **5** (SDA) | net **SDA** |
+| net **SCL** | R3 4.7 kΩ → **+5 V** |
+| net **SDA** | R4 4.7 kΩ → **+5 V** |
+| U1 pin **11** (RB6 (SCL)) | net **SCL** |
+| U1 pin **13** (RB4 (SDA)) | net **SDA** |
+| U1 pin **15** (RC1) | R5 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
+| U1 pin **14** (RC2) | R6 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
+| U1 pin **7** (RC3) | R7 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
+| U1 pin **6** (RC4) | R8 680 Ω → D5 LED (long leg towards the resistor) → **GND** |
+| U1 pin **5** (RC5) | R9 680 Ω → D6 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 4. Check before you power it

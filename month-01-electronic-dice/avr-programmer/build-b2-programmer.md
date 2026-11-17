@@ -27,21 +27,21 @@ D1 is already in place from Build B1.
 ![Breadboard layout for build B2](images/build-2-breadboard.png)
 
 <!-- placement:2 -->
-| Step | Part              | Where it goes                                                                      | Notes                                      |
-| ---: | ----------------- | ---------------------------------------------------------------------------------- | ------------------------------------------ |
-|    1 | jumper wire       | **18h** → **23a**                                                                  | signal D8 (any colour)                     |
-|    2 | R5 680 Ω resistor | **23d** and **23g**                                                                | either way round                           |
-|    3 | D2 red LED        | **long leg** in **23h**, **short leg** in bottom **blue** rail (−), near column 23 | the long leg (+) goes towards the resistor |
-|    4 | jumper wire       | **17h** → **24a**                                                                  | signal D7 (any colour)                     |
-|    5 | R6 680 Ω resistor | **24d** and **24g**                                                                | either way round                           |
-|    6 | D3 red LED        | **long leg** in **24h**, **short leg** in bottom **blue** rail (−), near column 24 | the long leg (+) goes towards the resistor |
+| Step | Part | Where it goes | Notes |
+|---:|---|---|---|
+| 1 | jumper wire | **18h** → **23a** | signal D8 (any colour) |
+| 2 | R5 680 Ω resistor | **23d** and **23g** | either way round |
+| 3 | D2 red LED | **long leg** in **23h**, **short leg** in bottom **blue** rail (−), near column 23 | the long leg (+) goes towards the resistor |
+| 4 | jumper wire | **17h** → **24a** | signal D7 (any colour) |
+| 5 | R6 680 Ω resistor | **24d** and **24g** | either way round |
+| 6 | D3 red LED | **long leg** in **24h**, **short leg** in bottom **blue** rail (−), near column 24 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:2 -->
-| Starts at                | Then goes through                                           |
-| ------------------------ | ----------------------------------------------------------- |
+| Starts at | Then goes through |
+|---|---|
 | U1 pin **14** (D8 (PB0)) | R5 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
 | U1 pin **13** (D7 (PD7)) | R6 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->

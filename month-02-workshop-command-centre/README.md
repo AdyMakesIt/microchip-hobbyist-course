@@ -42,18 +42,18 @@ Ask for the **P** (PDIP) package of the PIC18F47K42 and the **SP** (skinny) pack
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part                                                     | Value            | Qty used | Buy at least |
-| -------------------------------------------------------- | ---------------- | -------: | -----------: |
-| Resistor                                                 | 10 kΩ            |        2 |            3 |
-| Resistor                                                 | 100 Ω            |        1 |            2 |
-| Resistor                                                 | 4.7 kΩ           |        2 |            3 |
-| Resistor                                                 | 680 Ω            |        9 |           11 |
-| Ceramic capacitor                                        | 100nF            |        3 |            4 |
-| LED, 5 mm                                                | red              |        9 |           11 |
-| Push button (4-leg tact switch)                          | 6 mm             |        2 |            3 |
-| Piezo disc (passive)                                     |                  |        1 |            2 |
-| Jumper wires, solid or male-to-male                      | assorted lengths |       31 |           37 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
+| Part | Value | Qty used | Buy at least |
+|---|---|---:|---:|
+| Resistor | 10 kΩ | 2 | 3 |
+| Resistor | 100 Ω | 1 | 2 |
+| Resistor | 4.7 kΩ | 2 | 3 |
+| Resistor | 680 Ω | 9 | 11 |
+| Ceramic capacitor | 100nF | 3 | 4 |
+| LED, 5 mm | red | 9 | 11 |
+| Push button (4-leg tact switch) | 6 mm | 2 | 3 |
+| Piezo disc (passive) |  | 1 | 2 |
+| Jumper wires, solid or male-to-male | assorted lengths | 31 | 37 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
 <!-- /bom -->
 
 ### Tools
