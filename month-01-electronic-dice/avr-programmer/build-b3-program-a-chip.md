@@ -29,53 +29,53 @@
 The right-hand half of your power rails needs the four short bridging wires (columns 31 to 32) if your rails have a break in the middle.
 
 <!-- placement:3 -->
-| Step | Part | Where it goes | Notes |
-|---:|---|---|---|
-| 1 | U2 ATmega328P-PU (target) | Pin 1 in hole **30f**, notch to the **left**. Pins 1–14 run along row f (columns 30–43); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-| 2 | jumper wire | top **red** rail (+), near column 31 → top **red** rail (+), near column 32 | +5 V power (red) |
-| 3 | jumper wire | bottom **red** rail (+), near column 31 → bottom **red** rail (+), near column 32 | +5 V power (red) |
-| 4 | jumper wire | top **blue** rail (−), near column 31 → top **blue** rail (−), near column 32 | ground (black) |
-| 5 | jumper wire | bottom **blue** rail (−), near column 31 → bottom **blue** rail (−), near column 32 | ground (black) |
-| 6 | R3 10 kΩ resistor | **30i** and bottom **red** rail (+), near column 30 | either way round |
-| 7 | jumper wire | **17c** → **30g** | signal D10 reset (any colour) |
-| 8 | jumper wire | **36j** → bottom **red** rail (+), near column 36 | +5 V power (red) |
-| 9 | jumper wire | **37j** → bottom **blue** rail (−), near column 37 | ground (black) |
-| 10 | C6 100nF capacitor | **36i** and **37i** | ceramic: either way round; keep the legs short |
-| 11 | jumper wire | **38b** → top **red** rail (+), near column 38 | +5 V power (red) |
-| 12 | jumper wire | **36b** → top **blue** rail (−), near column 36 | ground (black) |
-| 13 | Y2 16MHz crystal | **38h** and **39h** | no polarity; the metal can may be left standing up |
-| 14 | C7 22pF capacitor | **38i** and bottom **blue** rail (−), near column 38 | ceramic: either way round; keep the legs short |
-| 15 | C8 22pF capacitor | **39i** and bottom **blue** rail (−), near column 39 | ceramic: either way round; keep the legs short |
-| 16 | jumper wire | **16b** → **41b** | signal MOSI (any colour) |
-| 17 | jumper wire | **15b** → **40b** | signal MISO (any colour) |
-| 18 | jumper wire | **14b** → **39b** | signal SCK (any colour) |
-| 19 | jumper wire | **43b** → **46a** | signal D9 (any colour) |
-| 20 | R4 680 Ω resistor | **46d** and **46g** | either way round |
-| 21 | D4 red LED | **long leg** in **46h**, **short leg** in bottom **blue** rail (−), near column 46 | the long leg (+) goes towards the resistor |
+| Step | Part                      |    Pin(s)     | Where it goes                                                                                                                                                | Notes                                                                                            |
+| ---: | ------------------------- | :-----------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+|    1 | U2 ATmega328P-PU (target) |       1       | Pin 1 in hole **30f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 30–43); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f).           |
+|    2 | jumper wire               |       –       | top **red** rail (+), near column 31 → top **red** rail (+), near column 32                                                                                  | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
+|    3 | jumper wire               |       –       | bottom **red** rail (+), near column 31 → bottom **red** rail (+), near column 32                                                                            | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
+|    4 | jumper wire               |       –       | top **blue** rail (−), near column 31 → top **blue** rail (−), near column 32                                                                                | ground (black) After placing it, **check the power**: measure across the rails with the meter.   |
+|    5 | jumper wire               |       –       | bottom **blue** rail (−), near column 31 → bottom **blue** rail (−), near column 32                                                                          | ground (black) After placing it, **check the power**: measure across the rails with the meter.   |
+|    6 | R3 10 kΩ resistor         |     U2:1      | **30i** and bottom **red** rail (+), near column 30                                                                                                          | either way round                                                                                 |
+|    7 | jumper wire               | U1:16 / U2:1  | **17c** → **30g**                                                                                                                                            | signal D10 reset (any colour)                                                                    |
+|    8 | jumper wire               |     U2:7      | **36j** → bottom **red** rail (+), near column 36                                                                                                            | +5 V power (red)                                                                                 |
+|    9 | jumper wire               |     U2:8      | **37j** → bottom **blue** rail (−), near column 37                                                                                                           | ground (black)                                                                                   |
+|   10 | C6 100nF capacitor        |  U2:7 / U2:8  | **36i** and **37i**                                                                                                                                          | ceramic: either way round; keep the legs short                                                   |
+|   11 | jumper wire               |     U2:20     | **38b** → top **red** rail (+), near column 38                                                                                                               | +5 V power (red)                                                                                 |
+|   12 | jumper wire               |     U2:22     | **36b** → top **blue** rail (−), near column 36                                                                                                              | ground (black)                                                                                   |
+|   13 | Y2 16MHz crystal          | U2:9 / U2:10  | **38h** and **39h**                                                                                                                                          | no polarity; the metal can may be left standing up                                               |
+|   14 | C7 22pF capacitor         |     U2:9      | **38i** and bottom **blue** rail (−), near column 38                                                                                                         | ceramic: either way round; keep the legs short                                                   |
+|   15 | C8 22pF capacitor         |     U2:10     | **39i** and bottom **blue** rail (−), near column 39                                                                                                         | ceramic: either way round; keep the legs short                                                   |
+|   16 | jumper wire               | U1:17 / U2:17 | **16b** → **41b**                                                                                                                                            | signal MOSI (any colour)                                                                         |
+|   17 | jumper wire               | U1:18 / U2:18 | **15b** → **40b**                                                                                                                                            | signal MISO (any colour)                                                                         |
+|   18 | jumper wire               | U1:19 / U2:19 | **14b** → **39b**                                                                                                                                            | signal SCK (any colour)                                                                          |
+|   19 | jumper wire               |     U2:15     | **43b** → **46a**                                                                                                                                            | signal D9 (any colour)                                                                           |
+|   20 | R4 680 Ω resistor         |       –       | **46d** and **46g**                                                                                                                                          | either way round                                                                                 |
+|   21 | D4 red LED                |       –       | **long leg** in **46h**, **short leg** in bottom **blue** rail (−), near column 46                                                                           | the long leg (+) goes towards the resistor                                                       |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:3 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **16** (D10 (PB2)) | net **TRESET** |
-| U2 pin **7** (VCC) | **+5 V** |
-| U2 pin **20** (AVCC) | **+5 V** |
-| U2 pin **8** (GND) | **GND** |
-| U2 pin **22** (GND) | **GND** |
-| net **+5V** | C6 100nF → **GND** |
-| U2 pin **1** (RESET) | net **TRESET** |
-| net **TRESET** | R3 10 kΩ → **+5 V** |
-| U2 pin **9** (XTAL1) | net **XTAL1B** |
-| U2 pin **10** (XTAL2) | net **XTAL2B** |
-| net **XTAL1B** | Y2 16MHz crystal → net **XTAL2B** |
-| net **XTAL1B** | C7 22pF → **GND** |
-| net **XTAL2B** | C8 22pF → **GND** |
-| U2 pin **17** (MOSI (PB3)) | net **MOSI** |
-| U2 pin **18** (MISO (PB4)) | net **MISO** |
-| U2 pin **19** (SCK (PB5)) | net **SCK** |
-| U2 pin **15** (D9 (PB1)) | R4 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
+| Starts at                  | Then goes through                                           |
+| -------------------------- | ----------------------------------------------------------- |
+| U1 pin **16** (D10 (PB2))  | net **TRESET**                                              |
+| U2 pin **7** (VCC)         | **+5 V**                                                    |
+| U2 pin **20** (AVCC)       | **+5 V**                                                    |
+| U2 pin **8** (GND)         | **GND**                                                     |
+| U2 pin **22** (GND)        | **GND**                                                     |
+| net **+5V**                | C6 100nF → **GND**                                          |
+| U2 pin **1** (RESET)       | net **TRESET**                                              |
+| net **TRESET**             | R3 10 kΩ → **+5 V**                                         |
+| U2 pin **9** (XTAL1)       | net **XTAL1B**                                              |
+| U2 pin **10** (XTAL2)      | net **XTAL2B**                                              |
+| net **XTAL1B**             | Y2 16MHz crystal → net **XTAL2B**                           |
+| net **XTAL1B**             | C7 22pF → **GND**                                           |
+| net **XTAL2B**             | C8 22pF → **GND**                                           |
+| U2 pin **17** (MOSI (PB3)) | net **MOSI**                                                |
+| U2 pin **18** (MISO (PB4)) | net **MISO**                                                |
+| U2 pin **19** (SCK (PB5))  | net **SCK**                                                 |
+| U2 pin **15** (D9 (PB1))   | R4 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 3. Check before you power it

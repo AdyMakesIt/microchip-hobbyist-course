@@ -559,6 +559,12 @@
 <text x="433.0" y="323.0" font-size="9" fill="#222" text-anchor="middle">C1 100nF</text>
 <circle cx="424.0" cy="304.0" r="2.6" fill="#555"/>
 <circle cx="442.0" cy="304.0" r="2.6" fill="#555"/>
+<line x1="460.0" y1="178.0" x2="424.0" y2="178.0" stroke="#ffe34d" stroke-width="22" stroke-linecap="round" opacity=".6"/>
+<line x1="460.0" y1="178.0" x2="424.0" y2="178.0" stroke="#9aa0a6" stroke-width="2"/>
+<ellipse cx="442.0" cy="178.0" rx="7" ry="8" fill="#f2c94c" stroke="#8a6d00"/>
+<text x="442.0" y="197.0" font-size="9" fill="#222" text-anchor="middle">C2 100nF</text>
+<circle cx="460.0" cy="178.0" r="2.6" fill="#555"/>
+<circle cx="424.0" cy="178.0" r="2.6" fill="#555"/>
 <line x1="316.0" y1="304.0" x2="316.0" y2="376.0" stroke="#ffe34d" stroke-width="22" stroke-linecap="round" opacity=".6"/>
 <line x1="316.0" y1="304.0" x2="316.0" y2="376.0" stroke="#9aa0a6" stroke-width="2"/>
 <g transform="translate(316.0,340.0)"><rect x="-6" y="-17.0" width="12" height="34" rx="4" fill="#d9b779" stroke="#6b5a2d"/><text transform="rotate(-90)" x="0" y="3" font-size="8.5" font-weight="bold" fill="#3b2a00" text-anchor="middle">R1</text></g>

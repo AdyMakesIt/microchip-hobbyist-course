@@ -22,11 +22,11 @@ Pressing the button connects PC0 to GND, so it reads **LOW (0)**. That is why "p
 ![Breadboard layout for AVR build 2](images/avr-2-breadboard.png)
 
 <!-- placement:avr:2 -->
-| Step | Part            | Where it goes                                                 | Notes                                                                                              |
-| ---: | --------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-|    1 | SW1 push button | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
-|    2 | jumper wire     | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
-|    3 | jumper wire     | **5g** → **13b**                                              | signal PC0 (any colour)                                                                            |
+| Step | Part            | Pin(s) | Where it goes                                                 | Notes                                                                                              |
+| ---: | --------------- | :----: | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|    1 | SW1 push button |   –    | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
+|    2 | jumper wire     |   –    | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
+|    3 | jumper wire     |   23   | **5g** → **13b**                                              | signal PC0 (any colour)                                                                            |
 <!-- /placement -->
 
 A 4-legged push button has two pairs of legs joined inside. Wiring only the two **diagonal** legs (as above) means it works whichever way round it sits.

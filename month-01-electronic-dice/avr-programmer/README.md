@@ -21,7 +21,7 @@ The USBasp stays the quicker everyday tool. Skip Part B if you would rather move
 
 ## The three builds
 
-| #   | Build                                                     | You add                                  | You prove                                           |
+|  #  | Build                                                     | You add                                  | You prove                                           |
 | :-: | --------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
 | B1  | [The minimum ATmega328P board](build-b1-minimum-board.md) | the chip, crystal, reset, serial lead    | the chip runs and accepts a program over USB-serial |
 | B2  | [Turn it into a programmer](build-b2-programmer.md)       | two status LEDs                          | the chip is running the programmer software         |
@@ -48,16 +48,16 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ### Parts used (counted automatically from the three circuits)
 
 <!-- bom -->
-| Part | Value | Qty used | Buy at least |
-|---|---|---:|---:|
-| Resistor | 10 kΩ | 2 | 3 |
-| Resistor | 680 Ω | 4 | 5 |
-| Ceramic capacitor | 100nF | 4 | 5 |
-| Ceramic capacitor | 22pF | 4 | 5 |
-| Crystal | 16MHz | 2 | 3 |
-| LED, 5 mm | red | 4 | 5 |
-| Jumper wires, solid or male-to-male | assorted lengths | 22 | 28 |
-| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) | | 9 | 10 |
+| Part                                                                       | Value            | Qty used | Buy at least |
+| -------------------------------------------------------------------------- | ---------------- | -------: | -----------: |
+| Resistor                                                                   | 10 kΩ            |        2 |            3 |
+| Resistor                                                                   | 680 Ω            |        4 |            5 |
+| Ceramic capacitor                                                          | 100nF            |        4 |            5 |
+| Ceramic capacitor                                                          | 22pF             |        4 |            5 |
+| Crystal                                                                    | 16MHz            |        2 |            3 |
+| LED, 5 mm                                                                  | red              |        4 |            5 |
+| Jumper wires, solid or male-to-male                                        | assorted lengths |       22 |           28 |
+| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) |                  |        9 |           10 |
 <!-- /bom -->
 
 ### Software

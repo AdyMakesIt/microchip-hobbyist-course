@@ -27,26 +27,26 @@ If you would like it to *look* like a die, bend the LED legs out and arrange the
 Six identical little "LED units": a wire from the chip pin to the top of a column, a resistor across the centre channel, and an LED to the bottom ground rail.
 
 <!-- placement:avr:3 -->
-| Step | Part              | Where it goes                                                                      | Notes                                      |
-| ---: | ----------------- | ---------------------------------------------------------------------------------- | ------------------------------------------ |
-|    1 | jumper wire       | **10h** → **26a**                                                                  | signal PD1 (any colour)                    |
-|    2 | R3 680 Ω resistor | **26d** and **26g**                                                                | either way round                           |
-|    3 | D2 red LED        | **long leg** in **26h**, **short leg** in bottom **blue** rail (−), near column 26 | the long leg (+) goes towards the resistor |
-|    4 | jumper wire       | **11h** → **27a**                                                                  | signal PD2 (any colour)                    |
-|    5 | R4 680 Ω resistor | **27d** and **27g**                                                                | either way round                           |
-|    6 | D3 red LED        | **long leg** in **27h**, **short leg** in bottom **blue** rail (−), near column 27 | the long leg (+) goes towards the resistor |
-|    7 | jumper wire       | **12h** → **28a**                                                                  | signal PD3 (any colour)                    |
-|    8 | R5 680 Ω resistor | **28d** and **28g**                                                                | either way round                           |
-|    9 | D4 red LED        | **long leg** in **28h**, **short leg** in bottom **blue** rail (−), near column 28 | the long leg (+) goes towards the resistor |
-|   10 | jumper wire       | **13h** → **29a**                                                                  | signal PD4 (any colour)                    |
-|   11 | R6 680 Ω resistor | **29d** and **29g**                                                                | either way round                           |
-|   12 | D5 red LED        | **long leg** in **29h**, **short leg** in bottom **blue** rail (−), near column 29 | the long leg (+) goes towards the resistor |
-|   13 | jumper wire       | **18h** → **30a**                                                                  | signal PD5 (any colour)                    |
-|   14 | R7 680 Ω resistor | **30d** and **30g**                                                                | either way round                           |
-|   15 | D6 red LED        | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30 | the long leg (+) goes towards the resistor |
-|   16 | jumper wire       | **19h** → **31a**                                                                  | signal PD6 (any colour)                    |
-|   17 | R8 680 Ω resistor | **31d** and **31g**                                                                | either way round                           |
-|   18 | D7 red LED        | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31 | the long leg (+) goes towards the resistor |
+| Step | Part              | Pin(s) | Where it goes                                                                      | Notes                                      |
+| ---: | ----------------- | :----: | ---------------------------------------------------------------------------------- | ------------------------------------------ |
+|    1 | jumper wire       |   3    | **10h** → **26a**                                                                  | signal PD1 (any colour)                    |
+|    2 | R3 680 Ω resistor |   –    | **26d** and **26g**                                                                | either way round                           |
+|    3 | D2 red LED        |   –    | **long leg** in **26h**, **short leg** in bottom **blue** rail (−), near column 26 | the long leg (+) goes towards the resistor |
+|    4 | jumper wire       |   4    | **11h** → **27a**                                                                  | signal PD2 (any colour)                    |
+|    5 | R4 680 Ω resistor |   –    | **27d** and **27g**                                                                | either way round                           |
+|    6 | D3 red LED        |   –    | **long leg** in **27h**, **short leg** in bottom **blue** rail (−), near column 27 | the long leg (+) goes towards the resistor |
+|    7 | jumper wire       |   5    | **12h** → **28a**                                                                  | signal PD3 (any colour)                    |
+|    8 | R5 680 Ω resistor |   –    | **28d** and **28g**                                                                | either way round                           |
+|    9 | D4 red LED        |   –    | **long leg** in **28h**, **short leg** in bottom **blue** rail (−), near column 28 | the long leg (+) goes towards the resistor |
+|   10 | jumper wire       |   6    | **13h** → **29a**                                                                  | signal PD4 (any colour)                    |
+|   11 | R6 680 Ω resistor |   –    | **29d** and **29g**                                                                | either way round                           |
+|   12 | D5 red LED        |   –    | **long leg** in **29h**, **short leg** in bottom **blue** rail (−), near column 29 | the long leg (+) goes towards the resistor |
+|   13 | jumper wire       |   11   | **18h** → **30a**                                                                  | signal PD5 (any colour)                    |
+|   14 | R7 680 Ω resistor |   –    | **30d** and **30g**                                                                | either way round                           |
+|   15 | D6 red LED        |   –    | **long leg** in **30h**, **short leg** in bottom **blue** rail (−), near column 30 | the long leg (+) goes towards the resistor |
+|   16 | jumper wire       |   12   | **19h** → **31a**                                                                  | signal PD6 (any colour)                    |
+|   17 | R8 680 Ω resistor |   –    | **31d** and **31g**                                                                | either way round                           |
+|   18 | D7 red LED        |   –    | **long leg** in **31h**, **short leg** in bottom **blue** rail (−), near column 31 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Connections, as a list:

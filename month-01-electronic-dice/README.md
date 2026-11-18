@@ -41,7 +41,7 @@ Order three of each: spares are useful when a chip gets damaged.
 | ------------------------------------------------------------------------- | ---------------- | -------: | -----------: |
 | Resistor                                                                  | 10 kΩ            |        1 |            2 |
 | Resistor                                                                  | 680 Ω            |        7 |            9 |
-| Ceramic capacitor                                                         | 100nF            |        1 |            2 |
+| Ceramic capacitor                                                         | 100nF            |        2 |            3 |
 | LED, 5 mm                                                                 | red              |        7 |            9 |
 | Push button (4-leg tact switch)                                           | 6 mm             |        1 |            2 |
 | Jumper wires, solid or male-to-male                                       | assorted lengths |       15 |           21 |

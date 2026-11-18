@@ -23,11 +23,11 @@ That is why "pressed" means `0` in the code. Most buttons in later months work t
 ![Breadboard layout for build 2](images/pic-2-breadboard.png)
 
 <!-- placement:pic:2 -->
-| Step | Part            | Where it goes                                                 | Notes                                                                                              |
-| ---: | --------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-|    1 | SW1 push button | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
-|    2 | jumper wire     | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
-|    3 | jumper wire     | **5g** → **9g**                                               | signal RA0 (any colour)                                                                            |
+| Step | Part            | Pin(s) | Where it goes                                                 | Notes                                                                                              |
+| ---: | --------------- | :----: | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|    1 | SW1 push button |   –    | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
+|    2 | jumper wire     |   –    | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
+|    3 | jumper wire     |   2    | **5g** → **9g**                                               | signal RA0 (any colour)                                                                            |
 <!-- /placement -->
 
 A 4-legged push button has two pairs of legs joined inside. Wiring only the two **diagonal** legs (as above) means it works
