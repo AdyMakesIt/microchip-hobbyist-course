@@ -19,22 +19,22 @@
 ![Breadboard layout for build 3](images/build-3-breadboard.png)
 
 <!-- placement:3 -->
-| Step | Part | Where it goes | Notes |
-|---:|---|---|---|
-| 1 | SW1 push button | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
-| 2 | jumper wire | **3a** → top **blue** rail (−), near column 3 | ground (black) |
-| 3 | jumper wire | **5g** → **10h** | signal RA1 (any colour) |
-| 4 | R13 10 kΩ resistor | **10i** and bottom **red** rail (+), near column 10 | either way round |
+| Step | Part               | Pin(s) | Where it goes                                                 | Notes                                                                                              |
+| ---: | ------------------ | :----: | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|    1 | SW1 push button    |   –    | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
+|    2 | jumper wire        |   –    | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
+|    3 | jumper wire        |  U1:3  | **5g** → **10h**                                              | signal RA1 (any colour)                                                                            |
+|    4 | R13 10 kΩ resistor |  U1:3  | **10i** and bottom **red** rail (+), near column 10           | either way round                                                                                   |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:3 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **3** (RA1 (button)) | net **BTN** |
-| net **BTN** | R13 10 kΩ → **+3.3 V** |
-| net **BTN** | SW1 button → **GND** |
+| Starts at                   | Then goes through      |
+| --------------------------- | ---------------------- |
+| U1 pin **3** (RA1 (button)) | net **BTN**            |
+| net **BTN**                 | R13 10 kΩ → **+3.3 V** |
+| net **BTN**                 | SW1 button → **GND**   |
 <!-- /connections -->
 
 ## 3. Check before you power it

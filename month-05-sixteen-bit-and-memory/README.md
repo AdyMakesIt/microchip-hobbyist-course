@@ -15,7 +15,7 @@ New this month:
 
 Do them in order. Each ends with a **pass check**.
 
-| #   | Build                                                     | You add                                     | You prove                                    |
+|  #  | Build                                                     | You add                                     | You prove                                    |
 | :-: | --------------------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
 |  1  | [Blink at 3.3 V](build-1-blink.md)                        | the PIC24, power, programmer leads, one LED | the chip, the 3.3 V supply and XC16 all work |
 |  2  | [Say hello to the EEPROM](build-2-eeprom-hello.md)        | the 24LC512, eight LEDs                     | you can store and fetch a byte               |
@@ -37,17 +37,17 @@ Nothing here has been run on a real bench yet. If something does not work, that 
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part | Value | Qty used | Buy at least |
-|---|---|---:|---:|
-| Resistor | 10 kΩ | 2 | 3 |
-| Resistor | 330 Ω | 9 | 11 |
-| Resistor | 4.7 kΩ | 2 | 3 |
-| Ceramic capacitor | 100nF | 2 | 3 |
-| Ceramic capacitor | 10uF | 1 | 2 |
-| LED, 5 mm | red | 9 | 11 |
-| Push button (4-leg tact switch) | 6 mm | 1 | 2 |
-| Jumper wires, solid or male-to-male | assorted lengths | 30 | 36 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
+| Part                                                     | Value            | Qty used | Buy at least |
+| -------------------------------------------------------- | ---------------- | -------: | -----------: |
+| Resistor                                                 | 10 kΩ            |        2 |            3 |
+| Resistor                                                 | 330 Ω            |        9 |           11 |
+| Resistor                                                 | 4.7 kΩ           |        2 |            3 |
+| Ceramic capacitor                                        | 100nF            |        2 |            3 |
+| Ceramic capacitor                                        | 10uF             |        1 |            2 |
+| LED, 5 mm                                                | red              |        9 |           11 |
+| Push button (4-leg tact switch)                          | 6 mm             |        1 |            2 |
+| Jumper wires, solid or male-to-male                      | assorted lengths |       30 |           36 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
 <!-- /bom -->
 
 **One part needs care:** the **10 µF capacitor on pin 20 (VCAP)**. The chip has a small internal regulator that makes its 2.5 V core supply, and that regulator needs a capacitor to be stable.
