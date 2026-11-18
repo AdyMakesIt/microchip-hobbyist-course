@@ -8,7 +8,7 @@ The [purchasing plan](purchasing-plan.md) turns this into exact quantities and s
 
 Buy this once. Prices are **rough hobby-market guides, not quotes**; they vary by supplier and change often.
 
-| Item                                                  | What to look for                                                                                                                      | Rough cost   |
+| Item                                                  | What to look for                                                                                                                      |   Rough cost |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -----------: |
 | Solderless breadboard                                 | 830 tie-points (the full-size kind with 63 columns)                                                                                   |         £3–6 |
 | Breadboard power supply                               | MB102 style, with a jumper for 5 V / 3.3 V, USB or barrel input                                                                       |         £2–4 |

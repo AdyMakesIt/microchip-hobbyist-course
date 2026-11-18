@@ -12,6 +12,17 @@ Everything you need for months 1 and 2, in about 10 minutes. Skip what you alrea
   Many boards have a **break in the middle** of each rail. If yours does, join the two halves with a short jumper wire.
 * In this course a hole is named by its **column and row**: **16b** is column 16, row b. A rail hole is named, for example, "top red rail near column 11".
 
+### Check which way your row letters run
+
+The pictures in this course are drawn with **row a at the top and row j at the bottom**, column **1 at the left**. Many breadboards are printed that way, but **some print the letters the other way up (j at the top)**.
+Look at your own board before you build anything.
+
+* **Letters run a to j from top to bottom:** hole names in the tables are exactly what is printed on your board.
+* **Letters run j to a from top to bottom:** the tables will not work as written, because a chip's pins must still run *anticlockwise* from pin 1. Swap each letter for its partner **before** you read a hole name: **a↔j, b↔i, c↔h, d↔g, e↔f**. So the table's "8f" is the hole printed **8e** on your board.
+* **Not sure?** Ignore the letters and use the **Pin(s)** column and the picture. Every placement table says which chip pin each part connects to, and the chip is always placed with its **notch towards the lower column numbers** and pin 1 in the lower of the two rows beside the centre channel (as pictured).
+
+If your breadboard is laid out in some other way, tell us: the instructions can be made to say it.
+
 ## Reading a chip
 
 ![Chip pin numbering](images/chip-pin-numbering.png)
