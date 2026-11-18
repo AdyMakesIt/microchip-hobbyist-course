@@ -14,7 +14,7 @@ Both chips talk over **SPI**, a four-wire bus faster and simpler than I2C. As in
 
 Do them in order. Each ends with a **pass check**.
 
-| #   | Build                                                 | You add                                       | You prove                              |
+|  #  | Build                                                 | You add                                       | You prove                              |
 | :-: | ----------------------------------------------------- | --------------------------------------------- | -------------------------------------- |
 |  1  | [Read a knob](build-1-adc-bar-graph.md)               | the PIC, the MCP3008, a potentiometer, 8 LEDs | SPI works and the ADC measures voltage |
 |  2  | [Add the DAC](build-2-dac.md)                         | the MCP4822 and an LED                        | the chip can output exact voltages     |
@@ -38,16 +38,16 @@ You also need the **PIC18F47K42-I/P** from Month 2 and the same PICkit 3 program
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part | Value | Qty used | Buy at least |
-|---|---|---:|---:|
-| Resistor | 1 kΩ | 1 | 2 |
-| Resistor | 10 kΩ | 1 | 2 |
-| Resistor | 680 Ω | 9 | 11 |
-| Ceramic capacitor | 100nF | 4 | 5 |
-| Potentiometer (rotary or trimmer) | 10 kΩ | 1 | 2 |
-| LED, 5 mm | red | 10 | 12 |
-| Jumper wires, solid or male-to-male | assorted lengths | 40 | 46 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
+| Part                                                     | Value            | Qty used | Buy at least |
+| -------------------------------------------------------- | ---------------- | -------: | -----------: |
+| Resistor                                                 | 1 kΩ             |        1 |            2 |
+| Resistor                                                 | 10 kΩ            |        1 |            2 |
+| Resistor                                                 | 680 Ω            |        9 |           11 |
+| Ceramic capacitor                                        | 100nF            |        4 |            5 |
+| Potentiometer (rotary or trimmer)                        | 10 kΩ            |        1 |            2 |
+| LED, 5 mm                                                | red              |       10 |           12 |
+| Jumper wires, solid or male-to-male                      | assorted lengths |       40 |           46 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
 <!-- /bom -->
 
 The potentiometer should be a **10 kΩ linear** one ("B10K"): a rotary pot with three legs in a row, or a small trimmer. Any value from 5 kΩ to 100 kΩ works.

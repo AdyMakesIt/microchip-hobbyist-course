@@ -38,36 +38,36 @@ Unlike the ADC (which measures against the 5 V supply), the DAC's voltage is set
 ![Breadboard layout for build 2](images/build-2-breadboard.png)
 
 <!-- placement:2 -->
-| Step | Part | Where it goes | Notes |
-|---:|---|---|---|
-| 1 | U3 MCP4822-E/P | Pin 1 in hole **36f**, notch to the **left**. Pins 1–4 run along row f (columns 36–39); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-| 2 | jumper wire | **36h** → bottom **red** rail (+), near column 36 | +5 V power (red) |
-| 3 | C4 100nF capacitor | **36i** and bottom **blue** rail (−), near column 36 | ceramic: either way round; keep the legs short |
-| 4 | jumper wire | **37b** → top **blue** rail (−), near column 37 | ground (black) |
-| 5 | jumper wire | **39b** → top **blue** rail (−), near column 39 | ground (black) |
-| 6 | jumper wire | **37h** → **20c** | signal CS DAC (any colour) |
-| 7 | jumper wire | **38i** → **29d** | signal SCK (any colour) |
-| 8 | jumper wire | **39g** → **31d** | signal MOSI (any colour) |
-| 9 | jumper wire | **38b** → **53a** | signal VOUTB (any colour) |
-| 10 | R11 1 kΩ resistor | **53d** and **53g** | either way round |
-| 11 | D10 red LED | **long leg** in **53h**, **short leg** in bottom **blue** rail (−), near column 53 | the long leg (+) goes towards the resistor |
+| Step | Part               |    Pin(s)    | Where it goes                                                                                                                                             | Notes                                                                                  |
+| ---: | ------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+|    1 | U3 MCP4822-E/P     |      1       | Pin 1 in hole **36f**, notch to the **left** (towards the lower column numbers). Pins 1–4 run along row f (columns 36–39); pins 5–8 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+|    2 | jumper wire        |     U3:1     | **36h** → bottom **red** rail (+), near column 36                                                                                                         | +5 V power (red)                                                                       |
+|    3 | C4 100nF capacitor |     U3:1     | **36i** and bottom **blue** rail (−), near column 36                                                                                                      | ceramic: either way round; keep the legs short                                         |
+|    4 | jumper wire        |     U3:7     | **37b** → top **blue** rail (−), near column 37                                                                                                           | ground (black)                                                                         |
+|    5 | jumper wire        |     U3:5     | **39b** → top **blue** rail (−), near column 39                                                                                                           | ground (black)                                                                         |
+|    6 | jumper wire        | U3:2 / U1:23 | **37h** → **20c**                                                                                                                                         | signal CS DAC (any colour)                                                             |
+|    7 | jumper wire        | U3:3 / U2:13 | **38i** → **29d**                                                                                                                                         | signal SCK (any colour)                                                                |
+|    8 | jumper wire        | U3:4 / U2:11 | **39g** → **31d**                                                                                                                                         | signal MOSI (any colour)                                                               |
+|    9 | jumper wire        |     U3:6     | **38b** → **53a**                                                                                                                                         | signal VOUTB (any colour)                                                              |
+|   10 | R11 1 kΩ resistor  |      –       | **53d** and **53g**                                                                                                                                       | either way round                                                                       |
+|   11 | D10 red LED        |      –       | **long leg** in **53h**, **short leg** in bottom **blue** rail (−), near column 53                                                                        | the long leg (+) goes towards the resistor                                             |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:2 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **23** (RC4 (CS DAC)) | net **CS_DAC** |
-| U3 pin **1** (VDD) | **+5 V** |
-| U3 pin **7** (VSS) | **GND** |
-| U3 pin **5** (LDAC) | **GND** |
-| net **+5V** | C4 100nF → **GND** |
-| U3 pin **2** (CS) | net **CS_DAC** |
-| U3 pin **3** (SCK) | net **SCK** |
-| U3 pin **4** (SDI) | net **MOSI** |
-| U3 pin **6** (VOUTB) | R11 1 kΩ → D10 LED (long leg towards the resistor) → **GND** |
-| U3 pin **8** (VOUTA) | net **DACA** |
+| Starts at                    | Then goes through                                            |
+| ---------------------------- | ------------------------------------------------------------ |
+| U1 pin **23** (RC4 (CS DAC)) | net **CS_DAC**                                               |
+| U3 pin **1** (VDD)           | **+5 V**                                                     |
+| U3 pin **7** (VSS)           | **GND**                                                      |
+| U3 pin **5** (LDAC)          | **GND**                                                      |
+| net **+5V**                  | C4 100nF → **GND**                                           |
+| U3 pin **2** (CS)            | net **CS_DAC**                                               |
+| U3 pin **3** (SCK)           | net **SCK**                                                  |
+| U3 pin **4** (SDI)           | net **MOSI**                                                 |
+| U3 pin **6** (VOUTB)         | R11 1 kΩ → D10 LED (long leg towards the resistor) → **GND** |
+| U3 pin **8** (VOUTA)         | net **DACA**                                                 |
 <!-- /connections -->
 
 ## 4. Check before you power it
