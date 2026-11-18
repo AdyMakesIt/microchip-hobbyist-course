@@ -13,7 +13,7 @@ never disagree with the real file or the verified circuit:
 Run:  python3 sync_docs.py        (make_all.py draws the pictures; run it first)
 """
 import os, re, sys, collections
-from mhc_draw import pin_table, pretty_ohms, RAILS
+from mhc_draw import pin_table, pretty_ohms, RAILS, hole_node
 from circuits import month1, month2, month3, month4, month5, month1_avr, month1_isp
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -38,7 +38,7 @@ def describe(c, b, it):
     if k == "ic":
         ic = c.ics[it["ref"]]; half = ic.npins // 2; top, bot = it["rows"]
         c0 = it["col"]
-        where = (f"Pin 1 in hole **{c0}{bot}**, notch to the **left**. Pins 1–{half} run along row {bot} "
+        where = (f"Pin 1 in hole **{c0}{bot}**, notch to the **left** (towards the lower column numbers). Pins 1–{half} run along row {bot} "
                  f"(columns {c0}–{c0+half-1}); pins {half+1}–{ic.npins} run back along row {top}.")
         extra = ("This is a **wide (600 mil)** chip: it will not sit in the centre channel like a skinny chip. "
                  f"Put its two rows of pins in rows **{top}** and **{bot}** so it straddles the channel.") if ic.width == "wide" else \
@@ -71,14 +71,51 @@ def describe(c, b, it):
                 f"only the diagonal legs ({col}e and {col+2}f) are wired; keep strips {col+2}e and {col}f empty. Works either way round.")
     raise ValueError(k)
 
+def strip_pins(c, b, build):
+    """strip node -> list of (ic ref, pin) for every chip placed up to this build"""
+    m = {}
+    for it in b.items:
+        if it["kind"] == "ic" and it["build"] <= build:
+            ic = c.ics[it["ref"]]
+            for p in range(1, ic.npins + 1):
+                m.setdefault(hole_node(b.ic_pin_hole(it["ref"], p)), []).append((it["ref"], p))
+    return m
+
+def pins_text(c, b, build, it):
+    """the chip pin(s) this item connects to, as a short text (for the 'Pin(s)' column)"""
+    k = it["kind"]
+    if k == "ic":
+        return "1"
+    m = strip_pins(c, b, build)
+    holes = []
+    if k == "SW":
+        col = it["col"]; holes = [(col, "e"), (col + 2, "f")]
+    else:
+        for key in ("a", "w", "b"):
+            if key in it: holes.append(it[key])
+    found = []
+    for h in holes:
+        for ref, p in m.get(hole_node(h), []):
+            if (ref, p) not in found: found.append((ref, p))
+    if not found: return "–"
+    chips = {r for r, _ in found}
+    many = len([r for r in c.ics if not c.ics[r].connector]) > 1
+    return " / ".join((f"{r}:{p}" if many else str(p)) for r, p in found)
+
+def rail_note(it):
+    if it["kind"] == "wire" and it["a"][1] in RAILS and it["b"][1] in RAILS:
+        return " After placing it, **check the power**: measure across the rails with the meter."
+    return ""
+
 def placement_md(c, b, build):
     rows = []
     for it in b.items:
-        if it["build"] == build: rows.append(describe(c, b, it))
-    removed = [it for it in b.items if it.get("until", 99) == build - 1 and build > 1]
-    out = ["| Step | Part | Where it goes | Notes |", "|---:|---|---|---|"]
-    for i, (p, w, n) in enumerate(rows, 1):
-        out.append(f"| {i} | {p} | {w} | {n} |")
+        if it["build"] == build:
+            p, w, n = describe(c, b, it)
+            rows.append((p, pins_text(c, b, build, it), w, n + rail_note(it)))
+    out = ["| Step | Part | Pin(s) | Where it goes | Notes |", "|---:|---|:-:|---|---|"]
+    for i, (p, pin, w, n) in enumerate(rows, 1):
+        out.append(f"| {i} | {p} | {pin} | {w} | {n} |")
     return "\n".join(out)
 
 def connections_md(c, b, build):

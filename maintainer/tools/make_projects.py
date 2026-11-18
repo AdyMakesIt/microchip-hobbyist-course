@@ -24,12 +24,14 @@ MONTHS = [  # folder, label, PIC device (or None), compiler, notes
 ]
 PIO_INI = """; PlatformIO project for the ATmega328P (internal 1 MHz oscillator, factory fuses).
 ; Choose the environment that matches your programmer. Build: the tick; upload: the arrow.
+; 'framework = arduino' is only here so PlatformIO knows how to build; our own main() runs instead of Arduino's.
 [platformio]
 default_envs = usbasp
 
 [env:usbasp]
 platform = atmelavr
 board = ATmega328P
+framework = arduino
 board_build.f_cpu = 1000000L
 upload_protocol = usbasp
 upload_flags =
@@ -40,6 +42,7 @@ upload_flags =
 ; an Arduino Uno R3 running the ArduinoISP example, used as a programmer
 platform = atmelavr
 board = ATmega328P
+framework = arduino
 board_build.f_cpu = 1000000L
 upload_protocol = stk500v1
 upload_port = COM3   ; change to your Uno's port (Linux/macOS: /dev/ttyACM0)

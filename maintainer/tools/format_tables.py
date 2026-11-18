@@ -57,7 +57,7 @@ def format_table(lines):
                 elif aligns[i] == "r": d = "-" * (widths[i] - 1) + ":"
                 cells.append(d)
         else:
-            cells = [pad(r[i], widths[i], aligns[i] if k != 0 else "l") for i in range(n)]
+            cells = [pad(r[i], widths[i], aligns[i]) for i in range(n)]
         out.append("| " + " | ".join(cells) + " |")
     return out
 
