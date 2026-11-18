@@ -50,44 +50,44 @@ The MCP23017's address is **0x20** because its three address pins (A0, A1, A2) a
 The MCP23017 is a *skinny* chip: it goes across the centre channel in rows **e** and **f**, with its notch to the **left**, like the Month 1 chip.
 
 <!-- placement:2 -->
-| Step | Part | Where it goes | Notes |
-|---:|---|---|---|
-| 1 | U2 MCP23017-E/SP | Pin 1 in hole **30f**, notch to the **left**. Pins 1–14 run along row f (columns 30–43); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-| 2 | jumper wire | **38h** → bottom **red** rail (+), near column 38 | +5 V power (red) |
-| 3 | jumper wire | **39h** → bottom **blue** rail (−), near column 39 | ground (black) |
-| 4 | C3 100nF capacitor | **38g** and **39g** | ceramic: either way round; keep the legs short |
-| 5 | jumper wire | **20i** → **41g** | signal SCL (any colour) |
-| 6 | jumper wire | **20c** → **42g** | signal SDA (any colour) |
-| 7 | R3 4.7 kΩ resistor | **41i** and bottom **red** rail (+), near column 41 | either way round |
-| 8 | R4 4.7 kΩ resistor | **42i** and bottom **red** rail (+), near column 42 | either way round |
-| 9 | jumper wire | **41b** → top **blue** rail (−), near column 41 | ground (black) |
-| 10 | jumper wire | **42b** → top **blue** rail (−), near column 42 | ground (black) |
-| 11 | jumper wire | **43b** → top **blue** rail (−), near column 43 | ground (black) |
-| 12 | R5 10 kΩ resistor | **40d** and top **red** rail (+), near column 40 | either way round |
-| 13 | jumper wire | **37b** → **44a** | signal GPA0 (any colour) |
-| 14 | R6 680 Ω resistor | **44d** and **44g** | either way round |
-| 15 | D2 red LED | **long leg** in **44h**, **short leg** in bottom **blue** rail (−), near column 44 | the long leg (+) goes towards the resistor |
+| Step | Part               |    Pin(s)     | Where it goes                                                                                                                                                | Notes                                                                                  |
+| ---: | ------------------ | :-----------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
+|    1 | U2 MCP23017-E/SP   |       1       | Pin 1 in hole **30f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 30–43); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+|    2 | jumper wire        |     U2:9      | **38h** → bottom **red** rail (+), near column 38                                                                                                            | +5 V power (red)                                                                       |
+|    3 | jumper wire        |     U2:10     | **39h** → bottom **blue** rail (−), near column 39                                                                                                           | ground (black)                                                                         |
+|    4 | C3 100nF capacitor | U2:9 / U2:10  | **38g** and **39g**                                                                                                                                          | ceramic: either way round; keep the legs short                                         |
+|    5 | jumper wire        | U1:18 / U2:12 | **20i** → **41g**                                                                                                                                            | signal SCL (any colour)                                                                |
+|    6 | jumper wire        | U1:23 / U2:13 | **20c** → **42g**                                                                                                                                            | signal SDA (any colour)                                                                |
+|    7 | R3 4.7 kΩ resistor |     U2:12     | **41i** and bottom **red** rail (+), near column 41                                                                                                          | either way round                                                                       |
+|    8 | R4 4.7 kΩ resistor |     U2:13     | **42i** and bottom **red** rail (+), near column 42                                                                                                          | either way round                                                                       |
+|    9 | jumper wire        |     U2:17     | **41b** → top **blue** rail (−), near column 41                                                                                                              | ground (black)                                                                         |
+|   10 | jumper wire        |     U2:16     | **42b** → top **blue** rail (−), near column 42                                                                                                              | ground (black)                                                                         |
+|   11 | jumper wire        |     U2:15     | **43b** → top **blue** rail (−), near column 43                                                                                                              | ground (black)                                                                         |
+|   12 | R5 10 kΩ resistor  |     U2:18     | **40d** and top **red** rail (+), near column 40                                                                                                             | either way round                                                                       |
+|   13 | jumper wire        |     U2:21     | **37b** → **44a**                                                                                                                                            | signal GPA0 (any colour)                                                               |
+|   14 | R6 680 Ω resistor  |       –       | **44d** and **44g**                                                                                                                                          | either way round                                                                       |
+|   15 | D2 red LED         |       –       | **long leg** in **44h**, **short leg** in bottom **blue** rail (−), near column 44                                                                           | the long leg (+) goes towards the resistor                                             |
 <!-- /placement -->
 
 Same circuit as a connection list:
 
 <!-- connections:2 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **18** (RC3 (SCL)) | net **SCL** |
-| U1 pin **23** (RC4 (SDA)) | net **SDA** |
-| net **SCL** | R3 4.7 kΩ → **+5 V** |
-| net **SDA** | R4 4.7 kΩ → **+5 V** |
-| U2 pin **12** (SCL) | net **SCL** |
-| U2 pin **13** (SDA) | net **SDA** |
-| U2 pin **9** (VDD) | **+5 V** |
-| U2 pin **10** (VSS) | **GND** |
-| net **+5V** | C3 100nF → **GND** |
-| U2 pin **15** (A0) | **GND** |
-| U2 pin **16** (A1) | **GND** |
-| U2 pin **17** (A2) | **GND** |
-| U2 pin **18** (RESET) | R5 10 kΩ → **+5 V** |
-| U2 pin **21** (GPA0) | R6 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
+| Starts at                 | Then goes through                                           |
+| ------------------------- | ----------------------------------------------------------- |
+| U1 pin **18** (RC3 (SCL)) | net **SCL**                                                 |
+| U1 pin **23** (RC4 (SDA)) | net **SDA**                                                 |
+| net **SCL**               | R3 4.7 kΩ → **+5 V**                                        |
+| net **SDA**               | R4 4.7 kΩ → **+5 V**                                        |
+| U2 pin **12** (SCL)       | net **SCL**                                                 |
+| U2 pin **13** (SDA)       | net **SDA**                                                 |
+| U2 pin **9** (VDD)        | **+5 V**                                                    |
+| U2 pin **10** (VSS)       | **GND**                                                     |
+| net **+5V**               | C3 100nF → **GND**                                          |
+| U2 pin **15** (A0)        | **GND**                                                     |
+| U2 pin **16** (A1)        | **GND**                                                     |
+| U2 pin **17** (A2)        | **GND**                                                     |
+| U2 pin **18** (RESET)     | R5 10 kΩ → **+5 V**                                         |
+| U2 pin **21** (GPA0)      | R6 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 4. Check before you power it

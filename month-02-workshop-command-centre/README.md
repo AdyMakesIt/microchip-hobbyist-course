@@ -16,7 +16,7 @@ You will write the I2C routines yourself (about 60 readable lines), so you can s
 
 Do them in order. Each ends with a **pass check**.
 
-| #   | Build                                                  | You add                                          | You prove                                    |
+|  #  | Build                                                  | You add                                          | You prove                                    |
 | :-: | ------------------------------------------------------ | ------------------------------------------------ | -------------------------------------------- |
 |  1  | [Blink (minimum circuit)](build-1-blink.md)            | the chip, power, programmer leads, heartbeat LED | chip, programmer and software work           |
 |  2  | [Say hello to the MCP23017](build-2-hello-expander.md) | the expander, two I2C wires, one LED             | I2C works; you can write and read a register |
@@ -42,18 +42,18 @@ Ask for the **P** (PDIP) package of the PIC18F47K42 and the **SP** (skinny) pack
 ### Parts used (counted automatically from the circuit)
 
 <!-- bom -->
-| Part | Value | Qty used | Buy at least |
-|---|---|---:|---:|
-| Resistor | 10 kΩ | 2 | 3 |
-| Resistor | 100 Ω | 1 | 2 |
-| Resistor | 4.7 kΩ | 2 | 3 |
-| Resistor | 680 Ω | 9 | 11 |
-| Ceramic capacitor | 100nF | 3 | 4 |
-| LED, 5 mm | red | 9 | 11 |
-| Push button (4-leg tact switch) | 6 mm | 2 | 3 |
-| Piezo disc (passive) |  | 1 | 2 |
-| Jumper wires, solid or male-to-male | assorted lengths | 31 | 37 |
-| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) | | 5 | 6 |
+| Part                                                     | Value            | Qty used | Buy at least |
+| -------------------------------------------------------- | ---------------- | -------: | -----------: |
+| Resistor                                                 | 10 kΩ            |        2 |            3 |
+| Resistor                                                 | 100 Ω            |        1 |            2 |
+| Resistor                                                 | 4.7 kΩ           |        2 |            3 |
+| Resistor                                                 | 680 Ω            |        9 |           11 |
+| Ceramic capacitor                                        | 100nF            |        3 |            4 |
+| LED, 5 mm                                                | red              |        9 |           11 |
+| Push button (4-leg tact switch)                          | 6 mm             |        2 |            3 |
+| Piezo disc (passive)                                     |                  |        1 |            2 |
+| Jumper wires, solid or male-to-male                      | assorted lengths |       31 |           37 |
+| Female-to-male Dupont leads (PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
 <!-- /bom -->
 
 ### Tools
