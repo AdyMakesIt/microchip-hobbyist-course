@@ -75,7 +75,6 @@ upload_flags =
     -e
     -Pusb
     -B32
-
 ```
 
 ```ini
@@ -109,7 +108,6 @@ upload_speed = 19200
 upload_flags =
     -P$UPLOAD_PORT
     -b$UPLOAD_SPEED
-
 ```
 
 What the lines mean:
