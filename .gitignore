@@ -30,3 +30,7 @@ _autosave-*
 *.kicad_sch-bak
 ~*.lck
 /maintainer/tools/node_modules
+
+# PlatformIO
+.pio/
+.vscode/
