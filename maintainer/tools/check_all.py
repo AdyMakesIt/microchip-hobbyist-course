@@ -10,27 +10,95 @@ check_all.py - one command that proves the package is consistent.  Run it before
 
 Usage:  python3 maintainer/tools/check_all.py        (from the repository root, or anywhere)
 """
-import os, re, subprocess, sys
+import os
+import re
+import shutil
+import subprocess
+import sys
+
+if shutil.which("node") is None:
+    sys.exit(
+        "ERROR: Node.js was not found on PATH.\n"
+        "Install Node.js LTS, then reopen PowerShell and run check_all.py again."
+    )
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+
+IS_WINDOWS = os.name == "nt"
+
+if IS_WINDOWS:
+    BASH = r"C:\msys64\usr\bin\bash.exe"
+
+    if not os.path.isfile(BASH):
+        BASH = shutil.which("bash")
+
+    if BASH is None:
+        sys.exit(
+            "ERROR: bash was not found.\n"
+            "Install MSYS2 and ensure C:\\msys64\\usr\\bin\\bash.exe exists,\n"
+            "or add C:\\msys64\\usr\\bin to PATH."
+        )
+
+    MSYS_ROOT = os.path.dirname(os.path.dirname(BASH))
+
+    MSYS_PATHS = [
+        os.path.join(MSYS_ROOT, "usr", "bin"),
+        os.path.join(MSYS_ROOT, "ucrt64", "bin"),
+    ]
+
+    SUBPROCESS_ENV = os.environ.copy()
+    SUBPROCESS_ENV["PATH"] = os.pathsep.join(
+        MSYS_PATHS + [SUBPROCESS_ENV.get("PATH", "")]
+    )
+else:
+    BASH = shutil.which("bash")
+
+    if BASH is None:
+        sys.exit("ERROR: bash was not found on PATH.")
+
+    MSYS_PATHS = []
+    SUBPROCESS_ENV = os.environ.copy()
+
 ok = True
 
 def step(name, good, detail=""):
     global ok
     ok &= bool(good)
-    print(("PASS  " if good else "FAIL  ") + name + (("\n      " + detail.replace("\n", "\n      ")) if detail and not good else ""))
+    print(
+        ("PASS " if good else "FAIL ")
+        + name
+        + (("\n  " + detail.replace("\n", "\n  ")) if detail and not good else "")
+    )
 
 def run(cmd, cwd):
-    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    r = subprocess.run(
+        cmd,
+        cwd=cwd,
+        capture_output=True,
+        text=True,
+        env=SUBPROCESS_ENV,
+    )
     return r.returncode == 0, (r.stdout + r.stderr)[-1500:]
 
 # 1 logic tests
 for m in ("m1pic", "m1avr", "m2", "m3", "m4", "m5"):
-    good, out = run(["sh", "run_tests.sh"], os.path.join(ROOT, "maintainer", "sim", m))
+    sim_dir = os.path.join(ROOT, "maintainer", "sim", m)
+
+    bash_command = (
+        'export PATH="/usr/bin:/ucrt64/bin:$PATH"; '
+        'echo "PATH=$PATH"; '
+        'command -v dirname; '
+        'command -v timeout; '
+        'command -v g++; '
+        'exec bash ./run_tests.sh'
+    )
+
+    good, out = run([BASH, "-c", bash_command], sim_dir)
+
     n_fail = len(re.findall(r"FAILED|FAIL:", out))
     step(f"logic tests ({m})", good and n_fail == 0, out)
-
+    
 # 2 diagrams
 good, out = run([sys.executable, "make_all.py"], HERE); step("breadboard layouts match schematics; diagrams regenerated", good, out)
 good, out = run([sys.executable, "make_extra.py"], HERE); step("teaching diagrams generated", good, out)
