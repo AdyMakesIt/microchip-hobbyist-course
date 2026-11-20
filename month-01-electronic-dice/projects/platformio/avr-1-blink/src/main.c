@@ -11,24 +11,24 @@
  * If you see this, the chip, the programmer and your wiring all work.
  */
 
-#ifndef F_CPU                    /* (the build tool may already have set it) */
-#define F_CPU 1000000UL          /* tells _delay_ms() the clock speed: 1 MHz */
+#ifndef F_CPU           /* (the build tool may already have set it) */
+#define F_CPU 1000000UL /* tells _delay_ms() the clock speed: 1 MHz */
 #endif
 
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED  (1 << PD0)          /* a mask with only bit 0 set (port D) */
+#define LED (1 << PD3) /* a mask with only bit 0 set (port D) */
 
 int main(void)
 {
-    DDRD |= LED;                 /* DDRD: a 1 bit makes the pin an OUTPUT */
+    DDRD |= LED; /* DDRD: a 1 bit makes the pin an OUTPUT */
 
     while (1)
     {
-        PORTD |= LED;            /* LED on  (PORTD sets the output level) */
+        PORTD |= LED; /* LED on  (PORTD sets the output level) */
         _delay_ms(500);
-        PORTD &= ~LED;           /* LED off */
+        PORTD &= ~LED; /* LED off */
         _delay_ms(500);
     }
 }
