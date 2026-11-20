@@ -116,7 +116,7 @@ class Circuit:
 # ----------------------------------------------------------------------------
 ROWS_TOP, ROWS_BOT = "abcde", "fghij"
 RAILS = {"TP": "+5V", "TN": "GND", "BN": "GND", "BP": "+5V"}
-RAIL_SPLIT = 31      # columns <= 31 are the 'left' rail segment; many boards have a break here
+RAIL_SPLIT = 63      # columns <= 31 are the 'left' rail segment; many boards have a break here
 
 def parse_hole(s):
     m = re.match(r"^(TP|TN|BN|BP)(\d+)$", s)

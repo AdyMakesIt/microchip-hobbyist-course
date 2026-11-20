@@ -70,7 +70,6 @@ def month1():
     b.wire("5g", "9g", 2, "RA0")
     return c, b
 
-
 # ---------------------------------------------------------------------------------
 # MONTH 1, AVR TRACK - ATmega328P electronic dice (programmed through an ISP programmer)
 # ---------------------------------------------------------------------------------
@@ -92,26 +91,65 @@ def month1_avr():
     for jp, up, nm in ((1, 18, "MISO"), (2, 19, "SCK"), (3, 17, "MOSI")):
         c.chain(("J1", jp), [f"NET:{nm}"], 1); c.chain(("U1", up), [f"NET:{nm}"], 1)
     c.chain(("J1", 5), ["GND"], 1)
-    leds = [(2, "D1", "R2", 1), (3, "D2", "R3", 3), (4, "D3", "R4", 3), (5, "D4", "R5", 3), (6, "D5", "R6", 3),
-            (11, "D6", "R7", 3), (12, "D7", "R8", 3)]
-    for pin, d, r, bld in leds:
+
+    # Build 1 blinks D4 (centre LED); Build 3 adds the rest of the dice LEDs.
+    leds = [
+        (2,  "D1", "R2", 3, "9g",  "PD0"),
+        (3,  "D2", "R3", 3, "10g", "PD1"),
+        (4,  "D3", "R4", 3, "11g", "PD2"),
+        (5,  "D4", "R5", 1, "12g", "PD3"),
+        (6,  "D5", "R6", 3, "13g", "PD4"),
+        (11, "D6", "R7", 3, "18g", "PD5"),
+        (12, "D7", "R8", 3, "19g", "PD6"),
+    ]
+    for pin, d, r, bld, _src, _net in leds:
         c.chain(("U1", pin), [f"R:{r}:680R", f"LED:{d}:red", "GND"], bld)
     c.chain(("U1", 23), ["SW:SW1:ROLL", "GND"], 2)
 
     b = Board(c)
     b.ic("U1", 8, 1)
-    b.wire("TP2", "BP2", 1, "+5V"); b.wire("TN1", "BN1", 1, "GND")
+    b.wire("TP63", "BP63", 1, "+5V"); b.wire("TN62", "BN62", 1, "GND")
     b.wire("14h", "BP14", 1, "+5V"); b.wire("15h", "BN15", 1, "GND"); b.two("C1", "14g", "15g", 1)
     b.wire("16b", "TP16", 1, "+5V"); b.wire("14b", "TN14", 1, "GND"); b.two("C2", "16d", "14d", 1)
     b.two("R1", "8i", "BP8", 1)
     b.lead("J1", 4, "8h", 1, "RESET"); b.lead("J1", 1, "18c", 1, "MISO"); b.lead("J1", 2, "17c", 1, "SCK")
     b.lead("J1", 3, "19c", 1, "MOSI"); b.lead("J1", 5, "TN6", 1, "GND")
-    pinhole = {2: "9h", 3: "10h", 4: "11h", 5: "12h", 6: "13h", 11: "18h", 12: "19h"}
-    for i, (pin, d, r, bld) in enumerate(leds):
-        uc = 25 + i
-        b.wire(pinhole[pin], f"{uc}a", bld, f"PD{i}")
-        b.two(r, f"{uc}d", f"{uc}g", bld)
-        b.two(d, f"{uc}h", f"BN{uc}", bld)
+
+    # D1 (Build 3, PD0): cols 25-26 (top)
+    b.wire("9g", "25e", 3, "PD0")
+    b.two("R2", "25d", "26b", 3)
+    b.two("D1", "26a", "TN26", 3)
+
+    # D2 (Build 3, PD1): cols 27-28 (top)
+    b.wire("10g", "35e", 3, "PD1")
+    b.two("R3", "35d", "34b", 3)
+    b.two("D2", "34a", "TN34", 3)
+
+    # D3 (Build 3, PD2): cols 29-30 (top)
+    b.wire("11g", "27d", 3, "PD2")
+    b.two("R4", "27e", "28f", 3)
+    b.two("D3", "28g", "BN28", 3)
+    
+    # D4 (Build 1 centre blink LED, PD3): cols 31-32 (top)
+    b.wire("12g", "29d", 1, "PD3")
+    b.two("R5", "29e", "30f", 1)
+    b.two("D4", "30g", "BN30", 1)
+
+    # D5 (Build 3, PD4): cols 33-34 (top)
+    b.wire("13g", "31d", 3, "PD4")
+    b.two("R6", "31e", "32f", 3)
+    b.two("D5", "32g", "BN32", 3)
+
+    # D6 (Build 3, PD5): cols 35-36 (bottom)
+    b.wire("18g", "25f", 3, "PD5")
+    b.two("R7", "25g", "26i", 3)
+    b.two("D6", "26j", "BN26", 3)
+
+    # D7 (Build 3, PD6): cols 37-38 (bottom)
+    b.wire("19g", "35f", 3, "PD6")
+    b.two("R8", "35g", "34i", 3)
+    b.two("D7", "34j", "BN34", 3)
+
     b.switch("SW1", 22, 2, flip=True); b.wire("22d", "13b", 2, "PC0"); b.wire("24g", "BN24", 2, "GND")
     return c, b
 

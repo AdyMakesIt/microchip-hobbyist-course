@@ -3,18 +3,18 @@ J1,ISP programmer,connector,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Ve
 U1,ATmega328P-PU,IC,Package_DIP:DIP-28_W7.62mm,1
 C1,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
 C2,100nF,capacitor,Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm,1
-D1,red,LED,LED_THT:LED_D5.0mm,1
+D1,red,LED,LED_THT:LED_D5.0mm,3
 D2,red,LED,LED_THT:LED_D5.0mm,3
 D3,red,LED,LED_THT:LED_D5.0mm,3
-D4,red,LED,LED_THT:LED_D5.0mm,3
+D4,red,LED,LED_THT:LED_D5.0mm,1
 D5,red,LED,LED_THT:LED_D5.0mm,3
 D6,red,LED,LED_THT:LED_D5.0mm,3
 D7,red,LED,LED_THT:LED_D5.0mm,3
 R1,10 kΩ,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
-R2,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
+R2,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
 R3,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
 R4,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
-R5,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
+R5,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,1
 R6,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
 R7,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
 R8,680 Ω,resistor,Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,3
