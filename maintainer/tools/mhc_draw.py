@@ -153,10 +153,11 @@ class Board:
         """Potentiometer: a and b are the outer legs (the track ends), w the middle leg (wiper)."""
         self.items.append(dict(kind="POT", ref=ref, a=parse_hole(a), w=parse_hole(w), b=parse_hole(b), build=build))
 
-    def switch(self, ref, col, build):
+    def switch(self, ref, col, build, flip=False):
         """Tact switch straddling the centre gap: legs at (col,e) (col+2,e) (col,f) (col+2,f).
-        Only the diagonal legs (col,e) and (col+2,f) are used, whichever way round the switch is."""
-        self.items.append(dict(kind="SW", ref=ref, col=col, build=build))
+        flip=False: pin 2 (GND) at (col,e), pin 1 (signal) at (col+2,f).
+        flip=True:  pin 1 (signal) at (col,e), pin 2 (GND) at (col+2,f)."""
+        self.items.append(dict(kind="SW", ref=ref, col=col, build=build, flip=flip))
 
     def lead(self, conn, pin, hole, build, label, until=99):
         """A lead from a hole to pin <pin> of an off-board connector (programmer, USB-serial adapter...)."""
@@ -203,9 +204,14 @@ class Board:
                 u(("pin", it["conn"], int(it["pin"])), hole_node(it["a"]))
             elif k == "SW":
                 col = it["col"]
-                # schematic pin 1 = the signal side (bottom-right leg), pin 2 = the GND side (top-left leg)
-                u(("pin", it["ref"], "2"), hole_node((col, "e")))
-                u(("pin", it["ref"], "1"), hole_node((col + 2, "f")))
+                if it.get("flip"):
+                    # schematic pin 1 = the signal side (top left leg), pin 2 = the GND side (bottom right leg)
+                    u(("pin", it["ref"], "1"), hole_node((col, "e")))
+                    u(("pin", it["ref"], "2"), hole_node((col + 2, "f")))
+                else:
+                    # schematic pin 1 = the signal side (bottom-right leg), pin 2 = the GND side (top-left leg)
+                    u(("pin", it["ref"], "2"), hole_node((col, "e")))
+                    u(("pin", it["ref"], "1"), hole_node((col + 2, "f")))
         # the supply feeds the LEFT end of the top rails
         u(("net", "+5V"), ("rail", "TP", 0)); u(("net", "GND"), ("rail", "TN", 0))
         groups = collections.defaultdict(set)

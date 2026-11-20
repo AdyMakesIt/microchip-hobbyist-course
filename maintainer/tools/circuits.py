@@ -104,7 +104,7 @@ def month1_avr():
     b.wire("14h", "BP14", 1, "+5V"); b.wire("15h", "BN15", 1, "GND"); b.two("C1", "14g", "15g", 1)
     b.wire("16b", "TP16", 1, "+5V"); b.wire("14b", "TN14", 1, "GND"); b.two("C2", "16d", "14d", 1)
     b.two("R1", "8i", "BP8", 1)
-    b.lead("J1", 4, "8j", 1, "RESET"); b.lead("J1", 1, "18c", 1, "MISO"); b.lead("J1", 2, "17c", 1, "SCK")
+    b.lead("J1", 4, "8h", 1, "RESET"); b.lead("J1", 1, "18c", 1, "MISO"); b.lead("J1", 2, "17c", 1, "SCK")
     b.lead("J1", 3, "19c", 1, "MOSI"); b.lead("J1", 5, "TN6", 1, "GND")
     pinhole = {2: "9h", 3: "10h", 4: "11h", 5: "12h", 6: "13h", 11: "18h", 12: "19h"}
     for i, (pin, d, r, bld) in enumerate(leds):
@@ -112,7 +112,7 @@ def month1_avr():
         b.wire(pinhole[pin], f"{uc}a", bld, f"PD{i}")
         b.two(r, f"{uc}d", f"{uc}g", bld)
         b.two(d, f"{uc}h", f"BN{uc}", bld)
-    b.switch("SW1", 3, 2); b.wire("3a", "TN3", 2, "GND"); b.wire("5g", "13b", 2, "PC0")
+    b.switch("SW1", 22, 2, flip=True); b.wire("22d", "13b", 2, "PC0"); b.wire("24g", "BN24", 2, "GND")
     return c, b
 
 # ---------------------------------------------------------------------------------

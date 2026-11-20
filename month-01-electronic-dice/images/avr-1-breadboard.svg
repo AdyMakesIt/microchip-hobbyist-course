@@ -603,9 +603,9 @@
 <path d="M 334.0 286.0 C 391.6 234.0, 564.4 72.0, 622.0 124.0" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>
 <path d="M 334.0 286.0 C 391.6 234.0, 564.4 72.0, 622.0 124.0" fill="none" stroke="#8c564b" stroke-width="3.2" stroke-linecap="round"/>
 <circle cx="334.0" cy="286.0" r="3" fill="#8c564b" stroke="#fff" stroke-width=".8"/><circle cx="622.0" cy="124.0" r="3" fill="#8c564b" stroke="#fff" stroke-width=".8"/>
-<path d="M 316.0 322.0 C 256.0 322.0, 210.0 106.9, 150.0 106.9" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>
-<path d="M 316.0 322.0 C 256.0 322.0, 210.0 106.9, 150.0 106.9" fill="none" stroke="#7a3fb0" stroke-width="2.4" stroke-dasharray="6 3" stroke-linecap="round"/>
-<circle cx="316.0" cy="322.0" r="3" fill="#7a3fb0"/>
+<path d="M 316.0 286.0 C 256.0 286.0, 210.0 106.9, 150.0 106.9" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+<path d="M 316.0 286.0 C 256.0 286.0, 210.0 106.9, 150.0 106.9" fill="none" stroke="#7a3fb0" stroke-width="2.4" stroke-dasharray="6 3" stroke-linecap="round"/>
+<circle cx="316.0" cy="286.0" r="3" fill="#7a3fb0"/>
 <rect x="10.0" y="97.9" width="140.0" height="18" rx="3" fill="#efe4fa" stroke="#7a3fb0"/><text x="80.0" y="110.9" font-size="9.5" fill="#4a1f78" text-anchor="middle">ISP programmer: RESET</text>
 <path d="M 496.0 160.0 C 436.0 160.0, 210.0 133.0, 150.0 133.0" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>
 <path d="M 496.0 160.0 C 436.0 160.0, 210.0 133.0, 150.0 133.0" fill="none" stroke="#7a3fb0" stroke-width="2.4" stroke-dasharray="6 3" stroke-linecap="round"/>
