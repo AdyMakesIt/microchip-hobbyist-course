@@ -14,13 +14,23 @@ from course_data import (CHIPS, STOCK, TOOLS, PLAN, PHASES, CAPSTONE_SHORTLIST, 
 from circuits import CIRCUITS
 from sync_docs import bom_counts
 from format_tables import format_tree
+from circuits import CIRCUITS
+
+
+def month_dirs_from_registry(entries):
+    """Map month number -> primary course folder from CIRCUITS."""
+    dirs = {}
+    for entry in entries:
+        m_num = int(entry["month"])
+        folder = entry.get("folder")
+        if folder and "/" not in folder and m_num not in dirs:
+            dirs[m_num] = folder
+    return dirs
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT = os.path.join(ROOT, "start-here")
-MONTH_DIRS = {1: "month-01-electronic-dice", 2: "month-02-workshop-command-centre", 3: "month-03-analogue-in-out",
-              4: "month-04-binary-clock", 5: "month-05-sixteen-bit-and-memory"}
-
+MONTH_DIRS = month_dirs_from_registry(CIRCUITS)
 RES = {"100 Ω": "r100", "330 Ω": "r330", "680 Ω": "r680", "1 kΩ": "r1k", "4.7 kΩ": "r4k7", "10 kΩ": "r10k", "100 kΩ": "r100k", "120 Ω": "r120"}
 CAP = {"10pF": "c10p", "22pF": "c22p", "100nF": "c100n", "1uF": "c1u", "10uF": "c10u", "100uF": "c100u"}
 XT = {"16MHz": "xtal16m", "32.768kHz": "xtal32k", "8MHz": "xtal8m"}

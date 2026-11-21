@@ -15,6 +15,7 @@ import re
 import shutil
 import subprocess
 import sys
+from circuits import CIRCUITS
 
 if shutil.which("node") is None:
     sys.exit(
@@ -82,15 +83,19 @@ def run(cmd, cwd):
     return r.returncode == 0, (r.stdout + r.stderr)[-1500:]
 
 # 1 logic tests
-for m in ("m1pic", "m1avr", "m2", "m3", "m4", "m5"):
+sim_targets = [
+    entry["id"]
+    for entry in CIRCUITS
+    if "id" in entry
+    and os.path.isfile(os.path.join(ROOT, "maintainer", "sim", entry["id"], "run_tests.sh"))
+]
+
+for m in sim_targets:
     sim_dir = os.path.join(ROOT, "maintainer", "sim", m)
 
     bash_command = (
         'export PATH="/usr/bin:/ucrt64/bin:$PATH"; '
         'echo "PATH=$PATH"; '
-        'command -v dirname; '
-        'command -v timeout; '
-        'command -v g++; '
         'exec bash ./run_tests.sh'
     )
 
@@ -98,7 +103,7 @@ for m in ("m1pic", "m1avr", "m2", "m3", "m4", "m5"):
 
     n_fail = len(re.findall(r"FAILED|FAIL:", out))
     step(f"logic tests ({m})", good and n_fail == 0, out)
-    
+
 # 2 diagrams
 good, out = run([sys.executable, "make_all.py"], HERE); step("breadboard layouts match schematics; diagrams regenerated", good, out)
 good, out = run([sys.executable, "make_extra.py"], HERE); step("teaching diagrams generated", good, out)

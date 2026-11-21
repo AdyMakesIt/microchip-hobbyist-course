@@ -1,5 +1,5 @@
-from .month01_avr import month01_avr, M01_AVR_BUILDS
 from .month01_pic import month01_pic, M01_PIC_BUILDS
+from .month01_avr import month01_avr, M01_AVR_BUILDS
 from .month01_isp import month01_isp, M01_ISP_BUILDS
 from .month02 import month02, M02_BUILDS
 from .month03 import month03, M03_BUILDS
@@ -7,7 +7,7 @@ from .month04 import month04, M04_BUILDS
 from .month05 import month05, M05_BUILDS
 
 __all__ = [
-    "month01_avr", "month01_pic", "month01_isp",
+    "month01", "month01_avr", "month01_isp",
     "month02", "month03", "month04", "month05",
     "M01_PIC_BUILDS", "M01_AVR_BUILDS", "M01_ISP_BUILDS",
     "M02_BUILDS", "M03_BUILDS", "M04_BUILDS", "M05_BUILDS",
@@ -16,35 +16,49 @@ __all__ = [
 
 CIRCUITS = [
     {
-        "id": "m01avr",
+        "id": "m01_avr",
         "month": 1,
         "folder": "month-01-electronic-dice",
-        "prefix": "avr",
+        "prefix": "build-avr",
         "title": "Month 1 (ATmega328P)",
         "hw_title": "Month 1, ATmega328P track",
         "builds": M01_AVR_BUILDS,
         "fn": month01_avr,
+        "sheet_file": "bench-month-01-avr",
+        "sheet_title": "Month 1, AVR track (ATmega328P)",
+        "pages": ["avr-1-blink.md", "avr-2-button.md", "avr-3-dice.md"],
+        "tools": "VS Code + PlatformIO, USBasp or Uno R3, multimeter",
+        "assumptions": [2, 4, 6],
     },
     {
-        "id": "m01pic",
+        "id": "m01_pic",
         "month": 1,
         "folder": "month-01-electronic-dice",
-        "prefix": "pic",
+        "prefix": "build-pic",
         "title": "Month 1 (PIC)",
         "hw_title": "Month 1, PIC track",
         "builds": M01_PIC_BUILDS,
         "fn": month01_pic,
+        "sheet_file": "bench-month-01-pic",
+        "sheet_title": "Month 1, PIC track (PIC16F18857)",
+        "pages": ["pic-1-blink.md", "pic-2-button.md", "pic-3-dice.md"],
+        "tools": "MPLAB X v6.20, XC8, PICkit 3, multimeter",
+        "assumptions": [1, 2, 5],
     },
     {
-        "id": "m01isp",
+        "id": "m01_isp",
         "month": 1,
-        "folder": "month-01B-avr-programmer",
-        "prefix": "programmer",
-        "img_prefix": "build",
+        "folder": "month-01-programmer",  # <-- match your new folder name here
+        "prefix": "build-isp",
         "title": "Month 1 Part B",
         "hw_title": "Month 1 Part B, AVR programmer",
         "builds": M01_ISP_BUILDS,
         "fn": month01_isp,
+        "sheet_file": "bench-month-01-programmer",
+        "sheet_title": "Month 1, Part B (optional AVR programmer)",
+        "pages": ["build-b1-minimum-board.md", "build-b2-programmer.md", "build-b3-program-a-chip.md"],
+        "tools": "Arduino IDE, USBasp or Uno, USB-serial adapter",
+        "assumptions": [7],
     },
     {
         "id": "m02",
@@ -56,6 +70,11 @@ CIRCUITS = [
         "hw_title": "Month 2",
         "builds": M02_BUILDS,
         "fn": month02,
+        "sheet_file": "bench-month-02",
+        "sheet_title": "Month 2 (PIC18F47K42 + MCP23017)",
+        "pages": ["build-1-blink.md", "build-2-hello-expander.md", "build-3-led-chase.md", "build-4-command-centre.md"],
+        "tools": "MPLAB X v6.20, XC8, PICkit 3",
+        "assumptions": [1, 2, 3, 5],
     },
     {
         "id": "m03",
@@ -67,6 +86,11 @@ CIRCUITS = [
         "hw_title": "Month 3",
         "builds": M03_BUILDS,
         "fn": month03,
+        "sheet_file": "bench-month-03",
+        "sheet_title": "Month 3 (MCP3008 + MCP4822)",
+        "pages": ["build-1-adc-bar-graph.md", "build-2-dac.md", "build-3-loopback.md"],
+        "tools": "MPLAB X v6.20, XC8, PICkit 3, multimeter",
+        "assumptions": [2, 8],
     },
     {
         "id": "m04",
@@ -78,6 +102,11 @@ CIRCUITS = [
         "hw_title": "Month 4",
         "builds": M04_BUILDS,
         "fn": month04,
+        "sheet_file": "bench-month-04",
+        "sheet_title": "Month 4 (PIC16F18446 + MCP7940N)",
+        "pages": ["build-1-blink.md", "build-2-rtc-hello.md", "build-3-binary-clock.md"],
+        "tools": "MPLAB X v6.20, XC8, PICkit 3",
+        "assumptions": [1, 9, 11],
     },
     {
         "id": "m05",
@@ -89,5 +118,10 @@ CIRCUITS = [
         "hw_title": "Month 5",
         "builds": M05_BUILDS,
         "fn": month05,
+        "sheet_file": "bench-month-05",
+        "sheet_title": "Month 5 (PIC24FJ64GA002 + 24LC512, 3.3 V)",
+        "pages": ["build-1-blink.md", "build-2-eeprom-hello.md", "build-3-boot-counter.md"],
+        "tools": "MPLAB X v6.20, XC16, PICkit 3, multimeter",
+        "assumptions": [1, 2, 10],
     },
 ]

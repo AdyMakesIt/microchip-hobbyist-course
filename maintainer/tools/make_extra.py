@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 """Small teaching diagrams (dice pip map, chip pin numbering, breadboard connections)."""
 import os, subprocess
-HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+from circuits import CIRCUITS
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 F = "DejaVu Sans, Verdana, Arial, sans-serif"
 
+
+def dice_folder():
+    for entry in CIRCUITS:
+        if entry.get("id") == "m1pic" or entry.get("prefix") == "pic":
+            if entry.get("folder"):
+                return entry["folder"]
+    return "month-01-electronic-dice"
+
+
 def save(path, svg):
-    open(path, "w").write(svg)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    open(path, "w", encoding="utf-8").write(svg)
     subprocess.run(["node", os.path.join(HERE, "svg2png.js"), path, path[:-4] + ".png", "1200"], check=True, capture_output=True)
+
 
 def dice():
     pips = {"TOP_LEFT": (0, 0, "RC0", 11), "MID_LEFT": (0, 1, "RC1", 12), "BOTTOM_LEFT": (0, 2, "RC2", 13),
@@ -21,7 +35,9 @@ def dice():
     o.append('<text x="300" y="80" font-size="13" font-weight="bold">LED order along the breadboard row</text>')
     for i, (nm, (cx, cy, rc, pin)) in enumerate(pips.items()):
         o.append(f'<text x="300" y="{106+i*26}" font-size="13">{i+1}. {nm.replace("_"," ").lower()} = <tspan font-weight="bold">{rc}</tspan> (chip pin {pin})</text>')
-    o.append('</svg>'); return "\n".join(o)
+    o.append('</svg>')
+    return "\n".join(o)
+
 
 def dip():
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" width="760" height="330" font-family="{F}"><rect width="100%" height="100%" fill="#fff"/>',
@@ -39,7 +55,9 @@ def dip():
     o.append(f'<text x="{x0+n*26}" y="{y0+50}" font-size="14" fill="#fff" text-anchor="middle">notch (or dot) at the LEFT</text>')
     o.append('<text x="40" y="288" font-size="13">Hold the chip with the notch on the left. Pin 1 is the bottom-left pin (next to the dot).</text>')
     o.append('<text x="40" y="308" font-size="13">Numbers run right along the bottom, then back left along the top. (Example: a 16-pin chip.)</text>')
-    o.append('</svg>'); return "\n".join(o)
+    o.append('</svg>')
+    return "\n".join(o)
+
 
 def strips():
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" font-family="{F}"><rect width="100%" height="100%" fill="#fff"/>',
@@ -59,10 +77,13 @@ def strips():
     for r, lab in enumerate("fghij"): o.append(f'<text x="84" y="{204+r*18}" font-size="12" fill="#555" text-anchor="middle">{lab}</text>')
     o.append('<text x="360" y="174" font-size="12" fill="#6b6354" text-anchor="middle">centre channel: NOT connected across</text>')
     o.append('<text x="40" y="318" font-size="13">The 5 holes of one column (a-e, or f-j) are joined. Yellow shows two examples. Rows run across, columns run up and down.</text>')
-    o.append('</svg>'); return "\n".join(o)
+    o.append('</svg>')
+    return "\n".join(o)
+
 
 if __name__ == "__main__":
-    save(os.path.join(ROOT, "month-01-electronic-dice", "images", "dice-pip-map.svg"), dice())
+    save(os.path.join(ROOT, dice_folder(), "images", "dice-pip-map.svg"), dice())
     save(os.path.join(ROOT, "start-here", "images", "chip-pin-numbering.svg"), dip())
     save(os.path.join(ROOT, "start-here", "images", "breadboard-connections.svg"), strips())
     print("ok")
+    

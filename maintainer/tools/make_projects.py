@@ -11,17 +11,32 @@ Also writes projects/README.md per month and maintainer/PROJECT_STATUS.md, and C
 holds exactly the same main.c as code/.   Usage:  python3 make_projects.py [--check]
 """
 import os, sys, shutil, glob
+from circuits import CIRCUITS
+
+def project_months_from_registry(entries):
+    """Return unique project month specs in registry order: (folder, label, device, compiler, note)."""
+    seen = set()
+    out = []
+    for entry in entries:
+        folder = entry.get("folder")
+        if not folder or folder in seen:
+            continue
+        if "proj_label" not in entry and "compiler" not in entry:
+            continue
+        seen.add(folder)
+        out.append((
+            folder,
+            entry.get("proj_label", entry["title"]),
+            entry.get("pic_device"),
+            entry.get("compiler", "XC8"),
+            entry.get("proj_note", ""),
+        ))
+    return out
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+MONTHS = project_months_from_registry(CIRCUITS)
 
-MONTHS = [  # folder, label, PIC device (or None), compiler, notes
-    ("month-01-electronic-dice", "Month 1", "PIC16F18857 (for the pic-* builds)", "XC8", ""),
-    ("month-02-workshop-command-centre", "Month 2", "PIC18F47K42", "XC8", ""),
-    ("month-03-analogue-in-out", "Month 3", "PIC18F47K42", "XC8", ""),
-    ("month-04-binary-clock", "Month 4", "PIC16F18446", "XC8", ""),
-    ("month-05-sixteen-bit-and-memory", "Month 5", "PIC24FJ64GA002", "XC16", "3.3 V board"),
-]
 PIO_INI = """; PlatformIO project for the ATmega328P (internal 1 MHz oscillator, factory fuses).
 ; Choose the environment that matches your programmer. Build: the tick; upload: the arrow.
 ; 'framework = arduino' is only here so PlatformIO knows how to build; our own main() runs instead of Arduino's.
@@ -101,7 +116,7 @@ def generate():
         pr += ["", "The source on the build pages comes from `../code/`; these projects always hold an identical copy (checked automatically).", ""]
         write(os.path.join(base, "projects", "README.md"), "\n".join(pr))
     # Part B Arduino sketch
-    pb = os.path.join(ROOT, "month-01-electronic-dice", "avr-programmer")
+    pb = os.path.join(ROOT, "month-01-programmer")
     ino = os.path.join(pb, "code", "blink-d9", "blink-d9.ino")
     write(os.path.join(pb, "projects", "arduino", "blink-d9", "blink-d9.ino"), read(ino))
     write(os.path.join(pb, "projects", "README.md"), "# Ready-to-open projects\n\n| Folder | What is in it |\n|---|---|\n| [`arduino/`](arduino/) | the Arduino sketch (open `blink-d9/blink-d9.ino` in the Arduino IDE; the folder name must match the sketch name) |\n\nThe ArduinoISP programmer program comes with the Arduino IDE (File → Examples → 11.ArduinoISP).\n")
@@ -117,7 +132,7 @@ def check():
                 if os.path.exists(cand) and read(cand) != src: bad.append(f"{os.path.relpath(cand, ROOT)} differs from code/{b}/main.c")
             xdir = os.path.join(base, "projects", "mplabx", b + ".X")
             if os.path.isdir(xdir) and not os.path.exists(os.path.join(xdir, "nbproject")): bad.append(f"{os.path.relpath(xdir, ROOT)} has no nbproject folder (not a real MPLAB X project)")
-    pb = os.path.join(ROOT, "month-01-electronic-dice", "avr-programmer")
+    pb = os.path.join(ROOT, "month-01-programmer")
     a, b2 = os.path.join(pb, "code", "blink-d9", "blink-d9.ino"), os.path.join(pb, "projects", "arduino", "blink-d9", "blink-d9.ino")
     if os.path.exists(b2) and read(a) != read(b2): bad.append("arduino sketch differs from code/")
     return bad
