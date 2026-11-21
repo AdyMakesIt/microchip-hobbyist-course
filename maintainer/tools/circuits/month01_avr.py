@@ -5,9 +5,9 @@ from mhc_draw import Circuit, Board
 # ---------------------------------------------------------------------------------
 # MONTH 1, AVR TRACK - ATmega328P electronic dice (programmed through an ISP programmer)
 # ---------------------------------------------------------------------------------
-AVR1_BUILDS = {1: "AVR Build 1 - Blink an LED", 2: "AVR Build 2 - Add the button", 3: "AVR Build 3 - The dice (seven LEDs)"}
+M01_AVR_BUILDS = {1: "AVR Build 1 - Blink an LED", 2: "AVR Build 2 - Add the button", 3: "AVR Build 3 - The dice (seven LEDs)"}
 
-def month1_avr():
+def month01_avr():
     c = Circuit("Month 1 AVR")
     c.ic("J1", "ISP programmer", 5, "skinny", {1: "MISO", 2: "SCK", 3: "MOSI", 4: "RESET", 5: "GND"}, at=(20, 60),
          sides={1: "R", 2: "R", 3: "R", 4: "R", 5: "R"}, connector=True, named_only=True)

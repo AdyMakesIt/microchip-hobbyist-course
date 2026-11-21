@@ -5,10 +5,10 @@ from mhc_draw import Circuit, Board
 # ---------------------------------------------------------------------------------
 # MONTH 2 - PIC18F47K42 + MCP23017 workshop command centre
 # ---------------------------------------------------------------------------------
-M2_BUILDS = {1: "Build 1 - Blink (minimum circuit)", 2: "Build 2 - Say hello to the MCP23017",
+M02_BUILDS = {1: "Build 1 - Blink (minimum circuit)", 2: "Build 2 - Say hello to the MCP23017",
              3: "Build 3 - Eight LEDs and a button", 4: "Build 4 - Workshop Command Centre"}
 
-def month2():
+def month02():
     c = Circuit("Month 2")
     c.ic("J1", "PICkit 3 ICSP", 5, "skinny", {1: "MCLR", 2: "VDD", 3: "VSS", 4: "PGD", 5: "PGC"}, at=(20, 60),
          sides={1: "R", 2: "R", 3: "R", 4: "R", 5: "R"}, connector=True)

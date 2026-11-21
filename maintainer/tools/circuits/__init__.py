@@ -1,93 +1,93 @@
-from .month01_pic import month1_pic, PIC1_BUILDS
-from .month01_avr import month1_avr, AVR1_BUILDS
-from .month01_isp import month1_isp, ISP1_BUILDS
-from .month02 import month2, M2_BUILDS
-from .month03 import month3, M3_BUILDS
-from .month04 import month4, M4_BUILDS
-from .month05 import month5, M5_BUILDS
+from .month01_avr import month01_avr, M01_AVR_BUILDS
+from .month01_pic import month01_pic, M01_PIC_BUILDS
+from .month01_isp import month01_isp, M01_ISP_BUILDS
+from .month02 import month02, M02_BUILDS
+from .month03 import month03, M03_BUILDS
+from .month04 import month04, M04_BUILDS
+from .month05 import month05, M05_BUILDS
 
 __all__ = [
-    "month1", "month1_avr", "month1_isp",
-    "month2", "month3", "month4", "month5",
-    "PIC1_BUILDS", "AVR1_BUILDS", "ISP1_BUILDS",
-    "M2_BUILDS", "M3_BUILDS", "M4_BUILDS", "M5_BUILDS",
+    "month01_avr", "month01_pic", "month01_isp",
+    "month02", "month03", "month04", "month05",
+    "M01_PIC_BUILDS", "M01_AVR_BUILDS", "M01_ISP_BUILDS",
+    "M02_BUILDS", "M03_BUILDS", "M04_BUILDS", "M05_BUILDS",
     "CIRCUITS",
 ]
 
 CIRCUITS = [
     {
-        "id": "m1pic",
-        "month": 1,
-        "folder": "month-01-electronic-dice",
-        "prefix": "pic",
-        "title": "Month 1 (PIC)",
-        "hw_title": "Month 1, PIC track",
-        "builds": PIC1_BUILDS,
-        "fn": month1_pic,
-    },
-    {
-        "id": "m1avr",
+        "id": "m01avr",
         "month": 1,
         "folder": "month-01-electronic-dice",
         "prefix": "avr",
         "title": "Month 1 (ATmega328P)",
         "hw_title": "Month 1, ATmega328P track",
-        "builds": AVR1_BUILDS,
-        "fn": month1_avr,
+        "builds": M01_AVR_BUILDS,
+        "fn": month01_avr,
     },
     {
-        "id": "m1isp",
+        "id": "m01pic",
         "month": 1,
-        "folder": "month-01-electronic-dice/avr-programmer",
+        "folder": "month-01-electronic-dice",
+        "prefix": "pic",
+        "title": "Month 1 (PIC)",
+        "hw_title": "Month 1, PIC track",
+        "builds": M01_PIC_BUILDS,
+        "fn": month01_pic,
+    },
+    {
+        "id": "m01isp",
+        "month": 1,
+        "folder": "month-01B-avr-programmer",
         "prefix": "programmer",
         "img_prefix": "build",
         "title": "Month 1 Part B",
         "hw_title": "Month 1 Part B, AVR programmer",
-        "builds": ISP1_BUILDS,
-        "fn": month1_isp,
+        "builds": M01_ISP_BUILDS,
+        "fn": month01_isp,
     },
     {
-        "id": "m2",
+        "id": "m02",
         "month": 2,
         "folder": "month-02-workshop-command-centre",
-        "prefix": "month2",
+        "prefix": "month02",
         "img_prefix": "build",
         "title": "Month 2",
         "hw_title": "Month 2",
-        "builds": M2_BUILDS,
-        "fn": month2,
+        "builds": M02_BUILDS,
+        "fn": month02,
     },
     {
-        "id": "m3",
+        "id": "m03",
         "month": 3,
         "folder": "month-03-analogue-in-out",
-        "prefix": "month3",
+        "prefix": "month03",
         "img_prefix": "build",
         "title": "Month 3",
         "hw_title": "Month 3",
-        "builds": M3_BUILDS,
-        "fn": month3,
+        "builds": M03_BUILDS,
+        "fn": month03,
     },
     {
-        "id": "m4",
+        "id": "m04",
         "month": 4,
         "folder": "month-04-binary-clock",
-        "prefix": "month4",
+        "prefix": "month04",
         "img_prefix": "build",
         "title": "Month 4",
         "hw_title": "Month 4",
-        "builds": M4_BUILDS,
-        "fn": month4,
+        "builds": M04_BUILDS,
+        "fn": month04,
     },
     {
-        "id": "m5",
+        "id": "m05",
         "month": 5,
         "folder": "month-05-sixteen-bit-and-memory",
-        "prefix": "month5",
+        "prefix": "month05",
         "img_prefix": "build",
         "title": "Month 5",
         "hw_title": "Month 5",
-        "builds": M5_BUILDS,
-        "fn": month5,
+        "builds": M05_BUILDS,
+        "fn": month05,
     },
 ]

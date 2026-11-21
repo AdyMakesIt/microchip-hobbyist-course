@@ -5,10 +5,10 @@ from mhc_draw import Circuit, Board
 # ---------------------------------------------------------------------------------
 # MONTH 1, PART B (optional) - ATmega328P as an AVR programmer
 # ---------------------------------------------------------------------------------
-ISP1_BUILDS = {1: "Build B1 - The minimum ATmega328P board", 2: "Build B2 - Turn it into a programmer",
+M01_ISP_BUILDS = {1: "Build B1 - The minimum ATmega328P board", 2: "Build B2 - Turn it into a programmer",
               3: "Build B3 - Program a second chip"}
 
-def month1_isp():
+def month01_isp():
     c = Circuit("Month 1 Part B")
     c.ic("J2", "USB-serial adapter", 4, "skinny", {1: "GND", 2: "TXD (to chip RXD)", 3: "RXD (from chip TXD)", 4: "DTR"},
          at=(20, 40), sides={1: "R", 2: "R", 3: "R", 4: "R"}, connector=True, named_only=True)

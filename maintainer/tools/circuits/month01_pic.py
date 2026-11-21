@@ -5,9 +5,9 @@ from mhc_draw import Circuit, Board
 # ---------------------------------------------------------------------------------
 # MONTH 1 - PIC16F18857 electronic dice
 # ---------------------------------------------------------------------------------
-PIC1_BUILDS = {1: "PIC Build 1 - Blink an LED", 2: "PIC Build 2 - Add the button", 3: "PIC Build 3 - The dice (seven LEDs)"}
+M01_PIC_BUILDS = {1: "PIC Build 1 - Blink an LED", 2: "PIC Build 2 - Add the button", 3: "PIC Build 3 - The dice (seven LEDs)"}
 
-def month1_pic():
+def month01_pic():
     c = Circuit("Month 1 PIC")
     c.ic("J1", "PICkit 3 ICSP", 5, "skinny",
          {1: "MCLR", 2: "VDD", 3: "VSS", 4: "PGD", 5: "PGC"}, at=(20, 60),

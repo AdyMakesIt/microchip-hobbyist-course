@@ -50,7 +50,7 @@ That is deliberate: a project file written by hand and never opened in MPLAB can
 
 **Once a build has compiled and run on your bench**, you can add the real project:
 
-1. In MPLAB X, make the project inside the build's code folder, for example `month-02-.../code/build-2-hello-expander/Month2_Build2.X`.
+1. In MPLAB X, make the project inside the build's code folder, for example `month-02-.../code/build-2-hello-expander/month02_Build2.X`.
 2. Commit the **`.X` folder** (the `.gitignore` already leaves out `build/`, `dist/` and `debug/`).
 3. Note in [the verification log](VERIFICATION_LOG.md) the MPLAB X, XC8 and device-pack versions it was built with.
 
