@@ -4,9 +4,12 @@ These tests run each build's **unmodified `main.c`** on a PC against a model of 
 the datasheet protocol. They need only `g++` (any recent version).
 
 ```sh
-sh maintainer/sim/m1pic/run_tests.sh   # Month 1, PIC track
-sh maintainer/sim/m1avr/run_tests.sh   # Month 1, ATmega328P track
-sh maintainer/sim/m2/run_tests.sh     # Month 2
+sh maintainer/sim/m01_pic/run_tests.sh   # Month 1, PIC track
+sh maintainer/sim/m01_avr/run_tests.sh   # Month 1, ATmega328P track
+sh maintainer/sim/m02/run_tests.sh       # Month 2
+sh maintainer/sim/m03/run_tests.sh       # Month 3
+sh maintainer/sim/m04/run_tests.sh       # Month 4
+sh maintainer/sim/m05/run_tests.sh       # Month 5
 ```
 
 ## What they prove

@@ -65,7 +65,7 @@ Order three of each: spares are useful when a chip gets damaged.
 ## Optional: Part B, build your own AVR programmer
 
 After both tracks, you can turn a second ATmega328P into a programmer yourself and use it to program a third. This teaches crystals, fuses, bootloaders and the ISP connection.
-See [Part B](avr-programmer/README.md). Skip it if you would rather move on.
+See [Part B](../month-01-programmer/README.md). Skip it if you would rather move on.
 
 **Status:** the logic of all six programs has been tested in simulation (see
 [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring in the pictures has been machine-checked against the schematics.

@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 4 · Build 1 – Blink on a new chip
 
-Page: `month-04-binary-clock/build-1-blink.md`
+Page: `build-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -34,7 +34,7 @@ Page: `month-04-binary-clock/build-1-blink.md`
 
 ## Month 4 · Build 2 – Meet the real-time clock
 
-Page: `month-04-binary-clock/build-2-rtc-hello.md`
+Page: `build-2-rtc-hello.md`
 
 **Before power (meter checks):**
 
@@ -61,7 +61,7 @@ Page: `month-04-binary-clock/build-2-rtc-hello.md`
 
 ## Month 4 · Build 3 – The binary clock
 
-Page: `month-04-binary-clock/build-3-binary-clock.md`
+Page: `build-3-binary-clock.md`
 
 **Before power (meter checks):**
 

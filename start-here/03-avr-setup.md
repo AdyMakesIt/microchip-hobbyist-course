@@ -217,7 +217,7 @@ up there. If you prefer, install avrdude separately (Linux: `sudo apt install av
 An AVR chip stores a few settings called **fuses**: which clock to use, whether the reset pin works, and so on. The chip leaves the factory using its **internal 8 MHz oscillator divided by 8, which is 1 MHz**.
 That is what this course uses, so **you never need to touch the fuses in Month 1.**
 
-Do not experiment with fuse values yet. Choosing the wrong clock source (for example, an external crystal that is not there) can make the chip unreachable until a clock is supplied. Fuses are explained properly in [Month 1 Part B](../month-01-electronic-dice/avr-programmer/README.md).
+Do not experiment with fuse values yet. Choosing the wrong clock source (for example, an external crystal that is not there) can make the chip unreachable until a clock is supplied. Fuses are explained properly in [Month 1 Part B](../month-01-programmer/README.md).
 
 ## Troubleshooting
 

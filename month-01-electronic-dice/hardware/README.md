@@ -1,4 +1,4 @@
-# Hardware files: Month 1, PIC track
+# Hardware files: Month 1, ATmega328P track
 
 This folder holds everything you need to turn this month's circuit into a printed circuit board (PCB).
 

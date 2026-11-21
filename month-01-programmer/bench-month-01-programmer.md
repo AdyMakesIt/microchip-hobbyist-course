@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 1 · Part B · Build B1 – The minimum ATmega328P board
 
-Page: `month-01-electronic-dice/avr-programmer/build-b1-minimum-board.md`
+Page: `build-b1-minimum-board.md`
 
 **Before power (meter checks):**
 
@@ -35,7 +35,7 @@ Page: `month-01-electronic-dice/avr-programmer/build-b1-minimum-board.md`
 
 ## Month 1 · Part B · Build B2 – Turn it into a programmer
 
-Page: `month-01-electronic-dice/avr-programmer/build-b2-programmer.md`
+Page: `build-b2-programmer.md`
 
 **Before power (meter checks):**
 
@@ -60,7 +60,7 @@ Page: `month-01-electronic-dice/avr-programmer/build-b2-programmer.md`
 
 ## Month 1 · Part B · Build B3 – Program a second chip
 
-Page: `month-01-electronic-dice/avr-programmer/build-b3-program-a-chip.md`
+Page: `build-b3-program-a-chip.md`
 
 **Before power (meter checks):**
 

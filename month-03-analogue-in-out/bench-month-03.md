@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 3 · Build 1 – Read a knob
 
-Page: `month-03-analogue-in-out/build-1-adc-bar-graph.md`
+Page: `build-1-adc-bar-graph.md`
 
 **Before power (meter checks):**
 
@@ -36,7 +36,7 @@ Page: `month-03-analogue-in-out/build-1-adc-bar-graph.md`
 
 ## Month 3 · Build 2 – Add the DAC
 
-Page: `month-03-analogue-in-out/build-2-dac.md`
+Page: `build-2-dac.md`
 
 **Before power (meter checks):**
 
@@ -64,7 +64,7 @@ Page: `month-03-analogue-in-out/build-2-dac.md`
 
 ## Month 3 · Build 3 – Loop the DAC back into the ADC
 
-Page: `month-03-analogue-in-out/build-3-loopback.md`
+Page: `build-3-loopback.md`
 
 **Before power (meter checks):**
 

@@ -84,7 +84,7 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ## Ready-made projects and hardware files
 
 * **Working projects:** [`projects/`](projects/README.md) holds complete, ready-to-open projects for the builds (an Arduino sketch).
-* **Hardware files:** [`hardware/`](hardware/README.md) holds the parts list and connection list (the KiCad schematic goes here too) you can use to design a PCB. See [Taking a project further](../../start-here/07-taking-a-project-further.md).
+* **Hardware files:** [`hardware/`](hardware/README.md) holds the parts list and connection list (the KiCad schematic goes here too) you can use to design a PCB. See [Taking a project further](../start-here/07-taking-a-project-further.md).
 
 ## Folder contents
 

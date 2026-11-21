@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 5 · Build 1 – Blink at 3.3 V
 
-Page: `month-05-sixteen-bit-and-memory/build-1-blink.md`
+Page: `build-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -35,7 +35,7 @@ Page: `month-05-sixteen-bit-and-memory/build-1-blink.md`
 
 ## Month 5 · Build 2 – Say hello to the EEPROM
 
-Page: `month-05-sixteen-bit-and-memory/build-2-eeprom-hello.md`
+Page: `build-2-eeprom-hello.md`
 
 **Before power (meter checks):**
 
@@ -61,7 +61,7 @@ Page: `month-05-sixteen-bit-and-memory/build-2-eeprom-hello.md`
 
 ## Month 5 · Build 3 – Memory that survives power-off
 
-Page: `month-05-sixteen-bit-and-memory/build-3-boot-counter.md`
+Page: `build-3-boot-counter.md`
 
 **Before power (meter checks):**
 
