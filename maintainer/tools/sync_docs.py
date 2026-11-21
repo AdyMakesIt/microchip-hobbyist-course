@@ -14,17 +14,27 @@ Run:  python3 sync_docs.py        (make_all.py draws the pictures; run it first)
 """
 import os, re, sys, collections
 from mhc_draw import pin_table, pretty_ohms, RAILS, hole_node
-from circuits import month1, month2, month3, month4, month5, month1_avr, month1_isp
+from circuits import CIRCUITS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
-# folder -> {key: circuit function}. The first key is the default for markers that give no key.
-MONTHS = {"month-01-electronic-dice": {"pic": month1, "avr": month1_avr},
-          "month-02-workshop-command-centre": {"main": month2},
-          "month-03-analogue-in-out": {"main": month3},
-          "month-04-binary-clock": {"main": month4},
-          "month-05-sixteen-bit-and-memory": {"main": month5},
-          "month-01-electronic-dice/avr-programmer": {"main": month1_isp}}
+
+
+def months_from_registry(entries):
+    """Build {folder: {key: circuit_fn}} from CIRCUITS; first key is default for unprefixed markers."""
+    grouped = collections.defaultdict(dict)
+    for entry in entries:
+        folder = entry.get("folder")
+        if not folder:
+            continue
+        key = entry.get("doc_key") or (
+            entry.get("prefix") if folder == "month-01-electronic-dice" else "main"
+        )
+        grouped[folder][key] = entry["fn"]
+    return dict(grouped)
+
+
+MONTHS = months_from_registry(CIRCUITS)
 
 RAIL_NAME = {"TP": "top **red** rail (+)", "TN": "top **blue** rail (−)", "BN": "bottom **blue** rail (−)", "BP": "bottom **red** rail (+)"}
 
@@ -98,7 +108,6 @@ def pins_text(c, b, build, it):
         for ref, p in m.get(hole_node(h), []):
             if (ref, p) not in found: found.append((ref, p))
     if not found: return "–"
-    chips = {r for r, _ in found}
     many = len([r for r in c.ics if not c.ics[r].connector]) > 1
     return " / ".join((f"{r}:{p}" if many else str(p)) for r, p in found)
 

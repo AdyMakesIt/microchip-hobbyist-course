@@ -12,9 +12,10 @@ Works on Windows PowerShell 5.1+ and PowerShell 7+.
 
 $ErrorActionPreference = "Stop"
 
-# Repository root is the parent of the directory containing this script.
-$RepoRoot = $PSScriptRoot
-$CheckScript = Join-Path $RepoRoot "maintainer\tools\check_all.py"
+# Repository root is two levels above maintainer/tools.
+$ToolsDir = $PSScriptRoot
+$RepoRoot = [System.IO.Path]::GetFullPath((Join-Path $ToolsDir "..\.."))
+$CheckScript = Join-Path $ToolsDir "check_all.py"
 
 if (-not (Test-Path -LiteralPath $CheckScript)) {
     Write-Error "Could not find check script: $CheckScript"
