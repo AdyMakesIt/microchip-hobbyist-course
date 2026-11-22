@@ -1,13 +1,13 @@
 # Month 1 · PIC Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](build-pic-2-button.md)
 
 **Goal:** make one LED blink once a second. This proves that the chip, the power, the programmer and the
 software all work. Almost every problem you will meet later is easier to find because this build works.
 
 **Status:** logic tested in simulation · compile and bench test pending
 
-This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](avr-1-blink.md); the two tracks are independent.
+This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](build-avr-1-blink.md); the two tracks are independent.
 
 ## 0. Coming from the AVR track?
 
@@ -191,4 +191,4 @@ How it works, line by line:
 * Make it blink twice as fast. Which numbers change?
 * Make it blink three short flashes, a pause, repeat.
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](build-pic-2-button.md)

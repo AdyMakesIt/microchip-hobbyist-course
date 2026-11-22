@@ -1,6 +1,6 @@
 # Month 1 · AVR Build 3 – The dice
 
-[← AVR Build 2](avr-2-button.md) · [Month 1](README.md) · [Next: PIC track →](pic-1-blink.md)
+[← AVR Build 2](build-avr-2-button.md) · [Month 1](README.md) · [Next: PIC track →](build-pic-1-blink.md)
 
 **Goal:** six more LEDs, and a program that "rolls" them to show a number from 1 to 6.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for AVR build 3](images/avr-3-schematic.png)
+![Schematic for AVR build 3](images/build-avr-3-schematic.png)
 
 Six more LEDs, each with its own 680 Ω resistor, on PD1 to PD6. Together with D1 (PD0) they are the seven "pips" of a die:
 
@@ -232,6 +232,6 @@ How it works:
 ## 8. Where next
 
 You have built the same dice on an Arduino chip, in plain C, with the real tools. Next, the same circuit idea on a **PIC**, with Microchip's tools:
-[PIC Build 1](pic-1-blink.md). When you move over, keep the LEDs, resistors and button; the PIC pages tell you exactly which wires to move.
+[PIC Build 1](build-pic-1-blink.md). When you move over, keep the LEDs, resistors and button; the PIC pages tell you exactly which wires to move.
 
-[← AVR Build 2](avr-2-button.md) · [Month 1](README.md) · [Next: PIC track →](pic-1-blink.md)
+[← AVR Build 2](build-avr-2-button.md) · [Month 1](README.md) · [Next: PIC track →](build-pic-1-blink.md)

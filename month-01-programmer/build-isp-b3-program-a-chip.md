@@ -1,6 +1,6 @@
 # Month 1 · Part B · Build B3 – Program a second chip
 
-[← Build B2](build-b2-programmer.md) · [Part B](README.md)
+[← Build B2](build-isp-b2-programmer.md) · [Part B](README.md)
 
 **Goal:** your programmer loads a bootloader and the blink sketch into a **second, blank ATmega328P**, with no USBasp involved.
 
@@ -118,4 +118,4 @@ The programmer chip is still running ArduinoISP and is connected to the computer
 * Look at Arduino's example source for ArduinoISP (File → Examples → 11.ArduinoISP). It is mostly the same SPI conversation you met in Month 2 with I2C.
 * Later, an **ATtiny85** can be programmed the same way with the same four wires.
 
-[← Build B2](build-b2-programmer.md) · [Part B](README.md)
+[← Build B2](build-isp-b2-programmer.md) · [Part B](README.md)

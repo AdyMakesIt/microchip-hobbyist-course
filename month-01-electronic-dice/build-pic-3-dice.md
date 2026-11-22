@@ -1,6 +1,6 @@
 # Month 1 · PIC Build 3 – The dice
 
-[← PIC Build 2](pic-2-button.md) · [Month 1](README.md)
+[← PIC Build 2](build-pic-2-button.md) · [Month 1](README.md)
 
 **Goal:** six more LEDs, and a program that "rolls" them to show a number from 1 to 6.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/pic-3-schematic.png)
+![Schematic for build 3](images/build-pic-3-schematic.png)
 
 Six more LEDs, each with its own 680 Ω resistor, on RC1 to RC6. Together with D1 (RC0) they are the seven "pips" of a die:
 
@@ -237,4 +237,4 @@ How it works:
 * Add a second roll style: hold the button for a "high roll" (always 4, 5 or 6). (Hint: you can read `PORTA` for how long it stays down.)
 * Make the centre LED flash on a six, as a celebration.
 
-[← PIC Build 2](pic-2-button.md) · [Month 1](README.md)
+[← PIC Build 2](build-pic-2-button.md) · [Month 1](README.md)

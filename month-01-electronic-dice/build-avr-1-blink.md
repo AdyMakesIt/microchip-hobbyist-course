@@ -1,6 +1,6 @@
 # Month 1 · AVR Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: AVR Build 2 →](avr-2-button.md)
+[← Month 1](README.md) · [Next: AVR Build 2 →](build-avr-2-button.md)
 
 **Goal:** make one LED blink once a second on an ATmega328P, programmed in plain C with a USBasp or an Uno R3 as programmer.
 This proves the chip, the programmer and the software all work.
@@ -11,7 +11,7 @@ This proves the chip, the programmer and the software all work.
 
 ## 1. What you are building
 
-![Schematic for AVR build 1](images/avr-1-schematic.png)
+![Schematic for AVR build 1](images/build-avr-1-schematic.png)
 
 How to read it: lines are wires. The little arrows with a name (such as **RESET**) are "net flags": every flag with the same name is the same wire.
 The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
@@ -187,6 +187,6 @@ How it works, line by line:
 
 * Make it blink twice as fast. Which number changes?
 * Make it blink three short flashes, a pause, repeat.
-* Compare `main.c` with the PIC version of the same build ([PIC Build 1](pic-1-blink.md)) when you reach it: the structure is the same, only the register names differ.
+* Compare `main.c` with the PIC version of the same build ([PIC Build 1](build-pic-1-blink.md)) when you reach it: the structure is the same, only the register names differ.
 
-[← Month 1](README.md) · [Next: AVR Build 2 →](avr-2-button.md)
+[← Month 1](README.md) · [Next: AVR Build 2 →](build-avr-2-button.md)

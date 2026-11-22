@@ -21,11 +21,11 @@ The USBasp stays the quicker everyday tool. Skip Part B if you would rather move
 
 ## The three builds
 
-|  #  | Build                                                     | You add                                  | You prove                                           |
-| :-: | --------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
-| B1  | [The minimum ATmega328P board](build-b1-minimum-board.md) | the chip, crystal, reset, serial lead    | the chip runs and accepts a program over USB-serial |
-| B2  | [Turn it into a programmer](build-b2-programmer.md)       | two status LEDs                          | the chip is running the programmer software         |
-| B3  | [Program a second chip](build-b3-program-a-chip.md)       | a second ATmega328P board and four wires | your programmer really programs another chip        |
+|  #  | Build                                                         | You add                                  | You prove                                           |
+| :-: | ------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
+| B1  | [The minimum ATmega328P board](build-isp-b1-minimum-board.md) | the chip, crystal, reset, serial lead    | the chip runs and accepts a program over USB-serial |
+| B2  | [Turn it into a programmer](build-isp-b2-programmer.md)       | two status LEDs                          | the chip is running the programmer software         |
+| B3  | [Program a second chip](build-isp-b3-program-a-chip.md)       | a second ATmega328P board and four wires | your programmer really programs another chip        |
 
 **Status:** the wiring in the pictures is machine-checked against the schematics. The programs are Arduino's standard examples plus a ten-line blink sketch.
 Nothing here has been run on a real bench yet. Please report what you find.
@@ -91,11 +91,11 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ```text
 avr-programmer/
   README.md                         this page
-  build-b1-minimum-board.md
-  build-b2-programmer.md
-  build-b3-program-a-chip.md
+  build-isp-b1-minimum-board.md
+  build-isp-b2-programmer.md
+  build-isp-b3-program-a-chip.md
   images/                           schematic + breadboard picture for every build
-  projects/              ready-to-open projects (see projects/README.md)
-  hardware/              KiCad schematic, parts list and connection list
+  projects/                         ready-to-open projects (see projects/README.md)
+  hardware/                         KiCad schematic, parts list and connection list
   code/blink-d9/blink-d9.ino        the blink sketch (ArduinoISP comes with the Arduino IDE)
 ```

@@ -1,6 +1,6 @@
 # Month 1 · Part B · Build B1 – The minimum ATmega328P board
 
-[← Part B](README.md) · [Next: Build B2 →](build-b2-programmer.md)
+[← Part B](README.md) · [Next: Build B2 →](build-isp-b2-programmer.md)
 
 **Goal:** a bare ATmega328P chip running on its own, with a 16 MHz crystal, programmed over USB-serial to blink an LED.
 
@@ -164,4 +164,4 @@ void loop()
 | Upload works but nothing blinks                                           | LED backwards, or crystal not running                 | long leg to the resistor; check Y1, C2, C3 (the chip needs its crystal after Burn Bootloader)                               |
 | Everything worked, then stopped                                           | loose crystal or jumper                               | press the crystal legs firmly into their holes                                                                              |
 
-[← Part B](README.md) · [Next: Build B2 →](build-b2-programmer.md)
+[← Part B](README.md) · [Next: Build B2 →](build-isp-b2-programmer.md)

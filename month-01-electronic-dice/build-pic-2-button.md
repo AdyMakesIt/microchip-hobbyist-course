@@ -1,6 +1,6 @@
 # Month 1 · PIC Build 2 – Add the button
 
-[← PIC Build 1](pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](pic-3-dice.md)
+[← PIC Build 1](build-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](build-pic-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 2](images/pic-2-schematic.png)
+![Schematic for build 2](images/build-build-pic-1-schematic.png)
 
 New in green: the push button **SW1** between pin 2 (RA0) and GND.
 
@@ -137,4 +137,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← PIC Build 1](pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](pic-3-dice.md)
+[← PIC Build 1](build-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](build-pic-3-dice.md)

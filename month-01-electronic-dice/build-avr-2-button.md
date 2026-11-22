@@ -1,6 +1,6 @@
 # Month 1 · AVR Build 2 – Add the button
 
-[← AVR Build 1](avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](avr-3-dice.md)
+[← AVR Build 1](build-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](build-avr-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for AVR build 2](images/avr-2-schematic.png)
+![Schematic for AVR build 2](images/build-avr-2-schematic.png)
 
 New in green: the push button **SW1** between pin 23 (**PC0**) and GND.
 
@@ -124,4 +124,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← AVR Build 1](avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](avr-3-dice.md)
+[← AVR Build 1](build-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](build-avr-3-dice.md)

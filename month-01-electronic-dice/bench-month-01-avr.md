@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 1 · AVR Build 1 – Blink an LED
 
-Page: `avr-1-blink.md`
+Page: `build-avr-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -36,7 +36,7 @@ Page: `avr-1-blink.md`
 
 ## Month 1 · AVR Build 2 – Add the button
 
-Page: `avr-2-button.md`
+Page: `build-avr-2-button.md`
 
 **Before power (meter checks):**
 
@@ -62,7 +62,7 @@ Page: `avr-2-button.md`
 
 ## Month 1 · AVR Build 3 – The dice
 
-Page: `avr-3-dice.md`
+Page: `build-avr-3-dice.md`
 
 **Before power (meter checks):**
 

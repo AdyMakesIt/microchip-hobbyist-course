@@ -13,10 +13,10 @@ Building one project on two chips shows you what is the same (the ideas) and wha
 
 Do the **AVR track first**: it is the gentler start, especially if you have used an Arduino. Then do the **PIC track**.
 
-| Track   | Chip          | Builds                                                                            | Programmer                   | Software                                                      |
-| ------- | ------------- | --------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------- |
-| **AVR** | ATmega328P-PU | [1 Blink](avr-1-blink.md) · [2 Button](avr-2-button.md) · [3 Dice](avr-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
-| **PIC** | PIC16F18857   | [1 Blink](pic-1-blink.md) · [2 Button](pic-2-button.md) · [3 Dice](pic-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
+| Track   | Chip          | Builds                                                                                              | Programmer                   | Software                                                      |
+| ------- | ------------- | --------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------- |
+| **AVR** | ATmega328P-PU | [1 Blink](build-avr-1-blink.md) · [2 Button](build-avr-2-button.md) · [3 Dice](build-avr-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
+| **PIC** | PIC16F18857   | [1 Blink](build-pic-1-blink.md) · [2 Button](build-pic-2-button.md) · [3 Dice](build-pic-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
 
 Each build ends with a **pass check**. Do not move on until it passes.
 
@@ -80,15 +80,15 @@ Nothing here has been built on a real bench yet. If something does not work, tha
 
 ```text
 month-01-electronic-dice/
-  README.md                this page
-  avr-1-blink.md ...       one page per AVR build
-  pic-1-blink.md ...       one page per PIC build
-  avr-programmer/          optional Part B: build an AVR programmer (its own pages, pictures, code)
-  images/                  schematic + breadboard picture for every build (avr-N-..., pic-N-...)
-  projects/              ready-to-open projects (see projects/README.md)
-  hardware/              KiCad schematic, parts list and connection list
+  README.md                 this page
+  build-avr-1-blink.md ...  one page per AVR build
+  build-pic-1-blink.md ...  one page per PIC build
+  avr-programmer/           optional Part B: build an AVR programmer (its own pages, pictures, code)
+  images/                   schematic + breadboard picture for every build (avr-N-..., pic-N-...)
+  projects/                 ready-to-open projects (see projects/README.md)
+  hardware/                 KiCad schematic, parts list and connection list
   code/
-    avr-1-blink/main.c     one complete file per build
+    avr-1-blink/main.c      one complete file per build
     avr-2-button/main.c
     avr-3-dice/main.c
     pic-1-blink/main.c
