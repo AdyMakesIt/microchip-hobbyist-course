@@ -66,7 +66,7 @@ D10 resets the target, D11, D12, D13 are the ISP data and clock lines, and D9, D
 * [ ] **D1** (heartbeat) pulses slowly: it fades up and down, not an on/off blink.
 * [ ] **D2** (error) and **D3** (programming) are **off**.
 
-To turn the chip back into a plain blinker, upload `blink-d9.ino` again.
+To turn the chip back into a plain blinker, upload `month-01-isp-1-minimum-board.ino` again.
 
 ## 6. If it does not work
 

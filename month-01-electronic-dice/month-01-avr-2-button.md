@@ -22,11 +22,11 @@ Pressing the button connects PC0 to GND, so it reads **LOW (0)**. That is why "p
 ![Breadboard layout for AVR build 2](images/month-01-avr-2-breadboard.png)
 
 <!-- placement:avr:2 -->
-| Step | Part | Pin(s) | Where it goes | Notes |
-|---:|---|:-:|---|---|
-| 1 | SW1 push button | – | straddling the centre channel with legs in **22e, 24e, 22f, 24f** | only the diagonal legs (22e and 24f) are wired; keep strips 24e and 22f empty. Works either way round. |
-| 2 | jumper wire | 23 | **22d** → **13b** | signal PC0 (any colour) |
-| 3 | jumper wire | – | **24g** → bottom **blue** rail (−), near column 24 | ground (black) |
+| Step | Part            | Pin(s) | Where it goes                                                     | Notes                                                                                                  |
+| ---: | --------------- | :----: | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+|    1 | SW1 push button |   –    | straddling the centre channel with legs in **22e, 24e, 22f, 24f** | only the diagonal legs (22e and 24f) are wired; keep strips 24e and 22f empty. Works either way round. |
+|    2 | jumper wire     |   23   | **22d** → **13b**                                                 | signal PC0 (any colour)                                                                                |
+|    3 | jumper wire     |   –    | **24g** → bottom **blue** rail (−), near column 24                | ground (black)                                                                                         |
 <!-- /placement -->
 
 A 4-legged push button has two pairs of legs joined inside. Wiring only the two **diagonal** legs (as above) means it works whichever way round it sits.
@@ -35,8 +35,8 @@ The other two legs must not touch anything.
 Connections, as a list:
 
 <!-- connections:avr:2 -->
-| Starts at | Then goes through |
-|---|---|
+| Starts at           | Then goes through    |
+| ------------------- | -------------------- |
 | U1 pin **23** (PC0) | SW1 button → **GND** |
 <!-- /connections -->
 

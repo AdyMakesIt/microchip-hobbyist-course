@@ -92,7 +92,7 @@ The programmer chip is still running ArduinoISP and is connected to the computer
 1. **Tools → Board → Arduino Uno.** **Tools → Port →** the USB-serial adapter.
 2. **Tools → Programmer → Arduino as ISP.** (Be careful: not "ArduinoISP" or "Arduino ISP"; pick **Arduino as ISP**.)
 3. **Tools → Burn Bootloader.** This programs the **target**, not the programmer. **D3** (programming) should light up and flicker while it works. Wait for **Done burning bootloader.**
-4. Open `code/blink-d9/blink-d9.ino` from Build B1.
+4. Open `code/month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino` from Build B1.
 5. **Sketch → Upload Using Programmer.** (This is *not* the same as Upload.) Wait for **Done uploading.**
 
 ## 5. Pass check

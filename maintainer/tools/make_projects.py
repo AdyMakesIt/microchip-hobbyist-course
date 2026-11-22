@@ -117,9 +117,9 @@ def generate():
         write(os.path.join(base, "projects", "README.md"), "\n".join(pr))
     # Part B Arduino sketch
     pb = os.path.join(ROOT, "month-01-programmer")
-    ino = os.path.join(pb, "code", "blink-d9", "blink-d9.ino")
-    write(os.path.join(pb, "projects", "arduino", "blink-d9", "blink-d9.ino"), read(ino))
-    write(os.path.join(pb, "projects", "README.md"), "# Ready-to-open projects\n\n| Folder | What is in it |\n|---|---|\n| [`arduino/`](arduino/) | the Arduino sketch (open `blink-d9/blink-d9.ino` in the Arduino IDE; the folder name must match the sketch name) |\n\nThe ArduinoISP programmer program comes with the Arduino IDE (File → Examples → 11.ArduinoISP).\n")
+    ino = os.path.join(pb, "code", "month-01-isp-1-minimum-board", "month-01-isp-1-minimum-board.ino")
+    write(os.path.join(pb, "projects", "arduino", "month-01-isp-1-minimum-board", "month-01-isp-1-minimum-board.ino"), read(ino))
+    write(os.path.join(pb, "projects", "README.md"), "# Ready-to-open projects\n\n| Folder | What is in it |\n|---|---|\n| [`arduino/`](arduino/) | the Arduino sketch (open `month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino` in the Arduino IDE; the folder name must match the sketch name) |\n\nThe ArduinoISP programmer program comes with the Arduino IDE (File → Examples → 11.ArduinoISP).\n")
     return problems
 
 def check():
@@ -133,7 +133,7 @@ def check():
             xdir = os.path.join(base, "projects", "mplabx", b + ".X")
             if os.path.isdir(xdir) and not os.path.exists(os.path.join(xdir, "nbproject")): bad.append(f"{os.path.relpath(xdir, ROOT)} has no nbproject folder (not a real MPLAB X project)")
     pb = os.path.join(ROOT, "month-01-programmer")
-    a, b2 = os.path.join(pb, "code", "blink-d9", "blink-d9.ino"), os.path.join(pb, "projects", "arduino", "blink-d9", "blink-d9.ino")
+    a, b2 = os.path.join(pb, "code", "month-01-isp-1-minimum-board", "month-01-isp-1-minimum-board.ino"), os.path.join(pb, "projects", "arduino", "month-01-isp-1-minimum-board", "month-01-isp-1-minimum-board.ino")
     if os.path.exists(b2) and read(a) != read(b2): bad.append("arduino sketch differs from code/")
     return bad
 
@@ -146,7 +146,7 @@ def status():
             pio = "Yes" if os.path.exists(os.path.join(base, "projects", "platformio", b, "platformio.ini")) else "n/a"
             mpx = "n/a" if b.startswith("avr-") else ("Yes" if os.path.isdir(os.path.join(base, "projects", "mplabx", b + ".X")) else "Not yet")
             rows.append(f"| {label[6:]} | {b} | Yes | {pio} | {mpx} | n/a | {'Yes' if kicad else 'Not yet'} |")
-    rows.append("| 1B | blink-d9 | Yes | n/a | n/a | Yes | Not yet |")
+    rows.append("| 1B | month-01-isp-1-minimum-board | Yes | n/a | n/a | Yes | Not yet |")
     write(os.path.join(ROOT, "maintainer", "PROJECT_STATUS.md"), "\n".join(rows) + "\n")
 
 if __name__ == "__main__":

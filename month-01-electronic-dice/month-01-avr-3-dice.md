@@ -27,37 +27,37 @@ If you would like it to *look* like a die, bend the LED legs out and arrange the
 Six identical little "LED units": a wire from the chip pin to the top of a column, a resistor across the centre channel, and an LED to the bottom ground rail.
 
 <!-- placement:avr:3 -->
-| Step | Part | Pin(s) | Where it goes | Notes |
-|---:|---|:-:|---|---|
-| 1 | jumper wire | 2 | **9g** → **25e** | signal PD0 (any colour) |
-| 2 | R2 680 Ω resistor | – | **25d** and **26b** | either way round |
-| 3 | D1 red LED | – | **long leg** in **26a**, **short leg** in top **blue** rail (−), near column 26 | the long leg (+) goes towards the resistor |
-| 4 | jumper wire | 3 | **10g** → **35e** | signal PD1 (any colour) |
-| 5 | R3 680 Ω resistor | – | **35d** and **34b** | either way round |
-| 6 | D2 red LED | – | **long leg** in **34a**, **short leg** in top **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor |
-| 7 | jumper wire | 4 | **11g** → **27d** | signal PD2 (any colour) |
-| 8 | R4 680 Ω resistor | – | **27e** and **28f** | either way round |
-| 9 | D3 red LED | – | **long leg** in **28g**, **short leg** in bottom **blue** rail (−), near column 28 | the long leg (+) goes towards the resistor |
-| 10 | jumper wire | 6 | **13g** → **31d** | signal PD4 (any colour) |
-| 11 | R6 680 Ω resistor | – | **31e** and **32f** | either way round |
-| 12 | D5 red LED | – | **long leg** in **32g**, **short leg** in bottom **blue** rail (−), near column 32 | the long leg (+) goes towards the resistor |
-| 13 | jumper wire | 11 | **18g** → **25f** | signal PD5 (any colour) |
-| 14 | R7 680 Ω resistor | – | **25g** and **26i** | either way round |
-| 15 | D6 red LED | – | **long leg** in **26j**, **short leg** in bottom **blue** rail (−), near column 26 | the long leg (+) goes towards the resistor |
-| 16 | jumper wire | 12 | **19g** → **35f** | signal PD6 (any colour) |
-| 17 | R8 680 Ω resistor | – | **35g** and **34i** | either way round |
-| 18 | D7 red LED | – | **long leg** in **34j**, **short leg** in bottom **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor |
+| Step | Part              | Pin(s) | Where it goes                                                                      | Notes                                      |
+| ---: | ----------------- | :----: | ---------------------------------------------------------------------------------- | ------------------------------------------ |
+|    1 | jumper wire       |   2    | **9g** → **25e**                                                                   | signal PD0 (any colour)                    |
+|    2 | R2 680 Ω resistor |   –    | **25d** and **26b**                                                                | either way round                           |
+|    3 | D1 red LED        |   –    | **long leg** in **26a**, **short leg** in top **blue** rail (−), near column 26    | the long leg (+) goes towards the resistor |
+|    4 | jumper wire       |   3    | **10g** → **35e**                                                                  | signal PD1 (any colour)                    |
+|    5 | R3 680 Ω resistor |   –    | **35d** and **34b**                                                                | either way round                           |
+|    6 | D2 red LED        |   –    | **long leg** in **34a**, **short leg** in top **blue** rail (−), near column 34    | the long leg (+) goes towards the resistor |
+|    7 | jumper wire       |   4    | **11g** → **27d**                                                                  | signal PD2 (any colour)                    |
+|    8 | R4 680 Ω resistor |   –    | **27e** and **28f**                                                                | either way round                           |
+|    9 | D3 red LED        |   –    | **long leg** in **28g**, **short leg** in bottom **blue** rail (−), near column 28 | the long leg (+) goes towards the resistor |
+|   10 | jumper wire       |   6    | **13g** → **31d**                                                                  | signal PD4 (any colour)                    |
+|   11 | R6 680 Ω resistor |   –    | **31e** and **32f**                                                                | either way round                           |
+|   12 | D5 red LED        |   –    | **long leg** in **32g**, **short leg** in bottom **blue** rail (−), near column 32 | the long leg (+) goes towards the resistor |
+|   13 | jumper wire       |   11   | **18g** → **25f**                                                                  | signal PD5 (any colour)                    |
+|   14 | R7 680 Ω resistor |   –    | **25g** and **26i**                                                                | either way round                           |
+|   15 | D6 red LED        |   –    | **long leg** in **26j**, **short leg** in bottom **blue** rail (−), near column 26 | the long leg (+) goes towards the resistor |
+|   16 | jumper wire       |   12   | **19g** → **35f**                                                                  | signal PD6 (any colour)                    |
+|   17 | R8 680 Ω resistor |   –    | **35g** and **34i**                                                                | either way round                           |
+|   18 | D7 red LED        |   –    | **long leg** in **34j**, **short leg** in bottom **blue** rail (−), near column 34 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 Connections, as a list:
 
 <!-- connections:avr:3 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **2** (PD0) | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
-| U1 pin **3** (PD1) | R3 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
-| U1 pin **4** (PD2) | R4 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
-| U1 pin **6** (PD4) | R6 680 Ω → D5 LED (long leg towards the resistor) → **GND** |
+| Starts at           | Then goes through                                           |
+| ------------------- | ----------------------------------------------------------- |
+| U1 pin **2** (PD0)  | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
+| U1 pin **3** (PD1)  | R3 680 Ω → D2 LED (long leg towards the resistor) → **GND** |
+| U1 pin **4** (PD2)  | R4 680 Ω → D3 LED (long leg towards the resistor) → **GND** |
+| U1 pin **6** (PD4)  | R6 680 Ω → D5 LED (long leg towards the resistor) → **GND** |
 | U1 pin **11** (PD5) | R7 680 Ω → D6 LED (long leg towards the resistor) → **GND** |
 | U1 pin **12** (PD6) | R8 680 Ω → D7 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->

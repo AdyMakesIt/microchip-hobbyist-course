@@ -114,12 +114,12 @@ From now on, **the chip will not run without its crystal**. That is normal.
 
 1. Plug in the USB-serial adapter.
 2. **Tools → Port** and choose the adapter's port.
-3. Open `code/blink-d9/blink-d9.ino`:
+3. Open `code/month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino`:
 4. **Sketch → Upload.**
 
 The sketch, for reference:
 
-<!-- code:code/blink-d9/blink-d9.ino -->
+<!-- code:code/month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino -->
 ```cpp
 /*
  * Month 1 Part B: blink an LED on D9

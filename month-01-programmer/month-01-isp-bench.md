@@ -29,9 +29,9 @@ Page: `month-01-isp-1-minimum-board.md`
 - [ ] The upload ended with **Done uploading.**
 - [ ] The D9 LED blinks: half a second on, half a second off.
 
-| Result | Notes / exact messages |
-|---|---|
-| [ ] passed   [ ] partly   [ ] failed | |
+| Result                               | Notes / exact messages |
+| ------------------------------------ | ---------------------- |
+| [ ] passed   [ ] partly   [ ] failed |                        |
 
 ## Month 1 · Part B · Build B2 – Turn it into a programmer
 
@@ -54,9 +54,9 @@ Page: `month-01-isp-2-programmer.md`
 - [ ] **D1** (heartbeat) pulses slowly: it fades up and down, not an on/off blink.
 - [ ] **D2** (error) and **D3** (programming) are **off**.
 
-| Result | Notes / exact messages |
-|---|---|
-| [ ] passed   [ ] partly   [ ] failed | |
+| Result                               | Notes / exact messages |
+| ------------------------------------ | ---------------------- |
+| [ ] passed   [ ] partly   [ ] failed |                        |
 
 ## Month 1 · Part B · Build B3 – Program a second chip
 
@@ -82,17 +82,17 @@ Page: `month-01-isp-3-program-a-chip.md`
 - [ ] The **target's LED (D4)** blinks: half a second on, half a second off.
 - [ ] The target keeps blinking after you **unplug the four ISP wires**: it is now a chip programmed by a programmer you built.
 
-| Result | Notes / exact messages |
-|---|---|
-| [ ] passed   [ ] partly   [ ] failed | |
+| Result                               | Notes / exact messages |
+| ------------------------------------ | ---------------------- |
+| [ ] passed   [ ] partly   [ ] failed |                        |
 
 ## Assumptions to confirm this month
 
 These were written from datasheets and published examples, not from a real build. Tick each when you have confirmed it, or note what differs.
 
-| # | Assumption | Confirmed? |
-|:-:|---|:-:|
-| 7 | Part B: Arduino IDE menu names and messages match the IDE version you install; the ATmega328P pin table | [ ] |
+|  #  | Assumption                                                                                              | Confirmed? |
+| :-: | ------------------------------------------------------------------------------------------------------- | :--------: |
+|  7  | Part B: Arduino IDE menu names and messages match the IDE version you install; the ATmega328P pin table |    [ ]     |
 
 ## Summary
 

@@ -48,16 +48,16 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ### Parts used (counted automatically from the three circuits)
 
 <!-- bom -->
-| Part | Value | Qty used | Buy at least |
-|---|---|---:|---:|
-| Resistor | 10 kΩ | 2 | 3 |
-| Resistor | 680 Ω | 4 | 5 |
-| Ceramic capacitor | 100nF | 4 | 5 |
-| Ceramic capacitor | 22pF | 4 | 5 |
-| Crystal | 16MHz | 2 | 3 |
-| LED, 5 mm | red | 4 | 5 |
-| Jumper wires, solid or male-to-male | assorted lengths | 22 | 28 |
-| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) | | 9 | 10 |
+| Part                                                                       | Value            | Qty used | Buy at least |
+| -------------------------------------------------------------------------- | ---------------- | -------: | -----------: |
+| Resistor                                                                   | 10 kΩ            |        2 |            3 |
+| Resistor                                                                   | 680 Ω            |        4 |            5 |
+| Ceramic capacitor                                                          | 100nF            |        4 |            5 |
+| Ceramic capacitor                                                          | 22pF             |        4 |            5 |
+| Crystal                                                                    | 16MHz            |        2 |            3 |
+| LED, 5 mm                                                                  | red              |        4 |            5 |
+| Jumper wires, solid or male-to-male                                        | assorted lengths |       22 |           28 |
+| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) |                  |        9 |           10 |
 <!-- /bom -->
 
 ### Software
@@ -97,5 +97,5 @@ month-01-programmer/
   images/                           schematic + breadboard picture for every build
   projects/              ready-to-open projects (see projects/README.md)
   hardware/              KiCad schematic, parts list and connection list
-  code/blink-d9/blink-d9.ino        the blink sketch (ArduinoISP comes with the Arduino IDE)
+  code/month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino        the blink sketch (ArduinoISP comes with the Arduino IDE)
 ```

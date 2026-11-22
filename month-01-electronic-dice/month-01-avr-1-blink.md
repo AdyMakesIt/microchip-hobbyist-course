@@ -31,26 +31,26 @@ The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
 <!-- placement:avr:1 -->
-| Step | Part | Pin(s) | Where it goes | Notes |
-|---:|---|:-:|---|---|
-| 1 | U1 ATmega328P-PU | 1 | Pin 1 in hole **8f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 8–21); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
-| 2 | jumper wire | – | top **red** rail (+), near column 63 → bottom **red** rail (+), near column 63 | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
-| 3 | jumper wire | – | top **blue** rail (−), near column 62 → bottom **blue** rail (−), near column 62 | ground (black) After placing it, **check the power**: measure across the rails with the meter. |
-| 4 | jumper wire | 7 | **14h** → bottom **red** rail (+), near column 14 | +5 V power (red) |
-| 5 | jumper wire | 8 | **15h** → bottom **blue** rail (−), near column 15 | ground (black) |
-| 6 | C1 100nF capacitor | 7 / 8 | **14g** and **15g** | ceramic: either way round; keep the legs short |
-| 7 | jumper wire | 20 | **16b** → top **red** rail (+), near column 16 | +5 V power (red) |
-| 8 | jumper wire | 22 | **14b** → top **blue** rail (−), near column 14 | ground (black) |
-| 9 | C2 100nF capacitor | 20 / 22 | **16d** and **14d** | ceramic: either way round; keep the legs short |
-| 10 | R1 10 kΩ resistor | 1 | **8i** and bottom **red** rail (+), near column 8 | either way round |
-| 11 | ISP programmer lead: RESET | 1 | from ISP programmer **RESET** to **8h** | female-to-male Dupont lead |
-| 12 | ISP programmer lead: MISO | 18 | from ISP programmer **MISO** to **18c** | female-to-male Dupont lead |
-| 13 | ISP programmer lead: SCK | 19 | from ISP programmer **SCK** to **17c** | female-to-male Dupont lead |
-| 14 | ISP programmer lead: MOSI | 17 | from ISP programmer **MOSI** to **19c** | female-to-male Dupont lead |
-| 15 | ISP programmer lead: GND | – | from ISP programmer **GND** to top **blue** rail (−), near column 6 | female-to-male Dupont lead |
-| 16 | jumper wire | 5 | **12g** → **29d** | signal PD3 (any colour) |
-| 17 | R5 680 Ω resistor | – | **29e** and **30f** | either way round |
-| 18 | D4 red LED | – | **long leg** in **30g**, **short leg** in bottom **blue** rail (−), near column 30 | the long leg (+) goes towards the resistor |
+| Step | Part                       | Pin(s)  | Where it goes                                                                                                                                              | Notes                                                                                            |
+| ---: | -------------------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+|    1 | U1 ATmega328P-PU           |    1    | Pin 1 in hole **8f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 8–21); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f).           |
+|    2 | jumper wire                |    –    | top **red** rail (+), near column 63 → bottom **red** rail (+), near column 63                                                                             | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
+|    3 | jumper wire                |    –    | top **blue** rail (−), near column 62 → bottom **blue** rail (−), near column 62                                                                           | ground (black) After placing it, **check the power**: measure across the rails with the meter.   |
+|    4 | jumper wire                |    7    | **14h** → bottom **red** rail (+), near column 14                                                                                                          | +5 V power (red)                                                                                 |
+|    5 | jumper wire                |    8    | **15h** → bottom **blue** rail (−), near column 15                                                                                                         | ground (black)                                                                                   |
+|    6 | C1 100nF capacitor         |  7 / 8  | **14g** and **15g**                                                                                                                                        | ceramic: either way round; keep the legs short                                                   |
+|    7 | jumper wire                |   20    | **16b** → top **red** rail (+), near column 16                                                                                                             | +5 V power (red)                                                                                 |
+|    8 | jumper wire                |   22    | **14b** → top **blue** rail (−), near column 14                                                                                                            | ground (black)                                                                                   |
+|    9 | C2 100nF capacitor         | 20 / 22 | **16d** and **14d**                                                                                                                                        | ceramic: either way round; keep the legs short                                                   |
+|   10 | R1 10 kΩ resistor          |    1    | **8i** and bottom **red** rail (+), near column 8                                                                                                          | either way round                                                                                 |
+|   11 | ISP programmer lead: RESET |    1    | from ISP programmer **RESET** to **8h**                                                                                                                    | female-to-male Dupont lead                                                                       |
+|   12 | ISP programmer lead: MISO  |   18    | from ISP programmer **MISO** to **18c**                                                                                                                    | female-to-male Dupont lead                                                                       |
+|   13 | ISP programmer lead: SCK   |   19    | from ISP programmer **SCK** to **17c**                                                                                                                     | female-to-male Dupont lead                                                                       |
+|   14 | ISP programmer lead: MOSI  |   17    | from ISP programmer **MOSI** to **19c**                                                                                                                    | female-to-male Dupont lead                                                                       |
+|   15 | ISP programmer lead: GND   |    –    | from ISP programmer **GND** to top **blue** rail (−), near column 6                                                                                        | female-to-male Dupont lead                                                                       |
+|   16 | jumper wire                |    5    | **12g** → **29d**                                                                                                                                          | signal PD3 (any colour)                                                                          |
+|   17 | R5 680 Ω resistor          |    –    | **29e** and **30f**                                                                                                                                        | either way round                                                                                 |
+|   18 | D4 red LED                 |    –    | **long leg** in **30g**, **short leg** in bottom **blue** rail (−), near column 30                                                                         | the long leg (+) goes towards the resistor                                                       |
 <!-- /placement -->
 
 **Which programmer pin goes to each lead:**
@@ -69,25 +69,25 @@ The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
 The same circuit as a connection list:
 
 <!-- connections:avr:1 -->
-| Starts at | Then goes through |
-|---|---|
-| U1 pin **7** (VCC) | **+5 V** |
-| U1 pin **20** (AVCC) | **+5 V** |
-| U1 pin **8** (GND) | **GND** |
-| U1 pin **22** (GND) | **GND** |
-| net **+5V** | C1 100nF → **GND** |
-| net **+5V** | C2 100nF → **GND** |
-| U1 pin **1** (RESET) | net **RESET** |
-| net **RESET** | R1 10 kΩ → **+5 V** |
-| J1 pin **4** (RESET) | net **RESET** |
-| J1 pin **1** (MISO) | net **MISO** |
-| U1 pin **18** (MISO (PB4)) | net **MISO** |
-| J1 pin **2** (SCK) | net **SCK** |
-| U1 pin **19** (SCK (PB5)) | net **SCK** |
-| J1 pin **3** (MOSI) | net **MOSI** |
-| U1 pin **17** (MOSI (PB3)) | net **MOSI** |
-| J1 pin **5** (GND) | **GND** |
-| U1 pin **5** (PD3) | R5 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
+| Starts at                  | Then goes through                                           |
+| -------------------------- | ----------------------------------------------------------- |
+| U1 pin **7** (VCC)         | **+5 V**                                                    |
+| U1 pin **20** (AVCC)       | **+5 V**                                                    |
+| U1 pin **8** (GND)         | **GND**                                                     |
+| U1 pin **22** (GND)        | **GND**                                                     |
+| net **+5V**                | C1 100nF → **GND**                                          |
+| net **+5V**                | C2 100nF → **GND**                                          |
+| U1 pin **1** (RESET)       | net **RESET**                                               |
+| net **RESET**              | R1 10 kΩ → **+5 V**                                         |
+| J1 pin **4** (RESET)       | net **RESET**                                               |
+| J1 pin **1** (MISO)        | net **MISO**                                                |
+| U1 pin **18** (MISO (PB4)) | net **MISO**                                                |
+| J1 pin **2** (SCK)         | net **SCK**                                                 |
+| U1 pin **19** (SCK (PB5))  | net **SCK**                                                 |
+| J1 pin **3** (MOSI)        | net **MOSI**                                                |
+| U1 pin **17** (MOSI (PB3)) | net **MOSI**                                                |
+| J1 pin **5** (GND)         | **GND**                                                     |
+| U1 pin **5** (PD3)         | R5 680 Ω → D4 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 3. Check before you power it (2 minutes, saves chips)
