@@ -1,6 +1,6 @@
 # Month 1 · PIC Build 2 – Add the button
 
-[← PIC Build 1](build-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](build-pic-3-dice.md)
+[← PIC Build 1](month-01-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 2](images/build-build-pic-1-schematic.png)
+![Schematic for build 2](images/month-01-pic-2-schematic.png)
 
 New in green: the push button **SW1** between pin 2 (RA0) and GND.
 
@@ -20,14 +20,14 @@ That is why "pressed" means `0` in the code. Most buttons in later months work t
 
 ## 2. Build it
 
-![Breadboard layout for build 2](images/pic-2-breadboard.png)
+![Breadboard layout for build 2](images/month-01-pic-2-breadboard.png)
 
 <!-- placement:pic:2 -->
-| Step | Part            | Pin(s) | Where it goes                                                 | Notes                                                                                              |
-| ---: | --------------- | :----: | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-|    1 | SW1 push button |   –    | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
-|    2 | jumper wire     |   –    | **3a** → top **blue** rail (−), near column 3                 | ground (black)                                                                                     |
-|    3 | jumper wire     |   2    | **5g** → **9g**                                               | signal RA0 (any colour)                                                                            |
+| Step | Part | Pin(s) | Where it goes | Notes |
+|---:|---|:-:|---|---|
+| 1 | SW1 push button | – | straddling the centre channel with legs in **3e, 5e, 3f, 5f** | only the diagonal legs (3e and 5f) are wired; keep strips 5e and 3f empty. Works either way round. |
+| 2 | jumper wire | – | **3a** → top **blue** rail (−), near column 3 | ground (black) |
+| 3 | jumper wire | 2 | **5g** → **9g** | signal RA0 (any colour) |
 <!-- /placement -->
 
 A 4-legged push button has two pairs of legs joined inside. Wiring only the two **diagonal** legs (as above) means it works
@@ -36,8 +36,8 @@ whichever way round it sits. The other two legs must not touch anything.
 Connections, as a list:
 
 <!-- connections:pic:2 -->
-| Starts at          | Then goes through    |
-| ------------------ | -------------------- |
+| Starts at | Then goes through |
+|---|---|
 | U1 pin **2** (RA0) | SW1 button → **GND** |
 <!-- /connections -->
 
@@ -51,7 +51,7 @@ Connections, as a list:
 
 Change the code in your project (or make a new project, same settings) to this, then **Clean and Build** and **Make and Program Device**:
 
-<!-- code:code/pic-2-button/main.c -->
+<!-- code:code/month-01-pic-2-button/main.c -->
 ```c
 /*
  * Month 1 - Build 2: A button controls the LED
@@ -137,4 +137,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← PIC Build 1](build-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](build-pic-3-dice.md)
+[← PIC Build 1](month-01-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-3-dice.md)

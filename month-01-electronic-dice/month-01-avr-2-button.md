@@ -1,6 +1,6 @@
 # Month 1 · AVR Build 2 – Add the button
 
-[← AVR Build 1](build-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](build-avr-3-dice.md)
+[← AVR Build 1](month-01-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](month-01-avr-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for AVR build 2](images/build-avr-2-schematic.png)
+![Schematic for AVR build 2](images/month-01-avr-2-schematic.png)
 
 New in green: the push button **SW1** between pin 23 (**PC0**) and GND.
 
@@ -19,14 +19,14 @@ Pressing the button connects PC0 to GND, so it reads **LOW (0)**. That is why "p
 
 ## 2. Build it
 
-![Breadboard layout for AVR build 2](images/avr-2-breadboard.png)
+![Breadboard layout for AVR build 2](images/month-01-avr-2-breadboard.png)
 
 <!-- placement:avr:2 -->
-| Step | Part            | Pin(s) | Where it goes                                                     | Notes                                                                                                  |
-| ---: | --------------- | :----: | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-|    1 | SW1 push button |   –    | straddling the centre channel with legs in **22e, 24e, 22f, 24f** | only the diagonal legs (22e and 24f) are wired; keep strips 24e and 22f empty. Works either way round. |
-|    2 | jumper wire     |   23   | **22d** → **13b**                                                 | signal PC0 (any colour)                                                                                |
-|    3 | jumper wire     |   –    | **24g** → bottom **blue** rail (−), near column 24                | ground (black)                                                                                         |
+| Step | Part | Pin(s) | Where it goes | Notes |
+|---:|---|:-:|---|---|
+| 1 | SW1 push button | – | straddling the centre channel with legs in **22e, 24e, 22f, 24f** | only the diagonal legs (22e and 24f) are wired; keep strips 24e and 22f empty. Works either way round. |
+| 2 | jumper wire | 23 | **22d** → **13b** | signal PC0 (any colour) |
+| 3 | jumper wire | – | **24g** → bottom **blue** rail (−), near column 24 | ground (black) |
 <!-- /placement -->
 
 A 4-legged push button has two pairs of legs joined inside. Wiring only the two **diagonal** legs (as above) means it works whichever way round it sits.
@@ -35,8 +35,8 @@ The other two legs must not touch anything.
 Connections, as a list:
 
 <!-- connections:avr:2 -->
-| Starts at           | Then goes through    |
-| ------------------- | -------------------- |
+| Starts at | Then goes through |
+|---|---|
 | U1 pin **23** (PC0) | SW1 button → **GND** |
 <!-- /connections -->
 
@@ -50,7 +50,7 @@ Connections, as a list:
 
 Replace `src/main.c` with this, then **Build** and **Upload**:
 
-<!-- code:code/avr-2-button/main.c -->
+<!-- code:code/month-01-avr-2-button/main.c -->
 ```c
 /*
  * Month 1 (ATmega328P) - Build 2: A button controls the LED
@@ -124,4 +124,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← AVR Build 1](build-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](build-avr-3-dice.md)
+[← AVR Build 1](month-01-avr-1-blink.md) · [Month 1](README.md) · [Next: AVR Build 3 →](month-01-avr-3-dice.md)

@@ -1,13 +1,13 @@
 # Month 1 · PIC Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](build-pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-2-button.md)
 
 **Goal:** make one LED blink once a second. This proves that the chip, the power, the programmer and the
 software all work. Almost every problem you will meet later is easier to find because this build works.
 
 **Status:** logic tested in simulation · compile and bench test pending
 
-This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](build-avr-1-blink.md); the two tracks are independent.
+This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](month-01-avr-1-blink.md); the two tracks are independent.
 
 ## 0. Coming from the AVR track?
 
@@ -20,7 +20,7 @@ Then follow the table in step 2 below. Skip any step whose part is already in pl
 
 ## 1. What you are building
 
-![Schematic for build 1](images/pic-1-schematic.png)
+![Schematic for build 1](images/month-01-pic-1-schematic.png)
 
 How to read it: lines are wires. The little arrows with a name (such as **MCLR**) are "net flags":
 every flag with the same name is the same wire. The ground symbol (⏚) is the **GND** rail and the
@@ -35,33 +35,33 @@ What each part does:
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/pic-1-breadboard.png)
+![Breadboard layout for build 1](images/month-01-pic-1-breadboard.png)
 
-(The picture is also available as a sharper [SVG](images/pic-1-breadboard.svg). Open it in a browser and zoom in.)
+(The picture is also available as a sharper [SVG](images/month-01-pic-1-breadboard.svg). Open it in a browser and zoom in.)
 
 **Before you start:** power OFF, PICkit 3 unplugged. Each step below is one thing to plug in.
 Hole names such as **16b** mean *column 16, row b*; see the
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
 <!-- placement:pic:1 -->
-| Step | Part                     | Pin(s)  | Where it goes                                                                                                                                              | Notes                                                                                            |
-| ---: | ------------------------ | :-----: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-|    1 | U1 PIC16F18857-I/SP      |    1    | Pin 1 in hole **8f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 8–21); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f).           |
-|    2 | jumper wire              |    –    | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2                                                                               | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
-|    3 | jumper wire              |    –    | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1                                                                             | ground (black) After placing it, **check the power**: measure across the rails with the meter.   |
-|    4 | jumper wire              |   20    | **16b** → top **red** rail (+), near column 16                                                                                                             | +5 V power (red)                                                                                 |
-|    5 | jumper wire              |   19    | **17b** → top **blue** rail (−), near column 17                                                                                                            | ground (black)                                                                                   |
-|    6 | jumper wire              |    8    | **15h** → bottom **blue** rail (−), near column 15                                                                                                         | ground (black)                                                                                   |
-|    7 | C1 100nF capacitor       | 20 / 19 | **16c** and **17c**                                                                                                                                        | ceramic: either way round; keep the legs short                                                   |
-|    8 | R1 10 kΩ resistor        |    1    | **8g** and bottom **red** rail (+), near column 8                                                                                                          | either way round                                                                                 |
-|    9 | PICkit 3 ICSP lead: MCLR |    1    | from PICkit 3 ICSP pin **1** (MCLR) to **8h**                                                                                                              | female-to-male Dupont lead                                                                       |
-|   10 | PICkit 3 ICSP lead: VDD  |    –    | from PICkit 3 ICSP pin **2** (VDD) to top **red** rail (+), near column 5                                                                                  | female-to-male Dupont lead                                                                       |
-|   11 | PICkit 3 ICSP lead: VSS  |    –    | from PICkit 3 ICSP pin **3** (VSS) to top **blue** rail (−), near column 5                                                                                 | female-to-male Dupont lead                                                                       |
-|   12 | PICkit 3 ICSP lead: PGD  |   28    | from PICkit 3 ICSP pin **4** (PGD) to **8c**                                                                                                               | female-to-male Dupont lead                                                                       |
-|   13 | PICkit 3 ICSP lead: PGC  |   27    | from PICkit 3 ICSP pin **5** (PGC) to **9c**                                                                                                               | female-to-male Dupont lead                                                                       |
-|   14 | jumper wire              |   11    | **18h** → **25a**                                                                                                                                          | signal RC0 (any colour)                                                                          |
-|   15 | R2 680 Ω resistor        |    –    | **25d** and **25g**                                                                                                                                        | either way round                                                                                 |
-|   16 | D1 red LED               |    –    | **long leg** in **25h**, **short leg** in bottom **blue** rail (−), near column 25                                                                         | the long leg (+) goes towards the resistor                                                       |
+| Step | Part | Pin(s) | Where it goes | Notes |
+|---:|---|:-:|---|---|
+| 1 | U1 PIC16F18857-I/SP | 1 | Pin 1 in hole **8f**, notch to the **left** (towards the lower column numbers). Pins 1–14 run along row f (columns 8–21); pins 15–28 run back along row e. | Skinny (300 mil) chip: one row of pins each side of the centre channel (rows e and f). |
+| 2 | jumper wire | – | top **red** rail (+), near column 2 → bottom **red** rail (+), near column 2 | +5 V power (red) After placing it, **check the power**: measure across the rails with the meter. |
+| 3 | jumper wire | – | top **blue** rail (−), near column 1 → bottom **blue** rail (−), near column 1 | ground (black) After placing it, **check the power**: measure across the rails with the meter. |
+| 4 | jumper wire | 20 | **16b** → top **red** rail (+), near column 16 | +5 V power (red) |
+| 5 | jumper wire | 19 | **17b** → top **blue** rail (−), near column 17 | ground (black) |
+| 6 | jumper wire | 8 | **15h** → bottom **blue** rail (−), near column 15 | ground (black) |
+| 7 | C1 100nF capacitor | 20 / 19 | **16c** and **17c** | ceramic: either way round; keep the legs short |
+| 8 | R1 10 kΩ resistor | 1 | **8g** and bottom **red** rail (+), near column 8 | either way round |
+| 9 | PICkit 3 ICSP lead: MCLR | 1 | from PICkit 3 ICSP pin **1** (MCLR) to **8h** | female-to-male Dupont lead |
+| 10 | PICkit 3 ICSP lead: VDD | – | from PICkit 3 ICSP pin **2** (VDD) to top **red** rail (+), near column 5 | female-to-male Dupont lead |
+| 11 | PICkit 3 ICSP lead: VSS | – | from PICkit 3 ICSP pin **3** (VSS) to top **blue** rail (−), near column 5 | female-to-male Dupont lead |
+| 12 | PICkit 3 ICSP lead: PGD | 28 | from PICkit 3 ICSP pin **4** (PGD) to **8c** | female-to-male Dupont lead |
+| 13 | PICkit 3 ICSP lead: PGC | 27 | from PICkit 3 ICSP pin **5** (PGC) to **9c** | female-to-male Dupont lead |
+| 14 | jumper wire | 11 | **18h** → **25a** | signal RC0 (any colour) |
+| 15 | R2 680 Ω resistor | – | **25d** and **25g** | either way round |
+| 16 | D1 red LED | – | **long leg** in **25h**, **short leg** in bottom **blue** rail (−), near column 25 | the long leg (+) goes towards the resistor |
 <!-- /placement -->
 
 **The PICkit 3 leads:** pin 1 of the PICkit 3 is the one marked with an arrow or triangle on the case.
@@ -70,22 +70,22 @@ Use female-to-male Dupont leads. Pin 6 is not used. Leave the leads attached whi
 **The same circuit, as a connection list** (useful if you prefer reading to looking):
 
 <!-- connections:pic:1 -->
-| Starts at               | Then goes through                                           |
-| ----------------------- | ----------------------------------------------------------- |
-| U1 pin **20** (VDD)     | **+5 V**                                                    |
-| U1 pin **8** (VSS)      | **GND**                                                     |
-| U1 pin **19** (VSS)     | **GND**                                                     |
-| U1 pin **1** (MCLR)     | net **MCLR**                                                |
-| net **MCLR**            | R1 10 kΩ → **+5 V**                                         |
-| net **+5V**             | C1 100nF → **GND**                                          |
-| U1 pin **28** (RB7/PGD) | net **PGD**                                                 |
-| U1 pin **27** (RB6/PGC) | net **PGC**                                                 |
-| J1 pin **1** (MCLR)     | net **MCLR**                                                |
-| J1 pin **2** (VDD)      | **+5 V**                                                    |
-| J1 pin **3** (VSS)      | **GND**                                                     |
-| J1 pin **4** (PGD)      | net **PGD**                                                 |
-| J1 pin **5** (PGC)      | net **PGC**                                                 |
-| U1 pin **11** (RC0)     | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
+| Starts at | Then goes through |
+|---|---|
+| U1 pin **20** (VDD) | **+5 V** |
+| U1 pin **8** (VSS) | **GND** |
+| U1 pin **19** (VSS) | **GND** |
+| U1 pin **1** (MCLR) | net **MCLR** |
+| net **MCLR** | R1 10 kΩ → **+5 V** |
+| net **+5V** | C1 100nF → **GND** |
+| U1 pin **28** (RB7/PGD) | net **PGD** |
+| U1 pin **27** (RB6/PGC) | net **PGC** |
+| J1 pin **1** (MCLR) | net **MCLR** |
+| J1 pin **2** (VDD) | **+5 V** |
+| J1 pin **3** (VSS) | **GND** |
+| J1 pin **4** (PGD) | net **PGD** |
+| J1 pin **5** (PGC) | net **PGC** |
+| U1 pin **11** (RC0) | R2 680 Ω → D1 LED (long leg towards the resistor) → **GND** |
 <!-- /connections -->
 
 ## 3. Check before you power it (2 minutes, saves chips)
@@ -108,7 +108,7 @@ If any check fails, stop and fix it first. See [Troubleshooting](../start-here/0
 2. Replace the contents of `main.c` with the code below (or add the file from `code/pic-1-blink/`).
 3. **Clean and Build**, then **Make and Program Device**.
 
-<!-- code:code/pic-1-blink/main.c -->
+<!-- code:code/month-01-pic-1-blink/main.c -->
 ```c
 /*
  * Month 1 - Build 1: Blink an LED
@@ -191,4 +191,4 @@ How it works, line by line:
 * Make it blink twice as fast. Which numbers change?
 * Make it blink three short flashes, a pause, repeat.
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](build-pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-2-button.md)

@@ -1,6 +1,6 @@
 # Month 1 · Part B · Build B2 – Turn it into a programmer
 
-[← Build B1](build-isp-b1-minimum-board.md) · [Part B](README.md) · [Next: Build B3 →](build-isp-b3-program-a-chip.md)
+[← Build B1](month-01-isp-1-minimum-board.md) · [Part B](README.md) · [Next: Build B3 →](month-01-isp-3-program-a-chip.md)
 
 **Goal:** load the **ArduinoISP** program into your chip so that it behaves as a programmer for other AVR chips, with three status lights.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build B2](images/build-2-schematic.png)
+![Schematic for build B2](images/month-01-isp-2-schematic.png)
 
 Two more LEDs. ArduinoISP uses three, with fixed meanings:
 
@@ -24,7 +24,7 @@ D1 is already in place from Build B1.
 
 ## 2. Build it
 
-![Breadboard layout for build B2](images/build-2-breadboard.png)
+![Breadboard layout for build B2](images/month-01-isp-2-breadboard.png)
 
 <!-- placement:2 -->
 | Step | Part              | Pin(s) | Where it goes                                                                      | Notes                                      |
@@ -77,4 +77,4 @@ To turn the chip back into a plain blinker, upload `blink-d9.ino` again.
 | D2 (error) on                     | ArduinoISP detected a fault          | usually the sketch needs reloading; re-upload ArduinoISP                     |
 | Nothing at all                    | no power, or the crystal has stopped | repeat the Build B1 checks                                                   |
 
-[← Build B1](build-isp-b1-minimum-board.md) · [Part B](README.md) · [Next: Build B3 →](build-isp-b3-program-a-chip.md)
+[← Build B1](month-01-isp-1-minimum-board.md) · [Part B](README.md) · [Next: Build B3 →](month-01-isp-3-program-a-chip.md)

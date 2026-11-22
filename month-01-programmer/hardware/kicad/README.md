@@ -2,12 +2,12 @@
 
 Put this month's KiCad project here. Use these names so every month looks the same:
 
-| File                     | Name                                                                           |
-| ------------------------ | ------------------------------------------------------------------------------ |
-| project                  | `month-01B-avr-programmer.kicad_pro`                                           |
-| schematic                | `month-01B-avr-programmer.kicad_sch`                                           |
-| PCB (if you make one)    | `month-01B-avr-programmer.kicad_pcb`                                           |
-| schematic printed to PDF | `month-01B-avr-programmer-schematic.pdf` (so people can read it without KiCad) |
+| File                     | Name                                                                      |
+| ------------------------ | ------------------------------------------------------------------------- |
+| project                  | `month-01-programmer.kicad_pro`                                           |
+| schematic                | `month-01-programmer.kicad_sch`                                           |
+| PCB (if you make one)    | `month-01-programmer.kicad_pcb`                                           |
+| schematic printed to PDF | `month-01-programmer-schematic.pdf` (so people can read it without KiCad) |
 
 Rules:
 

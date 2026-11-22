@@ -13,10 +13,10 @@ Building one project on two chips shows you what is the same (the ideas) and wha
 
 Do the **AVR track first**: it is the gentler start, especially if you have used an Arduino. Then do the **PIC track**.
 
-| Track   | Chip          | Builds                                                                                              | Programmer                   | Software                                                      |
-| ------- | ------------- | --------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------- |
-| **AVR** | ATmega328P-PU | [1 Blink](build-avr-1-blink.md) · [2 Button](build-avr-2-button.md) · [3 Dice](build-avr-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
-| **PIC** | PIC16F18857   | [1 Blink](build-pic-1-blink.md) · [2 Button](build-pic-2-button.md) · [3 Dice](build-pic-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
+| Track   | Chip          | Builds                                                                                                       | Programmer                   | Software                                                      |
+| ------- | ------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------- |
+| **AVR** | ATmega328P-PU | [1 Blink](month-01-avr-1-blink.md) · [2 Button](month-01-avr-2-button.md) · [3 Dice](month-01-avr-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
+| **PIC** | PIC16F18857   | [1 Blink](month-01-pic-1-blink.md) · [2 Button](month-01-pic-2-button.md) · [3 Dice](month-01-pic-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
 
 Each build ends with a **pass check**. Do not move on until it passes.
 
@@ -37,15 +37,15 @@ Order three of each: spares are useful when a chip gets damaged.
 ### Parts used (counted automatically; the two tracks reuse the same parts)
 
 <!-- bom:pic+avr -->
-| Part                                                                      | Value            | Qty used | Buy at least |
-| ------------------------------------------------------------------------- | ---------------- | -------: | -----------: |
-| Resistor                                                                  | 10 kΩ            |        1 |            2 |
-| Resistor                                                                  | 680 Ω            |        7 |            9 |
-| Ceramic capacitor                                                         | 100nF            |        2 |            3 |
-| LED, 5 mm                                                                 | red              |        7 |            9 |
-| Push button (4-leg tact switch)                                           | 6 mm             |        1 |            2 |
-| Jumper wires, solid or male-to-male                                       | assorted lengths |       15 |           21 |
-| Female-to-male Dupont leads (ISP programmer / PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
+| Part | Value | Qty used | Buy at least |
+|---|---|---:|---:|
+| Resistor | 10 kΩ | 1 | 2 |
+| Resistor | 680 Ω | 7 | 9 |
+| Ceramic capacitor | 100nF | 2 | 3 |
+| LED, 5 mm | red | 7 | 9 |
+| Push button (4-leg tact switch) | 6 mm | 1 | 2 |
+| Jumper wires, solid or male-to-male | assorted lengths | 15 | 21 |
+| Female-to-male Dupont leads (ISP programmer / PICkit 3 ICSP → breadboard) | | 5 | 6 |
 <!-- /bom -->
 
 ### Tools
@@ -80,15 +80,14 @@ Nothing here has been built on a real bench yet. If something does not work, tha
 
 ```text
 month-01-electronic-dice/
-  README.md                 this page
-  build-avr-1-blink.md ...  one page per AVR build
-  build-pic-1-blink.md ...  one page per PIC build
-  avr-programmer/           optional Part B: build an AVR programmer (its own pages, pictures, code)
-  images/                   schematic + breadboard picture for every build (avr-N-..., pic-N-...)
-  projects/                 ready-to-open projects (see projects/README.md)
-  hardware/                 KiCad schematic, parts list and connection list
+  README.md                this page
+  month-01-avr-1-blink.md ...       one page per AVR build
+  month-01-pic-1-blink.md ...       one page per PIC build
+  images/                  schematic + breadboard picture for every build (avr-N-..., pic-N-...)
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/
-    avr-1-blink/main.c      one complete file per build
+    avr-1-blink/main.c     one complete file per build
     avr-2-button/main.c
     avr-3-dice/main.c
     pic-1-blink/main.c

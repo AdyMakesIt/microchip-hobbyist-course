@@ -6,9 +6,9 @@ from ._helpers import _picks, _unit, _rail_bridges
 # ---------------------------------------------------------------------------------
 # MONTH 4 - a clock that keeps time (PIC16F18446 + MCP7940N)
 # ---------------------------------------------------------------------------------
-M04_BUILDS = {1: "Build 1 - Blink on a new chip", 2: "Build 2 - Meet the real-time clock", 3: "Build 3 - The binary clock"}
+MONTH_04_BUILDS = {1: "Build 1 - Blink on a new chip", 2: "Build 2 - Meet the real-time clock", 3: "Build 3 - The binary clock"}
 
-def month04():
+def month_04():
     c = Circuit("Month 4")
     _picks(c)
     n1 = {1: "VDD", 4: "RA3 (MCLR)", 20: "VSS", 19: "RA0 (PGD)", 18: "RA1 (PGC)", 17: "RA2 (button)", 16: "RC0", 15: "RC1",

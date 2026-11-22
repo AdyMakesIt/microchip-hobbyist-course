@@ -6,9 +6,9 @@ from ._helpers import _picks, _unit, _rail_bridges
 # ---------------------------------------------------------------------------------
 # MONTH 3 - analogue in, analogue out (PIC18F47K42 + MCP3008 + MCP4822, SPI by hand)
 # ---------------------------------------------------------------------------------
-M03_BUILDS = {1: "Build 1 - Read a knob (ADC bar graph)", 2: "Build 2 - Add the DAC", 3: "Build 3 - Loop the DAC back into the ADC"}
+MONTH_03_BUILDS = {1: "Build 1 - Read a knob (ADC bar graph)", 2: "Build 2 - Add the DAC", 3: "Build 3 - Loop the DAC back into the ADC"}
 
-def month03():
+def month_03():
     c = Circuit("Month 3")
     _picks(c)
     n1 = {1: "MCLR", 11: "VDD", 12: "VSS", 15: "RC0 (SCK)", 16: "RC1 (MOSI)", 17: "RC2 (MISO)", 18: "RC3 (CS ADC)",

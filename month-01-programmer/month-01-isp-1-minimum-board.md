@@ -1,6 +1,6 @@
 # Month 1 · Part B · Build B1 – The minimum ATmega328P board
 
-[← Part B](README.md) · [Next: Build B2 →](build-isp-b2-programmer.md)
+[← Part B](README.md) · [Next: Build B2 →](month-01-isp-2-programmer.md)
 
 **Goal:** a bare ATmega328P chip running on its own, with a 16 MHz crystal, programmed over USB-serial to blink an LED.
 
@@ -8,7 +8,7 @@
 
 ## 1. What you are building
 
-![Schematic for build B1](images/build-1-schematic.png)
+![Schematic for build B1](images/month-01-isp-1-schematic.png)
 
 * **Power:** the chip has two supply pins (VCC pin 7 and AVCC pin 20) and two ground pins (8 and 22). **All four** must be connected. C1 and C5 are 100 nF capacitors that keep the supply steady.
 * **R1 (10 kΩ):** holds RESET high.
@@ -19,7 +19,7 @@
 
 ## 2. Build it
 
-![Breadboard layout for build B1](images/build-1-breadboard.png)
+![Breadboard layout for build B1](images/month-01-isp-1-breadboard.png)
 
 Power OFF. **Do not connect the USB-serial adapter's VCC lead.** The adapter's TXD goes to the chip's RXD and the adapter's RXD to the chip's TXD (they cross over).
 
@@ -164,4 +164,4 @@ void loop()
 | Upload works but nothing blinks                                           | LED backwards, or crystal not running                 | long leg to the resistor; check Y1, C2, C3 (the chip needs its crystal after Burn Bootloader)                               |
 | Everything worked, then stopped                                           | loose crystal or jumper                               | press the crystal legs firmly into their holes                                                                              |
 
-[← Part B](README.md) · [Next: Build B2 →](build-isp-b2-programmer.md)
+[← Part B](README.md) · [Next: Build B2 →](month-01-isp-2-programmer.md)

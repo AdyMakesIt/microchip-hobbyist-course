@@ -21,11 +21,11 @@ The USBasp stays the quicker everyday tool. Skip Part B if you would rather move
 
 ## The three builds
 
-|  #  | Build                                                         | You add                                  | You prove                                           |
-| :-: | ------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
-| B1  | [The minimum ATmega328P board](build-isp-b1-minimum-board.md) | the chip, crystal, reset, serial lead    | the chip runs and accepts a program over USB-serial |
-| B2  | [Turn it into a programmer](build-isp-b2-programmer.md)       | two status LEDs                          | the chip is running the programmer software         |
-| B3  | [Program a second chip](build-isp-b3-program-a-chip.md)       | a second ATmega328P board and four wires | your programmer really programs another chip        |
+|  #  | Build                                                           | You add                                  | You prove                                           |
+| :-: | --------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------- |
+| B1  | [The minimum ATmega328P board](month-01-isp-1-minimum-board.md) | the chip, crystal, reset, serial lead    | the chip runs and accepts a program over USB-serial |
+| B2  | [Turn it into a programmer](month-01-isp-2-programmer.md)       | two status LEDs                          | the chip is running the programmer software         |
+| B3  | [Program a second chip](month-01-isp-3-program-a-chip.md)       | a second ATmega328P board and four wires | your programmer really programs another chip        |
 
 **Status:** the wiring in the pictures is machine-checked against the schematics. The programs are Arduino's standard examples plus a ten-line blink sketch.
 Nothing here has been run on a real bench yet. Please report what you find.
@@ -48,16 +48,16 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ### Parts used (counted automatically from the three circuits)
 
 <!-- bom -->
-| Part                                                                       | Value            | Qty used | Buy at least |
-| -------------------------------------------------------------------------- | ---------------- | -------: | -----------: |
-| Resistor                                                                   | 10 kΩ            |        2 |            3 |
-| Resistor                                                                   | 680 Ω            |        4 |            5 |
-| Ceramic capacitor                                                          | 100nF            |        4 |            5 |
-| Ceramic capacitor                                                          | 22pF             |        4 |            5 |
-| Crystal                                                                    | 16MHz            |        2 |            3 |
-| LED, 5 mm                                                                  | red              |        4 |            5 |
-| Jumper wires, solid or male-to-male                                        | assorted lengths |       22 |           28 |
-| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) |                  |        9 |           10 |
+| Part | Value | Qty used | Buy at least |
+|---|---|---:|---:|
+| Resistor | 10 kΩ | 2 | 3 |
+| Resistor | 680 Ω | 4 | 5 |
+| Ceramic capacitor | 100nF | 4 | 5 |
+| Ceramic capacitor | 22pF | 4 | 5 |
+| Crystal | 16MHz | 2 | 3 |
+| LED, 5 mm | red | 4 | 5 |
+| Jumper wires, solid or male-to-male | assorted lengths | 22 | 28 |
+| Female-to-male Dupont leads (USB-serial adapter / USBasp ISP → breadboard) | | 9 | 10 |
 <!-- /bom -->
 
 ### Software
@@ -89,13 +89,13 @@ Two of the **three ATmega328P-PU** chips ordered in Month 1 (you may have used o
 ## Folder contents
 
 ```text
-avr-programmer/
+month-01-programmer/
   README.md                         this page
-  build-isp-b1-minimum-board.md
-  build-isp-b2-programmer.md
-  build-isp-b3-program-a-chip.md
+  month-01-isp-1-minimum-board.md
+  month-01-isp-2-programmer.md
+  month-01-isp-3-program-a-chip.md
   images/                           schematic + breadboard picture for every build
-  projects/                         ready-to-open projects (see projects/README.md)
-  hardware/                         KiCad schematic, parts list and connection list
+  projects/              ready-to-open projects (see projects/README.md)
+  hardware/              KiCad schematic, parts list and connection list
   code/blink-d9/blink-d9.ino        the blink sketch (ArduinoISP comes with the Arduino IDE)
 ```

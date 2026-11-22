@@ -82,7 +82,7 @@ def strips():
 
 
 if __name__ == "__main__":
-    save(os.path.join(ROOT, dice_folder(), "images", "dice-pip-map.svg"), dice())
+    save(os.path.join(ROOT, dice_folder(), "images", "month-01-dice-pip-map.svg"), dice())
     save(os.path.join(ROOT, "start-here", "images", "chip-pin-numbering.svg"), dip())
     save(os.path.join(ROOT, "start-here", "images", "breadboard-connections.svg"), strips())
     print("ok")

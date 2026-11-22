@@ -5,10 +5,10 @@ sync_docs.py - keeps the Markdown pages in step with the code and the circuit de
 Pages contain marker pairs. This script rewrites what is BETWEEN a pair, so the page can
 never disagree with the real file or the verified circuit:
 
-  <!-- code:code/build-1-blink/main.c -->        ...  <!-- /code -->        the file, as a code block
-  <!-- placement:2 -->                           ...  <!-- /placement -->    hole-by-hole steps for build 2
-  <!-- connections:2 -->                         ...  <!-- /connections --> what connects to what (schematic view)
-  <!-- bom -->                                   ...  <!-- /bom -->          parts counted from the circuit
+  <!-- code:code/month-01-avr-1-blink/main.c -->  ...  <!-- /code -->        the file, as a code block
+  <!-- placement:2 -->                               ...  <!-- /placement -->    hole-by-hole steps for build 2
+  <!-- connections:2 -->                             ...  <!-- /connections --> what connects to what (schematic view)
+  <!-- bom -->                                       ...  <!-- /bom -->          parts counted from the circuit
 
 Run:  python3 sync_docs.py        (make_all.py draws the pictures; run it first)
 """
@@ -250,6 +250,46 @@ def bom_md(circuits):
     return "\n".join(out)
 
 
+def resolve_code_path(base, md_name, arg):
+    """Resolve a code marker target using <md_stem> as the canonical code subdirectory name."""
+    direct = os.path.normpath(os.path.join(base, arg))
+    if os.path.isfile(direct):
+        return direct, arg
+
+    parts = arg.replace("\\", "/").split("/")
+    if parts and parts[0] == "code" and len(parts) >= 3:
+        code_root = os.path.join(base, "code")
+        tail = os.path.join(*parts[2:])
+        old_sub = parts[1]
+        md_stem = os.path.splitext(md_name)[0]
+
+        # 1. Canonical match: code/<md_stem>/<tail>
+        if md_stem and md_stem != "README":
+            canonical_cand = os.path.join(code_root, md_stem, tail)
+            if os.path.isfile(canonical_cand):
+                rel = os.path.relpath(canonical_cand, base).replace("\\", "/")
+                return canonical_cand, rel
+
+        # 2. Fallback match: any code/<dir>/<tail> where <dir> matches or ends with <old_sub>
+        if os.path.isdir(code_root):
+            matches = []
+            for entry in sorted(os.listdir(code_root)):
+                sub_dir = os.path.join(code_root, entry)
+                if os.path.isdir(sub_dir) and (entry == old_sub or entry.endswith(old_sub)):
+                    cand = os.path.join(sub_dir, tail)
+                    if os.path.isfile(cand):
+                        rel = os.path.relpath(cand, base).replace("\\", "/")
+                        matches.append((cand, rel))
+            if len(matches) == 1:
+                return matches[0]
+            if len(matches) > 1:
+                raise FileNotFoundError(
+                    f"Ambiguous code path {arg!r} in {base}: {[m[1] for m in matches]}"
+                )
+
+    raise FileNotFoundError(f"Code file not found for {arg!r} under {base} (page: {md_name})")
+
+
 def fence_code(path):
     txt = open(path, encoding="utf-8").read().rstrip("\n")
     lang = "cpp" if path.endswith((".ino", ".cpp")) else "c"
@@ -302,7 +342,10 @@ def process(folder, circuits):
         def rep(m):
             open_tag, kind, arg, _, close = m.groups()
             if kind == "code":
-                body = fence_code(os.path.join(base, arg))
+                resolved_path, resolved_arg = resolve_code_path(base, name, arg)
+                if resolved_arg != arg:
+                    open_tag = f"<!-- code:{resolved_arg} -->"
+                body = fence_code(resolved_path)
             elif kind == "placement":
                 (c, b), n = pick(arg)
                 body = placement_md(c, b, n)

@@ -6,9 +6,9 @@ from ._helpers import _picks, _unit, _rail_bridges
 # ---------------------------------------------------------------------------------
 # MONTH 5 - a 16-bit chip at 3.3 V (PIC24FJ64GA002 + 24LC512)
 # ---------------------------------------------------------------------------------
-M05_BUILDS = {1: "Build 1 - Blink at 3.3 V", 2: "Build 2 - Say hello to the EEPROM", 3: "Build 3 - Memory that survives power-off"}
+MONTH_05_BUILDS = {1: "Build 1 - Blink at 3.3 V", 2: "Build 2 - Say hello to the EEPROM", 3: "Build 3 - Memory that survives power-off"}
 
-def month05():
+def month_05():
     c = Circuit("Month 5"); c.supply_label = "+3.3 V"
     _picks(c)
     n1 = {1: "MCLR", 2: "RA0 (heartbeat)", 3: "RA1 (button)", 4: "RB0 (PGED1)", 5: "RB1 (PGEC1)", 6: "RB2", 7: "RB3", 8: "VSS",

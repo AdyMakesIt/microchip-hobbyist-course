@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 1 · AVR Build 1 – Blink an LED
 
-Page: `build-avr-1-blink.md`
+Page: `month-01-avr-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -30,13 +30,13 @@ Page: `build-avr-1-blink.md`
 - [ ] Ten blinks take about ten seconds on a stopwatch.
 - [ ] Unplugging and re-plugging the power starts the blinking again (the program is stored in the chip).
 
-| Result                               | Notes / exact messages |
-| ------------------------------------ | ---------------------- |
-| [ ] passed   [ ] partly   [ ] failed |                        |
+| Result | Notes / exact messages |
+|---|---|
+| [ ] passed   [ ] partly   [ ] failed | |
 
 ## Month 1 · AVR Build 2 – Add the button
 
-Page: `build-avr-2-button.md`
+Page: `month-01-avr-2-button.md`
 
 **Before power (meter checks):**
 
@@ -56,13 +56,13 @@ Page: `build-avr-2-button.md`
 - [ ] LED on while the button is held, off again when released.
 - [ ] A very quick tap still lights it briefly.
 
-| Result                               | Notes / exact messages |
-| ------------------------------------ | ---------------------- |
-| [ ] passed   [ ] partly   [ ] failed |                        |
+| Result | Notes / exact messages |
+|---|---|
+| [ ] passed   [ ] partly   [ ] failed | |
 
 ## Month 1 · AVR Build 3 – The dice
 
-Page: `build-avr-3-dice.md`
+Page: `month-01-avr-3-dice.md`
 
 **Before power (meter checks):**
 
@@ -84,19 +84,19 @@ Page: `build-avr-3-dice.md`
 - [ ] After 20 rolls you have seen every number at least once.
 - [ ] Each face looks right: 2 is opposite corners, 4 is four corners, 6 is two columns of three.
 
-| Result                               | Notes / exact messages |
-| ------------------------------------ | ---------------------- |
-| [ ] passed   [ ] partly   [ ] failed |                        |
+| Result | Notes / exact messages |
+|---|---|
+| [ ] passed   [ ] partly   [ ] failed | |
 
 ## Assumptions to confirm this month
 
 These were written from datasheets and published examples, not from a real build. Tick each when you have confirmed it, or note what differs.
 
-|  #  | Assumption                                                                                                                                                                                                                          | Confirmed? |
-| :-: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------: |
-|  2  | Pin numbers for the PIC18F47K42 (40-pin PDIP), MCP23017, MCP3008, 24LC512, ATmega328P and PIC24FJ64GA002 (28-pin SPDIP) were taken from recalled datasheet tables; the PIC16F18857 pins are bench-proven for RC0 and the power pins |    [ ]     |
-|  4  | The rail split is after column 31; the red/blue order of the rails varies by board                                                                                                                                                  |    [ ]     |
-|  6  | The AVR track: the chip's factory fuses give 1 MHz; `-B10` is slow enough for a factory-fresh chip with your USBasp; the USBasp header numbering matches your board; an Uno works as programmer without the reset capacitor         |    [ ]     |
+| # | Assumption | Confirmed? |
+|:-:|---|:-:|
+| 2 | Pin numbers for the PIC18F47K42 (40-pin PDIP), MCP23017, MCP3008, 24LC512, ATmega328P and PIC24FJ64GA002 (28-pin SPDIP) were taken from recalled datasheet tables; the PIC16F18857 pins are bench-proven for RC0 and the power pins | [ ] |
+| 4 | The rail split is after column 31; the red/blue order of the rails varies by board | [ ] |
+| 6 | The AVR track: the chip's factory fuses give 1 MHz; `-B10` is slow enough for a factory-fresh chip with your USBasp; the USBasp header numbering matches your board; an Uno works as programmer without the reset capacitor | [ ] |
 
 ## Summary
 
