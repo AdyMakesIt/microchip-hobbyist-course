@@ -1,6 +1,6 @@
 # Month 4 · Build 2 – Meet the real-time clock
 
-[← Build 1](build-1-blink.md) · [Month 4](README.md) · [Next: Build 3 →](build-3-binary-clock.md)
+[← Build 1](month-04-build-1-blink.md) · [Month 4](README.md) · [Next: Build 3 →](month-04-build-3-binary-clock.md)
 
 **Goal:** the PIC starts the clock chip, reads the seconds over I2C and shows them in binary on LEDs. If anything is wrong, the LED on RC0 tells you what by blinking a code.
 
@@ -21,7 +21,7 @@ Three ideas to know:
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/build-2-schematic.png)
+![Schematic for build 2](images/month-04-build-2-schematic.png)
 
 * **U2, the MCP7940N:** power (VCC pin 8, VSS pin 4) with C2. The **VBAT** pin (3) is tied to GND because there is no battery yet.
 * **Y1, C3, C4:** the 32.768 kHz crystal and its two 10 pF load capacitors, between pins 1 (X1) and 2 (X2), and ground.
@@ -33,7 +33,7 @@ The MCP7940N's I2C address is fixed at **0x6F**.
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-04-build-2-breadboard.png)
 
 **The crystal is delicate.** Do not bend its legs close to the body. Seat it so its legs reach the holes without strain.
 
@@ -109,7 +109,7 @@ Same circuit as a connection list:
 
 ## 5. Program it
 
-<!-- code:code/build-2-rtc-hello/main.c -->
+<!-- code:code/month-04-build-2-rtc-hello/main.c -->
 ```c
 /*
  * Month 4 - Build 2: Meet the real-time clock
@@ -394,4 +394,4 @@ A quick check: 37 seconds is `100101` in binary, so RC5, RC2 and RC0 are lit.
 * Make the clock count **minutes** instead of seconds (register `REG_MIN`).
 * Make LED RC0 stay lit for exactly half of each second. What would you need to change in how you read the clock?
 
-[← Build 1](build-1-blink.md) · [Month 4](README.md) · [Next: Build 3 →](build-3-binary-clock.md)
+[← Build 1](month-04-build-1-blink.md) · [Month 4](README.md) · [Next: Build 3 →](month-04-build-3-binary-clock.md)

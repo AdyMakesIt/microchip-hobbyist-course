@@ -12,11 +12,11 @@ This month has two ideas.
 
 Do them in order. Each ends with a **pass check**.
 
-|  #  | Build                                            | You add                                    | You prove                                            |
-| :-: | ------------------------------------------------ | ------------------------------------------ | ---------------------------------------------------- |
-|  1  | [Blink on a new chip](build-1-blink.md)          | the PIC16F18446, programmer leads, one LED | you can move a program to another chip of the family |
-|  2  | [Meet the real-time clock](build-2-rtc-hello.md) | the MCP7940N, its crystal, five more LEDs  | the clock keeps time and the PIC can read it         |
-|  3  | [The binary clock](build-3-binary-clock.md)      | two mode LEDs and a button                 | the finished clock                                   |
+|  #  | Build                                                     | You add                                    | You prove                                            |
+| :-: | --------------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------- |
+|  1  | [Blink on a new chip](month-04-build-1-blink.md)          | the PIC16F18446, programmer leads, one LED | you can move a program to another chip of the family |
+|  2  | [Meet the real-time clock](month-04-build-2-rtc-hello.md) | the MCP7940N, its crystal, five more LEDs  | the clock keeps time and the PIC can read it         |
+|  3  | [The binary clock](month-04-build-3-binary-clock.md)      | two mode LEDs and a button                 | the finished clock                                   |
 
 **Status:** the logic of all three programs, including the I2C conversation with a simulated clock chip (oscillator start, BCD times, minute and midnight rollover),
 has been tested (see [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring pictures are machine-checked against the schematics.
@@ -71,12 +71,12 @@ A **CR2032 coin cell with a holder**, for keeping the time while the board is of
 ```text
 month-04-binary-clock/
   README.md                          this page
-  build-1-blink.md ... build-3-binary-clock.md
+  build-1-blink.md ... month-04-build-3-binary-clock.md
   images/                            schematic + breadboard picture for every build
   projects/              ready-to-open projects (see projects/README.md)
   hardware/              KiCad schematic, parts list and connection list
   code/
-    build-1-blink/main.c             one complete file per build
-    build-2-rtc-hello/main.c
-    build-3-binary-clock/main.c
+    month-04-build-1-blink/main.c             one complete file per build
+    month-04-build-2-rtc-hello/main.c
+    month-04-build-3-binary-clock/main.c
 ```

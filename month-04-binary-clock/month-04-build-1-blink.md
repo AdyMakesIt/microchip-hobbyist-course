@@ -1,6 +1,6 @@
 # Month 4 · Build 1 – Blink on a new chip
 
-[← Month 4](README.md) · [Next: Build 2 →](build-2-rtc-hello.md)
+[← Month 4](README.md) · [Next: Build 2 →](month-04-build-2-rtc-hello.md)
 
 **Goal:** the Month 1 blink program, running on the PIC16F18446. The point is **what changes** when you move to another chip of the same family.
 
@@ -29,7 +29,7 @@ The lesson for the rest of the course: *the code often ports easily; the wiring 
 
 ## 2. What you are building
 
-![Schematic for build 1](images/build-1-schematic.png)
+![Schematic for build 1](images/month-04-build-1-schematic.png)
 
 * **C1 (100 nF):** across the supply pins. This chip has only one pair, so one capacitor.
 * **R1 (10 kΩ):** holds MCLR high.
@@ -38,7 +38,7 @@ The lesson for the rest of the course: *the code often ports easily; the wiring 
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-04-build-1-breadboard.png)
 
 <!-- placement:1 -->
 | Step | Part                     |    Pin(s)    | Where it goes                                                                                                                                              | Notes                                                                                            |
@@ -91,7 +91,7 @@ Same circuit as a connection list:
 
 Follow the [PIC setup](../start-here/04-pic-setup.md#create-a-project) with device **PIC16F18446**.
 
-<!-- code:code/build-1-blink/main.c -->
+<!-- code:code/month-04-build-1-blink/main.c -->
 ```c
 /*
  * Month 4 - Build 1: Blink on a new chip
@@ -166,4 +166,4 @@ Open your Month 1 `pic-1-blink/main.c` beside this one. The differences are only
 * Port the **Month 1 dice** to this chip yourself. You need seven LEDs: RC0 to RC6 are all available. Which wires move?
 * Which pin on this 20-pin chip would you use for the button, and why not RA0, RA1 or RA3?
 
-[← Month 4](README.md) · [Next: Build 2 →](build-2-rtc-hello.md)
+[← Month 4](README.md) · [Next: Build 2 →](month-04-build-2-rtc-hello.md)

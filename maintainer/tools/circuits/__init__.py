@@ -105,7 +105,7 @@ CIRCUITS = [
         "fn": month_04,
         "sheet_file": "month-04-bench",
         "sheet_title": "Month 4 (PIC16F18446 + MCP7940N)",
-        "pages": ["build-1-blink.md", "build-2-rtc-hello.md", "build-3-binary-clock.md"],
+        "pages": ["month-04-build-1-blink.md", "month-04-build-2-rtc-hello.md", "month-04-build-3-binary-clock.md"],
         "tools": "MPLAB X v6.20, XC8, PICkit 3",
         "assumptions": [1, 9, 11],
     },

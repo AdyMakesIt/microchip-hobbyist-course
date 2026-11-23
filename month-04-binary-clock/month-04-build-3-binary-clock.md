@@ -1,6 +1,6 @@
 # Month 4 · Build 3 – The binary clock
 
-[← Build 2](build-2-rtc-hello.md) · [Month 4](README.md)
+[← Build 2](month-04-build-2-rtc-hello.md) · [Month 4](README.md)
 
 **Goal:** the finished clock. A button chooses whether the LEDs show seconds, minutes or hours, and two mode LEDs say which.
 
@@ -10,14 +10,14 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/build-3-schematic.png)
+![Schematic for build 3](images/month-04-build-3-schematic.png)
 
 * **Two mode LEDs** on RC6 and RC7.
 * **SW1**, the push button, on **RA2** (pin 17). It uses the chip's own pull-up, like the buttons in Month 1, so pressing it reads as 0.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-04-build-3-breadboard.png)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                                      | Notes                                                                                              |
@@ -50,7 +50,7 @@ Same circuit as a connection list:
 
 ## 4. Program it
 
-<!-- code:code/build-3-binary-clock/main.c -->
+<!-- code:code/month-04-build-3-binary-clock/main.c -->
 ```c
 /*
  * Month 4 - Build 3: The binary clock
@@ -350,4 +350,4 @@ Reading the display: with RC7 lit and the six LEDs showing `010111`, the hour is
 
 You moved a program between chips of one family and noticed what stays the same (the code) and what changes (the pins). You used a real-time clock through I2C, decoded BCD, and handled a button with edge detection. In Month 5 the I2C routines move to a 16-bit chip.
 
-[← Build 2](build-2-rtc-hello.md) · [Month 4](README.md)
+[← Build 2](month-04-build-2-rtc-hello.md) · [Month 4](README.md)
