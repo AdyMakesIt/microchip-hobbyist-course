@@ -131,9 +131,11 @@ good, out = run([sys.executable, "make_bench_sheets.py"], HERE)
 step("bench validation sheets generated", good, out)
 
 # 3 sync
+good, out = run([sys.executable, "sync_readme_months.py"], HERE)
+step("root README months table synced with course_data", good, out)
+
 good, out = run([sys.executable, "sync_docs.py"], HERE)
 step("pages synced with code and circuits", good, out)
-
 
 # 4 links
 def slug(h):

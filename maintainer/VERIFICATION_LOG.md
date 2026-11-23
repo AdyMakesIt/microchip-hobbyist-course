@@ -12,9 +12,9 @@ An honest record of what has been checked. Update it whenever a build is compile
 | 1 PIC | 1 Blink           |           Yes 3 checks            |       Yes       |         Yes         |  Not yet   |  Not yet   |
 | 1 PIC | 2 Button          |           Yes 6 checks            |       Yes       |         Yes         |  Not yet   |  Not yet   |
 | 1 PIC | 3 Dice            |           Yes 6 checks            |       Yes       |         Yes         |  Not yet   |  Not yet   |
-|  1B   | B1 Minimum board  |        n/a (Arduino tools)        |       n/a       |         Yes         |  Not yet   |  Not yet   |
-|  1B   | B2 Programmer     | n/a (standard ArduinoISP example) |       n/a       |         Yes         |  Not yet   |  Not yet   |
-|  1B   | B3 Program a chip |                n/a                |       n/a       |         Yes         |  Not yet   |  Not yet   |
+| 1 ISP | B1 Minimum board  |        n/a (Arduino tools)        |       n/a       |         Yes         |  Not yet   |  Not yet   |
+| 1 ISP | B2 Programmer     | n/a (standard ArduinoISP example) |       n/a       |         Yes         |  Not yet   |  Not yet   |
+| 1 ISP | B3 Program a chip |                n/a                |       n/a       |         Yes         |  Not yet   |  Not yet   |
 |   2   | 1 Blink           |           Yes 3 checks            |       n/a       |         Yes         |  Not yet   |  Not yet   |
 |   2   | 2 Hello expander  |           Yes 16 checks           |       Yes       |         Yes         |  Not yet   |  Not yet   |
 |   2   | 3 LED chase       |           Yes 14 checks           |       Yes       |         Yes         |  Not yet   |  Not yet   |

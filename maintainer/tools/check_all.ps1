@@ -8,6 +8,7 @@ $ErrorActionPreference = "Stop"
 $ToolsDir = $PSScriptRoot
 $RepoRoot = (Resolve-Path (Join-Path $ToolsDir "..\..")).Path
 $MakeProjects = Join-Path $ToolsDir "make_projects.py"
+$SyncReadmeMonths = Join-Path $ToolsDir "sync_readme_months.py"
 $CheckAllPy = Join-Path $ToolsDir "check_all.py"
 
 $pyCmd = Get-Command python -ErrorAction SilentlyContinue
@@ -56,6 +57,13 @@ try {
             Write-Host "Update code/<build>/main.c from the project, or re-run with -PullProjects." -ForegroundColor Yellow
             exit $LASTEXITCODE
         }
+    }
+
+    Write-Host "Updating README.md months table from course_data.PLAN..." -ForegroundColor Cyan
+    & $Python $SyncReadmeMonths
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "FAIL could not update README.md months table." -ForegroundColor Red
+        exit $LASTEXITCODE
     }
 
     & $Python $CheckAllPy
