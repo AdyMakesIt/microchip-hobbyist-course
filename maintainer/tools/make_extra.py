@@ -23,13 +23,12 @@ def save(path, svg):
 
 
 def dice():
-    pips = {"TOP_LEFT": (0, 0, "RC0", 11), "MID_LEFT": (0, 1, "RC1", 12), "BOTTOM_LEFT": (0, 2, "RC2", 13),
-            "CENTRE": (1, 1, "RC3", 14), "TOP_RIGHT": (2, 0, "RC4", 15), "MID_RIGHT": (2, 1, "RC5", 16), "BOTTOM_RIGHT": (2, 2, "RC6", 17)}
+    pips = {"TOP_LEFT": (0, 0, "D1", 2),"TOP_RIGHT": (2, 0, "D2", 3),"MID_LEFT": (0, 1, "D3", 4),"CENTRE": (1, 1, "D4", 5),"MID_RIGHT": (2, 1, "D5", 6),"BOTTOM_LEFT": (0, 2, "D6", 7),"BOTTOM_RIGHT": (2, 2, "D7", 8)}
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330" font-family="{F}"><rect width="100%" height="100%" fill="#fff"/>',
          '<text x="14" y="26" font-size="16" font-weight="bold">Dice pip map: which LED is which pin</text>',
          '<rect x="40" y="46" width="230" height="250" rx="26" fill="#fafafa" stroke="#333" stroke-width="3"/>']
     for nm, (cx, cy, rc, pin) in pips.items():
-        x = 95 + cx * 80; y = 100 + cy * 80
+        x = 75 + cx * 80; y = 90 + cy * 80
         o.append(f'<circle cx="{x}" cy="{y}" r="24" fill="#d32f2f" stroke="#7a1010" stroke-width="2"/>')
         o.append(f'<text x="{x}" y="{y+4}" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">{rc}</text>')
     o.append('<text x="300" y="80" font-size="13" font-weight="bold">LED order along the breadboard row</text>')
