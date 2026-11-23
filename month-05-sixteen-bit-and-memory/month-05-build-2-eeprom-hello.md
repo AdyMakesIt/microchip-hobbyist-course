@@ -1,6 +1,6 @@
 # Month 5 · Build 2 – Say hello to the EEPROM
 
-[← Build 1](build-1-blink.md) · [Month 5](README.md) · [Next: Build 3 →](build-3-boot-counter.md)
+[← Build 1](month-05-build-1-blink.md) · [Month 5](README.md) · [Next: Build 3 →](month-05-build-3-boot-counter.md)
 
 **Goal:** the PIC stores a byte in the 24LC512 EEPROM, waits for it to be saved, reads it back, and shows it on eight LEDs. If anything is wrong, the heartbeat LED shows a fault code.
 
@@ -21,7 +21,7 @@ The chip's I2C address is `0x50` plus the three pins A0, A1, A2. All three are w
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/build-2-schematic.png)
+![Schematic for build 2](images/month-05-build-2-schematic.png)
 
 * **U2, the 24LC512:** power on pin 8 (3.3 V) with C3, ground on pin 4; **A0, A1, A2 (pins 1, 2, 3) and WP (pin 7) to ground**.
 * **R3, R4 (4.7 kΩ):** the I2C pull-ups, **to 3.3 V**, on SCL (pin 6) and SDA (pin 5).
@@ -29,7 +29,7 @@ The chip's I2C address is `0x50` plus the three pins A0, A1, A2. All three are w
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-05-build-2-breadboard.png)
 
 <!-- placement:2 -->
 | Step | Part               |    Pin(s)    | Where it goes                                                                                                                                             | Notes                                                                                  |
@@ -109,7 +109,7 @@ Same circuit as a connection list:
 
 ## 5. Program it
 
-<!-- code:code/build-2-eeprom-hello/main.c -->
+<!-- code:code/month-05-build-2-eeprom-hello/main.c -->
 ```c
 /*
  * Month 5 - Build 2: Say hello to the EEPROM
@@ -375,4 +375,4 @@ What to read first: `main()` at the bottom. Then the EEPROM routines `eeWrite()`
 * **Break it on purpose:** disconnect the WP wire from ground and see which fault code you get.
 * Write 8 different bytes starting at address 0x0100. How would you check them all?
 
-[← Build 1](build-1-blink.md) · [Month 5](README.md) · [Next: Build 3 →](build-3-boot-counter.md)
+[← Build 1](month-05-build-1-blink.md) · [Month 5](README.md) · [Next: Build 3 →](month-05-build-3-boot-counter.md)

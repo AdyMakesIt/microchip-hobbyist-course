@@ -1,6 +1,6 @@
 # Month 5 · Build 3 – Memory that survives power-off
 
-[← Build 2](build-2-eeprom-hello.md) · [Month 5](README.md)
+[← Build 2](month-05-build-2-eeprom-hello.md) · [Month 5](README.md)
 
 **Goal:** a counter kept in the EEPROM. It goes up by one every time the board is switched on and every time you press the button, and the eight LEDs show it in binary. Unplug the power and plug it in again: the number is still there.
 
@@ -10,13 +10,13 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/build-3-schematic.png)
+![Schematic for build 3](images/month-05-build-3-schematic.png)
 
 * **SW1**, the push button, on **RA1** (pin 3), with **R13 (10 kΩ) pulling it up to 3.3 V**. Pressing the button pulls RA1 to ground (reads 0). This chip's pull-ups work differently from the PIC16/18, so a simple external resistor is used here.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-05-build-3-breadboard.png)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                 | Notes                                                                                              |
@@ -45,7 +45,7 @@ Same circuit as a connection list:
 
 ## 4. Program it
 
-<!-- code:code/build-3-boot-counter/main.c -->
+<!-- code:code/month-05-build-3-boot-counter/main.c -->
 ```c
 /*
  * Month 5 - Build 3: Memory that survives power-off
@@ -316,13 +316,13 @@ What is new:
 
 ## 6. If it does not work
 
-| What you see                        | Most likely cause                 | What to do                                                                                     |
-| ----------------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------- |
-| The count resets to 1 every start   | the writes are not being stored   | the WP pin must be grounded; check the fault codes                                             |
-| A fault code appears                | the same causes as Build 2        | see the [fault codes](build-2-eeprom-hello.md#fault-codes-the-heartbeat-led-is-talking-to-you) |
-| Button does nothing                 | the pull-up or the button wiring  | pin 3 reads 3.3 V when not pressed; 0 V when pressed                                           |
-| The count jumps by two              | contact bounce                    | the 10 ms loop hides it; check the button's legs                                               |
-| Counts strangely after many presses | the chip's 16-bit counter wrapped | expected after 65 535                                                                          |
+| What you see                        | Most likely cause                 | What to do                                                                                              |
+| ----------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| The count resets to 1 every start   | the writes are not being stored   | the WP pin must be grounded; check the fault codes                                                      |
+| A fault code appears                | the same causes as Build 2        | see the [fault codes](month-05-build-2-eeprom-hello.md#fault-codes-the-heartbeat-led-is-talking-to-you) |
+| Button does nothing                 | the pull-up or the button wiring  | pin 3 reads 3.3 V when not pressed; 0 V when pressed                                                    |
+| The count jumps by two              | contact bounce                    | the 10 ms loop hides it; check the button's legs                                                        |
+| Counts strangely after many presses | the chip's 16-bit counter wrapped | expected after 65 535                                                                                   |
 
 ## 7. Try this
 
@@ -334,4 +334,4 @@ What is new:
 
 You used a 16-bit microcontroller at 3.3 V and a persistent memory, including its write delay, and made a device that remembers. The I2C routines are now the same on three different chip families.
 
-[← Build 2](build-2-eeprom-hello.md) · [Month 5](README.md)
+[← Build 2](month-05-build-2-eeprom-hello.md) · [Month 5](README.md)

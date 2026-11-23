@@ -1,6 +1,6 @@
 # Month 5 · Build 1 – Blink at 3.3 V
 
-[← Month 5](README.md) · [Next: Build 2 →](build-2-eeprom-hello.md)
+[← Month 5](README.md) · [Next: Build 2 →](month-05-build-2-eeprom-hello.md)
 
 **Goal:** the new chip, powered from 3.3 V with its VCAP capacitor, programmed through the PICkit 3 and blinking an LED. This proves the supply, the programmer and the XC16 compiler.
 
@@ -26,7 +26,7 @@ The two "A" pins (AVDD and AVSS) feed the analog part of the chip. **You must co
 
 ## 2. What you are building
 
-![Schematic for build 1](images/build-1-schematic.png)
+![Schematic for build 1](images/month-05-build-1-schematic.png)
 
 * **C1 (100 nF):** across the main supply pins.
 * **C2 (10 µF):** the **VCAP** capacitor, pin 20 to ground.
@@ -36,9 +36,9 @@ The two "A" pins (AVDD and AVSS) feed the analog part of the chip. **You must co
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-05-build-1-breadboard.png)
 
-(Sharper [SVG](images/build-1-breadboard.svg).) Power OFF, and **breadboard supply at 3.3 V**.
+(Sharper [SVG](images/month-05-build-1-breadboard.svg).) Power OFF, and **breadboard supply at 3.3 V**.
 
 <!-- placement:1 -->
 | Step | Part                     | Pin(s) | Where it goes                                                                                                                                              | Notes                                                                                              |
@@ -104,7 +104,7 @@ Same circuit as a connection list:
 
 Follow the [PIC setup](../start-here/04-pic-setup.md#pic24-and-dspic-the-xc16-compiler) with device **PIC24FJ64GA002**, compiler **XC16**.
 
-<!-- code:code/build-1-blink/main.c -->
+<!-- code:code/month-05-build-1-blink/main.c -->
 ```c
 /*
  * Month 5 - Build 1: Blink at 3.3 V
@@ -188,4 +188,4 @@ How it works:
 * Port the Month 1 blink in your head: which three lines of this program are different from the PIC16 version, and why?
 * Change the blink to run twice as fast. Which number do you change?
 
-[← Month 5](README.md) · [Next: Build 2 →](build-2-eeprom-hello.md)
+[← Month 5](README.md) · [Next: Build 2 →](month-05-build-2-eeprom-hello.md)

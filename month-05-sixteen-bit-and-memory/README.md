@@ -15,11 +15,11 @@ New this month:
 
 Do them in order. Each ends with a **pass check**.
 
-|  #  | Build                                                     | You add                                     | You prove                                    |
-| :-: | --------------------------------------------------------- | ------------------------------------------- | -------------------------------------------- |
-|  1  | [Blink at 3.3 V](build-1-blink.md)                        | the PIC24, power, programmer leads, one LED | the chip, the 3.3 V supply and XC16 all work |
-|  2  | [Say hello to the EEPROM](build-2-eeprom-hello.md)        | the 24LC512, eight LEDs                     | you can store and fetch a byte               |
-|  3  | [Memory that survives power-off](build-3-boot-counter.md) | a button                                    | a counter that remembers across power cycles |
+|  #  | Build                                                              | You add                                     | You prove                                    |
+| :-: | ------------------------------------------------------------------ | ------------------------------------------- | -------------------------------------------- |
+|  1  | [Blink at 3.3 V](month-05-build-1-blink.md)                        | the PIC24, power, programmer leads, one LED | the chip, the 3.3 V supply and XC16 all work |
+|  2  | [Say hello to the EEPROM](month-05-build-2-eeprom-hello.md)        | the 24LC512, eight LEDs                     | you can store and fetch a byte               |
+|  3  | [Memory that survives power-off](month-05-build-3-boot-counter.md) | a button                                    | a counter that remembers across power cycles |
 
 **Status:** the logic of all three programs, including the I2C conversation with a simulated EEPROM (16-bit addresses, pages, the 5 ms busy time, and several simulated power cycles),
 has been tested (see [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring pictures are machine-checked against the schematics.
@@ -74,12 +74,12 @@ Everything from Month 4, plus the **XC16 compiler** (free): see the [PIC setup p
 ```text
 month-05-sixteen-bit-and-memory/
   README.md                          this page
-  build-1-blink.md ... build-3-boot-counter.md
+  month-05-build-1-blink.md ... month-05-build-3-boot-counter.md
   images/                            schematic + breadboard picture for every build
   projects/              ready-to-open projects (see projects/README.md)
   hardware/              KiCad schematic, parts list and connection list
   code/
-    build-1-blink/main.c             one complete file per build
-    build-2-eeprom-hello/main.c
-    build-3-boot-counter/main.c
+    month-05-build-1-blink/main.c             one complete file per build
+    month-05-build-2-eeprom-hello/main.c
+    month-05-build-3-boot-counter/main.c
 ```

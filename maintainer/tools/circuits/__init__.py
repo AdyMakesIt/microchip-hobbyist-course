@@ -121,7 +121,7 @@ CIRCUITS = [
         "fn": month_05,
         "sheet_file": "month-05-bench",
         "sheet_title": "Month 5 (PIC24FJ64GA002 + 24LC512, 3.3 V)",
-        "pages": ["build-1-blink.md", "build-2-eeprom-hello.md", "build-3-boot-counter.md"],
+        "pages": ["month-05-build-1-blink.md", "month-05-build-2-eeprom-hello.md", "month-05-build-3-boot-counter.md"],
         "tools": "MPLAB X v6.20, XC16, PICkit 3, multimeter",
         "assumptions": [1, 2, 10],
     },
