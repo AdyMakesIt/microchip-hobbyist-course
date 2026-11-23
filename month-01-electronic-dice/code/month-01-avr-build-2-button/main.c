@@ -5,7 +5,7 @@
  * Compiler : avr-gcc (with avr-libc)
  * Supply   : 5 V
  * Clock    : internal oscillator, 1 MHz (factory setting)
- * LED      : PD0 (pin 2)  -> 680 ohm -> LED -> GND
+ * LED      : PD3 (pin 5)  -> 680 ohm -> LED -> GND
  * Button   : PC0 (pin 23) -> button -> GND
  *
  * What it does: the LED is on while you hold the button down.
@@ -20,19 +20,19 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED     (1 << PD0)       /* port D, bit 0 */
-#define BUTTON  (1 << PC0)       /* port C, bit 0 */
+#define LED (1 << PD3)    /* port D, bit 3 */
+#define BUTTON (1 << PC0) /* port C, bit 0 */
 
 int main(void)
 {
-    DDRD  |= LED;                /* LED pin: output                        */
+    DDRD |= LED; /* LED pin: output                        */
 
-    DDRC  &= ~BUTTON;            /* button pin: input (DDR bit = 0)        */
-    PORTC |= BUTTON;             /* for an INPUT, PORT bit = 1 turns on the pull-up */
+    DDRC &= ~BUTTON; /* button pin: input (DDR bit = 0)        */
+    PORTC |= BUTTON; /* for an INPUT, PORT bit = 1 turns on the pull-up */
 
     while (1)
     {
-        if ((PINC & BUTTON) == 0)    /* PINC reads the pins: 0 = pressed   */
+        if ((PINC & BUTTON) == 0) /* PINC reads the pins: 0 = pressed   */
         {
             PORTD |= LED;
         }

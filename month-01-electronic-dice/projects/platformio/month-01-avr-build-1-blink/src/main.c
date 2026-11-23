@@ -5,7 +5,7 @@
  * Compiler : avr-gcc (with avr-libc)
  * Supply   : 5 V
  * Clock    : internal oscillator, 1 MHz (the chip's factory setting: no crystal needed)
- * LED      : PD0 (pin 2) -> 680 ohm -> LED -> GND
+ * LED      : PD3 (pin 5) -> 680 ohm -> LED -> GND
  *
  * What it does: LED on for half a second, off for half a second, forever.
  * If you see this, the chip, the programmer and your wiring all work.
@@ -18,7 +18,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED (1 << PD3) /* a mask with only bit 0 set (port D) */
+#define LED (1 << PD3) /* a mask with only bit 3 set (port D) */
 
 int main(void)
 {

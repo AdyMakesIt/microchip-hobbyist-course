@@ -20,9 +20,9 @@ on an Arduino Uno. What changes is that you write plain C, you decide the settin
 | Arduino                       | Plain C on the ATmega328P                                 |
 | ----------------------------- | --------------------------------------------------------- |
 | `setup()` and `loop()`        | `main()` with a `while (1)` loop                          |
-| `pinMode(pin, OUTPUT);`       | set a bit in the **DDR** register: `DDRD \|= (1 << PD0);` |
-| `digitalWrite(pin, HIGH);`    | set a bit in **PORT**: `PORTD \|= (1 << PD0);`            |
-| `digitalWrite(pin, LOW);`     | clear it: `PORTD &= ~(1 << PD0);`                         |
+| `pinMode(pin, OUTPUT);`       | set a bit in the **DDR** register: `DDRD \|= (1 << PD3);` |
+| `digitalWrite(pin, HIGH);`    | set a bit in **PORT**: `PORTD \|= (1 << 3);`              |
+| `digitalWrite(pin, LOW);`     | clear it: `PORTD &= ~(1 << 3);`                           |
 | `digitalRead(pin)`            | read the **PIN** register: `PINC & (1 << PC0)`            |
 | `pinMode(pin, INPUT_PULLUP);` | `DDRC &= ~(1 << PC0);` then `PORTC \|= (1 << PC0);`       |
 | `delay(500);`                 | `_delay_ms(500);` (needs `F_CPU`, the clock speed)        |
