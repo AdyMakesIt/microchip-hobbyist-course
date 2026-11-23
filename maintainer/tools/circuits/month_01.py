@@ -42,7 +42,7 @@ def month_01_avr():
 
     b = Board(c)
     b.ic("U1", 8, 1)
-    b.wire("TP63", "BP63", 1, "+5V"); b.wire("TN62", "BN62", 1, "GND")
+    b.wire("TP63", "BP63", 1, "+5V"); b.wire("TN63", "BN63", 1, "GND")
     b.wire("14h", "BP14", 1, "+5V"); b.wire("15h", "BN15", 1, "GND"); b.two("C1", "14g", "15g", 1)
     b.wire("16b", "TP16", 1, "+5V"); b.wire("14b", "TN14", 1, "GND"); b.two("C2", "16d", "14d", 1)
     b.two("R1", "8i", "BP8", 1)

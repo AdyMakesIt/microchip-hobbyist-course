@@ -1036,8 +1036,8 @@
 <text x="532.0" y="253.0" font-size="7" fill="#c00" text-anchor="middle">×</text>
 <path d="M 1270.0 70.0 C 1256.0 161.8, 1256.0 284.2, 1270.0 376.0" fill="none" stroke="#d62728" stroke-width="3.2" stroke-linecap="round"/>
 <circle cx="1270.0" cy="70.0" r="3" fill="#d62728" stroke="#fff" stroke-width=".8"/><circle cx="1270.0" cy="376.0" r="3" fill="#d62728" stroke="#fff" stroke-width=".8"/>
-<path d="M 1252.0 88.0 C 1266.0 169.0, 1266.0 277.0, 1252.0 358.0" fill="none" stroke="#222222" stroke-width="3.2" stroke-linecap="round"/>
-<circle cx="1252.0" cy="88.0" r="3" fill="#222222" stroke="#fff" stroke-width=".8"/><circle cx="1252.0" cy="358.0" r="3" fill="#222222" stroke="#fff" stroke-width=".8"/>
+<path d="M 1270.0 88.0 C 1284.0 169.0, 1284.0 277.0, 1270.0 358.0" fill="none" stroke="#222222" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="1270.0" cy="88.0" r="3" fill="#222222" stroke="#fff" stroke-width=".8"/><circle cx="1270.0" cy="358.0" r="3" fill="#222222" stroke="#fff" stroke-width=".8"/>
 <path d="M 388.0 286.0 C 374.0 313.0, 374.0 349.0, 388.0 376.0" fill="none" stroke="#d62728" stroke-width="3.2" stroke-linecap="round"/>
 <circle cx="388.0" cy="286.0" r="3" fill="#d62728" stroke="#fff" stroke-width=".8"/><circle cx="388.0" cy="376.0" r="3" fill="#d62728" stroke="#fff" stroke-width=".8"/>
 <path d="M 406.0 286.0 C 420.0 307.6, 420.0 336.4, 406.0 358.0" fill="none" stroke="#222222" stroke-width="3.2" stroke-linecap="round"/>
