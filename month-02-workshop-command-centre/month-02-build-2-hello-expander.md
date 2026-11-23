@@ -1,6 +1,6 @@
 # Month 2 · Build 2 – Say hello to the MCP23017
 
-[← Build 1](build-1-blink.md) · [Month 2](README.md) · [Next: Build 3 →](build-3-led-chase.md)
+[← Build 1](month-02-build-1-blink.md) · [Month 2](README.md) · [Next: Build 3 →](month-02-build-3-led-chase.md)
 
 **Goal:** the PIC talks to the MCP23017 over I2C: it turns one LED on, then **reads the setting back** to prove the
 conversation worked. If anything is wrong, the heartbeat LED tells you *what* by blinking a code.
@@ -36,7 +36,7 @@ The MCP23017's address is **0x20** because its three address pins (A0, A1, A2) a
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/build-2-schematic.png)
+![Schematic for build 2](images/month-02-build-2-schematic.png)
 
 * **U2**: the MCP23017, with its power, its 100 nF capacitor (C3), and address pins A0–A2 to GND.
 * **RESET** (pin 18) is held high by **R5**. If this pin floats, the chip behaves randomly.
@@ -45,7 +45,7 @@ The MCP23017's address is **0x20** because its three address pins (A0, A1, A2) a
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-02-build-2-breadboard.png)
 
 The MCP23017 is a *skinny* chip: it goes across the centre channel in rows **e** and **f**, with its notch to the **left**, like the Month 1 chip.
 
@@ -100,7 +100,7 @@ Same circuit as a connection list:
 
 ## 5. Program it
 
-<!-- code:code/build-2-hello-expander/main.c -->
+<!-- code:code/month-02-build-2-hello-expander/main.c -->
 ```c
 /*
  * Month 2 - Build 2: Say hello to the MCP23017
@@ -339,4 +339,4 @@ What to read first: skip to `main()` at the bottom. It is only eight lines. The 
 * **Break it on purpose.** With the program running, pull out the SDA wire and press reset. Which fault code do you see? Put it back. Knowing what a fault looks like makes real faults far less scary.
 * Change `__delay_us(5)` to `__delay_us(50)` and confirm everything still works. I2C is forgiving about being slow.
 
-[← Build 1](build-1-blink.md) · [Month 2](README.md) · [Next: Build 3 →](build-3-led-chase.md)
+[← Build 1]month-02-build-1-blink.md) · [Month 2](README.md) · [Next: Build 3 →](month-02-build-3-led-chase.md)

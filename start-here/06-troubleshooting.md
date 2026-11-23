@@ -43,7 +43,7 @@ Disconnect everything you added in the failing build except what you are testing
 ## Rung 7: Use the fault code (Month 2 onwards)
 
 From Month 2 the heartbeat LED blinks a number of times when something fails, rather than staying silent.
-See the table in [Month 2 Build 2](../month-02-workshop-command-centre/build-2-hello-expander.md#fault-codes-the-heartbeat-led-is-talking-to-you).
+See the table in [Month 2 Build 2](../month-02-workshop-command-centre/month-02-build-2-hello-expander.md#fault-codes-the-heartbeat-led-is-talking-to-you).
 
 ## Habits that save hours
 

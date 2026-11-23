@@ -1,6 +1,6 @@
 # Month 2 · Build 3 – Eight LEDs and a button
 
-[← Build 2](build-2-hello-expander.md) · [Month 2](README.md) · [Next: Build 4 →](build-4-command-centre.md)
+[← Build 2](month-02-build-2-hello-expander.md) · [Month 2](README.md) · [Next: Build 4 →](month-02-build-4-command-centre.md)
 
 **Goal:** all eight LEDs on the expander, and one button that moves a single lit LED along the row. This is the first time the PIC
 **reads** something *through* the expander.
@@ -11,14 +11,14 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/build-3-schematic.png)
+![Schematic for build 3](images/month-02-build-3-schematic.png)
 
 * Seven more LED units (R7–R13, D3–D9) on GPA1 to GPA7.
 * **SW1** on GPB0 (pin 1). Like Month 1's button it connects the pin to GND when pressed. The expander has its own pull-ups, which the program switches on (`GPPUB`).
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-02-build-3-breadboard.png)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                                      | Notes                                                                                                  |
@@ -72,7 +72,7 @@ Same circuit as a connection list:
 
 ## 4. Program it
 
-<!-- code:code/build-3-led-chase/main.c -->
+<!-- code:code/month-02-build-3-led-chase/main.c -->
 ```c
 /*
  * Month 2 - Build 3: Eight-LED chase, moved by a button
@@ -319,17 +319,17 @@ What is new in `main()`:
 
 ## 6. If it does not work
 
-| What you see                          | Most likely cause                      | What to do                                                                                       |
-| ------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| One LED never lights in the lamp test | that LED unit                          | swap the LED; check its resistor and wire (the wire from GPA*n* lands in column 44 + *n*)        |
-| The light jumps two steps per press   | bounce or a wiring touch               | check SW1 is wired on its diagonal legs only                                                     |
-| Nothing moves when you press          | button not on GPB0                     | pin 1 of the MCP23017 ↔ **30g** ↔ **25g** ↔ SW1                                                  |
-| It moves by itself                    | pull-ups not working, or GPB0 floating | confirm the `GPPUB` line; check the wire to pin 1                                                |
-| Heartbeat shows 1 or 2 blinks         | I2C problem                            | see the [fault codes](build-2-hello-expander.md#fault-codes-the-heartbeat-led-is-talking-to-you) |
+| What you see                          | Most likely cause                      | What to do                                                                                                |
+| ------------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| One LED never lights in the lamp test | that LED unit                          | swap the LED; check its resistor and wire (the wire from GPA*n* lands in column 44 + *n*)                 |
+| The light jumps two steps per press   | bounce or a wiring touch               | check SW1 is wired on its diagonal legs only                                                              |
+| Nothing moves when you press          | button not on GPB0                     | pin 1 of the MCP23017 ↔ **30g** ↔ **25g** ↔ SW1                                                           |
+| It moves by itself                    | pull-ups not working, or GPB0 floating | confirm the `GPPUB` line; check the wire to pin 1                                                         |
+| Heartbeat shows 1 or 2 blinks         | I2C problem                            | see the [fault codes](month-02-build-2-hello-expander.md#fault-codes-the-heartbeat-led-is-talking-to-you) |
 
 ## 7. Try this
 
 * Make the light run the other way (`>>`). What must the wrap-around test become?
 * Make *two* lights chase each other.
 
-[← Build 2](build-2-hello-expander.md) · [Month 2](README.md) · [Next: Build 4 →](build-4-command-centre.md)
+[← Build 2](month-02-build-2-hello-expander.md) · [Month 2](README.md) · [Next: Build 4 →](month-02-build-4-command-centre.md)

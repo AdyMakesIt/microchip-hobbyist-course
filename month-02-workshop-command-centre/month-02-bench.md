@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 2 · Build 1 – Blink (minimum circuit)
 
-Page: `build-1-blink.md`
+Page: `month-02-build-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -33,7 +33,7 @@ Page: `build-1-blink.md`
 
 ## Month 2 · Build 2 – Say hello to the MCP23017
 
-Page: `build-2-hello-expander.md`
+Page: `month-02-build-2-hello-expander.md`
 
 **Before power (meter checks):**
 
@@ -60,7 +60,7 @@ Page: `build-2-hello-expander.md`
 
 ## Month 2 · Build 3 – Eight LEDs and a button
 
-Page: `build-3-led-chase.md`
+Page: `month-02-build-3-led-chase.md`
 
 **Before power (meter checks):**
 
@@ -87,7 +87,7 @@ Page: `build-3-led-chase.md`
 
 ## Month 2 · Build 4 – Workshop Command Centre
 
-Page: `build-4-command-centre.md`
+Page: `month-02-build-4-command-centre.md`
 
 **Before power (meter checks):**
 

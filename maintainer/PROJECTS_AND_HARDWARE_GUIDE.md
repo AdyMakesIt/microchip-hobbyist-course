@@ -24,7 +24,7 @@ month-0N-name/
 
 Do this **after** a build has compiled and run on your bench, so every published project is known to work.
 
-1. In MPLAB X make the project **inside** `projects/mplabx/`, named like the build (for example `build-2-hello-expander.X`), with the settings in that month's `projects/mplabx/README.md` (device, compiler, PICkit 3, "Power target circuit from PICkit3" unticked).
+1. In MPLAB X make the project **inside** `projects/mplabx/`, named like the build (for example `month-02-build-2-hello-expander.X`), with the settings in that month's `projects/mplabx/README.md` (device, compiler, PICkit 3, "Power target circuit from PICkit3" unticked).
 2. Add `main.c` by **copying** it into the project (not linking), and make sure it is **identical** to `code/<build>/main.c`. Edit `code/` first if you changed the program, then copy.
 3. **Clean** the project (Production → Clean) and delete any `build/`, `dist/` and `debug/` folders. The repository's `.gitignore` also excludes them.
 4. Commit the `.X` folder (it contains `nbproject/` with `configurations.xml` and `project.xml`, the `Makefile`, and `main.c`).

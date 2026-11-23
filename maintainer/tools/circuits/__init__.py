@@ -73,7 +73,7 @@ CIRCUITS = [
         "fn": month_02,
         "sheet_file": "month-02-bench",
         "sheet_title": "Month 2 (PIC18F47K42 + MCP23017)",
-        "pages": ["build-1-blink.md", "build-2-hello-expander.md", "build-3-led-chase.md", "build-4-command-centre.md"],
+        "pages": ["month-02-build-1-blink.md", "month-02-build-2-hello-expander.md", "month-02-build-3-led-chase.md", "month-02-build-4-command-centre.md"],
         "tools": "MPLAB X v6.20, XC8, PICkit 3",
         "assumptions": [1, 2, 3, 5],
     },

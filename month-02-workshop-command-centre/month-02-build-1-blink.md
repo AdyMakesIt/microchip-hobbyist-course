@@ -1,6 +1,6 @@
 # Month 2 · Build 1 – Blink (minimum circuit)
 
-[← Month 2](README.md) · [Next: Build 2 →](build-2-hello-expander.md)
+[← Month 2](README.md) · [Next: Build 2 →](month-02-build-2-hello-expander.md)
 
 **Goal:** the new chip, powered correctly, programmed, with one heartbeat LED blinking. No expander yet.
 
@@ -8,7 +8,7 @@
 
 ## 1. What you are building
 
-![Schematic for build 1](images/build-1-schematic.png)
+![Schematic for build 1](images/month-02-build-1-schematic.png)
 
 * **C1 and C2** (100 nF): one for each pair of power pins (11/12 and 32/31). Fit them as close to the pins as you can.
 * **R1** (10 kΩ): holds reset high.
@@ -17,9 +17,9 @@
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-02-build-1-breadboard.png)
 
-(Sharper [SVG](images/build-1-breadboard.svg).) Power OFF while you build. New to the hole names (like **13j**)? See
+(Sharper [SVG](images/month-02-build-1-breadboard.svg).) Power OFF while you build. New to the hole names (like **13j**)? See
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
 <!-- placement:1 -->
@@ -91,7 +91,7 @@ Power on (jumper at **5 V**): measure pin 11 to pin 12: **4.8 V to 5.2 V**.
 
 Follow [Software & programmer setup](../start-here/04-pic-setup.md#create-a-project) with device **PIC18F47K42**. Then:
 
-<!-- code:code/build-1-blink/main.c -->
+<!-- code:code/month-02-build-1-blink/main.c -->
 ```c
 /*
  * Month 2 - Build 1: Blink the heartbeat LED
@@ -163,4 +163,4 @@ New compared with Month 1: this chip runs at **64 MHz**, so `OSCFRQ = 0x08` is s
 | Programs but no blink         | LED backwards, or wire in wrong hole | wire from **21i** goes to **53a**; long leg towards the resistor                                                 |
 | Blink is far too slow or fast | clock configuration                  | check the `#pragma config` block; see [setup](../start-here/04-pic-setup.md#if-a-pragma-config-line-is-rejected) |
 
-[← Month 2](README.md) · [Next: Build 2 →](build-2-hello-expander.md)
+[← Month 2](README.md) · [Next: Build 2 →](month-02-build-2-hello-expander.md)

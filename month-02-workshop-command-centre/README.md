@@ -16,12 +16,12 @@ You will write the I2C routines yourself (about 60 readable lines), so you can s
 
 Do them in order. Each ends with a **pass check**.
 
-|  #  | Build                                                  | You add                                          | You prove                                    |
-| :-: | ------------------------------------------------------ | ------------------------------------------------ | -------------------------------------------- |
-|  1  | [Blink (minimum circuit)](build-1-blink.md)            | the chip, power, programmer leads, heartbeat LED | chip, programmer and software work           |
-|  2  | [Say hello to the MCP23017](build-2-hello-expander.md) | the expander, two I2C wires, one LED             | I2C works; you can write and read a register |
-|  3  | [Eight LEDs and a button](build-3-led-chase.md)        | seven more LEDs, button 1                        | writing and reading through the expander     |
-|  4  | [Workshop Command Centre](build-4-command-centre.md)   | button 2, piezo                                  | the finished project                         |
+|  #  | Build                                                           | You add                                          | You prove                                    |
+| :-: | --------------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------- |
+|  1  | [Blink (minimum circuit)](month-02-build-1-blink.md)            | the chip, power, programmer leads, heartbeat LED | chip, programmer and software work           |
+|  2  | [Say hello to the MCP23017](month-02-build-2-hello-expander.md) | the expander, two I2C wires, one LED             | I2C works; you can write and read a register |
+|  3  | [Eight LEDs and a button](month-02-build-3-led-chase.md)        | seven more LEDs, button 1                        | writing and reading through the expander     |
+|  4  | [Workshop Command Centre](month-02-build-4-command-centre.md)   | button 2, piezo                                  | the finished project                         |
 
 **Status:** the logic of all four programs, including the I2C protocol and its timing, has been tested against a
 simulated MCP23017 (see [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring pictures have been machine-checked
@@ -75,14 +75,14 @@ Everything from Month 1 (breadboard, 5 V supply, PICkit 3, multimeter, MPLAB X +
 
 ```text
 month-02-workshop-command-centre/
-  README.md                        this page
-  build-1-blink.md ... build-4-command-centre.md
-  images/                          schematic + breadboard picture for every build (SVG and PNG)
-  projects/              ready-to-open projects (see projects/README.md)
-  hardware/              KiCad schematic, parts list and connection list
+  README.md                      this page
+  month-02-build-1-blink.md ...  month-02-build-4-command-centre.md
+  images/                        schematic + breadboard picture for every build (SVG and PNG)
+  projects/                      ready-to-open projects (see projects/README.md)
+  hardware/                      KiCad schematic, parts list and connection list
   code/
-    build-1-blink/main.c           one complete file per build
-    build-2-hello-expander/main.c
-    build-3-led-chase/main.c
-    build-4-command-centre/main.c
+    month-02-build-1-blink/main.c           one complete file per build
+    month-02-build-2-hello-expander/main.c
+    month-02-build-3-led-chase/main.c
+    month-02-build-4-command-centre/main.c
 ```

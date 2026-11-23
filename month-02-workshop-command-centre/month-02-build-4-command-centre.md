@@ -1,6 +1,6 @@
 # Month 2 · Build 4 – Workshop Command Centre
 
-[← Build 3](build-3-led-chase.md) · [Month 2](README.md)
+[← Build 3](month-02-build-3-led-chase.md) · [Month 2](README.md)
 
 **Goal:** the finished panel: three light animations, a speed button, a beep on every press.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 4](images/build-4-schematic.png)
+![Schematic for build 4](images/month-02-build-4-schematic.png)
 
 * **SW2** on GPB1 (pin 2): the SPEED button.
 * **R14 (100 Ω) + BZ1**: a piezo disc on RD3. The PIC makes a beep by switching RD3 on and off about 4000 times a second.
@@ -20,7 +20,7 @@ only make a constant buzz with this program.
 
 ## 2. Build it
 
-![Breadboard layout for build 4](images/build-4-breadboard.png)
+![Breadboard layout for build 4](images/month-02-build-4-breadboard.png)
 
 <!-- placement:4 -->
 | Step | Part               | Pin(s) | Where it goes                                                     | Notes                                                                                                  |
@@ -50,7 +50,7 @@ Same circuit as a connection list:
 
 ## 4. Program it
 
-<!-- code:code/build-4-command-centre/main.c -->
+<!-- code:code/month-02-build-4-command-centre/main.c -->
 ```c
 /*
  * Month 2 - Build 4: Workshop Command Centre
@@ -392,4 +392,4 @@ What is new:
 You built a real "peripheral" project: a controller chip, a port expander, I2C, polling with edge detection, and a fault
 indicator. In Month 3 the same ideas return with other peripherals, so keep this project's board handy.
 
-[← Build 3](build-3-led-chase.md) · [Month 2](README.md)
+[← Build 3](month-02-build-3-led-chase.md) · [Month 2](README.md)
