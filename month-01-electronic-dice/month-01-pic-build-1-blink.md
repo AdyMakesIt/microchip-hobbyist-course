@@ -1,13 +1,13 @@
 # Month 1 · PIC Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-build-2-button.md)
 
 **Goal:** make one LED blink once a second. This proves that the chip, the power, the programmer and the
 software all work. Almost every problem you will meet later is easier to find because this build works.
 
 **Status:** logic tested in simulation · compile and bench test pending
 
-This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](month-01-avr-1-blink.md); the two tracks are independent.
+This is the **PIC track** of Month 1. If you have not done the ATmega328P track yet, you can start with [AVR Build 1](month-01-avr-build-1-blink.md); the two tracks are independent.
 
 ## 0. Coming from the AVR track?
 
@@ -20,7 +20,7 @@ Then follow the table in step 2 below. Skip any step whose part is already in pl
 
 ## 1. What you are building
 
-![Schematic for build 1](images/month-01-pic-1-schematic.png)
+![Schematic for build 1](images/month-01-pic-build-1-schematic.png)
 
 How to read it: lines are wires. The little arrows with a name (such as **MCLR**) are "net flags":
 every flag with the same name is the same wire. The ground symbol (⏚) is the **GND** rail and the
@@ -35,9 +35,9 @@ What each part does:
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/month-01-pic-1-breadboard.png)
+![Breadboard layout for build 1](images/month-01-pic-build-1-breadboard.png)
 
-(The picture is also available as a sharper [SVG](images/month-01-pic-1-breadboard.svg). Open it in a browser and zoom in.)
+(The picture is also available as a sharper [SVG](images/month-01-pic-build-1-breadboard.svg). Open it in a browser and zoom in.)
 
 **Before you start:** power OFF, PICkit 3 unplugged. Each step below is one thing to plug in.
 Hole names such as **16b** mean *column 16, row b*; see the
@@ -108,7 +108,7 @@ If any check fails, stop and fix it first. See [Troubleshooting](../start-here/0
 2. Replace the contents of `main.c` with the code below (or add the file from `code/pic-1-blink/`).
 3. **Clean and Build**, then **Make and Program Device**.
 
-<!-- code:code/month-01-pic-1-blink/main.c -->
+<!-- code:code/month-01-pic-build-1-blink/main.c -->
 ```c
 /*
  * Month 1 - Build 1: Blink an LED
@@ -191,4 +191,4 @@ How it works, line by line:
 * Make it blink twice as fast. Which numbers change?
 * Make it blink three short flashes, a pause, repeat.
 
-[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-2-button.md)
+[← Month 1](README.md) · [Next: PIC Build 2 →](month-01-pic-build-2-button.md)

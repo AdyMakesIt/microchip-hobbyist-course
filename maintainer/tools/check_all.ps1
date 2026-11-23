@@ -1,52 +1,66 @@
-#!/usr/bin/env pwsh
-<#
-.SYNOPSIS
-Runs the repository's full consistency check.
-
-.DESCRIPTION
-Locates the repository root from this script's location, then runs
-maintainer/tools/check_all.py using the available Python interpreter.
-
-Works on Windows PowerShell 5.1+ and PowerShell 7+.
-#>
+[CmdletBinding()]
+param(
+    [switch]$PullProjects
+)
 
 $ErrorActionPreference = "Stop"
 
-# Repository root is two levels above maintainer/tools.
 $ToolsDir = $PSScriptRoot
-$RepoRoot = [System.IO.Path]::GetFullPath((Join-Path $ToolsDir "..\.."))
-$CheckScript = Join-Path $ToolsDir "check_all.py"
+$RepoRoot = (Resolve-Path (Join-Path $ToolsDir "..\..")).Path
+$MakeProjects = Join-Path $ToolsDir "make_projects.py"
+$CheckAllPy = Join-Path $ToolsDir "check_all.py"
 
-if (-not (Test-Path -LiteralPath $CheckScript)) {
-    Write-Error "Could not find check script: $CheckScript"
+$pyCmd = Get-Command python -ErrorAction SilentlyContinue
+if (-not $pyCmd) {
+    $pyCmd = Get-Command python3 -ErrorAction SilentlyContinue
+}
+if (-not $pyCmd) {
+    Write-Error "Python was not found on PATH."
     exit 1
 }
+$Python = $pyCmd.Source
 
-# Find Python: prefer "python", then "python3".
-$Python = Get-Command python -ErrorAction SilentlyContinue
-if (-not $Python) {
-    $Python = Get-Command python3 -ErrorAction SilentlyContinue
+Push-Location $RepoRoot
+try {
+    if ($PullProjects) {
+        Write-Host "Pulling tested project changes back into code/..." -ForegroundColor Cyan
+        & $Python $MakeProjects --pull
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "FAIL could not pull project changes into code/." -ForegroundColor Red
+            exit $LASTEXITCODE
+        }
+    }
+
+    & $Python $MakeProjects --check
+    if ($LASTEXITCODE -ne 0) {
+        $canPrompt = [Environment]::UserInteractive -and (-not [Console]::IsInputRedirected)
+        if ($canPrompt) {
+            Write-Host ""
+            Write-Host "Project files differ from code/." -ForegroundColor Yellow
+            $answer = Read-Host "Sync from the project into code/ now? [y/N]"
+            if ($answer.Trim().ToLower() -in @("y", "yes")) {
+                & $Python $MakeProjects --pull
+                if ($LASTEXITCODE -ne 0) {
+                    Write-Host "FAIL could not pull project changes into code/." -ForegroundColor Red
+                    exit $LASTEXITCODE
+                }
+            }
+            else {
+                Write-Host "Skipping sync. Update code/<build>/main.c manually or run with -PullProjects." -ForegroundColor Yellow
+                exit 1
+            }
+        }
+        else {
+            Write-Host ""
+            Write-Host "FAIL project files differ from code/ (non-interactive session)." -ForegroundColor Red
+            Write-Host "Update code/<build>/main.c from the project, or re-run with -PullProjects." -ForegroundColor Yellow
+            exit $LASTEXITCODE
+        }
+    }
+
+    & $Python $CheckAllPy
+    exit $LASTEXITCODE
 }
-
-if (-not $Python) {
-    Write-Error "Python was not found on PATH. Install Python or add it to PATH."
-    exit 1
+finally {
+    Pop-Location
 }
-
-Write-Host "Repository: $RepoRoot"
-Write-Host "Python:     $($Python.Source)"
-Write-Host "Running checks..."
-Write-Host ""
-
-& $Python.Source $CheckScript
-$exitCode = $LASTEXITCODE
-
-Write-Host ""
-if ($exitCode -eq 0) {
-    Write-Host "Checks completed successfully." -ForegroundColor Green
-}
-else {
-    Write-Host "Checks failed." -ForegroundColor Red
-}
-
-exit $exitCode

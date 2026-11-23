@@ -1,6 +1,6 @@
 # Month 1 · AVR Build 1 – Blink an LED
 
-[← Month 1](README.md) · [Next: AVR Build 2 →](month-01-avr-2-button.md)
+[← Month 1](README.md) · [Next: AVR Build 2 →](month-01-avr-build-2-button.md)
 
 **Goal:** make one LED blink once a second on an ATmega328P, programmed in plain C with a USBasp or an Uno R3 as programmer.
 This proves the chip, the programmer and the software all work.
@@ -11,7 +11,7 @@ This proves the chip, the programmer and the software all work.
 
 ## 1. What you are building
 
-![Schematic for AVR build 1](images/month-01-avr-1-schematic.png)
+![Schematic for AVR build 1](images/month-01-avr-build-1-schematic.png)
 
 How to read it: lines are wires. The little arrows with a name (such as **RESET**) are "net flags": every flag with the same name is the same wire.
 The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
@@ -25,9 +25,9 @@ The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
 
 ## 2. Build it
 
-![Breadboard layout for AVR build 1](images/month-01-avr-1-breadboard.png)
+![Breadboard layout for AVR build 1](images/month-01-avr-build-1-breadboard.png)
 
-(Sharper [SVG](images/month-01-avr-1-breadboard.svg).) Power OFF. Hole names such as **14j** mean *column 14, row j*; see the
+(Sharper [SVG](images/month-01-avr-build-1-breadboard.svg).) Power OFF. Hole names such as **14j** mean *column 14, row j*; see the
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).
 
 <!-- placement:avr:1 -->
@@ -111,7 +111,7 @@ You want `Device signature = 0x1e950f`.
 2. Put this in `src/main.c`.
 3. Press **Build** (✓) then **Upload** (→).
 
-<!-- code:code/month-01-avr-1-blink/main.c -->
+<!-- code:code/month-01-avr-build-1-blink/main.c -->
 ```c
 /*
  * Month 1 (ATmega328P) - Build 1: Blink an LED
@@ -126,24 +126,24 @@ You want `Device signature = 0x1e950f`.
  * If you see this, the chip, the programmer and your wiring all work.
  */
 
-#ifndef F_CPU                    /* (the build tool may already have set it) */
-#define F_CPU 1000000UL          /* tells _delay_ms() the clock speed: 1 MHz */
+#ifndef F_CPU           /* (the build tool may already have set it) */
+#define F_CPU 1000000UL /* tells _delay_ms() the clock speed: 1 MHz */
 #endif
 
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED  (1 << PD0)          /* a mask with only bit 0 set (port D) */
+#define LED (1 << PD3) /* a mask with only bit 0 set (port D) */
 
 int main(void)
 {
-    DDRD |= LED;                 /* DDRD: a 1 bit makes the pin an OUTPUT */
+    DDRD |= LED; /* DDRD: a 1 bit makes the pin an OUTPUT */
 
     while (1)
     {
-        PORTD |= LED;            /* LED on  (PORTD sets the output level) */
+        PORTD |= LED; /* LED on  (PORTD sets the output level) */
         _delay_ms(500);
-        PORTD &= ~LED;           /* LED off */
+        PORTD &= ~LED; /* LED off */
         _delay_ms(500);
     }
 }
@@ -187,6 +187,6 @@ How it works, line by line:
 
 * Make it blink twice as fast. Which number changes?
 * Make it blink three short flashes, a pause, repeat.
-* Compare `main.c` with the PIC version of the same build ([PIC Build 1](month-01-pic-1-blink.md)) when you reach it: the structure is the same, only the register names differ.
+* Compare `main.c` with the PIC version of the same build ([PIC Build 1](month-01-pic-build-1-blink.md)) when you reach it: the structure is the same, only the register names differ.
 
-[← Month 1](README.md) · [Next: AVR Build 2 →](month-01-avr-2-button.md)
+[← Month 1](README.md) · [Next: AVR Build 2 →](month-01-avr-build-2-button.md)

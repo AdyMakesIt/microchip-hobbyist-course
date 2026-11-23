@@ -1,6 +1,6 @@
 # Month 1 · PIC Build 2 – Add the button
 
-[← PIC Build 1](month-01-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-3-dice.md)
+[← PIC Build 1](month-01-pic-build-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-build-3-dice.md)
 
 **Goal:** the LED lights only while you hold a button down. This proves you can **read** a pin, not just write to one.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 2](images/month-01-pic-2-schematic.png)
+![Schematic for build 2](images/month-01-pic-build-2-schematic.png)
 
 New in green: the push button **SW1** between pin 2 (RA0) and GND.
 
@@ -20,7 +20,7 @@ That is why "pressed" means `0` in the code. Most buttons in later months work t
 
 ## 2. Build it
 
-![Breadboard layout for build 2](images/month-01-pic-2-breadboard.png)
+![Breadboard layout for build 2](images/month-01-pic-build-2-breadboard.png)
 
 <!-- placement:pic:2 -->
 | Step | Part            | Pin(s) | Where it goes                                                 | Notes                                                                                              |
@@ -51,7 +51,7 @@ Connections, as a list:
 
 Change the code in your project (or make a new project, same settings) to this, then **Clean and Build** and **Make and Program Device**:
 
-<!-- code:code/month-01-pic-2-button/main.c -->
+<!-- code:code/month-01-pic-build-2-button/main.c -->
 ```c
 /*
  * Month 1 - Build 2: A button controls the LED
@@ -137,4 +137,4 @@ How it works:
 
 * Make the LED toggle on each press (on, off, on...) instead of following the button. What problem appears? (Hint: one press is read many times.)
 
-[← PIC Build 1](month-01-pic-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-3-dice.md)
+[← PIC Build 1](month-01-pic-build-1-blink.md) · [Month 1](README.md) · [Next: PIC Build 3 →](month-01-pic-build-3-dice.md)

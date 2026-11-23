@@ -63,6 +63,7 @@ else:
 
 ok = True
 
+
 def step(name, good, detail=""):
     global ok
     ok &= bool(good)
@@ -72,15 +73,19 @@ def step(name, good, detail=""):
         + (("\n  " + detail.replace("\n", "\n  ")) if detail and not good else "")
     )
 
+
 def run(cmd, cwd):
     r = subprocess.run(
         cmd,
         cwd=cwd,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         env=SUBPROCESS_ENV,
     )
     return r.returncode == 0, (r.stdout + r.stderr)[-1500:]
+
 
 # 1 logic tests
 sim_targets = [
@@ -104,42 +109,68 @@ for m in sim_targets:
     n_fail = len(re.findall(r"FAILED|FAIL:", out))
     step(f"logic tests ({m})", good and n_fail == 0, out)
 
-# 2 diagrams
-good, out = run([sys.executable, "make_all.py"], HERE); step("breadboard layouts match schematics; diagrams regenerated", good, out)
-good, out = run([sys.executable, "make_extra.py"], HERE); step("teaching diagrams generated", good, out)
-good, out = run([sys.executable, "make_hardware.py"], HERE); step("KiCad parts lists and connection lists generated", good, out)
-good, out = run([sys.executable, "make_projects.py"], HERE); step("ready-to-open projects in step with the code", good, out)
-good, out = run([sys.executable, "make_purchasing.py"], HERE); step("overview, purchasing plan and parts catalogue generated", good, out)
-good, out = run([sys.executable, "make_bench_sheets.py"], HERE); step("bench validation sheets generated", good, out)
+# 2 diagrams & project sync
+good, out = run([sys.executable, "make_all.py"], HERE)
+step("breadboard layouts match schematics; diagrams regenerated", good, out)
+
+good, out = run([sys.executable, "make_extra.py"], HERE)
+step("teaching diagrams generated", good, out)
+
+good, out = run([sys.executable, "make_hardware.py"], HERE)
+step("KiCad parts lists and connection lists generated", good, out)
+
+good_proj_drift, out_proj_drift = run([sys.executable, "make_projects.py", "--check"], HERE)
+step("project files match code/ before sync", good_proj_drift, out_proj_drift)
+
+good, out = run([sys.executable, "make_projects.py"], HERE)
+step("ready-to-open projects in step with the code", good, out)
+
+good, out = run([sys.executable, "make_purchasing.py"], HERE)
+step("overview, purchasing plan and parts catalogue generated", good, out)
+
+good, out = run([sys.executable, "make_bench_sheets.py"], HERE)
+step("bench validation sheets generated", good, out)
 
 # 3 sync
-good, out = run([sys.executable, "sync_docs.py"], HERE); step("pages synced with code and circuits", good, out)
+good, out = run([sys.executable, "sync_docs.py"], HERE)
+step("pages synced with code and circuits", good, out)
+
 
 # 4 links
 def slug(h):
     h = re.sub(r"[*`_]", "", h.strip().lower())
     h = re.sub(r"[^\w\- ]", "", h)
     return h.replace(" ", "-")
+
+
 mds = []
 for dp, dn, fn in os.walk(ROOT):
     dn[:] = [d for d in dn if d not in (".git", "node_modules", "dist")]
     mds += [os.path.join(dp, f) for f in fn if f.endswith(".md")]
+
 anchors = {}
+
+
 def anchors_of(p):
     if p not in anchors:
-        txt = open(p).read()
+        txt = open(p, encoding="utf-8").read()
         txt = re.sub(r"```.*?```", "", txt, flags=re.S)
         anchors[p] = {slug(m.group(2)) for m in re.finditer(r"^(#{1,6})\s+(.*)$", txt, re.M)}
     return anchors[p]
+
+
 bad = []
 for p in mds:
-    txt = re.sub(r"```.*?```", "", open(p).read(), flags=re.S)
+    txt = re.sub(r"```.*?```", "", open(p, encoding="utf-8").read(), flags=re.S)
     for m in re.finditer(r"!?\[[^\]]*\]\(([^)\s]+)\)", txt):
         link = m.group(1)
-        if re.match(r"^(https?:|mailto:)", link): continue
+        if re.match(r"^(https?:|mailto:)", link):
+            continue
         path, _, frag = link.partition("#")
         target = os.path.normpath(os.path.join(os.path.dirname(p), path)) if path else p
-        if not os.path.exists(target): bad.append(f"{os.path.relpath(p, ROOT)}: missing file {link}"); continue
+        if not os.path.exists(target):
+            bad.append(f"{os.path.relpath(p, ROOT)}: missing file {link}")
+            continue
         if frag and target.endswith(".md") and frag not in anchors_of(target):
             bad.append(f"{os.path.relpath(p, ROOT)}: missing anchor {link}")
 step(f"all links, images and anchors resolve ({len(mds)} pages)", not bad, "\n".join(bad[:25]))
@@ -147,10 +178,20 @@ step(f"all links, images and anchors resolve ({len(mds)} pages)", not bad, "\n".
 # 5 stale markers
 stale = []
 for p in mds:
-    if p.endswith("CHANGELOG.md"): continue
-    t = open(p).read()
-    for pat in (r"TODO", r"PLACEHOLDER", r"\bV\d{2}\b", r"FIXME", r"\b(old|earlier|previous) (package|course|version|Month|edition)", r"rewritten", r"\bpilot\b"):
-        if re.search(pat, t): stale.append(f"{os.path.relpath(p, ROOT)}: contains {pat}")
+    if p.endswith("CHANGELOG.md"):
+        continue
+    t = open(p, encoding="utf-8").read()
+    for pat in (
+        r"TODO",
+        r"PLACEHOLDER",
+        r"\bV\d{2}\b",
+        r"FIXME",
+        r"\b(old|earlier|previous) (package|course|version|Month|edition)",
+        r"rewritten",
+        r"\bpilot\b",
+    ):
+        if re.search(pat, t):
+            stale.append(f"{os.path.relpath(p, ROOT)}: contains {pat}")
 badnames = [f for dp, _, fs in os.walk(ROOT) for f in fs if re.search(r"_V\d+", f)]
 step("no TODO / placeholder / version stamps in pages or file names", not stale and not badnames, "\n".join(stale + badnames))
 

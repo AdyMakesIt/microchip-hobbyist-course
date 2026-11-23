@@ -8,7 +8,7 @@ Work through the builds **in order**. Tick what happened, and write down any mes
 
 ## Month 1 · PIC Build 1 – Blink an LED
 
-Page: `month-01-pic-1-blink.md`
+Page: `month-01-pic-build-1-blink.md`
 
 **Before power (meter checks):**
 
@@ -35,7 +35,7 @@ Page: `month-01-pic-1-blink.md`
 
 ## Month 1 · PIC Build 2 – Add the button
 
-Page: `month-01-pic-2-button.md`
+Page: `month-01-pic-build-2-button.md`
 
 **Before power (meter checks):**
 
@@ -61,7 +61,7 @@ Page: `month-01-pic-2-button.md`
 
 ## Month 1 · PIC Build 3 – The dice
 
-Page: `month-01-pic-3-dice.md`
+Page: `month-01-pic-build-3-dice.md`
 
 **Before power (meter checks):**
 

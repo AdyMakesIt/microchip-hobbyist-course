@@ -1,6 +1,6 @@
 # Month 1 · PIC Build 3 – The dice
 
-[← PIC Build 2](month-01-pic-2-button.md) · [Month 1](README.md)
+[← PIC Build 2](month-01-pic-build-2-button.md) · [Month 1](README.md)
 
 **Goal:** six more LEDs, and a program that "rolls" them to show a number from 1 to 6.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-01-pic-3-schematic.png)
+![Schematic for build 3](images/month-01-pic-build-3-schematic.png)
 
 Six more LEDs, each with its own 680 Ω resistor, on RC1 to RC6. Together with D1 (RC0) they are the seven "pips" of a die:
 
@@ -21,7 +21,7 @@ If you would like it to *look* like a die, bend the LED legs out and arrange the
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-01-pic-3-breadboard.png)
+![Breadboard layout for build 3](images/month-01-pic-build-3-breadboard.png)
 
 Six identical little "LED units": a wire from the chip pin to the top of a column, a resistor across the centre channel, and an LED to the bottom ground rail.
 
@@ -69,7 +69,7 @@ Connections, as a list:
 
 ## 4. Program it
 
-<!-- code:code/month-01-pic-3-dice/main.c -->
+<!-- code:code/month-01-pic-build-3-dice/main.c -->
 ```c
 /*
  * Month 1 - Build 3: Electronic dice
@@ -237,4 +237,4 @@ How it works:
 * Add a second roll style: hold the button for a "high roll" (always 4, 5 or 6). (Hint: you can read `PORTA` for how long it stays down.)
 * Make the centre LED flash on a six, as a celebration.
 
-[← PIC Build 2](month-01-pic-2-button.md) · [Month 1](README.md)
+[← PIC Build 2](month-01-pic-build-2-button.md) · [Month 1](README.md)

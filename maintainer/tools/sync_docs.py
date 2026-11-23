@@ -5,7 +5,7 @@ sync_docs.py - keeps the Markdown pages in step with the code and the circuit de
 Pages contain marker pairs. This script rewrites what is BETWEEN a pair, so the page can
 never disagree with the real file or the verified circuit:
 
-  <!-- code:code/month-01-avr-1-blink/main.c -->  ...  <!-- /code -->        the file, as a code block
+  <!-- code:code/month-01-avr-build-1-blink/main.c -->  ...  <!-- /code -->        the file, as a code block
   <!-- placement:2 -->                               ...  <!-- /placement -->    hole-by-hole steps for build 2
   <!-- connections:2 -->                             ...  <!-- /connections --> what connects to what (schematic view)
   <!-- bom -->                                       ...  <!-- /bom -->          parts counted from the circuit

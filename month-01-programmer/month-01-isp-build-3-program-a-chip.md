@@ -1,6 +1,6 @@
 # Month 1 · Part B · Build B3 – Program a second chip
 
-[← Build B2](month-01-isp-2-programmer.md) · [Part B](README.md)
+[← Build B2](month-01-isp-build-2-programmer.md) · [Part B](README.md)
 
 **Goal:** your programmer loads a bootloader and the blink sketch into a **second, blank ATmega328P**, with no USBasp involved.
 
@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build B3](images/month-01-isp-3-schematic.png)
+![Schematic for build B3](images/month-01-isp-build-3-schematic.png)
 
 * **A second, identical minimum board** (U2): power, reset pull-up (R3), crystal (Y2, C7, C8), decoupling (C6) and a test LED (D4 on D9).
 * **Four wires** from the programmer to the target. These four wires are the **ISP** connection:
@@ -24,7 +24,7 @@
 
 ## 2. Build it
 
-![Breadboard layout for build B3](images/month-01-isp-3-breadboard.png)
+![Breadboard layout for build B3](images/month-01-isp-build-3-breadboard.png)
 
 The right-hand half of your power rails needs the four short bridging wires (columns 31 to 32) if your rails have a break in the middle.
 
@@ -92,7 +92,7 @@ The programmer chip is still running ArduinoISP and is connected to the computer
 1. **Tools → Board → Arduino Uno.** **Tools → Port →** the USB-serial adapter.
 2. **Tools → Programmer → Arduino as ISP.** (Be careful: not "ArduinoISP" or "Arduino ISP"; pick **Arduino as ISP**.)
 3. **Tools → Burn Bootloader.** This programs the **target**, not the programmer. **D3** (programming) should light up and flicker while it works. Wait for **Done burning bootloader.**
-4. Open `code/month-01-isp-1-minimum-board/month-01-isp-1-minimum-board.ino` from Build B1.
+4. Open `code/month-01-isp-build-1-minimum-board/month-01-isp-build-1-minimum-board.ino` from Build B1.
 5. **Sketch → Upload Using Programmer.** (This is *not* the same as Upload.) Wait for **Done uploading.**
 
 ## 5. Pass check
@@ -118,4 +118,4 @@ The programmer chip is still running ArduinoISP and is connected to the computer
 * Look at Arduino's example source for ArduinoISP (File → Examples → 11.ArduinoISP). It is mostly the same SPI conversation you met in Month 2 with I2C.
 * Later, an **ATtiny85** can be programmed the same way with the same four wires.
 
-[← Build B2](month-01-isp-2-programmer.md) · [Part B](README.md)
+[← Build B2](month-01-isp-build-2-programmer.md) · [Part B](README.md)

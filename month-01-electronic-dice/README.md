@@ -13,10 +13,10 @@ Building one project on two chips shows you what is the same (the ideas) and wha
 
 Do the **AVR track first**: it is the gentler start, especially if you have used an Arduino. Then do the **PIC track**.
 
-| Track   | Chip          | Builds                                                                                                       | Programmer                   | Software                                                      |
-| ------- | ------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------- |
-| **AVR** | ATmega328P-PU | [1 Blink](month-01-avr-1-blink.md) · [2 Button](month-01-avr-2-button.md) · [3 Dice](month-01-avr-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
-| **PIC** | PIC16F18857   | [1 Blink](month-01-pic-1-blink.md) · [2 Button](month-01-pic-2-button.md) · [3 Dice](month-01-pic-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
+| Track   | Chip          | Builds                                                                                                                         | Programmer                   | Software                                                      |
+| ------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------- |
+| **AVR** | ATmega328P-PU | [1 Blink](month-01-avr-build-1-blink.md) · [2 Button](month-01-avr-build-2-button.md) · [3 Dice](month-01-avr-build-3-dice.md) | USBasp **or** Arduino Uno R3 | VS Code + PlatformIO ([setup](../start-here/03-avr-setup.md)) |
+| **PIC** | PIC16F18857   | [1 Blink](month-01-pic-build-1-blink.md) · [2 Button](month-01-pic-build-2-button.md) · [3 Dice](month-01-pic-build-3-dice.md) | PICkit 3                     | MPLAB X + XC8 ([setup](../start-here/04-pic-setup.md))        |
 
 Each build ends with a **pass check**. Do not move on until it passes.
 
@@ -81,8 +81,8 @@ Nothing here has been built on a real bench yet. If something does not work, tha
 ```text
 month-01-electronic-dice/
   README.md                this page
-  month-01-avr-1-blink.md ...       one page per AVR build
-  month-01-pic-1-blink.md ...       one page per PIC build
+  month-01-avr-build-1-blink.md ...       one page per AVR build
+  month-01-pic-build-1-blink.md ...       one page per PIC build
   images/                  schematic + breadboard picture for every build (avr-N-..., pic-N-...)
   projects/              ready-to-open projects (see projects/README.md)
   hardware/              KiCad schematic, parts list and connection list
