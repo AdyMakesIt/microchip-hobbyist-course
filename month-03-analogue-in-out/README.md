@@ -14,11 +14,11 @@ Both chips talk over **SPI**, a four-wire bus faster and simpler than I2C. As in
 
 Do them in order. Each ends with a **pass check**.
 
-|  #  | Build                                                 | You add                                       | You prove                              |
-| :-: | ----------------------------------------------------- | --------------------------------------------- | -------------------------------------- |
-|  1  | [Read a knob](build-1-adc-bar-graph.md)               | the PIC, the MCP3008, a potentiometer, 8 LEDs | SPI works and the ADC measures voltage |
-|  2  | [Add the DAC](build-2-dac.md)                         | the MCP4822 and an LED                        | the chip can output exact voltages     |
-|  3  | [Loop the DAC back into the ADC](build-3-loopback.md) | one wire                                      | both converters check each other       |
+|  #  | Build                                                          | You add                                       | You prove                              |
+| :-: | -------------------------------------------------------------- | --------------------------------------------- | -------------------------------------- |
+|  1  | [Read a knob](month-03-build-1-adc-bar-graph.md)               | the PIC, the MCP3008, a potentiometer, 8 LEDs | SPI works and the ADC measures voltage |
+|  2  | [Add the DAC](month-03-build-2-dac.md)                         | the MCP4822 and an LED                        | the chip can output exact voltages     |
+|  3  | [Loop the DAC back into the ADC](month-03-build-3-loopback.md) | one wire                                      | both converters check each other       |
 
 **Status:** the logic of all three programs, including the SPI protocol and its timing, has been tested against simulated MCP3008 and MCP4822 chips
 (see [`../maintainer/VERIFICATION_LOG.md`](../maintainer/VERIFICATION_LOG.md)). The wiring pictures are machine-checked against the schematics.
@@ -71,12 +71,12 @@ Everything from Month 2. Nothing else.
 ```text
 month-03-analogue-in-out/
   README.md                          this page
-  build-1-adc-bar-graph.md ... build-3-loopback.md
+  month-03-build-1-adc-bar-graph.md ... month-03-build-3-loopback.md
   images/                            schematic + breadboard picture for every build
   projects/              ready-to-open projects (see projects/README.md)
   hardware/              KiCad schematic, parts list and connection list
   code/
-    build-1-adc-bar-graph/main.c     one complete file per build
-    build-2-dac/main.c
-    build-3-loopback/main.c
+    month-03-build-1-adc-bar-graph/main.c     one complete file per build
+    month-03-build-2-dac/main.c
+    month-03-build-3-loopback/main.c
 ```

@@ -89,7 +89,7 @@ CIRCUITS = [
         "fn": month_03,
         "sheet_file": "month-03-bench",
         "sheet_title": "Month 3 (MCP3008 + MCP4822)",
-        "pages": ["build-1-adc-bar-graph.md", "build-2-dac.md", "build-3-loopback.md"],
+        "pages": ["month-03-build-1-adc-bar-graph.md", "month-03-build-2-dac.md", "month-03-build-3-loopback.md"],
         "tools": "MPLAB X v6.20, XC8, PICkit 3, multimeter",
         "assumptions": [2, 8],
     },

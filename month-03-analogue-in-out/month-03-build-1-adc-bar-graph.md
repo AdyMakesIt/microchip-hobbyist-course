@@ -1,6 +1,6 @@
 # Month 3 · Build 1 – Read a knob
 
-[← Month 3](README.md) · [Next: Build 2 →](build-2-dac.md)
+[← Month 3](README.md) · [Next: Build 2 →](month-03-build-2-dac.md)
 
 **Goal:** turn a knob and watch a bar of 8 LEDs follow it. This proves SPI and the ADC work. A built-in self-test tells you what is wrong if they do not.
 
@@ -35,7 +35,7 @@ Answer = (the two bits B9 and B8) × 256 + byte 3. That is a number from 0 to 10
 
 ## 2. What you are building
 
-![Schematic for build 1](images/build-1-schematic.png)
+![Schematic for build 1](images/month-03-build-1-schematic.png)
 
 * **U2, the MCP3008:** its **VREF** pin (15) and **VDD** (16) are both on +5 V, so a reading of 1023 means 5 V. **AGND** and **DGND** go to ground.
 * **RV1, the knob:** one end to +5 V, the other to ground; the **middle leg (the wiper)** goes to channel 0 (pin 1). Turning it slides the voltage from 0 V to 5 V.
@@ -44,9 +44,9 @@ Answer = (the two bits B9 and B8) × 256 + byte 3. That is a number from 0 to 10
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-03-build-1-breadboard.png)
 
-(Sharper [SVG](images/build-1-breadboard.svg).) Power OFF. The PIC18F47K42 is a *wide* chip: rows **d** and **h**, as in Month 2. The MCP3008 is *skinny*: rows **e** and **f**.
+(Sharper [SVG](images/month-03-build-1-breadboard.svg).) Power OFF. The PIC18F47K42 is a *wide* chip: rows **d** and **h**, as in Month 2. The MCP3008 is *skinny*: rows **e** and **f**.
 
 <!-- placement:1 -->
 | Step | Part                     |    Pin(s)     | Where it goes                                                                                                                                              | Notes                                                                                                                                                                      |
@@ -176,7 +176,7 @@ Same circuit as a connection list:
 
 Same project settings as Month 2 (device **PIC18F47K42**, see [PIC setup](../start-here/04-pic-setup.md#create-a-project)).
 
-<!-- code:code/build-1-adc-bar-graph/main.c -->
+<!-- code:code/month-03-build-1-adc-bar-graph/main.c -->
 ```c
 /*
  * Month 3 - Build 1: Read a knob (ADC bar graph)
@@ -361,4 +361,4 @@ What to read first: `main()` at the bottom (twelve lines). Then `spiTransfer()` 
 * Change the self-test limit `16` to `0` and see if it still passes. How much does an ADC reading of 0 V jump about? (A real 10-bit ADC is only good to about ±1 or 2 counts.)
 * Change `bar()` so it lights **one** LED that moves along the row instead of a growing bar.
 
-[← Month 3](README.md) · [Next: Build 2 →](build-2-dac.md)
+[← Month 3](README.md) · [Next: Build 2 →](month-03-build-2-dac.md)

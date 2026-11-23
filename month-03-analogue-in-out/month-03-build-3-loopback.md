@@ -1,6 +1,6 @@
 # Month 3 · Build 3 – Loop the DAC back into the ADC
 
-[← Build 2](build-2-dac.md) · [Month 3](README.md)
+[← Build 2](month-03-build-2-dac.md) · [Month 3](README.md)
 
 **Goal:** one extra wire joins the DAC's output to an ADC input, so the two converters check each other. The program tests the loop at start-up and then draws a smooth sweep on the bar graph.
 
@@ -10,13 +10,13 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/build-3-schematic.png)
+![Schematic for build 3](images/month-03-build-3-schematic.png)
 
 A single wire from **DAC output A (MCP4822 pin 8)** to **ADC channel 1 (MCP3008 pin 2)**. Now the chip can output a voltage *and* measure it, with no outside help.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-03-build-3-breadboard.png)
 
 <!-- placement:3 -->
 | Step | Part        |   Pin(s)    | Where it goes     | Notes                     |
@@ -39,7 +39,7 @@ Same circuit as a connection list:
 
 ## 4. Program it
 
-<!-- code:code/build-3-loopback/main.c -->
+<!-- code:code/month-03-build-3-loopback/main.c -->
 ```c
 /*
  * Month 3 - Build 3: Loop the DAC back into the ADC
@@ -281,4 +281,4 @@ What is new:
 
 You built a complete data-conversion loop: a number becomes a voltage, the voltage becomes a number again, and the program checks its own hardware. The same idea (self-test with known values) returns in later months.
 
-[← Build 2](build-2-dac.md) · [Month 3](README.md)
+[← Build 2](month-03-build-2-dac.md) · [Month 3](README.md)

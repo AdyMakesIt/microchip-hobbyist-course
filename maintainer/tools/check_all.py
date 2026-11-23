@@ -100,7 +100,6 @@ for m in sim_targets:
 
     bash_command = (
         'export PATH="/usr/bin:/ucrt64/bin:$PATH"; '
-        'echo "PATH=$PATH"; '
         'exec bash ./run_tests.sh'
     )
 

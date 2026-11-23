@@ -1,6 +1,6 @@
 # Month 3 · Build 2 – Add the DAC
 
-[← Build 1](build-1-adc-bar-graph.md) · [Month 3](README.md) · [Next: Build 3 →](build-3-loopback.md)
+[← Build 1](month-03-build-1-adc-bar-graph.md) · [Month 3](README.md) · [Next: Build 3 →](month-03-build-3-loopback.md)
 
 **Goal:** the chip outputs exact voltages. DAC channel A copies the knob (measure it with a multimeter); channel B draws a slow triangle wave that makes an LED slowly brighten and dim.
 
@@ -26,7 +26,7 @@ Unlike the ADC (which measures against the 5 V supply), the DAC's voltage is set
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/build-2-schematic.png)
+![Schematic for build 2](images/month-03-build-2-schematic.png)
 
 * **U3, the MCP4822:** power (pin 1 = VDD, pin 7 = VSS) with its own 100 nF capacitor (C4). **LDAC** (pin 5) is tied to GND, which means "update the output as soon as CS goes high".
 * **Three SPI wires** shared with the ADC (SCK, SDI = MOSI) plus **its own CS** to PIC pin 23.
@@ -35,7 +35,7 @@ Unlike the ADC (which measures against the 5 V supply), the DAC's voltage is set
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-03-build-2-breadboard.png)
 
 <!-- placement:2 -->
 | Step | Part               |    Pin(s)    | Where it goes                                                                                                                                             | Notes                                                                                  |
@@ -78,7 +78,7 @@ Same circuit as a connection list:
 
 ## 5. Program it
 
-<!-- code:code/build-2-dac/main.c -->
+<!-- code:code/month-03-build-2-dac/main.c -->
 ```c
 /*
  * Month 3 - Build 2: Add the DAC
@@ -292,4 +292,4 @@ What is new:
 * Make A output the **inverse** of the knob (`4095 - code`).
 * Use the multimeter to check the DAC's accuracy at three different values. How many millivolts is it off by?
 
-[← Build 1](build-1-adc-bar-graph.md) · [Month 3](README.md) · [Next: Build 3 →](build-3-loopback.md)
+[← Build 1](month-03-build-1-adc-bar-graph.md) · [Month 3](README.md) · [Next: Build 3 →](month-03-build-3-loopback.md)
