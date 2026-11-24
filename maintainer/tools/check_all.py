@@ -74,7 +74,20 @@ def step(name, good, detail=""):
     )
 
 
-def run(cmd, cwd):
+def _format_cmd_label(cmd):
+    if len(cmd) >= 3 and cmd[1] == "-c" and "run_tests.sh" in cmd[2]:
+        return None  # Printed with the month target below
+    if len(cmd) >= 2 and cmd[1].endswith(".py"):
+        script = os.path.basename(cmd[1])
+        rest = " ".join(cmd[2:])
+        return f"{script} {rest}".strip()
+    return " ".join(cmd)
+
+
+def run(cmd, cwd, label=None):
+    shown = label or _format_cmd_label(cmd)
+    if shown:
+        print(f"\nRunning {shown}...", flush=True)
     r = subprocess.run(
         cmd,
         cwd=cwd,
@@ -103,11 +116,11 @@ for m in sim_targets:
         'exec bash ./run_tests.sh'
     )
 
-    good, out = run([BASH, "-c", bash_command], sim_dir)
+    good, out = run([BASH, "-c", bash_command], sim_dir, label=f"logic tests ({m})")
 
     n_fail = len(re.findall(r"FAILED|FAIL:", out))
     step(f"logic tests ({m})", good and n_fail == 0, out)
-
+    
 # 2 diagrams & project sync
 good, out = run([sys.executable, "make_all.py"], HERE)
 step("breadboard layouts match schematics; diagrams regenerated", good, out)
