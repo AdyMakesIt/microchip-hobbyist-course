@@ -21,10 +21,10 @@ on an Arduino Uno. What changes is that you write plain C, you decide the settin
 | ----------------------------- | --------------------------------------------------------- |
 | `setup()` and `loop()`        | `main()` with a `while (1)` loop                          |
 | `pinMode(pin, OUTPUT);`       | set a bit in the **DDR** register: `DDRD \|= (1 << PD3);` |
-| `digitalWrite(pin, HIGH);`    | set a bit in **PORT**: `PORTD \|= (1 << 3);`              |
-| `digitalWrite(pin, LOW);`     | clear it: `PORTD &= ~(1 << 3);`                           |
-| `digitalRead(pin)`            | read the **PIN** register: `PINC & (1 << PC0)`            |
-| `pinMode(pin, INPUT_PULLUP);` | `DDRC &= ~(1 << PC0);` then `PORTC \|= (1 << PC0);`       |
+| `digitalWrite(pin, HIGH);`    | set a bit in **PORT**: `PORTD \|= (1 << PD3);`            |
+| `digitalWrite(pin, LOW);`     | clear it: `PORTD &= ~(1 << PD3);`                         |
+| `digitalRead(pin)`            | read the **PIN** register: `PIND & (1 << PD3)`            |
+| `pinMode(pin, INPUT_PULLUP);` | `DDRD &= ~(1 << PD3);` then `PORTD \|= (1 << PD3);`       |
 | `delay(500);`                 | `_delay_ms(500);` (needs `F_CPU`, the clock speed)        |
 
 Pins are grouped in **ports** of up to eight: **PB**0 to 7, **PC**0 to 5 and **PD**0 to 7 on the ATmega328P. The Arduino pin numbers
@@ -117,7 +117,7 @@ What the lines mean:
 * `upload_protocol` picks the uploader's language for your programmer.
 * `-Pusb` tells avrdude to look for the USBasp on USB; 
 * `-B10` slows the programming clock (explained in the next section).
-* `-e` erase the flashbefore programming
+* `-e` erase the flash before programming
    
 ## Step 3: Build and upload
 

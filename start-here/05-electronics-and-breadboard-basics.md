@@ -1,6 +1,6 @@
 # Electronics and breadboard basics
 
-Everything you need for months 1 and 2, in about 10 minutes. Skip what you already know.
+Everything you need in about 10 minutes. Skip what you already know.
 
 ## How the holes are connected
 

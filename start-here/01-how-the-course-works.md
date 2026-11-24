@@ -19,11 +19,16 @@ Every month is one folder. Everything for that month sits inside it:
 
 ```text
 month-NN-name/
-  README.md        what you build, what to order, the list of builds
-  build-1-....md   one short page per build
-  build-2-....md
-  images/          a schematic and a breadboard picture for every build
-  code/            one folder per build, each with a complete main.c
+  README.md                 what you build, what to order, the list of builds
+  month-NN-build-1-....md   one short page per build
+  month-NN-build-2-....md
+  month-NN-bench.md         bench validation sheet
+  images/                   a schematic and a breadboard picture for every build
+  photos/                   Pictures of completed circuits on Breadboard/PCB
+  code/                     one folder per build, each with a complete main.c
+  hardware/exports          BOM and net list
+  hardware/kicad            KiCad Projects if Applicable
+  projects                  completed Arduino/PlatformIO/MPLab projects                 
 ```
 
 A **build** is one small step that ends with something you can see working. You never build more than one step at a time.

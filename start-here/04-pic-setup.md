@@ -2,15 +2,12 @@
 
 **Do this once.** About 30–40 minutes, mostly downloading. This page is for the **PIC chips**. For the ATmega328P (AVR), see [AVR software and programmer setup](03-avr-setup.md).
 
-> **Tested combination (bench-tested on a PIC16F18857 on 2026-08-08):** MPLAB XC8 **v3.10** with the
-> PIC16F1xxxx device pack 1.31.465. Use the **MPLAB X IDE v6.20** installer: it is the **last version that supports the PICkit 3**.
-
 ## What you will install
 
 | Tool                   | Version                                                                         | What it is                                        |
 | ---------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------- |
 | **MPLAB X IDE**        | **v6.20**                                                                       | the editor and programming tool                   |
-| **MPLAB XC8** compiler | v3.10 (or the version your Microchip download page lists as current for XC8 v3) | turns your C into a program for PIC16/PIC18 chips |
+| **MPLAB XC8** compiler | v4.00 (or the version your Microchip download page lists as current for XC8 v3) | turns your C into a program for PIC16/PIC18 chips |
 
 You do **not** need MPLAB Code Configurator (MCC) for months 1 and 2.
 
