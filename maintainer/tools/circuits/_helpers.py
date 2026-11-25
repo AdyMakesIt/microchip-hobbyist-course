@@ -60,9 +60,32 @@ def add_isp_5pin(
     b.lead("J1", 3, holes["MOSI"], build, "MOSI")
     b.lead("J1", 5, holes["GND"], build, "GND")
 
-# ---------------------------------------------------------------------------------
-# helpers shared by months 3-5
-# ---------------------------------------------------------------------------------
+def add_external_power(
+    b,
+    mode="mb102",
+    build=1,
+    voltage="5 V",
+    top_voltage=None,
+    bottom_voltage=None,
+    label=None,
+    pos_hole=None,
+    neg_hole=None,
+):
+    """Add either an MB102 module or a battery pack to the breadboard."""
+    if mode == "mb102":
+        b.mb102(build=build, col=1, voltage=voltage, top_voltage=top_voltage, bottom_voltage=bottom_voltage)
+    elif mode == "battery":
+        kw = dict(
+            build=build,
+            pos_hole="BP1" if pos_hole is None else pos_hole,
+            neg_hole="BN1" if neg_hole is None else neg_hole,
+        )
+        if label is not None:
+            kw["label"] = label
+        if voltage is not None:
+            kw["voltage"] = voltage
+        b.battery_pack(**kw)
+                                        
 def _unit(b, src_hole, uc, r, d, build, label):
     """An LED unit: wire from a chip pin to (uc,a); resistor across the centre channel; LED to the bottom GND rail."""
     b.wire(src_hole, f"{uc}a", build, label)

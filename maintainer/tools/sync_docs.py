@@ -129,7 +129,24 @@ def describe(c, b, it):
             f"straddling the centre channel with legs in **{col}e, {col+2}e, {col}f, {col+2}f**",
             f"only the diagonal legs ({col}e and {col+2}f) are wired; keep strips {col+2}e and {col}f empty. Works either way round.",
         )
-    raise ValueError(k)
+    if k == "mb102":
+      v_top = it.get("top_voltage", it.get("voltage", "5 V"))
+      v_bot = it.get("bottom_voltage", it.get("voltage", "5 V"))
+      v_desc = v_top if v_top == v_bot else f"top rail {v_top}, bottom rail {v_bot}"
+      return (
+          f"MB102 breadboard power supply ({v_desc})",
+          f"plugged into the left end of the power rails at column {it['col']} (`TP{it['col']}`, `TN{it['col']}`, `BN{it['col']}`, `BP{it['col']}`)",
+          f"set the yellow jumpers to **{v_desc}**; check the rail voltage with your multimeter before inserting chips",
+        )    
+    if k == "battery":
+        base_label = it.get("label", "Battery pack")
+        volt = it.get("voltage")
+        part_name = f"{base_label} ({volt})" if volt else base_label
+        return (
+            part_name,
+            f"**red (+)** lead to {hole(it['a'])}, **black (−)** lead to {hole(it['b'])}",
+            "check polarity before connecting",
+        )    raise ValueError(k)
 
 
 def strip_pins(c, b, build):
@@ -148,6 +165,10 @@ def pins_text(c, b, build, it):
     k = it["kind"]
     if k == "ic":
         return "1"
+    if k == "mb102":
+        return "-"
+    if k == "battery":
+        return "-"
     m = strip_pins(c, b, build)
     holes = []
     if k == "SW":

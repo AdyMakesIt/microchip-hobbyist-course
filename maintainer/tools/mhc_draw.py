@@ -163,6 +163,40 @@ class Board:
         """A lead from a hole to pin <pin> of an off-board connector (programmer, USB-serial adapter...)."""
         self.items.append(dict(kind="lead", conn=conn, pin=str(pin), a=parse_hole(hole), build=build, label=label, until=until))
 
+    def mb102(self, build=1, col=1, voltage="5 V", top_voltage=None, bottom_voltage=None, until=99):
+        """MB102 breadboard power supply plugged onto the left end of the power rails.
+        Set `voltage` for both rails, or override `top_voltage` / `bottom_voltage` ('5 V', '3.3 V', or 'OFF').
+        """
+        v_top = top_voltage or voltage
+        v_bot = bottom_voltage or voltage
+        self.items.append(
+            dict(
+                kind="mb102",
+                col=col,
+                voltage=voltage,
+                top_voltage=v_top,
+                bottom_voltage=v_bot,
+                build=build,
+                until=until,
+            )
+        )
+
+    def battery_pack(self, build=1, pos_hole=None, neg_hole=None, label="3×AA battery pack", voltage=None, until=99):
+        """Battery pack with red (+) and black (-) leads into the power rails."""
+        p_hole = "BP1" if pos_hole is None else pos_hole
+        n_hole = "BN1" if neg_hole is None else neg_hole
+        self.items.append(
+            dict(
+                kind="battery",
+                a=parse_hole(p_hole),
+                b=parse_hole(n_hole),
+                label=label,
+                voltage=voltage,
+                build=build,
+                until=until,
+            )
+        )
+        
     # ---- IC geometry ------------------------------------------------------
     def ic_pin_hole(self, ref, pin):
         for it in self.items:
@@ -212,7 +246,21 @@ class Board:
                     # schematic pin 1 = the signal side (bottom-right leg), pin 2 = the GND side (top-left leg)
                     u(("pin", it["ref"], "2"), hole_node((col, "e")))
                     u(("pin", it["ref"], "1"), hole_node((col + 2, "f")))
-        # the supply feeds the LEFT end of the top rails
+            elif k == "mb102":
+                col = it["col"]
+                rail_pairs = [
+                    ("TP", "TN", it.get("top_voltage", it.get("voltage", "5 V"))),
+                    ("BP", "BN", it.get("bottom_voltage", it.get("voltage", "5 V"))),
+                ]
+                for r_plus, r_gnd, v_str in rail_pairs:
+                    u(("net", "GND"), hole_node((col, r_gnd)))
+                    if v_str == "3.3 V":
+                        u(("net", "+3.3V"), hole_node((col, r_plus)))
+                    elif v_str != "OFF":
+                        u(("net", "+5V"), hole_node((col, r_plus)))
+            elif k == "battery":
+                u(("net", "+5V"), hole_node(it["a"]))
+                u(("net", "GND"), hole_node(it["b"]))        # the supply feeds the LEFT end of the top rails
         u(("net", "+5V"), ("rail", "TP", 0)); u(("net", "GND"), ("rail", "TN", 0))
         groups = collections.defaultdict(set)
         for x in list(parent): groups[f(x)].add(x)
@@ -301,28 +349,154 @@ ROWY = {"TP": 0, "TN": 1, "a": 3.0, "b": 4.0, "c": 5.0, "d": 6.0, "e": 7.0,
 class BBDraw:
     def __init__(self, board, upto, title, cmin=None, cmax=None):
         self.b, self.upto, self.title = board, upto, title
+        has_mb102 = any(it["kind"] == "mb102" for it in board.items)
+        self.X0 = 265.0 if has_mb102 else 205.0
+        self.Y0 = 70.0
         cols = []
         for it in board.items:
-            if it["build"] > upto: continue
+            if it["build"] > upto:
+                continue
             if it["kind"] == "ic":
-                ic = board.c.ics[it["ref"]]; cols += [it["col"], it["col"] + ic.npins // 2 - 1]
-            elif it["kind"] == "SW": cols += [it["col"], it["col"] + 2]
+                ic = board.c.ics[it["ref"]]
+                cols += [it["col"], it["col"] + ic.npins // 2 - 1]
+            elif it["kind"] == "SW":
+                cols += [it["col"], it["col"] + 2]
+            elif it["kind"] == "mb102":
+                cols += [it["col"], it["col"] + 2]
             else:
                 for k in ("a", "b", "w"):
-                    if k in it: cols.append(it[k][0])
+                    if k in it:
+                        cols.append(it[k][0])
         # always show the same crop for every build of a month so pictures line up
         allcols = []
         for it in board.items:
             if it["kind"] == "ic":
                 ic = board.c.ics[it["ref"]]; allcols += [it["col"], it["col"] + ic.npins // 2 - 1]
             elif it["kind"] == "SW": allcols += [it["col"], it["col"] + 2]
+            elif it["kind"] == "mb102": allcols += [it["col"], it["col"] + 2]
             else:
                 for k in ("a", "b", "w"):
                     if k in it: allcols.append(it[k][0])
         self.cmin = cmin if cmin is not None else max(1, min(allcols) - 3)
         self.cmax = cmax if cmax is not None else min(63, max(allcols) + 3)
         self.X0 = 190.0; self.Y0 = 70.0
+    
+    def draw_mb102(self, it, new):
+        col = it["col"]
+        v_top = it.get("top_voltage", it.get("voltage", "5 V"))
+        v_bot = it.get("bottom_voltage", it.get("voltage", "5 V"))
+        x_pin, y_tp = self.xy((col, "TP"))
+        _, y_bp = self.xy((col, "BP"))
+        x_right = x_pin + 2 * P + 8
+        x_left = x_pin - 116
+        y_top = y_tp - 10
+        y_bot = y_bp + 10
+        h = y_bot - y_top
+        mid_y = (y_top + y_bot) / 2
+        s = []
+        if new:
+            s.append(
+                f'<rect x="{x_left-6}" y="{y_top-6}" width="{x_right-x_left+12}" '
+                f'height="{h+12}" rx="8" fill="#ffe34d" opacity=".6"/>'
+            )
+        # Main black PCB on the left end of the rails
+        s.append(
+            f'<rect x="{x_left}" y="{y_top}" width="{x_right-x_left}" height="{h}" '
+            f'rx="4" fill="#1e2229" stroke="#000" stroke-width="1.5"/>'
+        )
+        # DC barrel jack (top-left) & USB-A socket (bottom-left)
+        s.append(f'<rect x="{x_left-10}" y="{y_top+14}" width="34" height="28" rx="2" fill="#2b2b2b" stroke="#000"/>')
+        s.append(f'<text x="{x_left+7}" y="{y_top+31}" font-size="8" fill="#ccc" text-anchor="middle">7–12V</text>')
+        s.append(f'<rect x="{x_left-8}" y="{y_bot-44}" width="32" height="30" rx="2" fill="#cfd4dc" stroke="#555"/>')
+        s.append(f'<text x="{x_left+8}" y="{y_bot-26}" font-size="8" fill="#222" text-anchor="middle">USB</text>')
+        # White power switch & green LED
+        s.append(f'<rect x="{x_left+42}" y="{mid_y-12}" width="18" height="24" rx="3" fill="#f2f2f2" stroke="#555"/>')
+        s.append(f'<circle cx="{x_left+74}" cy="{mid_y}" r="4.5" fill="#2ecc71" stroke="#145a32"/>')
 
+        # Top and bottom jumper headers (left = 5V, right = 3.3V)
+        for ry, v_rail in ((y_top + 18, v_top), (y_bot - 18, v_bot)):
+            hx = x_right - 46
+            s.append(f'<rect x="{hx}" y="{ry-7}" width="36" height="14" rx="2" fill="#333" stroke="#666"/>')
+            if v_rail == "5 V":
+                s.append(f'<rect x="{hx+2}" y="{ry-5}" width="16" height="10" rx="1" fill="#f1c40f"/>')
+            elif v_rail == "3.3 V":
+                s.append(f'<rect x="{hx+18}" y="{ry-5}" width="16" height="10" rx="1" fill="#f1c40f"/>')
+            s.append(f'<text x="{hx+18}" y="{ry-10}" font-size="7.5" fill="#ffe34d" text-anchor="middle">{esc(v_rail)}</text>')
+
+        # Title rotated 90 degrees, centered vertically on the right-hand side of the MB102
+        tx = x_right - 22
+        v_summary = v_top if v_top == v_bot else f"{v_top} / {v_bot}"
+        s.append(
+            f'<g transform="translate({tx},{mid_y}) rotate(90)">'
+            f'<text x="0" y="-4" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">MB102</text>'
+            f'<text x="0" y="9" font-size="8.5" fill="#ffe34d" text-anchor="middle">{esc(v_summary)}</text>'
+            f'</g>'
+        )
+
+        # Header pins plugging into TP, TN, BN, BP
+        for rname in ("TP", "TN", "BN", "BP"):
+            px, py = self.xy((col, rname))
+            s.append(f'<circle cx="{px}" cy="{py}" r="3.2" fill="#f1c40f" stroke="#000" stroke-width=".8"/>')
+        return "\n".join(s)
+
+    def draw_battery(self, it, new):
+        xp, yp = self.xy(it["a"])
+        xn, yn = self.xy(it["b"])
+
+        board_bottom = self.Y0 + 17 * P + 22.0
+        bx, bw = 18.0, 124.0
+        bh = 52.0
+        by = board_bottom - bh - 14.0  # leaves 14 px below holder for the label within board_bottom
+        xe = bx + bw
+
+        base_label = it.get("label", "Battery pack")
+        volt = it.get("voltage")
+        shown_text = f"{base_label} ({volt})" if volt else base_label
+
+        s = []
+        if new:
+            s.append(
+                f'<rect x="{bx-5}" y="{by-5}" width="{bw+10}" height="{bh+22}" '
+                f'rx="8" fill="#ffe34d" opacity=".6"/>'
+            )
+        # Battery holder body
+        s.append(
+            f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="6" '
+            f'fill="#2b2b2b" stroke="#000" stroke-width="1.5"/>'
+        )
+        # Three cylindrical cells inside
+        cell_gap = 4.0
+        cell_h = (bh - 12.0 - cell_gap * 2) / 3.0
+        for i in range(3):
+            cy = by + 6.0 + i * (cell_h + cell_gap)
+            s.append(
+                f'<rect x="{bx+8}" y="{cy}" width="{bw-22}" height="{cell_h}" rx="3" '
+                f'fill="#4a90d9" stroke="#1c3f66"/>'
+            )
+            s.append(
+                f'<rect x="{bx+bw-14}" y="{cy+cell_h*0.25}" width="5" height="{cell_h*0.5}" '
+                f'fill="#d0d7de"/>'
+            )
+        # Label + optional voltage below the pack, staying within board_bottom
+        s.append(
+            f'<text x="{bx+bw/2}" y="{by+bh+11}" font-size="9" font-weight="bold" '
+            f'fill="#222" text-anchor="middle">{esc(shown_text)}</text>'
+        )
+
+        # Red (+) and black (-) leads curving up to pos_hole and neg_hole
+        y_out_n = by + bh * 0.30
+        y_out_p = by + bh * 0.70
+        dp = f"M {xe:.1f} {y_out_p:.1f} C {xe+65:.1f} {y_out_p:.1f}, {xp-65:.1f} {yp+24:.1f}, {xp:.1f} {yp:.1f}"
+        dn = f"M {xe:.1f} {y_out_n:.1f} C {xe+65:.1f} {y_out_n:.1f}, {xn-65:.1f} {yn+24:.1f}, {xn:.1f} {yn:.1f}"
+        if new:
+            s.append(f'<path d="{dp}" fill="none" stroke="#ffe34d" stroke-width="7" opacity=".7"/>')
+            s.append(f'<path d="{dn}" fill="none" stroke="#ffe34d" stroke-width="7" opacity=".7"/>')
+        s.append(f'<path d="{dp}" fill="none" stroke="#d62728" stroke-width="2.6" stroke-linecap="round"/>')
+        s.append(f'<path d="{dn}" fill="none" stroke="#222222" stroke-width="2.6" stroke-linecap="round"/>')
+        s.append(f'<circle cx="{xp}" cy="{yp}" r="3" fill="#d62728"/>')
+        s.append(f'<circle cx="{xn}" cy="{yn}" r="3" fill="#222222"/>')
+        return "\n".join(s)
+        
     def xy(self, h):
         col, row = h
         return (self.X0 + (col - self.cmin) * P, self.Y0 + ROWY[row] * P)
@@ -366,7 +540,7 @@ class BBDraw:
                 o.append(f'<text x="{x}" y="{self.Y0+2.05*P}" font-size="9" fill="#7a725f" text-anchor="middle">{col}</text>')
                 o.append(f'<text x="{x}" y="{self.Y0+15.15*P}" font-size="9" fill="#7a725f" text-anchor="middle">{col}</text>')
         # items (draw order: ICs, flat parts, switches, wires, leads)
-        order = {"ic": 0, "R": 1, "C": 1, "LED": 1, "PIEZO": 1, "XTAL": 1, "POT": 1, "SW": 2, "wire": 3, "lead": 4}
+        order = {"ic": 0, "R": 1, "C": 1, "LED": 1, "PIEZO": 1, "XTAL": 1, "POT": 1, "SW": 2, "wire": 3, "lead": 4, "mb102": 4, "battery": 4}
         wi = 0
         self.labels = []
         self.lead_idx = 0
@@ -379,6 +553,8 @@ class BBDraw:
             elif k == "SW": o.append(self.draw_switch(it, new))
             elif k == "wire": o.append(self.draw_wire(it, new, wi)); wi += 1
             elif k == "lead": o.append(self.draw_lead(it, new))
+            elif k == "mb102": o.append(self.draw_mb102(it, new))
+            elif k == "battery": o.append(self.draw_battery(it, new))
         o.extend(self.labels)
         o.append("</svg>")
         return "\n".join(o)
@@ -503,20 +679,50 @@ class BBDraw:
     def draw_lead(self, it, new):
         xa, ya = self.xy(it["a"])
         conn = self.b.c.ics[it["conn"]]
+        active_leads = [
+            x for x in self.b.items
+            if x["kind"] == "lead" and x["build"] <= self.upto <= x.get("until", 99)
+        ]
+        total_leads = max(1, len(active_leads))
+        idx = self.lead_idx
         self.lead_idx += 1
-        bx = 10.0; bw = 140.0
-        yy = self.Y0 + (0.6 + self.lead_idx * 1.45) * P
-        xe = bx + bw
-        d = f"M {xa:.1f} {ya:.1f} C {xa-60:.1f} {ya:.1f}, {xe+60:.1f} {yy:.1f}, {xe:.1f} {yy:.1f}"
-        txt = f"{conn.part}: {it['label']}" if conn.named_only else f"{conn.part} pin {it['pin']}  {it['label']}"
-        s = []
-        if new: s.append(f'<path d="{d}" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>')
-        s.append(f'<path d="{d}" fill="none" stroke="#7a3fb0" stroke-width="2.4" stroke-dasharray="6 3" stroke-linecap="round"/>')
-        s.append(f'<circle cx="{xa}" cy="{ya}" r="3" fill="#7a3fb0"/>')
-        s.append(f'<rect x="{bx}" y="{yy-9}" width="{bw}" height="18" rx="3" fill="#efe4fa" stroke="#7a3fb0"/>'
-                 f'<text x="{bx+bw/2}" y="{yy+4}" font-size="9.5" fill="#4a1f78" text-anchor="middle">{esc(txt)}</text>')
-        return "\n".join(s)
 
+        palette = ["#7a3fb0", "#0077b6", "#2a9d8f", "#d97706", "#c026d3", "#475569"]
+        stroke_col = palette[idx % len(palette)]
+
+        bx = 10.0
+        bw = 128.0
+        step_y = 28.0
+        mid_board_y = self.Y0 + 8.5 * P
+        start_y = mid_board_y - ((total_leads - 1) * step_y) / 2.0
+        yy = start_y + idx * step_y
+        xe = bx + bw
+
+        # Route smoothly above or below an MB102 if present so leads never cut across its PCB
+        ctrl_y1, ctrl_y2 = ya, yy
+        for other in self.b.items:
+            if other["kind"] == "mb102" and other["build"] <= self.upto <= other.get("until", 99):
+                mcol = other["col"]
+                _, my_tp = self.xy((mcol, "TP"))
+                _, my_bp = self.xy((mcol, "BP"))
+                mb_top, mb_bot = my_tp - 14.0, my_bp + 14.0
+                dodge_y = mb_top - 12.0 if ya < mid_board_y else mb_bot + 12.0
+                ctrl_y1 = dodge_y
+                ctrl_y2 = dodge_y
+                break
+
+        d = f"M {xa:.1f} {ya:.1f} C {xa-50:.1f} {ctrl_y1:.1f}, {xe+50:.1f} {ctrl_y2:.1f}, {xe:.1f} {yy:.1f}"
+        txt = f"{conn.part}: {it['label']}" if conn.named_only else f"{conn.part} pin {it['pin']} {it['label']}"
+        s = []
+        if new:
+            s.append(f'<path d="{d}" fill="none" stroke="#ffe34d" stroke-width="8" stroke-linecap="round" opacity=".7"/>')
+        s.append(f'<path d="{d}" fill="none" stroke="{stroke_col}" stroke-width="2.3" stroke-dasharray="6 3" stroke-linecap="round"/>')
+        s.append(f'<circle cx="{xa}" cy="{ya}" r="3.2" fill="{stroke_col}" stroke="#fff" stroke-width=".7"/>')
+        s.append(
+            f'<rect x="{bx}" y="{yy-9.5}" width="{bw}" height="19" rx="3" fill="#f8f5fc" stroke="{stroke_col}" stroke-width="1.2"/>'
+            f'<text x="{bx+bw/2}" y="{yy+3.5}" font-size="9" fill="#222" text-anchor="middle">{esc(txt)}</text>'
+        )
+        return "\n".join(s)
 
 # ----------------------------------------------------------------------------
 # 4. Schematic drawing
