@@ -8,7 +8,7 @@
 
 ## 1. What you are building
 
-![Schematic for build B1](images/month-01-isp-build-1-schematic.png)
+![Schematic for build B1](images/month-01-isp-build-1-schematic.svg)
 
 * **Power:** the chip has two supply pins (VCC pin 7 and AVCC pin 20) and two ground pins (8 and 22). **All four** must be connected. C1 and C5 are 100 nF capacitors that keep the supply steady.
 * **R1 (10 kΩ):** holds RESET high.
@@ -19,7 +19,7 @@
 
 ## 2. Build it
 
-![Breadboard layout for build B1](images/month-01-isp-build-1-breadboard.png)
+![Breadboard layout for build B1](images/month-01-isp-build-1-breadboard.svg)
 
 Power OFF. **Do not connect the USB-serial adapter's VCC lead.** The adapter's TXD goes to the chip's RXD and the adapter's RXD to the chip's TXD (they cross over).
 

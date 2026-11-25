@@ -8,7 +8,7 @@
 
 ## 1. What you are building
 
-![Schematic for build 1](images/month-02-build-1-schematic.png)
+![Schematic for build 1](images/month-02-build-1-schematic.svg)
 
 * **C1 and C2** (100 nF): one for each pair of power pins (11/12 and 32/31). Fit them as close to the pins as you can.
 * **R1** (10 kΩ): holds reset high.
@@ -17,7 +17,7 @@
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/month-02-build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-02-build-1-breadboard.svg)
 
 (Sharper [SVG](images/month-02-build-1-breadboard.svg).) Power OFF while you build. New to the hole names (like **13j**)? See
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).

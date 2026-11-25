@@ -11,7 +11,7 @@ This proves the chip, the programmer and the software all work.
 
 ## 1. What you are building
 
-![Schematic for AVR build 1](images/month-01-avr-build-1-schematic.png)
+![Schematic for AVR build 1](images/month-01-avr-build-1-schematic.svg)
 
 How to read it: lines are wires. The little arrows with a name (such as **RESET**) are "net flags": every flag with the same name is the same wire.
 The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
@@ -25,7 +25,7 @@ The ground symbol is the **GND** rail and the **+5 V** bar is the supply rail.
 
 ## 2. Build it
 
-![Breadboard layout for AVR build 1](images/month-01-avr-build-1-breadboard.png)
+![Breadboard layout for AVR build 1](images/month-01-avr-build-1-breadboard.svg)
 
 (Sharper [SVG](images/month-01-avr-build-1-breadboard.svg).) Power OFF. Hole names such as **14j** mean *column 14, row j*; see the
 [breadboard basics](../start-here/05-electronics-and-breadboard-basics.md#how-the-holes-are-connected).

@@ -4,7 +4,7 @@ Everything you need in about 10 minutes. Skip what you already know.
 
 ## How the holes are connected
 
-![How breadboard holes are connected](images/breadboard-connections.png)
+![How breadboard holes are connected](images/breadboard-connections.svg)
 
 * A full-size breadboard has **63 numbered columns**. In each column the five holes **a–e** are joined together, and separately the five holes **f–j** are joined together.
 * The **centre channel** separates the two halves. Holes on opposite sides are *not* connected.
@@ -25,7 +25,7 @@ If your breadboard is laid out in some other way, tell us: the instructions can 
 
 ## Reading a chip
 
-![Chip pin numbering](images/chip-pin-numbering.png)
+![Chip pin numbering](images/chip-pin-numbering.svg)
 
 * Notch (or dot) on the **left**: pin 1 is the **bottom-left** pin. Numbers run along the bottom to the right, then back along the top to the left.
 * The pictures in this course always draw chips this way.

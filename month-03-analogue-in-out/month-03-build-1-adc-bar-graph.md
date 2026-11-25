@@ -35,7 +35,7 @@ Answer = (the two bits B9 and B8) × 256 + byte 3. That is a number from 0 to 10
 
 ## 2. What you are building
 
-![Schematic for build 1](images/month-03-build-1-schematic.png)
+![Schematic for build 1](images/month-03-build-1-schematic.svg)
 
 * **U2, the MCP3008:** its **VREF** pin (15) and **VDD** (16) are both on +5 V, so a reading of 1023 means 5 V. **AGND** and **DGND** go to ground.
 * **RV1, the knob:** one end to +5 V, the other to ground; the **middle leg (the wiper)** goes to channel 0 (pin 1). Turning it slides the voltage from 0 V to 5 V.
@@ -44,7 +44,7 @@ Answer = (the two bits B9 and B8) × 256 + byte 3. That is a number from 0 to 10
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/month-03-build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-03-build-1-breadboard.svg)
 
 (Sharper [SVG](images/month-03-build-1-breadboard.svg).) Power OFF. The PIC18F47K42 is a *wide* chip: rows **d** and **h**, as in Month 2. The MCP3008 is *skinny*: rows **e** and **f**.
 

@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build B3](images/month-01-isp-build-3-schematic.png)
+![Schematic for build B3](images/month-01-isp-build-3-schematic.svg)
 
 * **A second, identical minimum board** (U2): power, reset pull-up (R3), crystal (Y2, C7, C8), decoupling (C6) and a test LED (D4 on D9).
 * **Four wires** from the programmer to the target. These four wires are the **ISP** connection:
@@ -24,7 +24,7 @@
 
 ## 2. Build it
 
-![Breadboard layout for build B3](images/month-01-isp-build-3-breadboard.png)
+![Breadboard layout for build B3](images/month-01-isp-build-3-breadboard.svg)
 
 The right-hand half of your power rails needs the four short bridging wires (columns 31 to 32) if your rails have a break in the middle.
 

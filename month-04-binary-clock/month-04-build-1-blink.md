@@ -29,7 +29,7 @@ The lesson for the rest of the course: *the code often ports easily; the wiring 
 
 ## 2. What you are building
 
-![Schematic for build 1](images/month-04-build-1-schematic.png)
+![Schematic for build 1](images/month-04-build-1-schematic.svg)
 
 * **C1 (100 nF):** across the supply pins. This chip has only one pair, so one capacitor.
 * **R1 (10 kΩ):** holds MCLR high.
@@ -38,7 +38,7 @@ The lesson for the rest of the course: *the code often ports easily; the wiring 
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/month-04-build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-04-build-1-breadboard.svg)
 
 <!-- placement:1 -->
 | Step | Part                     |    Pin(s)    | Where it goes                                                                                                                                              | Notes                                                                                            |

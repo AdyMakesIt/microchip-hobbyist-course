@@ -20,7 +20,7 @@ Then follow the table in step 2 below. Skip any step whose part is already in pl
 
 ## 1. What you are building
 
-![Schematic for build 1](images/month-01-pic-build-1-schematic.png)
+![Schematic for build 1](images/month-01-pic-build-1-schematic.svg)
 
 How to read it: lines are wires. The little arrows with a name (such as **MCLR**) are "net flags":
 every flag with the same name is the same wire. The ground symbol (⏚) is the **GND** rail and the
@@ -35,7 +35,7 @@ What each part does:
 
 ## 2. Build it
 
-![Breadboard layout for build 1](images/month-01-pic-build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-01-pic-build-1-breadboard.svg)
 
 (The picture is also available as a sharper [SVG](images/month-01-pic-build-1-breadboard.svg). Open it in a browser and zoom in.)
 

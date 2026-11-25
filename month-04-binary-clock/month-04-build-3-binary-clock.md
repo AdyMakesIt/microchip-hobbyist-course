@@ -10,14 +10,14 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-04-build-3-schematic.png)
+![Schematic for build 3](images/month-04-build-3-schematic.svg)
 
 * **Two mode LEDs** on RC6 and RC7.
 * **SW1**, the push button, on **RA2** (pin 17). It uses the chip's own pull-up, like the buttons in Month 1, so pressing it reads as 0.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-04-build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-04-build-3-breadboard.svg)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                                      | Notes                                                                                              |

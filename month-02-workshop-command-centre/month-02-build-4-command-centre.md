@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 4](images/month-02-build-4-schematic.png)
+![Schematic for build 4](images/month-02-build-4-schematic.svg)
 
 * **SW2** on GPB1 (pin 2): the SPEED button.
 * **R14 (100 Ω) + BZ1**: a piezo disc on RD3. The PIC makes a beep by switching RD3 on and off about 4000 times a second.
@@ -20,7 +20,7 @@ only make a constant buzz with this program.
 
 ## 2. Build it
 
-![Breadboard layout for build 4](images/month-02-build-4-breadboard.png)
+![Breadboard layout for build 4](images/month-02-build-4-breadboard.svg)
 
 <!-- placement:4 -->
 | Step | Part               | Pin(s) | Where it goes                                                     | Notes                                                                                                  |

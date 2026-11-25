@@ -26,7 +26,7 @@ The two "A" pins (AVDD and AVSS) feed the analog part of the chip. **You must co
 
 ## 2. What you are building
 
-![Schematic for build 1](images/month-05-build-1-schematic.png)
+![Schematic for build 1](images/month-05-build-1-schematic.svg)
 
 * **C1 (100 nF):** across the main supply pins.
 * **C2 (10 µF):** the **VCAP** capacitor, pin 20 to ground.
@@ -36,7 +36,7 @@ The two "A" pins (AVDD and AVSS) feed the analog part of the chip. **You must co
 
 ## 3. Build it
 
-![Breadboard layout for build 1](images/month-05-build-1-breadboard.png)
+![Breadboard layout for build 1](images/month-05-build-1-breadboard.svg)
 
 (Sharper [SVG](images/month-05-build-1-breadboard.svg).) Power OFF, and **breadboard supply at 3.3 V**.
 

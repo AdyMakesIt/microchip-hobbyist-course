@@ -21,7 +21,7 @@ Three ideas to know:
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/month-04-build-2-schematic.png)
+![Schematic for build 2](images/month-04-build-2-schematic.svg)
 
 * **U2, the MCP7940N:** power (VCC pin 8, VSS pin 4) with C2. The **VBAT** pin (3) is tied to GND because there is no battery yet.
 * **Y1, C3, C4:** the 32.768 kHz crystal and its two 10 pF load capacitors, between pins 1 (X1) and 2 (X2), and ground.
@@ -33,7 +33,7 @@ The MCP7940N's I2C address is fixed at **0x6F**.
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/month-04-build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-04-build-2-breadboard.svg)
 
 **The crystal is delicate.** Do not bend its legs close to the body. Seat it so its legs reach the holes without strain.
 

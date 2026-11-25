@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build B2](images/month-01-isp-build-2-schematic.png)
+![Schematic for build B2](images/month-01-isp-build-2-schematic.svg)
 
 Two more LEDs. ArduinoISP uses three, with fixed meanings:
 
@@ -24,7 +24,7 @@ D1 is already in place from Build B1.
 
 ## 2. Build it
 
-![Breadboard layout for build B2](images/month-01-isp-build-2-breadboard.png)
+![Breadboard layout for build B2](images/month-01-isp-build-2-breadboard.svg)
 
 <!-- placement:2 -->
 | Step | Part              | Pin(s) | Where it goes                                                                      | Notes                                      |

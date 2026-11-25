@@ -21,7 +21,7 @@ The chip's I2C address is `0x50` plus the three pins A0, A1, A2. All three are w
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/month-05-build-2-schematic.png)
+![Schematic for build 2](images/month-05-build-2-schematic.svg)
 
 * **U2, the 24LC512:** power on pin 8 (3.3 V) with C3, ground on pin 4; **A0, A1, A2 (pins 1, 2, 3) and WP (pin 7) to ground**.
 * **R3, R4 (4.7 kΩ):** the I2C pull-ups, **to 3.3 V**, on SCL (pin 6) and SDA (pin 5).
@@ -29,7 +29,7 @@ The chip's I2C address is `0x50` plus the three pins A0, A1, A2. All three are w
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/month-05-build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-05-build-2-breadboard.svg)
 
 <!-- placement:2 -->
 | Step | Part               |    Pin(s)    | Where it goes                                                                                                                                             | Notes                                                                                  |

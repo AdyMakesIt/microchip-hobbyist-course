@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for build 2](images/month-01-pic-build-2-schematic.png)
+![Schematic for build 2](images/month-01-pic-build-2-schematic.svg)
 
 New in green: the push button **SW1** between pin 2 (RA0) and GND.
 
@@ -20,7 +20,7 @@ That is why "pressed" means `0` in the code. Most buttons in later months work t
 
 ## 2. Build it
 
-![Breadboard layout for build 2](images/month-01-pic-build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-01-pic-build-2-breadboard.svg)
 
 <!-- placement:pic:2 -->
 | Step | Part            | Pin(s) | Where it goes                                                 | Notes                                                                                              |

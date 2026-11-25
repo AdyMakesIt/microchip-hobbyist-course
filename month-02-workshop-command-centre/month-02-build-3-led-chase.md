@@ -11,14 +11,14 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-02-build-3-schematic.png)
+![Schematic for build 3](images/month-02-build-3-schematic.svg)
 
 * Seven more LED units (R7–R13, D3–D9) on GPA1 to GPA7.
 * **SW1** on GPB0 (pin 1). Like Month 1's button it connects the pin to GND when pressed. The expander has its own pull-ups, which the program switches on (`GPPUB`).
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-02-build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-02-build-3-breadboard.svg)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                                      | Notes                                                                                                  |

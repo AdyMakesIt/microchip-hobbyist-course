@@ -10,13 +10,13 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-03-build-3-schematic.png)
+![Schematic for build 3](images/month-03-build-3-schematic.svg)
 
 A single wire from **DAC output A (MCP4822 pin 8)** to **ADC channel 1 (MCP3008 pin 2)**. Now the chip can output a voltage *and* measure it, with no outside help.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-03-build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-03-build-3-breadboard.svg)
 
 <!-- placement:3 -->
 | Step | Part        |   Pin(s)    | Where it goes     | Notes                     |

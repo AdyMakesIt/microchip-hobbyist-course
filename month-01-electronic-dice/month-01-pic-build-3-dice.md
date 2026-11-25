@@ -10,18 +10,18 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-01-pic-build-3-schematic.png)
+![Schematic for build 3](images/month-01-pic-build-3-schematic.svg)
 
 Six more LEDs, each with its own 680 Ω resistor, on RC1 to RC6. Together with D1 (RC0) they are the seven "pips" of a die:
 
-![Dice pip map](images/month-01-dice-pip-map.png)
+![Dice pip map](images/month-01-dice-pip-map.svg)
 
 You can wire the LEDs in a straight row, as the breadboard picture does. The program already knows which pin is which pip.
 If you would like it to *look* like a die, bend the LED legs out and arrange the seven LEDs using the map above.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-01-pic-build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-01-pic-build-3-breadboard.svg)
 
 Six identical little "LED units": a wire from the chip pin to the top of a column, a resistor across the centre channel, and an LED to the bottom ground rail.
 

@@ -10,11 +10,11 @@
 
 ## 1. What you are adding
 
-![Schematic for AVR build 3](images/month-01-avr-build-3-schematic.png)
+![Schematic for AVR build 3](images/month-01-avr-build-3-schematic.svg)
 
 Six more LEDs, each with its own 680 Ω resistor, on PD1 to PD6. Together with D1 (PD0) they are the seven "pips" of a die:
 
-![Dice pip map](images/month-01-dice-pip-map.png)
+![Dice pip map](images/month-01-dice-pip-map.svg)
 
 The pip map shows the PIC pin names; for the ATmega328P the same seven LEDs are on **PD0 to PD6** in the same order
 (top left = PD0 ... bottom right = PD6). You can wire the LEDs in a straight row, as the breadboard picture does.
@@ -22,7 +22,7 @@ If you would like it to *look* like a die, bend the LED legs out and arrange the
 
 ## 2. Build it
 
-![Breadboard layout for AVR build 3](images/month-01-avr-build-3-breadboard.png)
+![Breadboard layout for AVR build 3](images/month-01-avr-build-3-breadboard.svg)
 
 Six identical little "LED units": a wire from the chip pin to the top of a column, a resistor across the centre channel, and an LED to the bottom ground rail.
 

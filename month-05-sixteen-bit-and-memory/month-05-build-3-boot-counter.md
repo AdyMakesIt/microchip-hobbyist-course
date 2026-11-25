@@ -10,13 +10,13 @@
 
 ## 1. What you are adding
 
-![Schematic for build 3](images/month-05-build-3-schematic.png)
+![Schematic for build 3](images/month-05-build-3-schematic.svg)
 
 * **SW1**, the push button, on **RA1** (pin 3), with **R13 (10 kΩ) pulling it up to 3.3 V**. Pressing the button pulls RA1 to ground (reads 0). This chip's pull-ups work differently from the PIC16/18, so a simple external resistor is used here.
 
 ## 2. Build it
 
-![Breadboard layout for build 3](images/month-05-build-3-breadboard.png)
+![Breadboard layout for build 3](images/month-05-build-3-breadboard.svg)
 
 <!-- placement:3 -->
 | Step | Part               | Pin(s) | Where it goes                                                 | Notes                                                                                              |

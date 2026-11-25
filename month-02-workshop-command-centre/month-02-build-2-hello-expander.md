@@ -36,7 +36,7 @@ The MCP23017's address is **0x20** because its three address pins (A0, A1, A2) a
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/month-02-build-2-schematic.png)
+![Schematic for build 2](images/month-02-build-2-schematic.svg)
 
 * **U2**: the MCP23017, with its power, its 100 nF capacitor (C3), and address pins A0–A2 to GND.
 * **RESET** (pin 18) is held high by **R5**. If this pin floats, the chip behaves randomly.
@@ -45,7 +45,7 @@ The MCP23017's address is **0x20** because its three address pins (A0, A1, A2) a
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/month-02-build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-02-build-2-breadboard.svg)
 
 The MCP23017 is a *skinny* chip: it goes across the centre channel in rows **e** and **f**, with its notch to the **left**, like the Month 1 chip.
 

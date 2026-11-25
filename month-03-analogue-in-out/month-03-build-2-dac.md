@@ -26,7 +26,7 @@ Unlike the ADC (which measures against the 5 V supply), the DAC's voltage is set
 
 ## 2. What you are adding
 
-![Schematic for build 2](images/month-03-build-2-schematic.png)
+![Schematic for build 2](images/month-03-build-2-schematic.svg)
 
 * **U3, the MCP4822:** power (pin 1 = VDD, pin 7 = VSS) with its own 100 nF capacitor (C4). **LDAC** (pin 5) is tied to GND, which means "update the output as soon as CS goes high".
 * **Three SPI wires** shared with the ADC (SCK, SDI = MOSI) plus **its own CS** to PIC pin 23.
@@ -35,7 +35,7 @@ Unlike the ADC (which measures against the 5 V supply), the DAC's voltage is set
 
 ## 3. Build it
 
-![Breadboard layout for build 2](images/month-03-build-2-breadboard.png)
+![Breadboard layout for build 2](images/month-03-build-2-breadboard.svg)
 
 <!-- placement:2 -->
 | Step | Part               |    Pin(s)    | Where it goes                                                                                                                                             | Notes                                                                                  |

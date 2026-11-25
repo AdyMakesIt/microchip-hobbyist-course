@@ -10,7 +10,7 @@
 
 ## 1. What you are adding
 
-![Schematic for AVR build 2](images/month-01-avr-build-2-schematic.png)
+![Schematic for AVR build 2](images/month-01-avr-build-2-schematic.svg)
 
 New in green: the push button **SW1** between pin 23 (**PC0**) and GND.
 
@@ -19,7 +19,7 @@ Pressing the button connects PC0 to GND, so it reads **LOW (0)**. That is why "p
 
 ## 2. Build it
 
-![Breadboard layout for AVR build 2](images/month-01-avr-build-2-breadboard.png)
+![Breadboard layout for AVR build 2](images/month-01-avr-build-2-breadboard.svg)
 
 <!-- placement:avr:2 -->
 | Step | Part            | Pin(s) | Where it goes                                                     | Notes                                                                                                  |
