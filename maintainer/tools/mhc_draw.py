@@ -379,7 +379,6 @@ class BBDraw:
                     if k in it: allcols.append(it[k][0])
         self.cmin = cmin if cmin is not None else max(1, min(allcols) - 3)
         self.cmax = cmax if cmax is not None else min(63, max(allcols) + 3)
-        self.X0 = 190.0; self.Y0 = 70.0
     
     def draw_mb102(self, it, new):
         col = it["col"]
@@ -589,36 +588,59 @@ class BBDraw:
         mx, my = (xa + xb) / 2, (ya + yb) / 2
         L = math.hypot(xb - xa, yb - ya) or 1
         ang = math.degrees(math.atan2(yb - ya, xb - xa))
-        vertical = abs(xa - xb) < 1
         ref, k = it["ref"], it["kind"]
-        val = self.b.c.parts[ref][1]
+        raw_val = self.b.c.parts[ref][1]
+        val_txt = pretty_ohms(raw_val) if (k == "R" and raw_val) else raw_val
+
         s = []
-        if new: s.append(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="#ffe34d" stroke-width="22" stroke-linecap="round" opacity=".6"/>')
+        if new:
+            s.append(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="#ffe34d" stroke-width="22" stroke-linecap="round" opacity=".6"/>')
         s.append(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="#9aa0a6" stroke-width="2"/>')
+
         if k == "R":
             bl = min(L - 6, 34)
-            if vertical:
-                s.append(f'<g transform="translate({mx},{my})"><rect x="-6" y="{-bl/2}" width="12" height="{bl}" rx="4" fill="#d9b779" stroke="#6b5a2d"/>'
-                         f'<text transform="rotate(-90)" x="0" y="3" font-size="8.5" font-weight="bold" fill="#3b2a00" text-anchor="middle">{esc(ref)}</text></g>')
-            else:
-                s.append(f'<g transform="translate({mx},{my}) rotate({ang})"><rect x="{-bl/2}" y="-5.5" width="{bl}" height="11" rx="4" fill="#d9b779" stroke="#6b5a2d"/>'
-                         f'<text x="0" y="3" font-size="8.5" font-weight="bold" fill="#3b2a00" text-anchor="middle">{esc(ref)}</text></g>')
-                s.append(f'<text x="{mx}" y="{my-10}" font-size="9" fill="#222" text-anchor="middle">{esc(pretty_ohms(val))}</text>')
+            s.append(
+                f'<g transform="translate({mx},{my}) rotate({ang})">'
+                f'<rect x="{-bl/2}" y="-5.5" width="{bl}" height="11" rx="4" fill="#d9b779" stroke="#6b5a2d"/>'
+                f'<text x="0" y="3" font-size="8.5" font-weight="bold" fill="#3b2a00" text-anchor="middle">{esc(ref)}</text>'
+                f'</g>'
+            )
+            if val_txt:
+                vy = min(ya, yb) - 10 if abs(xa - xb) < 1 else my - 13
+                s.append(f'<text x="{mx}" y="{vy}" font-size="9" font-weight="600" fill="#222" text-anchor="middle">{esc(val_txt)}</text>')
+
         elif k == "LED":
             s.append(f'<circle cx="{mx}" cy="{my}" r="8.6" fill="#d32f2f" stroke="#7a1010"/>')
             s.append(f'<text x="{mx}" y="{my+3}" font-size="8.5" font-weight="bold" fill="#fff" text-anchor="middle">{esc(ref)}</text>')
-            # mark the anode (long leg) with a red + beside its hole
             s.append(f'<text x="{xa+6}" y="{ya-4}" font-size="11" font-weight="bold" fill="#c00" stroke="#fff" stroke-width="2.4" paint-order="stroke">+</text>')
+            if val_txt:
+                s.append(f'<text x="{mx}" y="{my-14}" font-size="9" font-weight="600" fill="#222" text-anchor="middle">{esc(val_txt)}</text>')
+
         elif k == "XTAL":
-            s.append(f'<g transform="translate({mx},{my}) rotate({ang if not vertical else 90})"><rect x="-14" y="-6" width="28" height="12" rx="6" fill="#c9ced4" stroke="#555"/>'
-                     f'<text x="0" y="3" font-size="7.5" font-weight="bold" fill="#222" text-anchor="middle">{esc(ref)}</text></g>')
-            s.append(f'<text x="{mx}" y="{my-10}" font-size="9" fill="#222" text-anchor="middle">{esc(val)}</text>')
+            s.append(
+                f'<g transform="translate({mx},{my}) rotate({ang})">'
+                f'<line x1="-10" y1="-11" x2="-10" y2="11" stroke="#555" stroke-width="2"/>'
+                f'<line x1="10" y1="-11" x2="10" y2="11" stroke="#555" stroke-width="2"/>'
+                f'<rect x="-14" y="-6" width="28" height="12" rx="6" fill="#c9ced4" stroke="#555"/>'
+                f'<text x="0" y="3" font-size="7.5" font-weight="bold" fill="#222" text-anchor="middle">{esc(ref)}</text>'
+                f'</g>'
+            )
+            if val_txt:
+                vy = min(ya, yb) - 14 if abs(xa - xb) < 1 else my - 15
+                s.append(f'<text x="{mx}" y="{vy}" font-size="9" font-weight="600" fill="#222" text-anchor="middle">{esc(val_txt)}</text>')
+
         elif k == "C":
-            s.append(f'<ellipse cx="{mx}" cy="{my}" rx="7" ry="8" fill="#f2c94c" stroke="#8a6d00"/>')
-            s.append(f'<text x="{mx}" y="{my+19}" font-size="9" fill="#222" text-anchor="middle">{esc(ref)} {esc(val)}</text>')
+            s.append(f'<ellipse cx="{mx}" cy="{my}" rx="9.5" ry="8.5" fill="#f2c94c" stroke="#8a6d00"/>')
+            s.append(f'<text x="{mx}" y="{my+3}" font-size="8" font-weight="bold" fill="#3b2a00" text-anchor="middle">{esc(ref)}</text>')
+            if val_txt:
+                s.append(f'<text x="{mx}" y="{my-14}" font-size="9" font-weight="600" fill="#222" text-anchor="middle">{esc(val_txt)}</text>')
+
         else:  # piezo
             s.append(f'<circle cx="{mx}" cy="{my}" r="9" fill="#d4af37" stroke="#7a6310"/>')
-            s.append(f'<text x="{mx}" y="{my+3}" font-size="8" font-weight="bold" fill="#4a3b00" text-anchor="middle">BZ</text>')
+            s.append(f'<text x="{mx}" y="{my+3}" font-size="8" font-weight="bold" fill="#4a3b00" text-anchor="middle">{esc(ref)}</text>')
+            if val_txt:
+                s.append(f'<text x="{mx}" y="{my-15}" font-size="9" font-weight="600" fill="#222" text-anchor="middle">{esc(val_txt)}</text>')
+
         for (x, y) in ((xa, ya), (xb, yb)):
             s.append(f'<circle cx="{x}" cy="{y}" r="2.6" fill="#555"/>')
         return "\n".join(s)
@@ -825,35 +847,36 @@ class SchDraw:
         cx = x + d * 27
         s = []
         lab = f'<text x="{cx}" y="{y-12}" font-size="10" font-weight="bold" fill="{col}" text-anchor="middle">{esc(ref)}</text>'
+        val_tag = lambda vy, txt: f'<text x="{cx}" y="{vy}" font-size="10" font-weight="600" fill="{col}" text-anchor="middle">{esc(txt)}</text>'
         if kind == "R":
             s.append(f'<rect x="{cx-18}" y="{y-6}" width="36" height="12" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
-            s.append(lab + f'<text x="{cx}" y="{y+21}" font-size="10" fill="{col}" text-anchor="middle">{esc(pretty_ohms(val))}</text>')
+            s.append(lab + val_tag(y + 21, pretty_ohms(val)))
         elif kind == "LED":
             # triangle pointing in the direction of current flow (away from the pin)
             tip = cx + d * 8; base = cx - d * 8
             s.append(f'<polygon points="{base},{y-9} {base},{y+9} {tip},{y}" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
             s.append(f'<line x1="{tip}" y1="{y-9}" x2="{tip}" y2="{y+9}" stroke="{col}" stroke-width="1.8"/>')
             s.append(f'<path d="M {cx-2} {y-12} l 7 -7 m -3 0 h 3 v 3 M {cx+6} {y-9} l 7 -7 m -3 0 h 3 v 3" fill="none" stroke="{col}" stroke-width="1.1"/>')
-            s.append(lab.replace(f'y="{y-12}"', f'y="{y-23}"') )
+            s.append(lab.replace(f'y="{y-12}"', f'y="{y-23}"') + (val_tag(y + 21, val) if val else ""))
         elif kind == "POT":
             s.append(f'<rect x="{cx-18}" y="{y-6}" width="36" height="12" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
             s.append(f'<path d="M {cx} {y-20} L {cx} {y-7} M {cx-4} {y-12} L {cx} {y-7} L {cx+4} {y-12}" fill="none" stroke="{col}" stroke-width="1.6"/>')
-            s.append(lab.replace(f'y="{y-12}"', f'y="{y-24}"') + f'<text x="{cx}" y="{y+21}" font-size="10" fill="{col}" text-anchor="middle">{esc(pretty_ohms(val))} pot</text>')
+            s.append(lab.replace(f'y="{y-12}"', f'y="{y-24}"') + val_tag(y + 21, f"{pretty_ohms(val)} pot"))
         elif kind == "XTAL":
             s.append(f'<line x1="{cx-10}" y1="{y-11}" x2="{cx-10}" y2="{y+11}" stroke="{col}" stroke-width="2"/><line x1="{cx+10}" y1="{y-11}" x2="{cx+10}" y2="{y+11}" stroke="{col}" stroke-width="2"/>')
             s.append(f'<rect x="{cx-5}" y="{y-8}" width="10" height="16" fill="#fff" stroke="{col}" stroke-width="1.8"/>')
-            s.append(lab + f'<text x="{cx}" y="{y+25}" font-size="10" fill="{col}" text-anchor="middle">{esc(val)}</text>')
+            s.append(lab + val_tag(y + 25, val))
         elif kind == "C":
             s.append(f'<line x1="{cx-4}" y1="{y-11}" x2="{cx-4}" y2="{y+11}" stroke="{col}" stroke-width="2"/><line x1="{cx+4}" y1="{y-11}" x2="{cx+4}" y2="{y+11}" stroke="{col}" stroke-width="2"/>')
-            s.append(lab + f'<text x="{cx}" y="{y+25}" font-size="10" fill="{col}" text-anchor="middle">{esc(val)}</text>')
+            s.append(lab + val_tag(y + 25, val))
         elif kind == "SW":
             s.append(f'<circle cx="{cx-14}" cy="{y}" r="3" fill="#fff" stroke="{col}" stroke-width="1.6"/><circle cx="{cx+14}" cy="{y}" r="3" fill="#fff" stroke="{col}" stroke-width="1.6"/>')
             s.append(f'<line x1="{cx-14}" y1="{y-3}" x2="{cx+12}" y2="{y-13}" stroke="{col}" stroke-width="1.8"/>')
-            s.append(lab + f'<text x="{cx}" y="{y+21}" font-size="10" fill="{col}" text-anchor="middle">{esc(val)} button</text>')
+            s.append(lab + val_tag(y + 21, f"{val} button"))
         elif kind == "PIEZO":
             s.append(f'<rect x="{cx-16}" y="{y-10}" width="32" height="20" rx="3" fill="#fff6d6" stroke="{col}" stroke-width="1.8"/>')
             s.append(f'<path d="M {cx-10} {y} q 3 -8 5 0 t 5 0 t 5 0" fill="none" stroke="{col}" stroke-width="1.4"/>')
-            s.append(lab.replace(f'y="{y-12}"', f'y="{y-15}"') + f'<text x="{cx}" y="{y+24}" font-size="10" fill="{col}" text-anchor="middle">piezo</text>')
+            s.append(lab.replace(f'y="{y-12}"', f'y="{y-15}"') + val_tag(y + 24, val or "piezo"))
         return "\n".join(s)
 
     def gnd(self, x, y, col, d=1):
