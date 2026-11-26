@@ -34,3 +34,6 @@ _autosave-*
 # PlatformIO
 .pio/
 .vscode/
+
+# Working directory for iterative changes (never pushed)
+working/
