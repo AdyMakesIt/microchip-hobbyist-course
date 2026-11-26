@@ -1,5 +1,9 @@
 # Microchip Hobbyist Course
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--SA%204.0-lightgrey.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/AdyMakesIt/microchip-hobbyist-course/actions/workflows/check.yml/badge.svg)](https://github.com/AdyMakesIt/microchip-hobbyist-course/actions/workflows/check.yml)
+
 Learn to build with Microchip's **PIC** and **AVR** microcontrollers on a breadboard, one small project a month,
 using **free chip samples** with a **low-cost PICkit 3 programmer** and a **USB/ASP programmer**. No soldering. No degree needed.
 
@@ -77,4 +81,11 @@ See [maintainer/README.md](maintainer/README.md).
 
 ## Licence
 
-Not yet chosen. See the note in [maintainer/GITHUB_GUIDE.md](maintainer/GITHUB_GUIDE.md#licence).
+This project uses a dual licence:
+
+| Content | Licence |
+|---------|---------|
+| Text, images, diagrams, documentation | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| C source code (`main.c`) | [MIT](LICENSE#source-code-mainc-files--mit-licence) |
+
+See [LICENSE](LICENSE) for full details.

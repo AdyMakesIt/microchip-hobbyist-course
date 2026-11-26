@@ -1,0 +1,58 @@
+# Licence
+
+This repository contains two types of content with different licences.
+
+## Text, images, diagrams, documentation — Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+All Markdown pages (`.md`), images (`.svg`, `.png`), diagrams, and documentation in this repository are licensed under CC BY-SA 4.0.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the licence, and indicate if changes were made
+- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same licence as the original
+
+Full licence text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+---
+
+## Source code (`main.c` files) — MIT Licence
+
+All C source files under `month-*/code/**/main.c` and `month-*/projects/**/src/main.c` are licensed under the MIT Licence.
+
+```
+MIT Licence
+
+Copyright (c) 2024-present Adrian Sherriff
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## Summary
+
+| Content | Licence |
+|---------|---------|
+| Markdown pages, images, diagrams, documentation | CC BY-SA 4.0 |
+| C source code (`main.c`) | MIT |
+
+This dual-licence approach lets people freely use the code in their own projects (MIT) while ensuring the course materials stay open and attributed (CC BY-SA 4.0).
