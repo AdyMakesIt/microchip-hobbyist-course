@@ -146,7 +146,8 @@ def describe(c, b, it):
             part_name,
             f"**red (+)** lead to {hole(it['a'])}, **black (−)** lead to {hole(it['b'])}",
             "check polarity before connecting",
-        )    raise ValueError(k)
+        )
+    raise ValueError(k)
 
 
 def strip_pins(c, b, build):
