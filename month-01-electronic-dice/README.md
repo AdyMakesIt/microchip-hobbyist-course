@@ -44,7 +44,7 @@ Order three of each: spares are useful when a chip gets damaged.
 | Ceramic capacitor                                                         | 100nF            |        2 |            3 |
 | LED, 5 mm                                                                 | red              |        7 |            9 |
 | Push button (4-leg tact switch)                                           | 6 mm             |        1 |            2 |
-| Jumper wires, solid or male-to-male                                       | assorted lengths |       15 |           21 |
+| Jumper wires, solid or male-to-male                                       | assorted lengths |       14 |           20 |
 | Female-to-male Dupont leads (ISP programmer / PICkit 3 ICSP → breadboard) |                  |        5 |            6 |
 <!-- /bom -->
 
