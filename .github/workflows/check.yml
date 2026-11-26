@@ -1,0 +1,32 @@
+name: Check Course
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ nodejs npm
+
+      - name: Install Node dependencies (sharp for PNG export)
+        working-directory: maintainer/tools
+        run: npm ci
+
+      - name: Run check_all.py
+        run: python3 maintainer/tools/check_all.py
