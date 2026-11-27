@@ -83,9 +83,9 @@ See [maintainer/README.md](maintainer/README.md).
 
 This project uses a dual licence:
 
-| Content | Licence |
-|---------|---------|
+| Content                               | Licence                                                         |
+| ------------------------------------- | --------------------------------------------------------------- |
 | Text, images, diagrams, documentation | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| C source code (`main.c`) | [MIT](LICENSE#source-code-mainc-files--mit-licence) |
+| C source code (`main.c`)              | [MIT](LICENSE#source-code-mainc-files--mit-licence)             |
 
 See [LICENSE](LICENSE) for full details.

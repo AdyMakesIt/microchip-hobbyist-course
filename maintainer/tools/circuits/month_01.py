@@ -42,7 +42,9 @@ def month_01_avr():
 
     b = Board(c)
     b.ic("U1", 8, 1)
-    b.wire("TP63", "BP63", 1, "+5V"); b.wire("TN63", "BN63", 1, "GND")
+    # MB102 power supply at left end of rails (column 1) - powers all builds
+    b.mb102(build=1, col=1, voltage="5 V")
+    # power pins - chip power from rails (no rail bridging wires needed; MB102 feeds left end)
     b.wire("14h", "BP14", 1, "+5V"); b.wire("15h", "BN15", 1, "GND"); b.two("C1", "14g", "15g", 1)
     b.wire("16b", "TP16", 1, "+5V"); b.wire("14b", "TN14", 1, "GND"); b.two("C2", "16d", "14d", 1)
     b.two("R1", "8i", "BP8", 1)
@@ -63,7 +65,7 @@ def month_01_avr():
     b.wire("11g", "27d", 3, "PD2")
     b.two("R4", "27e", "28f", 3)
     b.two("D3", "28g", "BN28", 3)
-    
+
     # D4 (Build 1 centre blink LED, PD3): cols 31-32 (top)
     b.wire("12g", "29d", 1, "PD3")
     b.two("R5", "29e", "30f", 1)
@@ -128,6 +130,7 @@ def month_01_pic():
     b = Board(c)
     b.ic("U1", 8, 1)
     # rails: the supply feeds the LEFT end of the TOP rails; bridge to the bottom rails
+    b.mb102(build=1, col=1, voltage="5 V")
     b.wire("TP2", "BP2", 1, "+5V"); b.wire("TN1", "BN1", 1, "GND")
     # power pins
     b.wire("16b", "TP16", 1, "+5V")          # pin 20 VDD
@@ -215,6 +218,7 @@ def month_01_isp():
 
     b = Board(c)
     b.ic("U1", 5, 1)
+    b.mb102(build=1, col=1, voltage="5 V")
     b.wire("TP2", "BP2", 1, "+5V"); b.wire("TN1", "BN1", 1, "GND")
     # power
     b.wire("11j", "BP11", 1, "+5V"); b.wire("12j", "BN12", 1, "GND"); b.two("C1", "11i", "12i", 1)
